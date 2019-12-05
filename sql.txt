@@ -1,0 +1,17 @@
+TaiKhoan(*id,tentaikhoan,matkhau,hoten,ngaysinh,permission,lophocid)
+LopHoc(*id,tenlop,caphocid)
+CapHoc(*id,tencap)
+MonHoc(*id,tenmonhoc)
+CapHoc_MonHoc(*caphocid,*monhocid)
+
+CauHoi(*id,noidung,goiy,dokho,caphocid,monhocid,donggop,trangthai)
+DapAn(*cauhoiid,*stt,noidung,dungsai)
+
+DeThi(*id,loaidethi,thoigiantoida,caphocid,monhocid,kythiid)
+DeThi_CauHoi(*dethiid,*cauhoiid)
+
+HocSinhLamBai(*hocsinhid,*dethiid,*cauhoiid,dungsai) : HocSinh <lam> CauHoi - DeThi
+HocSinhThamGia(*hocsinhid,*dethiid,socaudung,thoigianlambai) : HocSinh <thamgia> DeThi
+
+KyThi(*id,tenkythi)
+
