@@ -34,7 +34,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChangeInfo = new System.Windows.Forms.Button();
             this.lblGrade = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
@@ -44,15 +44,15 @@
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblNextExams = new System.Windows.Forms.Label();
             this.lblNextTime = new System.Windows.Forms.Label();
             this.lblNextSubject = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbExams = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblNextExams = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,7 +73,7 @@
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnChangeInfo);
             this.groupBox1.Controls.Add(this.lblGrade);
             this.groupBox1.Controls.Add(this.lblClass);
             this.groupBox1.Controls.Add(this.lblYear);
@@ -134,16 +134,16 @@
             this.button3.Text = "Xem kết quả thi";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnChangeInfo
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnChangeInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(15, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Sửa thông tin";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChangeInfo.Location = new System.Drawing.Point(15, 116);
+            this.btnChangeInfo.Name = "btnChangeInfo";
+            this.btnChangeInfo.Size = new System.Drawing.Size(92, 35);
+            this.btnChangeInfo.TabIndex = 2;
+            this.btnChangeInfo.Text = "Sửa thông tin";
+            this.btnChangeInfo.UseVisualStyleBackColor = true;
             // 
             // lblGrade
             // 
@@ -230,6 +230,14 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "Thời gian:";
             // 
+            // lblNextExams
+            // 
+            this.lblNextExams.Location = new System.Drawing.Point(54, 22);
+            this.lblNextExams.Name = "lblNextExams";
+            this.lblNextExams.Size = new System.Drawing.Size(162, 13);
+            this.lblNextExams.TabIndex = 4;
+            this.lblNextExams.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblNextTime
             // 
             this.lblNextTime.Location = new System.Drawing.Point(136, 66);
@@ -245,6 +253,15 @@
             this.lblNextSubject.Size = new System.Drawing.Size(57, 13);
             this.lblNextSubject.TabIndex = 4;
             this.lblNextSubject.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Kỳ thi:";
             // 
             // label9
             // 
@@ -294,23 +311,6 @@
             this.cbbExams.Size = new System.Drawing.Size(162, 21);
             this.cbbExams.TabIndex = 6;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Kỳ thi:";
-            // 
-            // lblNextExams
-            // 
-            this.lblNextExams.Location = new System.Drawing.Point(54, 22);
-            this.lblNextExams.Name = "lblNextExams";
-            this.lblNextExams.Size = new System.Drawing.Size(162, 13);
-            this.lblNextExams.TabIndex = 4;
-            this.lblNextExams.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,7 +340,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChangeInfo;
         private System.Windows.Forms.Label lblGrade;
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.Label lblYear;

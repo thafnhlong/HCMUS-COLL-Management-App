@@ -56,6 +56,12 @@
     <Compile Include="Validator\BaseValidator.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Validator\DOBValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\EmptyValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Validator\RegexValidator.cs">
       <SubType>Component</SubType>
     </Compile>

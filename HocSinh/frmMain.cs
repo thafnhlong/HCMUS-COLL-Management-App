@@ -33,6 +33,16 @@ namespace HocSinh
             btnLogout.Click += (s, e) => Close();
 
             Load += frmMain_Load;
+            btnChangeInfo.Click += BtnChangeInfo_Click;
+        }
+
+        private void BtnChangeInfo_Click(object sender, EventArgs e)
+        {
+            var form = new infomation.frmChangeInfo(hocSinhId);
+            form.FormClosed += (s1, e1) => Show();
+            form.updated += (s1, e1) => frmMain_Load(s1, e1);
+            form.Show();
+            Hide();
         }
 
         void frmMain_Load(object sender, EventArgs e)
