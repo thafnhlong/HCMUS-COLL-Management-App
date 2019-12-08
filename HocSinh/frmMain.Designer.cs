@@ -49,7 +49,7 @@
             this.lblNextSubject = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDoExam = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbExams = new System.Windows.Forms.ComboBox();
@@ -212,7 +212,7 @@
             this.groupBox2.Controls.Add(this.lblNextSubject);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.btnDoExam);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
@@ -272,14 +272,14 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Môn thi tiếp theo:";
             // 
-            // button5
+            // btnDoExam
             // 
-            this.button5.Location = new System.Drawing.Point(32, 88);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Bắt đầu thi";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDoExam.Location = new System.Drawing.Point(32, 88);
+            this.btnDoExam.Name = "btnDoExam";
+            this.btnDoExam.Size = new System.Drawing.Size(159, 23);
+            this.btnDoExam.TabIndex = 2;
+            this.btnDoExam.Text = "Bắt đầu thi";
+            this.btnDoExam.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -353,7 +353,7 @@
         private System.Windows.Forms.Label lblNextTime;
         private System.Windows.Forms.Label lblNextSubject;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDoExam;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;

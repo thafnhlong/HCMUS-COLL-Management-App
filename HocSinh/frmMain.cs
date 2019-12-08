@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HocSinh.Exam;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,12 +34,15 @@ namespace HocSinh
             btnLogout.Click += (s, e) => Close();
 
             Load += frmMain_Load;
+
+            btnDoExam.Click += (s, e) => (new frmDoExam()).Show();
+
             btnChangeInfo.Click += BtnChangeInfo_Click;
         }
 
         private void BtnChangeInfo_Click(object sender, EventArgs e)
         {
-            var form = new infomation.frmChangeInfo(hocSinhId);
+            var form = new Infomation.frmChangeInfo(hocSinhId);
             form.FormClosed += (s1, e1) => Show();
             form.updated += (s1, e1) => frmMain_Load(s1, e1);
             form.Show();
@@ -47,7 +51,6 @@ namespace HocSinh
 
         void frmMain_Load(object sender, EventArgs e)
         {
-            List<HocSinhThamGia> dsbaithi = null;
             using (var qltn = Utils.QLTN.getInstance())
             {
                 var dataLoadOtion = new DataLoadOptions();

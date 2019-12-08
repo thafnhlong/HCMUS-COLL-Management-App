@@ -22,7 +22,7 @@ namespace Main
                 hs.logout += (s1, e1) =>
                 {
                     Show();
-                    Application.OpenForms[Name].Focus();
+                    Focus();
                 };
                 Hide();
                 hs.Show();
