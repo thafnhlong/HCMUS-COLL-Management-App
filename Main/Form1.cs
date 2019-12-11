@@ -30,6 +30,7 @@ namespace Main
             button2.Click += (s, e) => { new GiaoVien.frmMain(2).Show(); };
             button3.Click += (s, e) => { new Admin.frmMain(3).Show(); };
 
+            Load += (s, e) => { Activate(); };
 
 
             BaseValidator.ClearList();
@@ -46,7 +47,7 @@ namespace Main
             btnLogin.Click += CheckValidate;
         }
 
-        
+
 
         private void CheckValidate(object sender, EventArgs e)
         {
