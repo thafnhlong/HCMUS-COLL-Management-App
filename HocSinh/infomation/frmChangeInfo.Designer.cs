@@ -97,9 +97,8 @@
             this.lblGrade.AutoSize = true;
             this.lblGrade.Location = new System.Drawing.Point(85, 104);
             this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(43, 13);
+            this.lblGrade.Size = new System.Drawing.Size(0, 13);
             this.lblGrade.TabIndex = 1;
-            this.lblGrade.Text = "Khối 10";
             // 
             // label6
             // 

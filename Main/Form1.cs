@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utils.Validator;
@@ -15,7 +16,16 @@ namespace Main
     {
         public Form1()
         {
+            var loadingForm = new Thread(() => {
+                Application.Run(new SplashScreen.SplashForm());
+            });
+            loadingForm.Start();
+
             InitializeComponent();
+
+            Thread.Sleep(2000);
+            loadingForm.Abort();
+
             button1.Click += (s, e) =>
             {
                 var hs = new HocSinh.frmMain(1);
