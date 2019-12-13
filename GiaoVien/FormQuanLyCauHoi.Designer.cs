@@ -49,7 +49,7 @@
             this.lvLoadCauHoi.FullRowSelect = true;
             this.lvLoadCauHoi.GridLines = true;
             this.lvLoadCauHoi.HideSelection = false;
-            this.lvLoadCauHoi.Location = new System.Drawing.Point(38, 39);
+            this.lvLoadCauHoi.Location = new System.Drawing.Point(12, 36);
             this.lvLoadCauHoi.Name = "lvLoadCauHoi";
             this.lvLoadCauHoi.Size = new System.Drawing.Size(620, 310);
             this.lvLoadCauHoi.TabIndex = 6;
@@ -69,7 +69,7 @@
             // cbDoKhoa
             // 
             this.cbDoKhoa.FormattingEnabled = true;
-            this.cbDoKhoa.Location = new System.Drawing.Point(537, 12);
+            this.cbDoKhoa.Location = new System.Drawing.Point(511, 9);
             this.cbDoKhoa.Name = "cbDoKhoa";
             this.cbDoKhoa.Size = new System.Drawing.Size(121, 21);
             this.cbDoKhoa.TabIndex = 13;
@@ -77,7 +77,7 @@
             // cbCapHoc
             // 
             this.cbCapHoc.FormattingEnabled = true;
-            this.cbCapHoc.Location = new System.Drawing.Point(323, 12);
+            this.cbCapHoc.Location = new System.Drawing.Point(297, 9);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(121, 21);
             this.cbCapHoc.TabIndex = 14;
@@ -86,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(478, 17);
+            this.label3.Location = new System.Drawing.Point(452, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 11;
@@ -96,7 +96,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(256, 17);
+            this.label2.Location = new System.Drawing.Point(230, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 12;
@@ -106,7 +106,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 17);
+            this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 10;
@@ -115,14 +115,14 @@
             // cbMonHoc
             // 
             this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(109, 12);
+            this.cbMonHoc.Location = new System.Drawing.Point(83, 9);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(121, 21);
             this.cbMonHoc.TabIndex = 9;
             // 
             // btnSuaCauHoi
             // 
-            this.btnSuaCauHoi.Location = new System.Drawing.Point(157, 367);
+            this.btnSuaCauHoi.Location = new System.Drawing.Point(131, 364);
             this.btnSuaCauHoi.Name = "btnSuaCauHoi";
             this.btnSuaCauHoi.Size = new System.Drawing.Size(93, 38);
             this.btnSuaCauHoi.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             // btnThemCauHoi
             // 
-            this.btnThemCauHoi.Location = new System.Drawing.Point(38, 367);
+            this.btnThemCauHoi.Location = new System.Drawing.Point(12, 364);
             this.btnThemCauHoi.Name = "btnThemCauHoi";
             this.btnThemCauHoi.Size = new System.Drawing.Size(93, 38);
             this.btnThemCauHoi.TabIndex = 8;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 416);
+            this.ClientSize = new System.Drawing.Size(643, 416);
             this.Controls.Add(this.lvLoadCauHoi);
             this.Controls.Add(this.cbDoKhoa);
             this.Controls.Add(this.cbCapHoc);

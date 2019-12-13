@@ -13,16 +13,19 @@ namespace GiaoVien
     public partial class FormLuaChon : Form
     {
         FormQuanLyCauHoi formQLCH;
-        public FormLuaChon(frmMain _parent)
+        int ID;
+        public FormLuaChon(int id)
         {
             InitializeComponent();
             FormClosed += (s, e) => { Hide(); };
             btnQLCH.Click += BtnQLCH_Click;
-            formQLCH = new FormQuanLyCauHoi();           
+            //formQLCH = new FormQuanLyCauHoi();      
+            ID = id;
         }
 
         private void BtnQLCH_Click(object sender, EventArgs e)
         {
+            formQLCH = new FormQuanLyCauHoi(ID);
             formQLCH.Show();            
             Close();
         }

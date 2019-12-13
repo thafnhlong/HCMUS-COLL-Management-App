@@ -26,17 +26,22 @@ namespace GiaoVien
         Button btnXacNhan = new Button();
         Label lblGoiY = new Label();
         TextBox txtGopY = new TextBox();
-        
 
-        public FormQuanLyCauHoi()
+        int ID;
+        CauHoi ch = null;
+        List<CauHoi> dsCauHoi = new List<CauHoi>();
+        public FormQuanLyCauHoi(int id)
         {
             InitializeComponent();
+            ID = id;
             Load += FormQuanLyCauHoi_Load;
             // event
             cbMonHoc.SelectedIndexChanged += CbMonHoc_SelectedIndexChanged;
             cbCapHoc.SelectedIndexChanged += CbCapHoc_SelectedIndexChanged;
             cbDoKhoa.SelectedIndexChanged += CbDoKhoa_SelectedIndexChanged;
+            lvLoadCauHoi.SelectedIndexChanged += LvLoadCauHoi_SelectedIndexChanged;
             btnThemCauHoi.Click += BtnThemCauHoi_Click;
+            btnSuaCauHoi.Click += BtnSuaCauHoi_Click;
             btnXacNhan.Click += BtnXacNhan_Click;
 
             lbNoiDung.Visible = false;
@@ -86,6 +91,29 @@ namespace GiaoVien
             cbbMonHoc.SelectedIndex = 0;
             cbbCapHoc.SelectedIndex = 0;
             lblGoiY.Text = "Gợi Ý";
+        }
+
+        private void LvLoadCauHoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvLoadCauHoi.SelectedIndices.Count > 0)
+            {
+                int stt = int.Parse(lvLoadCauHoi.SelectedItems[0].SubItems[0].Text);
+                ch = dsCauHoi[stt - 1];
+            }
+        }
+
+        private void BtnSuaCauHoi_Click(object sender, EventArgs e)
+        {
+
+            if (lvLoadCauHoi.SelectedItems.Count > 0)
+            { 
+                SuaCauHoiForm f = new SuaCauHoiForm(ch);
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn câu hỏi!!!");
+            }
         }
 
 
@@ -191,7 +219,6 @@ namespace GiaoVien
             int cbb3 = cbDoKhoa.SelectedIndex;
             using (var qltn = Utils.QLTN.getInstance())
             {
-                List<CauHoi> dsCauHoi = new List<CauHoi>();
                 if (cbb1 == 0 && cbb2 == 0 && cbb3 == 0)
                     dsCauHoi = qltn.CauHois.ToList();
                 else if (cbb1 == 0 && cbb2 == 0)
