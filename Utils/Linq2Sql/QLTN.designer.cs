@@ -906,7 +906,7 @@ namespace Utils.Linq2Sql
 		
 		private System.Nullable<int> _donggop;
 		
-		private System.Nullable<int> _trangthai;
+		private System.Nullable<bool> _trangthai;
 		
 		private EntitySet<DapAn> _DapAns;
 		
@@ -934,7 +934,7 @@ namespace Utils.Linq2Sql
     partial void OnmonhocidChanged();
     partial void OndonggopChanging(System.Nullable<int> value);
     partial void OndonggopChanged();
-    partial void OntrangthaiChanging(System.Nullable<int> value);
+    partial void OntrangthaiChanging(System.Nullable<bool> value);
     partial void OntrangthaiChanged();
     #endregion
 		
@@ -1099,8 +1099,8 @@ namespace Utils.Linq2Sql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangthai", DbType="Int")]
-		public System.Nullable<int> trangthai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangthai", DbType="Bit")]
+		public System.Nullable<bool> trangthai
 		{
 			get
 			{
@@ -1443,7 +1443,7 @@ namespace Utils.Linq2Sql
 		
 		private int _id;
 		
-		private System.Nullable<int> _loaidethi;
+		private System.Nullable<bool> _loaidethi;
 		
 		private System.Nullable<int> _thoigiantoida;
 		
@@ -1452,6 +1452,8 @@ namespace Utils.Linq2Sql
 		private System.Nullable<int> _monhocid;
 		
 		private System.Nullable<int> _kythiid;
+		
+		private System.Nullable<System.DateTime> _ngaythi;
 		
 		private EntitySet<DeThi_CauHoi> _DeThi_CauHois;
 		
@@ -1467,7 +1469,7 @@ namespace Utils.Linq2Sql
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void OnloaidethiChanging(System.Nullable<int> value);
+    partial void OnloaidethiChanging(System.Nullable<bool> value);
     partial void OnloaidethiChanged();
     partial void OnthoigiantoidaChanging(System.Nullable<int> value);
     partial void OnthoigiantoidaChanged();
@@ -1477,6 +1479,8 @@ namespace Utils.Linq2Sql
     partial void OnmonhocidChanged();
     partial void OnkythiidChanging(System.Nullable<int> value);
     partial void OnkythiidChanged();
+    partial void OnngaythiChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaythiChanged();
     #endregion
 		
 		public DeThi()
@@ -1508,8 +1512,8 @@ namespace Utils.Linq2Sql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaidethi", DbType="Int")]
-		public System.Nullable<int> loaidethi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaidethi", DbType="Bit")]
+		public System.Nullable<bool> loaidethi
 		{
 			get
 			{
@@ -1616,6 +1620,26 @@ namespace Utils.Linq2Sql
 					this._kythiid = value;
 					this.SendPropertyChanged("kythiid");
 					this.OnkythiidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaythi", DbType="Date")]
+		public System.Nullable<System.DateTime> ngaythi
+		{
+			get
+			{
+				return this._ngaythi;
+			}
+			set
+			{
+				if ((this._ngaythi != value))
+				{
+					this.OnngaythiChanging(value);
+					this.SendPropertyChanging();
+					this._ngaythi = value;
+					this.SendPropertyChanged("ngaythi");
+					this.OnngaythiChanged();
 				}
 			}
 		}
@@ -2191,7 +2215,7 @@ namespace Utils.Linq2Sql
 		
 		private System.Nullable<int> _socaudung;
 		
-		private System.Nullable<decimal> _thoigianlambai;
+		private string _thoigianlambai;
 		
 		private EntityRef<DeThi> _DeThi;
 		
@@ -2207,7 +2231,7 @@ namespace Utils.Linq2Sql
     partial void OndethiidChanged();
     partial void OnsocaudungChanging(System.Nullable<int> value);
     partial void OnsocaudungChanged();
-    partial void OnthoigianlambaiChanging(System.Nullable<decimal> value);
+    partial void OnthoigianlambaiChanging(string value);
     partial void OnthoigianlambaiChanged();
     #endregion
 		
@@ -2286,8 +2310,8 @@ namespace Utils.Linq2Sql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thoigianlambai", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> thoigianlambai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thoigianlambai", DbType="NVarChar(255)")]
+		public string thoigianlambai
 		{
 			get
 			{
@@ -2405,6 +2429,12 @@ namespace Utils.Linq2Sql
 		
 		private string _tenkythi;
 		
+		private System.Nullable<System.DateTime> _ngaybatdau;
+		
+		private System.Nullable<int> _songay;
+		
+		private System.Nullable<bool> _loaikythi;
+		
 		private EntitySet<DeThi> _DeThis;
 		
     #region Extensibility Method Definitions
@@ -2415,6 +2445,12 @@ namespace Utils.Linq2Sql
     partial void OnidChanged();
     partial void OntenkythiChanging(string value);
     partial void OntenkythiChanged();
+    partial void OnngaybatdauChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaybatdauChanged();
+    partial void OnsongayChanging(System.Nullable<int> value);
+    partial void OnsongayChanged();
+    partial void OnloaikythiChanging(System.Nullable<bool> value);
+    partial void OnloaikythiChanged();
     #endregion
 		
 		public KyThi()
@@ -2459,6 +2495,66 @@ namespace Utils.Linq2Sql
 					this._tenkythi = value;
 					this.SendPropertyChanged("tenkythi");
 					this.OntenkythiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaybatdau", DbType="Date")]
+		public System.Nullable<System.DateTime> ngaybatdau
+		{
+			get
+			{
+				return this._ngaybatdau;
+			}
+			set
+			{
+				if ((this._ngaybatdau != value))
+				{
+					this.OnngaybatdauChanging(value);
+					this.SendPropertyChanging();
+					this._ngaybatdau = value;
+					this.SendPropertyChanged("ngaybatdau");
+					this.OnngaybatdauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_songay", DbType="Int")]
+		public System.Nullable<int> songay
+		{
+			get
+			{
+				return this._songay;
+			}
+			set
+			{
+				if ((this._songay != value))
+				{
+					this.OnsongayChanging(value);
+					this.SendPropertyChanging();
+					this._songay = value;
+					this.SendPropertyChanged("songay");
+					this.OnsongayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaikythi", DbType="Bit")]
+		public System.Nullable<bool> loaikythi
+		{
+			get
+			{
+				return this._loaikythi;
+			}
+			set
+			{
+				if ((this._loaikythi != value))
+				{
+					this.OnloaikythiChanging(value);
+					this.SendPropertyChanging();
+					this._loaikythi = value;
+					this.SendPropertyChanged("loaikythi");
+					this.OnloaikythiChanged();
 				}
 			}
 		}

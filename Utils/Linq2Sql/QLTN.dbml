@@ -41,7 +41,7 @@
       <Column Name="caphocid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="monhocid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="donggop" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="trangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="CauHoi_DapAn" Member="DapAns" ThisKey="id" OtherKey="cauhoiid" Type="DapAn" />
       <Association Name="CauHoi_DeThi_CauHoi" Member="DeThi_CauHois" ThisKey="id" OtherKey="cauhoiid" Type="DeThi_CauHoi" />
       <Association Name="CapHoc_MonHoc_CauHoi" Member="CapHoc_MonHoc" ThisKey="caphocid,monhocid" OtherKey="caphocid,monhocid" Type="CapHoc_MonHoc" IsForeignKey="true" />
@@ -60,11 +60,12 @@
   <Table Name="dbo.DeThi" Member="DeThis">
     <Type Name="DeThi">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="loaidethi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loaidethi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="thoigiantoida" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="caphocid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="monhocid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="kythiid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngaythi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="DeThi_DeThi_CauHoi" Member="DeThi_CauHois" ThisKey="id" OtherKey="dethiid" Type="DeThi_CauHoi" />
       <Association Name="DeThi_HocSinhThamGia" Member="HocSinhThamGias" ThisKey="id" OtherKey="dethiid" Type="HocSinhThamGia" />
       <Association Name="CapHoc_MonHoc_DeThi" Member="CapHoc_MonHoc" ThisKey="caphocid,monhocid" OtherKey="caphocid,monhocid" Type="CapHoc_MonHoc" IsForeignKey="true" />
@@ -95,7 +96,7 @@
       <Column Name="hocsinhid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="dethiid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="socaudung" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thoigianlambai" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="thoigianlambai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="DeThi_HocSinhThamGia" Member="DeThi" ThisKey="dethiid" OtherKey="id" Type="DeThi" IsForeignKey="true" />
       <Association Name="TaiKhoan_HocSinhThamGia" Member="TaiKhoan" ThisKey="hocsinhid" OtherKey="id" Type="TaiKhoan" IsForeignKey="true" />
     </Type>
@@ -104,6 +105,9 @@
     <Type Name="KyThi">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tenkythi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ngaybatdau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="songay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loaikythi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="KyThi_DeThi" Member="DeThis" ThisKey="id" OtherKey="kythiid" Type="DeThi" />
     </Type>
   </Table>

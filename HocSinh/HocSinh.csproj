@@ -48,33 +48,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exam\frmDoExam.cs">
+    <Compile Include="DongGop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exam\frmDoExam.Designer.cs">
-      <DependentUpon>frmDoExam.cs</DependentUpon>
+    <Compile Include="DongGop.Designer.cs">
+      <DependentUpon>DongGop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="LBThi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="LBThi.Designer.cs">
+      <DependentUpon>LBThi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Infomation\frmChangeInfo.cs">
+    <Compile Include="LCMonThi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Infomation\frmChangeInfo.Designer.cs">
-      <DependentUpon>frmChangeInfo.cs</DependentUpon>
+    <Compile Include="LCMonThi.Designer.cs">
+      <DependentUpon>LCMonThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Exam\frmDoExam.resx">
-      <DependentUpon>frmDoExam.cs</DependentUpon>
+    <Compile Include="TBKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TBKetQua.Designer.cs">
+      <DependentUpon>TBKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTCN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTCN.Designer.cs">
+      <DependentUpon>TTCN.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DongGop.resx">
+      <DependentUpon>DongGop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="LBThi.resx">
+      <DependentUpon>LBThi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Infomation\frmChangeInfo.resx">
-      <DependentUpon>frmChangeInfo.cs</DependentUpon>
+    <EmbeddedResource Include="LCMonThi.resx">
+      <DependentUpon>LCMonThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +106,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TBKetQua.resx">
+      <DependentUpon>TBKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTCN.resx">
+      <DependentUpon>TTCN.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

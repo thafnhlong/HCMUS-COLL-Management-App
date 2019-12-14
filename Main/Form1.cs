@@ -14,25 +14,26 @@ namespace Main
 {
     public partial class Form1 : Form
     {
+        SplashScreen.SplashForm splashForm;
+
+
+
         public Form1()
         {
-            var loadingForm = new Thread(() => {
-                Application.Run(new SplashScreen.SplashForm());
-            });
-            loadingForm.Start();
+            LoadSplash();
 
             InitializeComponent();
 
-            Thread.Sleep(2000);
-            loadingForm.Abort();
+            Thread.Sleep(500);
+
+            CloseSplash();
 
             button1.Click += (s, e) =>
             {
-                var hs = new HocSinh.frmMain(1);
-                hs.logout += (s1, e1) =>
+                var hs = new HocSinh.Main(1);
+                hs.DangXuatEvent += (s1, e1) =>
                 {
                     Show();
-                    Focus();
                 };
                 Hide();
                 hs.Show();
@@ -55,6 +56,22 @@ namespace Main
             rV1.ErrorMessage = "Password is only [1-9]";
 
             btnLogin.Click += CheckValidate;
+        }
+
+        void LoadSplash()
+        {
+            new Thread(() =>
+            {
+                splashForm = new SplashScreen.SplashForm();
+                splashForm.AppName = "Mr.Long";
+
+                Application.Run(splashForm);
+            }).Start();
+        }
+
+        void CloseSplash()
+        {
+            splashForm?.Invoke(new Action(() => splashForm.Close()));
         }
 
 

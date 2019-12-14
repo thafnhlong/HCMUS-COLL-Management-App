@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HocSinh.Exam
+namespace HocSinh
 {
-    public partial class frmDoExam : Form
+    public partial class DongGop : Form
     {
-        public frmDoExam()
+
+        int HocSinhID;
+
+        public DongGop(int HocSinhID)
         {
             InitializeComponent();
-            btnDone.Click += (s, e) => Close();
-        }
 
+            this.HocSinhID = HocSinhID;
+
+        }
     }
 }
