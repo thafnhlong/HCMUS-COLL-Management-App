@@ -1,4 +1,4 @@
-﻿namespace HocSinh.infomation
+﻿namespace HocSinh.Infomation
 {
     partial class frmChangeInfo
     {
@@ -36,9 +36,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblGrade = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblClass = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cbbClass = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,18 +110,9 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Tên lớp: ";
             // 
-            // lblClass
-            // 
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(85, 126);
-            this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(32, 13);
-            this.lblClass.TabIndex = 1;
-            this.lblClass.Text = "10A1";
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(151, 104);
+            this.btnSave.Location = new System.Drawing.Point(138, 159);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
             this.btnSave.TabIndex = 3;
@@ -130,21 +121,30 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(232, 104);
+            this.btnCancel.Location = new System.Drawing.Point(219, 159);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(62, 35);
+            this.btnCancel.Size = new System.Drawing.Size(75, 35);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // cbbClass
+            // 
+            this.cbbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbClass.FormattingEnabled = true;
+            this.cbbClass.Location = new System.Drawing.Point(88, 123);
+            this.cbbClass.Name = "cbbClass";
+            this.cbbClass.Size = new System.Drawing.Size(206, 21);
+            this.cbbClass.TabIndex = 4;
             // 
             // frmChangeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 152);
+            this.ClientSize = new System.Drawing.Size(313, 202);
+            this.Controls.Add(this.cbbClass);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -174,8 +174,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblGrade;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cbbClass;
     }
 }

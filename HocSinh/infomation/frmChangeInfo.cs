@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Utils;
 using Utils.Validator;
 
-namespace HocSinh.infomation
+namespace HocSinh.Infomation
 {
     public partial class frmChangeInfo : Form
     {
@@ -45,6 +45,7 @@ namespace HocSinh.infomation
 
                 hs.hoten = txtName.Text;
                 hs.ngaysinh = DateTime.Parse(txtDOB.Text);
+                hs.lophocid = int.Parse(cbbClass.SelectedValue.ToString());
 
                 qltn.SubmitChanges();
             }
@@ -68,7 +69,14 @@ namespace HocSinh.infomation
 
                 txtName.Text = info.name;
                 txtDOB.Text = info.dob.Value.ToString("dd-MM-yyyy");
-                lblClass.Text = info.tenlop;
+
+                cbbClass.DisplayMember = "tenlop";
+                cbbClass.ValueMember = "id";
+                cbbClass.DataSource = qltn.TaiKhoans
+                    .Where(x => x.id == id)
+                    .FirstOrDefault().LopHoc.CapHoc.LopHocs;
+
+                cbbClass.Text = info.tenlop;
                 lblGrade.Text = info.tenkhoi;
             }
 

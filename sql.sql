@@ -73,7 +73,8 @@ create table DeThi
 	thoigiantoida int,
 	caphocid int,
 	monhocid int,
-    kythiid int
+    kythiid int,
+	ngaythi date
 )
 
 create table DeThi_CauHoi
@@ -105,6 +106,8 @@ create table KyThi
 (
 	id int identity(1,1) primary key,
 	tenkythi nvarchar(255),
+	ngaybatdau date,
+	songay int
 )
 
 alter table TaiKhoan

@@ -48,23 +48,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exam\frmDoExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam\frmDoExam.Designer.cs">
+      <DependentUpon>frmDoExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="infomation\frmChangeInfo.cs">
+    <Compile Include="Infomation\frmChangeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="infomation\frmChangeInfo.Designer.cs">
+    <Compile Include="Infomation\frmChangeInfo.Designer.cs">
       <DependentUpon>frmChangeInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Exam\frmDoExam.resx">
+      <DependentUpon>frmDoExam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="infomation\frmChangeInfo.resx">
+    <EmbeddedResource Include="Infomation\frmChangeInfo.resx">
       <DependentUpon>frmChangeInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
