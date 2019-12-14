@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -41,17 +42,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdduser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdduser.Designer.cs">
+      <DependentUpon>frmAdduser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBnR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBnR.Designer.cs">
+      <DependentUpon>frmBnR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdituser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdituser.Designer.cs">
+      <DependentUpon>frmEdituser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLy.Designer.cs">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAdduser.resx">
+      <DependentUpon>frmAdduser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBnR.resx">
+      <DependentUpon>frmBnR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdituser.resx">
+      <DependentUpon>frmEdituser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLy.resx">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

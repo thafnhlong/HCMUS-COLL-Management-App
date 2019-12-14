@@ -11,7 +11,8 @@ namespace Utils.Validator
         public override bool Validate()
         {
             DateTime temp;
-            if (DateTime.TryParse(Target.Text, out temp))
+            string target = DateTime.ParseExact(Target.Text, "dd-MM-yyyy", null).ToString();
+            if (DateTime.TryParse(target, out temp))
                 return temp <= DateTime.Now;
             else
                 return false;
