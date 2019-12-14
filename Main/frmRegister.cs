@@ -38,7 +38,7 @@ namespace Main
             rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
-            rVdob.Target = txtReDob;
+            rVdob.Target = dtpDOB;
             rVdob.ErrorMessage = "Date is invalidate";
 
             btnDangki.Click += BtnDangki_Click;
@@ -88,7 +88,7 @@ namespace Main
                             tentaikhoan = txtReUsername.Text,
                             matkhau = txtRePassword.Text,
                             hoten = txtReName.Text,
-                            ngaysinh = DateTime.ParseExact(txtReDob.Text, "dd-MM-yyyy", null),
+                            ngaysinh = dtpDOB.Value,
                             permission = cbbPer.SelectedIndex,
                             lophocid = int.Parse(cbbLophoc.SelectedValue.ToString())
                         };
@@ -108,7 +108,7 @@ namespace Main
                             tentaikhoan = txtReUsername.Text,
                             matkhau = txtRePassword.Text,
                             hoten = txtReName.Text,
-                            ngaysinh = DateTime.ParseExact(txtReDob.Text, "dd-MM-yyyy", null),
+                            ngaysinh = dtpDOB.Value,
                             permission = int.Parse(cbbPer.SelectedIndex.ToString())
                         };
                         MessageBox.Show("Them thanh cong");

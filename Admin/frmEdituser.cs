@@ -39,7 +39,7 @@ namespace Admin
             rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
-            rVdob.Target = txtUdob;
+            rVdob.Target = dtpDOB;
             rVdob.ErrorMessage = "Date is invalidate";
 
             Load += FrmEdituser_Load;
@@ -66,7 +66,7 @@ namespace Admin
                     }).FirstOrDefault();
 
                     txtUname.Text = infoHS.name;
-                    txtUdob.Text = infoHS.dob.Value.ToString("dd-MM-yyyy");
+                    dtpDOB.Value = infoHS.dob.Value;
                     txtUusername.Text = infoHS.username;
                     txtUpassword.Text = infoHS.password;
 
@@ -90,7 +90,7 @@ namespace Admin
                 else
                 {
                     txtUname.Text = u.hoten;
-                    txtUdob.Text = u.ngaysinh.Value.ToString("dd-MM-yyyy");
+                    dtpDOB.Value = u.ngaysinh.Value;
                     txtUusername.Text = u.tentaikhoan;
                     txtUpassword.Text = u.matkhau;
 
@@ -171,7 +171,7 @@ namespace Admin
                 hs.tentaikhoan = txtUusername.Text;
                 hs.hoten = txtUname.Text;
                 hs.matkhau = txtUpassword.Text;
-                hs.ngaysinh = DateTime.ParseExact(txtUdob.Text,"dd-MM-yyyy",null);
+                hs.ngaysinh = dtpDOB.Value;
                 hs.permission = cbbper.SelectedIndex;
                 if (cbbper.SelectedIndex == 0||cbbper.SelectedIndex == 1) 
                 {

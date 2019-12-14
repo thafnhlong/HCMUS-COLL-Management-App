@@ -38,7 +38,7 @@ namespace Admin
             rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
-            rVdob.Target = txtNdob;
+            rVdob.Target = dtpDOB;
             rVdob.ErrorMessage = "Date is invalidate";
 
         }
@@ -88,7 +88,7 @@ namespace Admin
                         tentaikhoan = txtNusername.Text,
                         matkhau = txtNpassword.Text,
                         hoten = txtNname.Text,
-                        ngaysinh = DateTime.ParseExact(txtNdob.Text, "dd-MM-yyyy", null),
+                        ngaysinh = dtpDOB.Value,
                         permission = cbbper.SelectedIndex,
                         lophocid = int.Parse(cbblophoc.SelectedValue.ToString())
                     };
@@ -108,7 +108,7 @@ namespace Admin
                         tentaikhoan = txtNusername.Text,
                         matkhau = txtNpassword.Text,
                         hoten = txtNname.Text,
-                        ngaysinh = DateTime.ParseExact(txtNdob.Text, "dd-MM-yyyy", null),
+                        ngaysinh = dtpDOB.Value,
                         permission = int.Parse(cbbper.SelectedIndex.ToString())
                     };
                     qltn.TaiKhoans.InsertOnSubmit(u);

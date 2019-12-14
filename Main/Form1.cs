@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utils.Linq2Sql;
@@ -17,9 +18,19 @@ namespace Main
     {
         private string tk = "admin";
         private string mk = "123";
+
+        SplashScreen.SplashForm splashForm;
+
         public Form1()
         {
+            LoadSplash();
+
             InitializeComponent();
+
+            Thread.Sleep(500);
+
+            CloseSplash();
+
             btnhuy1.Click += (s, e) =>
             {
                 this.Close();
@@ -32,6 +43,8 @@ namespace Main
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Activate();
+
             BaseValidator.ClearList();
 
             RegexValidator rV = new RegexValidator();
@@ -118,6 +131,22 @@ namespace Main
             regisForm.swapForm += (s, e1) => { Show(); Form1_Load(s, e1); };
             regisForm.Show();
             Hide();
+        }
+
+        void LoadSplash()
+        {
+            new Thread(() =>
+            {
+                splashForm = new SplashScreen.SplashForm();
+                splashForm.AppName = "Mr.Long";
+
+                Application.Run(splashForm);
+            }).Start();
+        }
+
+        void CloseSplash()
+        {
+            splashForm?.Invoke(new Action(() => splashForm.Close()));
         }
     }
 }

@@ -44,7 +44,7 @@ namespace HocSinh.Infomation
                 .FirstOrDefault();
 
                 hs.hoten = txtName.Text;
-                hs.ngaysinh = DateTime.Parse(txtDOB.Text);
+                hs.ngaysinh = dtpDOB.Value;
                 hs.lophocid = int.Parse(cbbClass.SelectedValue.ToString());
 
                 qltn.SubmitChanges();
@@ -68,7 +68,7 @@ namespace HocSinh.Infomation
                 }).FirstOrDefault();
 
                 txtName.Text = info.name;
-                txtDOB.Text = info.dob.Value.ToString("dd-MM-yyyy");
+                dtpDOB.Value = info.dob.Value;
 
                 cbbClass.DisplayMember = "tenlop";
                 cbbClass.ValueMember = "id";
@@ -87,7 +87,7 @@ namespace HocSinh.Infomation
 
             var dOBV = new DOBValidator();
             dOBV.ErrorMessage = "Ngày sinh phải nhỏ hơn hoặc bằng hiện tại";
-            dOBV.Target = txtDOB;
+            dOBV.Target = dtpDOB;
 
 
         }

@@ -17,14 +17,6 @@ namespace Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            var loadingForm = new Thread(() => {
-                Application.Run(new SplashScreen.SplashForm());
-            });
-            loadingForm.Start();
-            Thread.Sleep(2000);
-            loadingForm.Abort();
-
             Application.Run(new Form1());
         }
     }
