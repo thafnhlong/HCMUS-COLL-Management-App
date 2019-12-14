@@ -141,7 +141,7 @@ namespace GiaoVien
                 listaddCauHoi.dokho = DoKho;
                 listaddCauHoi.monhocid = MonHoc;
                 listaddCauHoi.caphocid = CapHoc;
-                listaddCauHoi.trangthai = 1;
+                listaddCauHoi.trangthai = true;
                 listaddCauHoi.goiy = strGopY;
 
                 qltn.CauHois.InsertOnSubmit(listaddCauHoi);

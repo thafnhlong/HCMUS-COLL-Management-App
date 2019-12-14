@@ -54,7 +54,7 @@ create table CauHoi
 	caphocid int,
 	monhocid int,
 	donggop int,
-	trangthai int
+	trangthai bit
 )
 
 create table DapAn
@@ -69,7 +69,7 @@ create table DapAn
 create table DeThi
 (
 	id int identity(1,1) primary key,
-	loaidethi int,
+	loaidethi bit,
 	thoigiantoida int,
 	caphocid int,
 	monhocid int,
@@ -98,7 +98,7 @@ create table HocSinhThamGia
 	hocsinhid int,
 	dethiid int,
 	socaudung int,
-	thoigianlambai decimal
+	thoigianlambai nvarchar(255)
 	primary key(hocsinhid,dethiid)
 )
 
@@ -107,7 +107,8 @@ create table KyThi
 	id int identity(1,1) primary key,
 	tenkythi nvarchar(255),
 	ngaybatdau date,
-	songay int
+	songay int,
+	loaikythi bit
 )
 
 alter table TaiKhoan
@@ -178,41 +179,3 @@ add constraint FK_HSTG_TK
 	constraint FK_HSTG_DT
 	foreign key (dethiid)
 	references DeThi
-
-
-SET IDENTITY_INSERT [dbo].[CapHoc] ON 
-
-GO
-INSERT [dbo].[CapHoc] ([id], [tencap]) VALUES (1, N'Khối 10')
-GO
-INSERT [dbo].[CapHoc] ([id], [tencap]) VALUES (2, N'Khối 11')
-GO
-INSERT [dbo].[CapHoc] ([id], [tencap]) VALUES (3, N'Khối 12')
-GO
-SET IDENTITY_INSERT [dbo].[CapHoc] OFF
-GO
-SET IDENTITY_INSERT [dbo].[LopHoc] ON 
-
-GO
-INSERT [dbo].[LopHoc] ([id], [tenlop], [caphocid]) VALUES (1, N'Lớp 10A1', 1)
-GO
-INSERT [dbo].[LopHoc] ([id], [tenlop], [caphocid]) VALUES (2, N'Lớp 10A2', 1)
-GO
-INSERT [dbo].[LopHoc] ([id], [tenlop], [caphocid]) VALUES (3, N'Lớp 11A1', 2)
-GO
-INSERT [dbo].[LopHoc] ([id], [tenlop], [caphocid]) VALUES (4, N'Lớp 12A1', 3)
-GO
-SET IDENTITY_INSERT [dbo].[LopHoc] OFF
-GO
-SET IDENTITY_INSERT [dbo].[MonHoc] ON 
-GO
-INSERT [dbo].[MonHoc] ([id], [tenmonhoc]) VALUES (1, N'Toán')
-GO
-INSERT [dbo].[MonHoc] ([id], [tenmonhoc]) VALUES (2, N'Lý ')
-GO
-INSERT [dbo].[MonHoc] ([id], [tenmonhoc]) VALUES (3, N'Hóa')
-GO
-INSERT [dbo].[MonHoc] ([id], [tenmonhoc]) VALUES (4, N'Sinh')
-GO
-SET IDENTITY_INSERT [dbo].[MonHoc] OFF
-GO

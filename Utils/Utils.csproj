@@ -73,9 +73,6 @@
       <LastGenOutput>QLTN.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Linq2Sql\QLTN.dbml.layout">
-      <DependentUpon>QLTN.dbml</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq2Sql\QLTN.dbml.layout">
+      <DependentUpon>QLTN.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

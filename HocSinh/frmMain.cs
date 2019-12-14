@@ -73,7 +73,7 @@ namespace HocSinh
             lblGrade.Text = curHocSinh.LopHoc.CapHoc.tencap;
 
             var dsdethi = curHocSinh.HocSinhThamGias.Where(
-                x => x.DeThi.loaidethi == 1
+                x => x.DeThi.loaidethi == true
             ).Select(
                 x => new { x.dethiid, x.DeThi.thoigiantoida, x.DeThi, check = x.thoigianlambai != null }
             );
