@@ -38,10 +38,23 @@ namespace HocSinh
                 ttcn.SuaEvent += (s1, e1) => LoadData();
                 ttcn.ShowDialog();
             };
+
+            btnLichThi.Click += (s, e) =>
+            {
+                var xlichthi = new XemLichThi(HocSinhID);
+                xlichthi.ShowDialog();
+            };
+
             btnLamBaiThi.Click += (s, e) =>
             {
                 var lcmonthi = new LCMonThi(HocSinhID);
                 lcmonthi.ShowDialog();
+            };
+
+            btnInBangDiem.Click += (s, e) =>
+            {
+                var inkythi = new InBangDiem(HocSinhID);
+                inkythi.ShowDialog();
             };
 
             btnDongGop.Click += (s, e) =>

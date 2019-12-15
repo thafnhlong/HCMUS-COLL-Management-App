@@ -18,9 +18,9 @@ namespace HocSinh
         class KyThiBS
         {
             public string tenkythi { get; set; }
-            public List<DethiBS> listdethi { get; set; }
+            public List<DeThiBS> listdethi { get; set; }
         };
-        class DethiBS
+        class DeThiBS
         {
             public int dethiid { get; set; }
             public string monthi { get; set; }
@@ -51,7 +51,7 @@ namespace HocSinh
 
             btnLamBai.Enabled = false;
 
-            var dethilist = cbbKyThi.SelectedValue as List<DethiBS>;
+            var dethilist = cbbKyThi.SelectedValue as List<DeThiBS>;
 
             lblThoiGian.DataBindings.Clear();
             lblThoiGian.Text = "";
@@ -112,7 +112,7 @@ namespace HocSinh
                 foreach (var item in kythilist)
                 {
                     var listdethi = item.Select(
-                        x => new DethiBS { dethiid = x.dethiid, monthi = x.monthi, thoigian = x.thoigian.Value }
+                        x => new DeThiBS { dethiid = x.dethiid, monthi = x.monthi, thoigian = x.thoigian.Value }
                     );
                     ListKyThi.Add(new KyThiBS
                     {

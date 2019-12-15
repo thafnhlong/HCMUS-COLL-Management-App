@@ -238,6 +238,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang sinh viên";
             this.ResumeLayout(false);
             this.PerformLayout();
