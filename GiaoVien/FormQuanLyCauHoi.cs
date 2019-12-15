@@ -13,23 +13,11 @@ namespace GiaoVien
 {
     public partial class FormQuanLyCauHoi : Form
     {
-
-        // khởi tạo
-        Label lbNoiDung = new Label();
-        Label lblMonHoc = new Label();
-        Label lblCapHoc = new Label();
-        Label lblDoKhoa = new Label();
-        TextBox txtND = new TextBox();
-        ComboBox cbbMonHoc = new ComboBox();
-        ComboBox cbbCapHoc = new ComboBox();
-        ComboBox cbbDoKhoa = new ComboBox();
-        Button btnXacNhan = new Button();
-        Label lblGoiY = new Label();
-        TextBox txtGopY = new TextBox();
-
         int ID;
         CauHoi ch = null;
         List<CauHoi> dsCauHoi = new List<CauHoi>();
+        FormThemCauHoi formThem;
+        SuaCauHoiForm f;
         public FormQuanLyCauHoi(int id)
         {
             InitializeComponent();
@@ -42,56 +30,8 @@ namespace GiaoVien
             lvLoadCauHoi.SelectedIndexChanged += LvLoadCauHoi_SelectedIndexChanged;
             btnThemCauHoi.Click += BtnThemCauHoi_Click;
             btnSuaCauHoi.Click += BtnSuaCauHoi_Click;
-            btnXacNhan.Click += BtnXacNhan_Click;
-
-            lbNoiDung.Visible = false;
-            lblMonHoc.Visible = false;
-            lblCapHoc.Visible = false;
-            lblDoKhoa.Visible = false;
-            txtND.Visible = false;
-            cbbMonHoc.Visible = false;
-            cbbCapHoc.Visible = false;
-            cbbDoKhoa.Visible = false;
-            btnXacNhan.Visible = false;
-            lblGoiY.Visible = false;
-            txtGopY.Visible = false;
-            lbNoiDung.Location = new Point(706, 70);
-            lblMonHoc.Location = new Point(706, 106);
-            lblCapHoc.Location = new Point(706, 148);
-            lblDoKhoa.Location = new Point(706, 187);
-            lblGoiY.Location = new Point(706, 229);
-            txtND.Location = new Point(820, 70);
-            txtND.Width = 140 ;
-            cbbCapHoc.Width = 140;
-            cbbDoKhoa.Width = 140;
-            cbbMonHoc.Width = 140;
-            txtGopY.Width = 140;
-            cbbMonHoc.Location = new Point(820, 100);
-            cbbCapHoc.Location = new Point(820, 145);
-            cbbDoKhoa.Location = new Point(820, 179);
-            txtGopY.Location = new Point(820, 225);
-            btnXacNhan.Location = new Point(751, 350);
-            lbNoiDung.Text = "Nội dung câu hỏi: ";
-            lblMonHoc.Text = "Môn học: ";
-            lblCapHoc.Text = "Cấp học: ";
-            lblDoKhoa.Text = "Độ khó: ";
-            btnXacNhan.Text = "Xác nhận";
-            cbbMonHoc.Items.Add("Toán");
-            cbbMonHoc.Items.Add("Lý");
-            cbbMonHoc.Items.Add("Hóa");
-            cbbMonHoc.Items.Add("Sinh");
-            cbbCapHoc.Items.Add("Khối 10");
-            cbbCapHoc.Items.Add("Khối 11");
-            cbbCapHoc.Items.Add("Khối 12");     
-            cbbDoKhoa.Items.Add("Dễ");
-            cbbDoKhoa.Items.Add("Trung bình");
-            cbbDoKhoa.Items.Add("Khó");
-            cbbDoKhoa.Items.Add("Rất khó");
-            cbbDoKhoa.SelectedIndex = 0;
-            cbbMonHoc.SelectedIndex = 0;
-            cbbCapHoc.SelectedIndex = 0;
-            lblGoiY.Text = "Gợi Ý";
-        }
+            
+        }  
 
         private void LvLoadCauHoi_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -102,13 +42,16 @@ namespace GiaoVien
             }
         }
 
+
+        // event click Sửa câu hỏi
         private void BtnSuaCauHoi_Click(object sender, EventArgs e)
         {
 
             if (lvLoadCauHoi.SelectedItems.Count > 0)
             { 
-                SuaCauHoiForm f = new SuaCauHoiForm(ch);
+                f = new SuaCauHoiForm(ch);
                 f.Show();
+                f.FormClosed += F_FormClosed;
             }
             else
             {
@@ -116,68 +59,25 @@ namespace GiaoVien
             }
         }
 
-
-        // event xác nhận add
-        private void BtnXacNhan_Click(object sender, EventArgs e)
+        // event close SuaCauHoiForm
+        private void F_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string strND = txtND.Text.ToString();
-            int MonHoc = cbbMonHoc.SelectedIndex + 1;
-            int CapHoc = cbbCapHoc.SelectedIndex + 1;
-            int DoKho = 1;
-            if (cbbDoKhoa.SelectedIndex == 0)
-                DoKho = 1;
-            if (cbbDoKhoa.SelectedIndex == 1)
-                DoKho = 2;
-            if (cbbDoKhoa.SelectedIndex == 2)
-                DoKho = 3;
-            if (cbbDoKhoa.SelectedIndex == 3)
-                DoKho = 4;
-            string strGopY = txtGopY.Text.ToString();
-            using (var qltn = Utils.QLTN.getInstance())
-            {
-                // add table Cau Hoi
-                var listaddCauHoi = new Utils.Linq2Sql.CauHoi();
-                listaddCauHoi.noidung = strND;
-                listaddCauHoi.dokho = DoKho;
-                listaddCauHoi.monhocid = MonHoc;
-                listaddCauHoi.caphocid = CapHoc;
-                listaddCauHoi.trangthai = true;
-                listaddCauHoi.goiy = strGopY;
-
-                qltn.CauHois.InsertOnSubmit(listaddCauHoi);
-                qltn.SubmitChanges();
-            }
             LoadData();
+        }
 
 
+        // event form close forThemCauHoi
+        private void FormThem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadData();
         }
 
         // event click thêm câu hỏi
         private void BtnThemCauHoi_Click(object sender, EventArgs e)
-        {
-            Width = 1000;        
-            lbNoiDung.Visible = true;
-            lblMonHoc.Visible = true;
-            lblCapHoc.Visible = true;
-            lblDoKhoa.Visible = true;
-            txtND.Visible = true;
-            cbbMonHoc.Visible = true;
-            cbbCapHoc.Visible = true;
-            cbbDoKhoa.Visible = true;
-            btnXacNhan.Visible = true;
-            lblGoiY.Visible = true;
-            txtGopY.Visible = true;
-            Controls.Add(lbNoiDung);
-            Controls.Add(lblMonHoc);
-            Controls.Add(lblCapHoc);
-            Controls.Add(lblDoKhoa);
-            Controls.Add(txtND);
-            Controls.Add(cbbMonHoc);
-            Controls.Add(cbbCapHoc);
-            Controls.Add(cbbDoKhoa);
-            Controls.Add(btnXacNhan);
-            Controls.Add(lblGoiY);
-            Controls.Add(txtGopY);
+        {       
+            formThem =  new FormThemCauHoi(ID);
+            formThem.Show();
+            formThem.FormClosed += FormThem_FormClosed;
         }
 
         // event combobox độ khóa
@@ -207,9 +107,10 @@ namespace GiaoVien
             loadMonHoc();
             loadCapHoc();
             loadDoKho();
-            LoadData();
+            LoadData();          
         }
 
+        
         //hàm xử lý
         public void LoadData()
         {
@@ -243,6 +144,7 @@ namespace GiaoVien
                     lvLoadCauHoi.Items.Add(lvi);
                 }
             }
+           
         }
 
         void loadCapHoc()
