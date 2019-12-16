@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GiaoVien;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +59,8 @@ namespace Main
             rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
 
 
-           
+            QuanLyDeThiForm f = new QuanLyDeThiForm();
+            f.Show();
         }
 
         private void BtnDangnhap_Click(object sender, EventArgs e)

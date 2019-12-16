@@ -29,5 +29,6 @@ namespace GiaoVien
             formQLCH.Show();            
             Close();
         }
+
     }
 }

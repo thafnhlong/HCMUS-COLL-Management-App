@@ -107,7 +107,8 @@ namespace GiaoVien
             loadMonHoc();
             loadCapHoc();
             loadDoKho();
-            LoadData();          
+            LoadData();
+            loadLoaiCauHoi();
         }
 
         
@@ -144,7 +145,6 @@ namespace GiaoVien
                     lvLoadCauHoi.Items.Add(lvi);
                 }
             }
-           
         }
 
         void loadCapHoc()
@@ -186,6 +186,14 @@ namespace GiaoVien
             cbDoKhoa.Items.Add("Trung bình");
             cbDoKhoa.Items.Add("Khó");
             cbDoKhoa.Items.Add("Rất khó");
+        }
+
+        void loadLoaiCauHoi()
+        {
+            cbbLoaiCH.Items.Clear();
+            cbbLoaiCH.Items.Add("Thi thật");
+            cbbLoaiCH.Items.Add("Thi thử/Ôn tập");
+            cbbLoaiCH.SelectedIndex = 0;
         }
     }
 }

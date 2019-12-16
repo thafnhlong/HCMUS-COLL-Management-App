@@ -36,11 +36,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDuyetCH = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(220, 198);
+            this.button4.Location = new System.Drawing.Point(143, 138);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 38);
             this.button4.TabIndex = 12;
@@ -49,7 +50,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(220, 141);
+            this.button3.Location = new System.Drawing.Point(143, 81);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 38);
             this.button3.TabIndex = 13;
@@ -58,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(89, 198);
+            this.button2.Location = new System.Drawing.Point(12, 138);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 38);
             this.button2.TabIndex = 14;
@@ -67,7 +68,7 @@
             // 
             // btnQLCH
             // 
-            this.btnQLCH.Location = new System.Drawing.Point(89, 141);
+            this.btnQLCH.Location = new System.Drawing.Point(12, 81);
             this.btnQLCH.Name = "btnQLCH";
             this.btnQLCH.Size = new System.Drawing.Size(103, 38);
             this.btnQLCH.TabIndex = 15;
@@ -77,7 +78,7 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(149, 96);
+            this.lblYear.Location = new System.Drawing.Point(72, 36);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(0, 13);
             this.lblYear.TabIndex = 10;
@@ -85,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(86, 96);
+            this.label4.Location = new System.Drawing.Point(9, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 11;
@@ -94,7 +95,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(149, 74);
+            this.lblName.Location = new System.Drawing.Point(72, 14);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(0, 13);
             this.lblName.TabIndex = 8;
@@ -102,11 +103,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 74);
+            this.label1.Location = new System.Drawing.Point(9, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Họ và tên:";
+            // 
+            // btnDuyetCH
+            // 
+            this.btnDuyetCH.Location = new System.Drawing.Point(12, 196);
+            this.btnDuyetCH.Name = "btnDuyetCH";
+            this.btnDuyetCH.Size = new System.Drawing.Size(103, 38);
+            this.btnDuyetCH.TabIndex = 15;
+            this.btnDuyetCH.Text = "Duyệt câu hỏi";
+            this.btnDuyetCH.UseVisualStyleBackColor = true;
             // 
             // FormLuaChon
             // 
@@ -116,6 +126,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDuyetCH);
             this.Controls.Add(this.btnQLCH);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.label4);
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDuyetCH;
     }
 }
