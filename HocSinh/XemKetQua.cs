@@ -10,31 +10,27 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class XemLichThi : Form
+    public partial class XemKetQua : Form
     {
         class DeThiBS
         {
-            [DisplayName("Ngày thi")]
-            public string ngaythi { get; set; }
             [DisplayName("Môn thi")]
             public string monthi { get; set; }
             [DisplayName("Thời gian")]
             public string thoigian { get; set; }
-            [DisplayName("Tình trạng")]
-            public string tinhtrang { get; set; }
+            [DisplayName("Điểm số")]
+            public float diemso { get; set; }
         }
         class KyThiBS
         {
             public string tenkythi { get; set; }
             public string loaikythi { get; set; }
-            public string ngaybd { get; set; }
-            public string ngaykt { get; set; }
             public List<DeThiBS> listdethi { get; set; }
         }
 
         private int HocSinhID;
 
-        public XemLichThi(int HocSinhID)
+        public XemKetQua(int HocSinhID)
         {
             InitializeComponent();
 
@@ -45,37 +41,35 @@ namespace HocSinh
             dgvLichThi.AllowUserToDeleteRows = false;
             //dgvLichThi
 
-            Load += XLichThi_Load;
+            Load += XemKetQua_Load;
         }
 
-        private void XLichThi_Load(object sender, EventArgs e)
+        private void XemKetQua_Load(object sender, EventArgs e)
         {
             lblLoaiKyThi.Text = "";
-            lblNgayBD.Text = "";
-            lblNgayKT.Text = "";
 
             using (var qltn = Utils.QLTN.getInstance())
             {
                 var kythilist = qltn.HocSinhThamGias.Where(
                     x => x.hocsinhid == HocSinhID
                 )
+                .Where(
+                    x => x.socaudung != null // thi roi
+                )
                 .Select(
                     x => new
                     {
                         tenkythi = x.DeThi.KyThi.tenkythi,
                         loaikythi = x.DeThi.KyThi.loaikythi, //thi that = true
-                        ngaybd = x.DeThi.KyThi.ngaybatdau.Value,
-                        ngaykt = x.DeThi.KyThi.songay.Value,
                         dethiid = x.dethiid,
 
                         monthi = x.DeThi.CapHoc_MonHoc.MonHoc.tenmonhoc,
                         thoigian = x.DeThi.thoigiantoida,
-                        tinhtrang = x.thoigianlambai != null, // thi roi = true
-                        ngaythi = x.DeThi.ngaythi
+                        diemso = (float)x.socaudung.Value / x.DeThi.DeThi_CauHois.Count * 10,
                     }
                 )
                 .GroupBy(
-                    x => new { x.tenkythi, x.loaikythi, x.ngaybd, x.ngaykt }
+                    x => new { x.tenkythi, x.loaikythi }
                 );
 
                 var listkythi = new List<KyThiBS>();
@@ -87,28 +81,23 @@ namespace HocSinh
                         {
                             monthi = x.monthi + (x.loaikythi.Value ? "" : " - " + x.dethiid),
                             thoigian = $"{x.thoigian.Value} Phút",
-                            tinhtrang = x.tinhtrang ? "Đã thi" : "Chưa thi",
-                            ngaythi = x.ngaythi.HasValue ? x.ngaythi.Value.ToString("dd-MM-yyy") : "Theo kỳ thi"
+                            diemso = x.diemso
                         }
                     );
                     listkythi.Add(new KyThiBS
                     {
                         tenkythi = item.Key.tenkythi,
                         loaikythi = item.Key.loaikythi.Value ? "Thi thật" : "Thi thử",
-                        ngaybd = item.Key.ngaybd.ToString("dd-MM-yyyy"),
-                        ngaykt = item.Key.ngaybd.AddDays(item.Key.ngaykt).ToString("dd-MM-yyyy"),
                         listdethi = listdethi.ToList()
                     });
                 }
 
-                var bs = new BindingSource { DataSource = listkythi };
+                var bs = new BindingSource { DataSource = listkythi};
 
                 cbbKyThi.DisplayMember = "tenkythi";
                 cbbKyThi.DataSource = bs;
 
                 lblLoaiKyThi.DataBindings.Add("Text", bs, "loaikythi");
-                lblNgayBD.DataBindings.Add("Text", bs, "ngaybd");
-                lblNgayKT.DataBindings.Add("Text", bs, "ngaykt");
 
                 var bs2 = new BindingSource(bs, "listdethi");
                 dgvLichThi.DataSource = bs2;

@@ -38,6 +38,8 @@ namespace HocSinh
             cbbKyThi.SelectedIndexChanged += ThayDoiKyThiEvent;
 
             btnInAn.Click += (s, e) => rvBangDiem.PrintDialog();
+
+            btnInAn.Enabled = false;
         }
 
         private void InBangDiem_Load(object sender, EventArgs e)

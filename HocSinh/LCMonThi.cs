@@ -40,36 +40,7 @@ namespace HocSinh
 
             Load += LCMonThi_Load;
 
-            cbbKyThi.SelectedIndexChanged += CbbKyThi_SelectedIndexChanged;
-
             btnLamBai.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue).ShowDialog(); };
-        }
-
-        private void CbbKyThi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbKyThi.SelectedIndex < 0) return;
-
-            btnLamBai.Enabled = false;
-
-            var dethilist = cbbKyThi.SelectedValue as List<DeThiBS>;
-
-            lblThoiGian.DataBindings.Clear();
-            lblThoiGian.Text = "";
-
-            if (dethilist.Count() > 0)
-            {
-                cbbMonThi.ValueMember = "dethiid";
-                cbbMonThi.DisplayMember = "monthi";
-                cbbMonThi.DataSource = dethilist;
-
-                lblThoiGian.DataBindings.Add("Text", cbbMonThi.DataSource, "thoigian");
-
-                btnLamBai.Enabled = true;
-            }
-            else
-            {
-                cbbMonThi.DataSource = null;
-            }
         }
 
         private void LCMonThi_Load(object sender, EventArgs e)
@@ -122,13 +93,27 @@ namespace HocSinh
                 }
             }
 
+
+            var bs = new BindingSource { DataSource = ListKyThi };
+
             if (ListKyThi.Count() > 0)
             {
                 cbbKyThi.DisplayMember = "tenkythi";
-                cbbKyThi.ValueMember = "listdethi";
-                cbbKyThi.DataSource = ListKyThi;
+                cbbKyThi.DataSource = bs;
             }
 
+            var bs1 = new BindingSource(bs,"listdethi");
+
+            cbbMonThi.ValueMember = "dethiid";
+            cbbMonThi.DisplayMember = "monthi";
+            cbbMonThi.DataSource = bs1;
+
+            lblThoiGian.DataBindings.Add("Text", bs1, "thoigian");
+
+            if (bs1.Count > 0)
+                btnLamBai.Enabled = true;
+            else
+                btnLamBai.Enabled = false;
         }
 
         void KiemTraLuuTam()

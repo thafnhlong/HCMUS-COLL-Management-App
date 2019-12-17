@@ -89,11 +89,23 @@
     <Compile Include="TBKetQua.Designer.cs">
       <DependentUpon>TBKetQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="TKThiThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKThiThu.Designer.cs">
+      <DependentUpon>TKThiThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="TTCN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TTCN.Designer.cs">
       <DependentUpon>TTCN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemKetQua.Designer.cs">
+      <DependentUpon>XemKetQua.cs</DependentUpon>
     </Compile>
     <Compile Include="XemLichThi.cs">
       <SubType>Form</SubType>
@@ -122,8 +134,14 @@
     <EmbeddedResource Include="TBKetQua.resx">
       <DependentUpon>TBKetQua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TKThiThu.resx">
+      <DependentUpon>TKThiThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TTCN.resx">
       <DependentUpon>TTCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemKetQua.resx">
+      <DependentUpon>XemKetQua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XemLichThi.resx">
       <DependentUpon>XemLichThi.cs</DependentUpon>

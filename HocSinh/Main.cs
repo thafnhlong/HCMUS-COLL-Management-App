@@ -57,6 +57,16 @@ namespace HocSinh
                 inkythi.ShowDialog();
             };
 
+            btnXemKQ.Click += (s, e) => {
+                var xemketqua = new XemKetQua(HocSinhID);
+                xemketqua.ShowDialog();
+            };
+
+            btnTKThiThu.Click += (s, e) => {
+                var ontap  = new TKThiThu(HocSinhID);
+                ontap.ShowDialog();
+            };
+
             btnDongGop.Click += (s, e) =>
             {
                 var donggop = new DongGop(HocSinhID);

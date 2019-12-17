@@ -42,7 +42,7 @@
             this.btnInBangDiem = new System.Windows.Forms.Button();
             this.btnXemKQ = new System.Windows.Forms.Button();
             this.btnDongGop = new System.Windows.Forms.Button();
-            this.btnOnTap = new System.Windows.Forms.Button();
+            this.btnTKThiThu = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -191,15 +191,15 @@
             this.btnDongGop.Text = "Đóng góp câu hỏi";
             this.btnDongGop.UseVisualStyleBackColor = true;
             // 
-            // btnOnTap
+            // btnTKThiThu
             // 
-            this.btnOnTap.Location = new System.Drawing.Point(211, 346);
-            this.btnOnTap.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOnTap.Name = "btnOnTap";
-            this.btnOnTap.Size = new System.Drawing.Size(182, 53);
-            this.btnOnTap.TabIndex = 13;
-            this.btnOnTap.Text = "Thi thử/ Ôn tập";
-            this.btnOnTap.UseVisualStyleBackColor = true;
+            this.btnTKThiThu.Location = new System.Drawing.Point(211, 346);
+            this.btnTKThiThu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTKThiThu.Name = "btnTKThiThu";
+            this.btnTKThiThu.Size = new System.Drawing.Size(182, 53);
+            this.btnTKThiThu.TabIndex = 13;
+            this.btnTKThiThu.Text = "Thống kê thi thử";
+            this.btnTKThiThu.UseVisualStyleBackColor = true;
             // 
             // btnDangXuat
             // 
@@ -218,7 +218,7 @@
             this.ClientSize = new System.Drawing.Size(602, 430);
             this.Controls.Add(this.btnLamBaiThi);
             this.Controls.Add(this.btnLichThi);
-            this.Controls.Add(this.btnOnTap);
+            this.Controls.Add(this.btnTKThiThu);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnDongGop);
             this.Controls.Add(this.btnXemKQ);
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Button btnInBangDiem;
         private System.Windows.Forms.Button btnXemKQ;
         private System.Windows.Forms.Button btnDongGop;
-        private System.Windows.Forms.Button btnOnTap;
+        private System.Windows.Forms.Button btnTKThiThu;
         private System.Windows.Forms.Button btnDangXuat;
     }
 }
