@@ -52,6 +52,7 @@
             this.lvLoadCauHoi.GridLines = true;
             this.lvLoadCauHoi.HideSelection = false;
             this.lvLoadCauHoi.Location = new System.Drawing.Point(12, 36);
+            this.lvLoadCauHoi.MultiSelect = false;
             this.lvLoadCauHoi.Name = "lvLoadCauHoi";
             this.lvLoadCauHoi.Size = new System.Drawing.Size(789, 310);
             this.lvLoadCauHoi.TabIndex = 6;
