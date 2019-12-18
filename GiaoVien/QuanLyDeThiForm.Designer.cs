@@ -39,10 +39,10 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTaoDeThi = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXoa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbbLoaiDeThi
@@ -139,6 +139,11 @@
             this.columnHeader4.Text = "Môn học";
             this.columnHeader4.Width = 91;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Loại đề thi";
+            this.columnHeader5.Width = 114;
+            // 
             // btnTaoDeThi
             // 
             this.btnTaoDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,27 +164,22 @@
             this.button2.Text = "Sửa đề thi";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(301, 403);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 41);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Xóa đề thi";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Loại đề thi";
-            this.columnHeader5.Width = 114;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(301, 403);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(113, 41);
+            this.btnXoa.TabIndex = 22;
+            this.btnXoa.Text = "Xóa đề thi";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // QuanLyDeThiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 469);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnTaoDeThi);
             this.Controls.Add(this.lvDethi);
@@ -211,7 +211,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnTaoDeThi;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

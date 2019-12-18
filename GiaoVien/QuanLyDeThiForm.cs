@@ -26,6 +26,12 @@ namespace GiaoVien
             cbbLoaiDeThi.SelectedIndexChanged += CbCapHoc_SelectedIndexChanged;
             btnTaoDeThi.Click += BtnTaoDeThi_Click;
             Load += QuanLyDeThiForm_Load;
+            btnXoa.Click += BtnXoa_Click;
+        }
+
+        private void BtnXoa_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void BtnTaoDeThi_Click(object sender, EventArgs e)
@@ -72,6 +78,8 @@ namespace GiaoVien
                     dsDeThi = qltn.DeThis.Where(i => i.monhocid == cbb1 && i.caphocid == cbb2).ToList();
                 else
                     dsDeThi = qltn.DeThis.Where(i => i.monhocid == cbb1 && i.caphocid == cbb2 && i.loaidethi == (cbb3 == 1) ? true : false).ToList();
+
+             
                 for (int i = 0; i < dsDeThi.Count(); i++)
                 {
                     ListViewItem lvi = new ListViewItem();
@@ -80,9 +88,25 @@ namespace GiaoVien
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = StrCapHoc[dsDeThi[i].caphocid.Value-1]);
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = StrMonHoc[dsDeThi[i].monhocid.Value-1]);
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = StrLoaiDeThi[dsDeThi[i].loaidethi.Value == true ? 0 : 1]);
+                    if(!KiemTraDeThi(dsDeThi[i],qltn))
+                        lvi.BackColor=Color.Red;
                     lvDethi.Items.Add(lvi);
                 }
             }
+        }
+
+        bool KiemTraDeThi(DeThi dt, QLTNDataContext qltn)
+        {
+            List<HocSinhThamGia> hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id).ToList();
+            if (hstg != null)
+            {
+                foreach(HocSinhThamGia i in hstg)
+                {
+                    if (i.thoigianlambai != null)
+                        return false;
+                }
+            }
+            return true;
         }
 
         void loadCapHoc()

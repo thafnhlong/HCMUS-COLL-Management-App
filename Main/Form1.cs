@@ -59,7 +59,7 @@ namespace Main
             rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
 
 
-            QuanLyDeThiForm f = new QuanLyDeThiForm();
+            QuanLyKyThiForm f = new QuanLyKyThiForm();
             f.Show();
         }
 
