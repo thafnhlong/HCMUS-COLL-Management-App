@@ -56,7 +56,7 @@ namespace GiaoVien
         private void LvDeThi_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             int idduoccheck = int.Parse(e.Item.SubItems[1].Text);
-            if (dsDethiDuocCheck.IndexOf(idduoccheck) != -1)
+            if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
                 dsDethiDuocCheck.Add(idduoccheck);
         }
 
@@ -111,13 +111,13 @@ namespace GiaoVien
                 loadLVDeThi();
         }
 
-        void loadLVHocSinh(int lophocid)
+        void loadLVHocSinh(int caphocid)
         {
             lvHocSinh.Items.Clear();
             ChonDeThi cdt = dsDeThiDuocSelect.Where(i => i.dethiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).FirstOrDefault();
             using(var qltn = Utils.QLTN.getInstance())
             {
-                List<TaiKhoan> dsHocSinh = qltn.TaiKhoans.Where(i => i.permission == 0 && i.lophocid == lophocid).ToList();
+                List<TaiKhoan> dsHocSinh = qltn.TaiKhoans.Where(i => i.permission == 0 && i.LopHoc.caphocid == caphocid).ToList();
                 foreach(TaiKhoan i in dsHocSinh)
                 {
                     ListViewItem lvi = new ListViewItem();
@@ -183,7 +183,7 @@ namespace GiaoVien
                 kt.ngaybatdau = dtNgayBD.Value;
                 kt.loaikythi = (cb.SelectedIndex == 0 ? true : false);
                 kt.songay = Decimal.ToInt32(numericSoNgay.Value);
-                qltn.KyThis.ToList().Add(kt);
+                qltn.KyThis.InsertOnSubmit(kt);
                 qltn.SubmitChanges();
 
                 kt = qltn.KyThis.ToList().Last();
