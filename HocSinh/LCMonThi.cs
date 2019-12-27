@@ -18,6 +18,7 @@ namespace HocSinh
         class KyThiBS
         {
             public string tenkythi { get; set; }
+            public string loaikythi { get; set; }
             public List<DeThiBS> listdethi { get; set; }
         };
         class DeThiBS
@@ -41,6 +42,7 @@ namespace HocSinh
             Load += LCMonThi_Load;
 
             btnLamBai.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue).ShowDialog(); };
+            btnXemDapAn.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue,true).ShowDialog(); };
         }
 
         private void LCMonThi_Load(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace HocSinh
 
             DateTime today = DateTime.Today;
             lblHomNay.Text = today.ToString("dd-MM-yyyy");
+            lblLoaiKyThi.Text = "";
             lblThoiGian.Text = "";
 
             using (var qltn = Utils.QLTN.getInstance())
@@ -58,26 +61,31 @@ namespace HocSinh
                     x => x.hocsinhid == HocSinhID &&
                         x.thoigianlambai == null
                 ).Where(
-                    x => x.DeThi.loaidethi.Value == true &&// thi that
-
+                    x =>
                         // today phai nam trong ngay cua kythi
                         today >= x.DeThi.KyThi.ngaybatdau.Value &&
                         today.AddDays(-1 * x.DeThi.KyThi.songay.Value) <= x.DeThi.KyThi.ngaybatdau.Value &&
 
-                        // today la ngay lam dethi
-                        today == x.DeThi.ngaythi
+
+                        (
+                            // today la ngay lam dethi neu nhu dethi co ngaythi
+                            (x.DeThi.ngaythi.HasValue && today == x.DeThi.ngaythi) ||
+                            //nguoc lai la khong can
+                            x.DeThi.ngaythi.HasValue == false
+                        )
                 )
                 .Select(
                     x => new
                     {
                         tenkythi = x.DeThi.KyThi.tenkythi,
+                        loaikythi = x.DeThi.KyThi.loaikythi.Value,
                         dethiid = x.dethiid,
                         monthi = x.DeThi.CapHoc_MonHoc.MonHoc.tenmonhoc,
                         thoigian = x.DeThi.thoigiantoida
                     }
                 )
                 .GroupBy(
-                    x => x.tenkythi
+                    x => new { x.tenkythi, x.loaikythi }
                 );
 
                 foreach (var item in kythilist)
@@ -87,7 +95,8 @@ namespace HocSinh
                     );
                     ListKyThi.Add(new KyThiBS
                     {
-                        tenkythi = item.Key,
+                        tenkythi = item.Key.tenkythi,
+                        loaikythi = item.Key.loaikythi ? "Thật" : "Thử",
                         listdethi = listdethi.ToList()
                     });
                 }
@@ -95,6 +104,7 @@ namespace HocSinh
 
 
             var bs = new BindingSource { DataSource = ListKyThi };
+            bs.PositionChanged += KyThiChanged;
 
             if (ListKyThi.Count() > 0)
             {
@@ -102,18 +112,29 @@ namespace HocSinh
                 cbbKyThi.DataSource = bs;
             }
 
-            var bs1 = new BindingSource(bs,"listdethi");
+            var bs1 = new BindingSource(bs, "listdethi");
 
             cbbMonThi.ValueMember = "dethiid";
             cbbMonThi.DisplayMember = "monthi";
             cbbMonThi.DataSource = bs1;
 
+            lblLoaiKyThi.DataBindings.Add("Text", bs, "loaikythi");
             lblThoiGian.DataBindings.Add("Text", bs1, "thoigian");
 
             if (bs1.Count > 0)
                 btnLamBai.Enabled = true;
             else
+            {
                 btnLamBai.Enabled = false;
+                btnXemDapAn.Visible = false;
+            }
+            KyThiChanged(bs, null);
+        }
+
+        private void KyThiChanged(object sender, EventArgs e)
+        {
+            string loaikythi = (((BindingSource)sender).Current as KyThiBS).loaikythi;
+            btnXemDapAn.Visible = loaikythi.Equals("Thử");
         }
 
         void KiemTraLuuTam()
@@ -137,7 +158,9 @@ namespace HocSinh
                         ).First();
 
                         var tenmonthi = dt.CapHoc_MonHoc.MonHoc.tenmonhoc;
-                        MessageBox.Show($"Tìm thấy một bài thi bạn đang thi dở của môn {tenmonthi}, bấm OK để thi tiếp"
+                        string tenkythi = dt.KyThi.tenkythi;
+                        string loaidethi = dt.loaidethi.Value ? "Thật" : "Thử";
+                        MessageBox.Show($"Tìm thấy một bài thi bạn đang thi dở của môn: {tenmonthi} - kỳ thi: {tenkythi} ({loaidethi}), bấm OK để thi tiếp"
                             , "Thông báo", MessageBoxButtons.OK);
 
                     }

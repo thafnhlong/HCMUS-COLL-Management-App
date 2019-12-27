@@ -38,6 +38,9 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbKyThi = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblLoaiKyThi = new System.Windows.Forms.Label();
+            this.btnXemDapAn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,53 +66,53 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 130);
+            this.label3.Location = new System.Drawing.Point(33, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 17);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Môn thi: ";
             // 
             // cbbMonThi
             // 
             this.cbbMonThi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMonThi.FormattingEnabled = true;
-            this.cbbMonThi.Location = new System.Drawing.Point(159, 127);
+            this.cbbMonThi.Location = new System.Drawing.Point(159, 177);
             this.cbbMonThi.Name = "cbbMonThi";
             this.cbbMonThi.Size = new System.Drawing.Size(280, 24);
-            this.cbbMonThi.TabIndex = 5;
+            this.cbbMonThi.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 180);
+            this.label4.Location = new System.Drawing.Point(33, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 17);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Thời gian (phút): ";
             // 
             // lblThoiGian
             // 
-            this.lblThoiGian.Location = new System.Drawing.Point(156, 180);
+            this.lblThoiGian.Location = new System.Drawing.Point(156, 230);
             this.lblThoiGian.Name = "lblThoiGian";
             this.lblThoiGian.Size = new System.Drawing.Size(283, 17);
-            this.lblThoiGian.TabIndex = 7;
+            this.lblThoiGian.TabIndex = 9;
             this.lblThoiGian.Text = "lblThoiGian";
             // 
             // btnLamBai
             // 
-            this.btnLamBai.Location = new System.Drawing.Point(132, 228);
+            this.btnLamBai.Location = new System.Drawing.Point(162, 284);
             this.btnLamBai.Name = "btnLamBai";
-            this.btnLamBai.Size = new System.Drawing.Size(147, 51);
-            this.btnLamBai.TabIndex = 8;
+            this.btnLamBai.Size = new System.Drawing.Size(124, 51);
+            this.btnLamBai.TabIndex = 11;
             this.btnLamBai.Text = "Làm bài";
             this.btnLamBai.UseVisualStyleBackColor = true;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(292, 228);
+            this.btnHuy.Location = new System.Drawing.Point(292, 284);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(147, 51);
-            this.btnHuy.TabIndex = 9;
+            this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
@@ -131,17 +134,46 @@
             this.cbbKyThi.Size = new System.Drawing.Size(280, 24);
             this.cbbKyThi.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Loại kỳ thi: ";
+            // 
+            // lblLoaiKyThi
+            // 
+            this.lblLoaiKyThi.Location = new System.Drawing.Point(156, 130);
+            this.lblLoaiKyThi.Name = "lblLoaiKyThi";
+            this.lblLoaiKyThi.Size = new System.Drawing.Size(283, 17);
+            this.lblLoaiKyThi.TabIndex = 5;
+            this.lblLoaiKyThi.Text = "lblLoaiKyThi";
+            // 
+            // btnXemDapAn
+            // 
+            this.btnXemDapAn.Location = new System.Drawing.Point(36, 284);
+            this.btnXemDapAn.Name = "btnXemDapAn";
+            this.btnXemDapAn.Size = new System.Drawing.Size(120, 51);
+            this.btnXemDapAn.TabIndex = 10;
+            this.btnXemDapAn.Text = "Xem Đáp Án";
+            this.btnXemDapAn.UseVisualStyleBackColor = true;
+            // 
             // LCMonThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 299);
+            this.ClientSize = new System.Drawing.Size(498, 352);
             this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnXemDapAn);
             this.Controls.Add(this.btnLamBai);
             this.Controls.Add(this.cbbKyThi);
             this.Controls.Add(this.cbbMonThi);
+            this.Controls.Add(this.lblLoaiKyThi);
             this.Controls.Add(this.lblThoiGian);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblHomNay);
@@ -171,5 +203,8 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbKyThi;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblLoaiKyThi;
+        private System.Windows.Forms.Button btnXemDapAn;
     }
 }

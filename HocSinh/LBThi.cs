@@ -19,6 +19,7 @@ namespace HocSinh
         {
             public int id;
             public string noidung { get; set; }
+            public string goiy { get; set; }
             public List<DapAnBS> listdapan { get; set; }
         }
         class DapAnBS
@@ -27,7 +28,7 @@ namespace HocSinh
 
             public int stt;
             public string noidung { get; set; }
-            public bool value;
+            public bool value { get; set; }
 
             bool _chonlua;
             public bool chonlua
@@ -86,6 +87,7 @@ namespace HocSinh
         }
 
         bool IsNopBai = false;
+        bool IsOnTap;
 
         Button _btnCur;
 
@@ -110,7 +112,7 @@ namespace HocSinh
 
         BindingManagerBase CauHoiBinding { get { return BindingContext[ListCauHoi]; } }
 
-        public LBThi(int HocSinhID, int DeThiID)
+        public LBThi(int HocSinhID, int DeThiID, bool IsOnTap = false)
         {
             InitializeComponent();
 
@@ -124,6 +126,8 @@ namespace HocSinh
 
 
             btnNopBai.Click += NopBaiEvent;
+
+            this.IsOnTap = IsOnTap;
         }
 
         Action loadfilebakup;
@@ -140,11 +144,12 @@ namespace HocSinh
                     var id = int.Parse(datach[0]);
                     var cauhoi = ListCauHoi.Where(x => x.id == id).First();
 
+                    CauHoiBinding.Position = ListCauHoi.IndexOf(cauhoi);
+                    BtnCur = flpCauHoi.Controls[CauHoiBinding.Position] as Button;
+
                     foreach (var sttstring in datach[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                     {
                         int stt = int.Parse(sttstring);
-
-                        BtnCur = flpCauHoi.Controls[ListCauHoi.IndexOf(cauhoi)] as Button;
 
                         cauhoi.listdapan.Where(x => x.stt == stt).First().chonlua = true;
                     }
@@ -213,9 +218,10 @@ namespace HocSinh
 
                 foreach (var ch_da in ListCH_DA)
                 {
-                    qltn.HocSinhLamBais.InsertOnSubmit( new Utils.Linq2Sql.HocSinhLamBai {
+                    qltn.HocSinhLamBais.InsertOnSubmit(new Utils.Linq2Sql.HocSinhLamBai
+                    {
                         hocsinhid = HocSinhID,
-                        dethiid=DeThiID,
+                        dethiid = DeThiID,
                         cauhoiid = ch_da.Item1,
                         dungsai = ch_da.Item2
                     });
@@ -240,14 +246,22 @@ namespace HocSinh
             LoadHocSinh();
             if (!LoadDeThi()) return;
 
-            TimerRun.Tick += TimerRun_Tick;
-            TimerRun.Enabled = true;
-
             loadfilebakup?.Invoke();
 
             //nhap cau hoi 1
             var btn = flpCauHoi.Controls[0];
             DoiCauHoiEvent(btn, null);
+
+            if (IsOnTap)
+            {
+                btnNopBai.Visible = false;
+                tlpDapAn.Enabled = false;
+                IsNopBai = true;
+                return;
+            }
+
+            TimerRun.Tick += TimerRun_Tick;
+            TimerRun.Enabled = true;
         }
 
         private void TimerRun_Tick(object sender, EventArgs e)
@@ -341,6 +355,7 @@ namespace HocSinh
                     {
                         id = cauhoi.id,
                         noidung = cauhoi.noidung,
+                        goiy = cauhoi.goiy,
                         listdapan = listdapan
                     });
 
@@ -355,6 +370,7 @@ namespace HocSinh
             rtbGoiY.Text = "";
             SoCauHoanThanh = 0;
 
+            rtbGoiY.DataBindings.Add("Text", ListCauHoi, "goiy");
             lblCauHoi.DataBindings.Add("Text", ListCauHoi, "noidung");
             return true;
         }
@@ -427,7 +443,8 @@ namespace HocSinh
         void ThemBindingCheckBox(Control control, object data)
         {
             control.DataBindings.Add("Text", data, "noidung");
-            control.DataBindings.Add("Checked", data, "chonlua", false, DataSourceUpdateMode.OnPropertyChanged);
+            string type = IsOnTap ? "value" : "chonlua";
+            control.DataBindings.Add("Checked", data, type, false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         bool DaLam(CauHoiDB cauhoi)
