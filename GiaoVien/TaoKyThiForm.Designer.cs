@@ -150,7 +150,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 34;
+            this.columnHeader1.Width = 51;
             // 
             // columnHeader2
             // 

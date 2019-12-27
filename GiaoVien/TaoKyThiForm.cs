@@ -56,8 +56,15 @@ namespace GiaoVien
         private void LvDeThi_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             int idduoccheck = int.Parse(e.Item.SubItems[1].Text);
-            if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
-                dsDethiDuocCheck.Add(idduoccheck);
+            if (e.Item.Checked)
+            {
+                if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
+                    dsDethiDuocCheck.Add(idduoccheck);
+            }
+            else
+            {
+                dsDethiDuocCheck.Remove(idduoccheck);
+            }
         }
 
         private void LvHocSinh_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -137,9 +144,9 @@ namespace GiaoVien
             using (var qltn = Utils.QLTN.getInstance())
             {
                 if (cb.SelectedIndex == 0)
-                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi.HasValue == false).ToList();
+                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == true && i.kythiid.HasValue == false).ToList();
                 else
-                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == true).ToList();
+                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == false && i.kythiid.HasValue == false).ToList();
             }
 
             lvDeThi.Items.Clear();

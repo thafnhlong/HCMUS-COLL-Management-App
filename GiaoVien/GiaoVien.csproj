@@ -30,10 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -66,6 +69,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="InKyThiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InKyThiForm.Designer.cs">
+      <DependentUpon>InKyThiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +94,12 @@
       <DependentUpon>SuaCauHoiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuaKyThiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaKyThiForm.Designer.cs">
+      <DependentUpon>SuaKyThiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaoDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,17 +129,24 @@
     <EmbeddedResource Include="FormThemCauHoi.resx">
       <DependentUpon>FormThemCauHoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InKyThiForm.resx">
+      <DependentUpon>InKyThiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDeThiForm.resx">
       <DependentUpon>QuanLyDeThiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\InKyThi.rdlc" />
     <EmbeddedResource Include="SuaCauHoiForm.resx">
       <DependentUpon>SuaCauHoiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaKyThiForm.resx">
+      <DependentUpon>SuaKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaoDeThiForm.resx">
       <DependentUpon>TaoDeThiForm.cs</DependentUpon>
