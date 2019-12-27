@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\ReportBangDiem.cs" />
+    <Compile Include="Report\ReportTKThiThu.cs" />
     <Compile Include="TBKetQua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +132,7 @@
     <EmbeddedResource Include="Report\ReportBangDiem.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTKThiThu.rdlc" />
     <EmbeddedResource Include="TBKetQua.resx">
       <DependentUpon>TBKetQua.cs</DependentUpon>
     </EmbeddedResource>
