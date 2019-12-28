@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,7 +61,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-	<Compile Include="SuaCauHoiForm.cs">
+    <Compile Include="SuaCauHoiForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SuaCauHoiForm.Designer.cs">
@@ -81,7 +82,7 @@
     <EmbeddedResource Include="FormQuanLyCauHoi.resx">
       <DependentUpon>FormQuanLyCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="SuaCauHoiForm.resx">
+    <EmbeddedResource Include="SuaCauHoiForm.resx">
       <DependentUpon>SuaCauHoiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">

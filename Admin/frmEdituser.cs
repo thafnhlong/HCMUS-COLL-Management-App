@@ -19,7 +19,8 @@ namespace Admin
         public frmEdituser()
         {
             InitializeComponent();
-            btnhuy.Click += (s, e) => { swapform?.Invoke(null, null); Close(); };
+            btnhuy.Click += (s, e) => { Close(); };
+            FormClosed += (s, e) => { swapform?.Invoke(null, null); };
 
             BaseValidator.ClearList();
 
