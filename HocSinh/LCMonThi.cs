@@ -124,13 +124,15 @@ namespace HocSinh
             lblThoiGian.DataBindings.Add("Text", bs1, "thoigian");
 
             if (bs1.Count > 0)
+            {
                 btnLamBai.Enabled = true;
+                KyThiChanged(bs, null);
+            }
             else
             {
                 btnLamBai.Enabled = false;
                 btnXemDapAn.Visible = false;
             }
-            KyThiChanged(bs, null);
         }
 
         private void KyThiChanged(object sender, EventArgs e)
