@@ -126,18 +126,18 @@ namespace GiaoVien
         {
             if (lvDeThi.SelectedItems.Count > 0)
             {
-                var dethi = qltn.DeThis.Where(i => i.id == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
-                if (dethi.ngaythi.HasValue)
+                var dethi = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
+                if (dethi.CoNgayThi)
                 {
                     checkbox.Checked = true;
-                    dtNgay.Value = dethi.ngaythi.Value;
+                    dtNgay.Value = dethi.NgayThi;
                 }
                 if (lvDeThi.SelectedItems[0].SubItems[5].Text.Length > 0)
                 {
                     checkbox.Checked = true;
                     dtNgay.Value = DateTime.Parse(lvDeThi.SelectedItems[0].SubItems[5].Text);
                 }
-
+                checkbox.Enabled = true;
                 checkLVHocSinh = false;
                 loadHocSinh();
                 checkLVHocSinh = true;
@@ -369,7 +369,7 @@ namespace GiaoVien
         }
         public string Tenkythi
         {
-            get => tenkythi;
+            get { return tenkythi; }
             set
             {
                 tenkythi = value;
@@ -379,7 +379,7 @@ namespace GiaoVien
 
         public int Songay
         {
-            get => songay.Value;
+            get { return songay.Value; }
             set
             {
                 songay = value;
@@ -389,7 +389,7 @@ namespace GiaoVien
 
         public DateTime Ngaybatdau
         {
-            get => ngaybatdau.Value;
+            get { return ngaybatdau.Value; }
             set
             {
                 ngaybatdau = value;
