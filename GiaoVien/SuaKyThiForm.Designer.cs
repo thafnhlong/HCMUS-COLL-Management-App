@@ -88,6 +88,7 @@
             // 
             // dtNgay
             // 
+            this.dtNgay.Enabled = false;
             this.dtNgay.Location = new System.Drawing.Point(198, 284);
             this.dtNgay.Name = "dtNgay";
             this.dtNgay.Size = new System.Drawing.Size(200, 20);
