@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace HocSinh.Report
 {
-    class ReportTKThiThu
+    public class ReportTKThiThu
     {
+        public string loaicauhoi { get; set; }
+        public int socaudung { get; set; }
+        public int tongsocau { get; set; }
     }
 }

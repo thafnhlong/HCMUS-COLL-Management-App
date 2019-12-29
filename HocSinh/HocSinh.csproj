@@ -133,7 +133,9 @@
     <EmbeddedResource Include="Report\ReportBangDiem.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\ReportTKThiThu.rdlc" />
+    <EmbeddedResource Include="Report\ReportTKThiThu.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="TBKetQua.resx">
       <DependentUpon>TBKetQua.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\HocSinh.Report.ReportBangDiem.datasource" />
+    <None Include="Properties\DataSources\HocSinh.Report.ReportTKThiThu.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

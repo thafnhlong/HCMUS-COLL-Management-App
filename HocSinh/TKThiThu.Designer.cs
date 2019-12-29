@@ -36,14 +36,14 @@
             this.rvThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvThongKe.Location = new System.Drawing.Point(0, 0);
             this.rvThongKe.Name = "rvThongKe";
-            this.rvThongKe.Size = new System.Drawing.Size(984, 461);
+            this.rvThongKe.Size = new System.Drawing.Size(1011, 672);
             this.rvThongKe.TabIndex = 0;
             // 
             // TKThiThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1011, 672);
             this.Controls.Add(this.rvThongKe);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

@@ -90,8 +90,10 @@ namespace HocSinh
 
                 foreach (var item in kythilist)
                 {
+                    bool isthu = !item.Key.loaikythi;
+
                     var listdethi = item.Select(
-                        x => new DeThiBS { dethiid = x.dethiid, monthi = x.monthi, thoigian = x.thoigian.Value }
+                        x => new DeThiBS { dethiid = x.dethiid, monthi = x.monthi + (isthu ? " - " + x.dethiid : ""), thoigian = x.thoigian.Value }
                     );
                     ListKyThi.Add(new KyThiBS
                     {
@@ -122,15 +124,13 @@ namespace HocSinh
             lblThoiGian.DataBindings.Add("Text", bs1, "thoigian");
 
             if (bs1.Count > 0)
-            {
                 btnLamBai.Enabled = true;
-                KyThiChanged(bs, null);
-            }
             else
             {
                 btnLamBai.Enabled = false;
                 btnXemDapAn.Visible = false;
             }
+            KyThiChanged(bs, null);
         }
 
         private void KyThiChanged(object sender, EventArgs e)
