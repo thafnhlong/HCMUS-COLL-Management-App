@@ -39,6 +39,7 @@
             this.btnDuyetCH = new System.Windows.Forms.Button();
             this.btnThongKeCauHoi = new System.Windows.Forms.Button();
             this.btnInDSKyThi = new System.Windows.Forms.Button();
+            this.btnInDSKyThiKQ = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnQLHS
@@ -138,11 +139,21 @@
             this.btnInDSKyThi.Text = "In DS kỳ thi";
             this.btnInDSKyThi.UseVisualStyleBackColor = true;
             // 
+            // btnInDSKyThiKQ
+            // 
+            this.btnInDSKyThiKQ.Location = new System.Drawing.Point(252, 138);
+            this.btnInDSKyThiKQ.Name = "btnInDSKyThiKQ";
+            this.btnInDSKyThiKQ.Size = new System.Drawing.Size(103, 38);
+            this.btnInDSKyThiKQ.TabIndex = 16;
+            this.btnInDSKyThiKQ.Text = "In DS kỳ thi + KQ";
+            this.btnInDSKyThiKQ.UseVisualStyleBackColor = true;
+            // 
             // FormLuaChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 311);
+            this.Controls.Add(this.btnInDSKyThiKQ);
             this.Controls.Add(this.btnInDSKyThi);
             this.Controls.Add(this.btnThongKeCauHoi);
             this.Controls.Add(this.btnQLHS);
@@ -176,5 +187,6 @@
         private System.Windows.Forms.Button btnDuyetCH;
         private System.Windows.Forms.Button btnThongKeCauHoi;
         private System.Windows.Forms.Button btnInDSKyThi;
+        private System.Windows.Forms.Button btnInDSKyThiKQ;
     }
 }

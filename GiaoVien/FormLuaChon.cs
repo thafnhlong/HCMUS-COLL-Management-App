@@ -29,6 +29,7 @@ namespace GiaoVien
             //
             btnThongKeCauHoi.Click += (s, e) => new Report.TKCauHoi().ShowDialog();
             btnInDSKyThi.Click += (s, e) => new Report.DSKyThi().ShowDialog();
+            btnInDSKyThiKQ.Click += (s, e) => new Report.DSKyThiKQ().ShowDialog();
         }
 
         private void BtnKyThi_Click(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace GiaoVien
         private void BtnQLCH_Click(object sender, EventArgs e)
         {
             formQLCH = new FormQuanLyCauHoi(ID);
-            formQLCH.Show();            
+            formQLCH.Show();
             Close();
         }
 
