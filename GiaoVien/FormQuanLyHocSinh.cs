@@ -21,8 +21,8 @@ namespace GiaoVien
 
         private void BtnXemHocSinh_Click(object sender, EventArgs e)
         {
-            var frm = new Report.Form1();
-            //FormXemThongKeHocSinh frm = new FormXemThongKeHocSinh();
+            //var frm = new Report.Form1();
+            FormXemThongKeHocSinh frm = new FormXemThongKeHocSinh();
             frm.Show();
             Close();
         }

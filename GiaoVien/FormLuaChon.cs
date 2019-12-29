@@ -24,6 +24,13 @@ namespace GiaoVien
             //formQLCH = new FormQuanLyCauHoi();      
             ID = id;
             btnDeThi.Click += BtnDeThi_Click;
+            btnKyThi.Click += BtnKyThi_Click;
+        }
+
+        private void BtnKyThi_Click(object sender, EventArgs e)
+        {
+            QuanLyKyThiForm f = new QuanLyKyThiForm();
+            f.Show();
         }
 
         private void BtnDeThi_Click(object sender, EventArgs e)

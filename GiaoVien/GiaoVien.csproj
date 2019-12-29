@@ -87,6 +87,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="InKyThiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InKyThiForm.Designer.cs">
+      <DependentUpon>InKyThiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,13 +106,12 @@
     <Compile Include="QuanLyKyThiForm.Designer.cs">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\Form1.cs">
+    <Compile Include="SuaKyThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SuaKyThiForm.Designer.cs">
+      <DependentUpon>SuaKyThiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\ThongKeHocSinhReport.cs" />
     <Compile Include="TaoDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +150,9 @@
     <EmbeddedResource Include="FormXemThongKeHocSinh.resx">
       <DependentUpon>FormXemThongKeHocSinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InKyThiForm.resx">
+      <DependentUpon>InKyThiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDeThiForm.resx">
       <DependentUpon>QuanLyDeThiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,11 +162,8 @@
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\ThongKeHocSinhReport.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EmbeddedResource Include="SuaKyThiForm.resx">
+      <DependentUpon>SuaKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaoDeThiForm.resx">
       <DependentUpon>TaoDeThiForm.cs</DependentUpon>
@@ -169,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\GiaoVien.Report.ThongKeHocSinhReport.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

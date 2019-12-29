@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.btnQLHS = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-
-            this.button4 = new System.Windows.Forms.Button();
             this.btnKyThi = new System.Windows.Forms.Button();
             this.btnDeThi = new System.Windows.Forms.Button();
-
             this.btnQLCH = new System.Windows.Forms.Button();
             this.lblYear = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -129,15 +123,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 311);
-
             this.Controls.Add(this.btnQLHS);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.btnKyThi);
             this.Controls.Add(this.btnDeThi);
-
             this.Controls.Add(this.btnDuyetCH);
             this.Controls.Add(this.btnQLCH);
             this.Controls.Add(this.lblYear);
@@ -155,10 +143,6 @@
 
 
         private System.Windows.Forms.Button btnQLHS;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnKyThi;
         private System.Windows.Forms.Button btnDeThi;
 
