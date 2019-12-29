@@ -16,8 +16,9 @@ namespace GiaoVien
         int ID;
         CauHoi ch = null;
         List<CauHoi> dsCauHoi = new List<CauHoi>();
+        List<DapAn> dsDapAn = new List<DapAn>();
         FormThemCauHoi formThem;
-        SuaCauHoiForm f;
+        FormSuaCauHoi frmSua;
         public FormQuanLyCauHoi(int id)
         {
             InitializeComponent();
@@ -33,13 +34,34 @@ namespace GiaoVien
             
         }  
 
+        // event chọn câu hỏi
         private void LvLoadCauHoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvLoadCauHoi.SelectedIndices.Count > 0)
             {
+                lvDapAn.Items.Clear();
                 int stt = int.Parse(lvLoadCauHoi.SelectedItems[0].SubItems[0].Text);
                 ch = dsCauHoi[stt - 1];
-            }
+                txtNoiDung.Text = ch.noidung;               
+                using (var qltn = Utils.QLTN.getInstance())
+                {
+                    dsDapAn = qltn.DapAns.Where(d => d.cauhoiid == ch.id).ToList();
+                }
+                int STT = 0;
+                string CheckTF;
+                foreach (var item in dsDapAn)
+                {              
+                    ListViewItem lvi = new ListViewItem();
+                    lvi.Text = (STT += 1).ToString();
+                    lvi.SubItems.Add(item.noidung);
+                    if (item.dungsai == true)
+                        CheckTF = "Đúng";
+                    else
+                        CheckTF = "Sai";
+                    lvi.SubItems.Add(CheckTF);
+                    lvDapAn.Items.Add(lvi);
+                }
+            }           
         }
 
 
@@ -48,10 +70,10 @@ namespace GiaoVien
         {
 
             if (lvLoadCauHoi.SelectedItems.Count > 0)
-            { 
-                f = new SuaCauHoiForm(ch);
-                f.Show();
-                f.FormClosed += F_FormClosed;
+            {
+                frmSua = new FormSuaCauHoi(ch);
+                frmSua.Show();
+                frmSua.FormClosed += FrmSua_FormClosed;
             }
             else
             {
@@ -60,12 +82,12 @@ namespace GiaoVien
         }
 
         // event close SuaCauHoiForm
-        private void F_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmSua_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadData();
         }
-
-
+        
+    
         // event form close forThemCauHoi
         private void FormThem_FormClosed(object sender, FormClosedEventArgs e)
         {

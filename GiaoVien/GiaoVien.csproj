@@ -30,10 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormQuanLyHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyHocSinh.Designer.cs">
+      <DependentUpon>FormQuanLyHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaCauHoi.Designer.cs">
+      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLuaChon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +75,12 @@
     <Compile Include="FormThemCauHoi.Designer.cs">
       <DependentUpon>FormThemCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXemThongKeHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemThongKeHocSinh.Designer.cs">
+      <DependentUpon>FormXemThongKeHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,19 +93,20 @@
     <Compile Include="QuanLyDeThiForm.Designer.cs">
       <DependentUpon>QuanLyDeThiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyKyThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyKyThiForm.Designer.cs">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuaCauHoiForm.cs">
+    <Compile Include="Report\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuaCauHoiForm.Designer.cs">
-      <DependentUpon>SuaCauHoiForm.cs</DependentUpon>
+    <Compile Include="Report\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\ThongKeHocSinhReport.cs" />
     <Compile Include="TaoDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +127,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormQuanLyHocSinh.resx">
+      <DependentUpon>FormQuanLyHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaCauHoi.resx">
+      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLuaChon.resx">
       <DependentUpon>FormLuaChon.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,17 +142,23 @@
     <EmbeddedResource Include="FormThemCauHoi.resx">
       <DependentUpon>FormThemCauHoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormXemThongKeHocSinh.resx">
+      <DependentUpon>FormXemThongKeHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDeThiForm.resx">
       <DependentUpon>QuanLyDeThiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuaCauHoiForm.resx">
-      <DependentUpon>SuaCauHoiForm.cs</DependentUpon>
+    <EmbeddedResource Include="Report\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="Report\ThongKeHocSinhReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="TaoDeThiForm.resx">
       <DependentUpon>TaoDeThiForm.cs</DependentUpon>
@@ -132,6 +166,9 @@
     <EmbeddedResource Include="TaoKyThiForm.resx">
       <DependentUpon>TaoKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\GiaoVien.Report.ThongKeHocSinhReport.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
