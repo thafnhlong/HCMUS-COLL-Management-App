@@ -26,6 +26,60 @@ namespace GiaoVien
             lvDethi.SelectedIndexChanged += LvDethi_SelectedIndexChanged;
             Load += QuanLyKyThiForm_Load;
             btnTao.Click += BtnTao_Click;
+            btnXoa.Click += BtnXoa_Click;
+            btnSua.Click += BtnSua_Click;
+        }
+
+        private void BtnSua_Click(object sender, EventArgs e)
+        {
+            if (lvKyThi.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn đề thi");
+                return;
+            }
+            using (var qltn = Utils.QLTN.getInstance())
+            {
+                var kythi = qltn.KyThis.Where(i => i.id == int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text)).First();
+                KyThi kt = qltn.KyThis.Where(i => i.id == kythi.id).First();
+                var dsDeThi = qltn.DeThis.Where(i => i.kythiid == kt.id).ToList();
+                foreach (DeThi dt in dsDeThi)
+                {
+                    var Hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id && i.thoigianlambai.Length > 0);
+                    if (Hstg.ToList().Count > 0)
+                    {
+                        MessageBox.Show("Kỳ thi này đã có thí sinh làm bài");
+                        return;
+                    }
+                }
+            }
+            SuaKyThiForm f = new SuaKyThiForm(int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text));
+            f.Show();
+        }
+
+        private void BtnXoa_Click(object sender, EventArgs e)
+        {
+            using(var qltn = Utils.QLTN.getInstance())
+            {
+                var kythi = qltn.KyThis.Where(i => i.id == int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text)).First();
+                KyThi kt = qltn.KyThis.Where(i => i.id == kythi.id).First();
+                var dsDeThi = qltn.DeThis.Where(i => i.kythiid == kt.id).ToList();
+                foreach(DeThi dt in dsDeThi)
+                {
+                    var Hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id && i.thoigianlambai.Length > 0);
+                    if (Hstg.ToList().Count > 0)
+                    {
+                        MessageBox.Show("Kỳ thi này đã có thí sinh làm bài");
+                        return;
+                    }
+                }
+                foreach(DeThi dt in dsDeThi)
+                {
+                    dt.kythiid = null;
+                }
+                qltn.KyThis.DeleteOnSubmit(kythi);
+                qltn.SubmitChanges();
+            }
+            loadLVKyThi();
         }
 
         private void BtnTao_Click(object sender, EventArgs e)
@@ -103,6 +157,14 @@ namespace GiaoVien
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = StrMonHoc[i.monhocid.Value - 1]);
                     lvDethi.Items.Add(lvi);
                 }
+            }
+            try
+            {
+                lvDethi.Items[0].Selected = true;
+            }
+            catch
+            {
+
             }
         }
 

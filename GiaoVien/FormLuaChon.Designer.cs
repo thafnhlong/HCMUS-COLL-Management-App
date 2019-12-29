@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.btnQLHS = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnKyThi = new System.Windows.Forms.Button();
+            this.btnDeThi = new System.Windows.Forms.Button();
+
             this.btnQLCH = new System.Windows.Forms.Button();
             this.lblYear = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,23 +54,23 @@
             this.btnQLHS.Text = "Quản lý học sinh";
             this.btnQLHS.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnKyThi
             // 
-            this.button3.Location = new System.Drawing.Point(143, 81);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 38);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Quản lý kỳ thi";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnKyThi.Location = new System.Drawing.Point(143, 81);
+            this.btnKyThi.Name = "btnKyThi";
+            this.btnKyThi.Size = new System.Drawing.Size(103, 38);
+            this.btnKyThi.TabIndex = 13;
+            this.btnKyThi.Text = "Quản lý kỳ thi";
+            this.btnKyThi.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDeThi
             // 
-            this.button2.Location = new System.Drawing.Point(12, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 38);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Quản lý đề thi";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeThi.Location = new System.Drawing.Point(12, 138);
+            this.btnDeThi.Name = "btnDeThi";
+            this.btnDeThi.Size = new System.Drawing.Size(103, 38);
+            this.btnDeThi.TabIndex = 14;
+            this.btnDeThi.Text = "Quản lý đề thi";
+            this.btnDeThi.UseVisualStyleBackColor = true;
             // 
             // btnQLCH
             // 
@@ -123,9 +129,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 311);
+
             this.Controls.Add(this.btnQLHS);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
+
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnKyThi);
+            this.Controls.Add(this.btnDeThi);
+
             this.Controls.Add(this.btnDuyetCH);
             this.Controls.Add(this.btnQLCH);
             this.Controls.Add(this.lblYear);
@@ -141,9 +153,15 @@
 
         #endregion
 
+
         private System.Windows.Forms.Button btnQLHS;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnKyThi;
+        private System.Windows.Forms.Button btnDeThi;
+
         private System.Windows.Forms.Button btnQLCH;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label label4;

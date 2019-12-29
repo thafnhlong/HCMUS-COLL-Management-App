@@ -44,9 +44,6 @@ namespace Main
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var frm = new GiaoVien.Report.Form1();
-            frm.Show();
-
             Activate();
 
             BaseValidator.ClearList();
@@ -60,6 +57,7 @@ namespace Main
             rV1.Target = txtPassword;
             rV1.Pattern = "^[a-z0-9]+$";
             rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
+
         }
 
         private void BtnDangnhap_Click(object sender, EventArgs e)

@@ -23,6 +23,13 @@ namespace GiaoVien
             btnQLHS.Click += BtnQLHS_Click;
             //formQLCH = new FormQuanLyCauHoi();      
             ID = id;
+            btnDeThi.Click += BtnDeThi_Click;
+        }
+
+        private void BtnDeThi_Click(object sender, EventArgs e)
+        {
+            QuanLyDeThiForm f = new QuanLyDeThiForm();
+            f.Show();
         }
 
         private void BtnQLHS_Click(object sender, EventArgs e)

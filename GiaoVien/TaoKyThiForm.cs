@@ -55,10 +55,16 @@ namespace GiaoVien
 
         private void LvDeThi_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (!e.Item.Checked) return;
             int idduoccheck = int.Parse(e.Item.SubItems[1].Text);
-            if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
-                dsDethiDuocCheck.Add(idduoccheck);
+            if (e.Item.Checked)
+            {
+                if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
+                    dsDethiDuocCheck.Add(idduoccheck);
+            }
+            else
+            {
+                dsDethiDuocCheck.Remove(idduoccheck);
+            }
         }
 
         private void LvHocSinh_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -118,7 +124,7 @@ namespace GiaoVien
             ChonDeThi cdt = dsDeThiDuocSelect.Where(i => i.dethiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).FirstOrDefault();
             using(var qltn = Utils.QLTN.getInstance())
             {
-                List<TaiKhoan> dsHocSinh = qltn.TaiKhoans.Where(i => i.permission == 0 && i.LopHoc.caphocid==caphocid).ToList();
+                List<TaiKhoan> dsHocSinh = qltn.TaiKhoans.Where(i => i.permission == 0 && i.LopHoc.caphocid == caphocid).ToList();
                 foreach(TaiKhoan i in dsHocSinh)
                 {
                     ListViewItem lvi = new ListViewItem();
@@ -138,9 +144,9 @@ namespace GiaoVien
             using (var qltn = Utils.QLTN.getInstance())
             {
                 if (cb.SelectedIndex == 0)
-                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi.HasValue == false).ToList();
+                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == true && i.kythiid.HasValue == false).ToList();
                 else
-                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == true).ToList();
+                    dsDeThi = qltn.DeThis.Where(i => i.loaidethi == false && i.kythiid.HasValue == false).ToList();
             }
 
             lvDeThi.Items.Clear();
@@ -187,7 +193,7 @@ namespace GiaoVien
                 qltn.KyThis.InsertOnSubmit(kt);
                 qltn.SubmitChanges();
 
- 
+                kt = qltn.KyThis.ToList().Last();
                 foreach (int i in dsDethiDuocCheck)
                 {
                     //update kythiid cua kythi
@@ -195,7 +201,7 @@ namespace GiaoVien
                     dt.kythiid = kt.id;
                     if (CoNgayThi)
                         dt.ngaythi = dtNgay.Value;
-                    
+                    qltn.SubmitChanges();
 
                     //insert HocSinhThamGia
                     foreach (ChonDeThi n in dsDeThiDuocSelect)
@@ -208,11 +214,10 @@ namespace GiaoVien
                                 hs.hocsinhid = m;
                                 hs.dethiid = i;
                                 qltn.HocSinhThamGias.InsertOnSubmit(hs);
+                                qltn.SubmitChanges();
                             }
                         }
                     }
-
-                    qltn.SubmitChanges();
                 }
             }
             form.loadLVKyThi();
