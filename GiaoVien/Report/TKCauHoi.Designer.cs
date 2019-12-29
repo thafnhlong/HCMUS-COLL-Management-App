@@ -42,7 +42,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(738, 60);
+            this.groupBox1.Size = new System.Drawing.Size(744, 60);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lựa chọn thống kê";
@@ -70,14 +70,14 @@
             this.rvTK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvTK.Location = new System.Drawing.Point(0, 60);
             this.rvTK.Name = "rvTK";
-            this.rvTK.Size = new System.Drawing.Size(738, 437);
+            this.rvTK.Size = new System.Drawing.Size(744, 461);
             this.rvTK.TabIndex = 1;
             // 
             // TKCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 497);
+            this.ClientSize = new System.Drawing.Size(744, 521);
             this.Controls.Add(this.rvTK);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +85,6 @@
             this.Name = "TKCauHoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê câu hỏi";
-            this.Load += new System.EventHandler(this.TKCauHoi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

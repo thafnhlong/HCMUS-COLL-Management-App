@@ -21,6 +21,8 @@ namespace GiaoVien.Report
         {
             InitializeComponent();
             rvTK.LocalReport.ReportPath = "Report/ReportTKCauHoi.rdlc";
+
+            Load += TKCauHoi_Load;
         }
 
         private void TKCauHoi_Load(object sender, EventArgs e)

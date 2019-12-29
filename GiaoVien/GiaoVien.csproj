@@ -106,6 +106,13 @@
     <Compile Include="QuanLyKyThiForm.Designer.cs">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\DSKyThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\DSKyThi.Designer.cs">
+      <DependentUpon>DSKyThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportDSKyThi.cs" />
     <Compile Include="Report\ReportTKCauHoi.cs" />
     <Compile Include="Report\TKCauHoi.cs">
       <SubType>Form</SubType>
@@ -169,6 +176,12 @@
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\DSKyThi.resx">
+      <DependentUpon>DSKyThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportDSKyThi.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportTKCauHoi.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -186,6 +199,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\GiaoVien.Report.ReportDSKyThi.datasource" />
     <None Include="Properties\DataSources\GiaoVien.Report.ReportTKCauHoi.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
