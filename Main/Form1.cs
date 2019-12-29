@@ -43,8 +43,6 @@ namespace Main
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            new HocSinh.Main(1).Show();
-            //
             Activate();
 
             BaseValidator.ClearList();

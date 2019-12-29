@@ -173,9 +173,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\DataSources\GiaoVien.Report.ThongKeHocSinhReport.datasource" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
