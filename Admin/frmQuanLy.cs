@@ -26,7 +26,6 @@ namespace Admin
             btnHuy.Click += (s, e) => {  Close(); };
             FormClosed+= (s, e) => { swapform?.Invoke(null, null); };
             idadmin = id;
-            // dataGridView1.de = View.Details;
         }
 
         private void frmQuanLy_Load(object sender, EventArgs e)
@@ -112,7 +111,7 @@ namespace Admin
                     saveExcelFile = dlg.SelectedPath;
                 }
                 //saveExcelFile = @"C:\Users\Admin\Desktop\abc.xlsx";
-                string filename = "\\ExPort.xlsx";
+                string filename = "\\ExPort.xlsx";  
                 saveExcelFile = saveExcelFile + filename;
                 Excel.Application xlApp = new Excel.Application();
 
@@ -299,10 +298,33 @@ namespace Admin
                     return true;
             }
         }
+        private bool checkpermission(int per, int lhid)
+        {
+            if ((per == 1 || per == 0) && lhid != 0)
+            {
+                return true;
+            }
+            else if (per == 2 && lhid != 0) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void btnImport_Click(object sender, EventArgs e)
         {
+            int c = 0,t=0;
+
+            OpenFileDialog dlg = new OpenFileDialog();   
             Excel.Application x = new Excel.Application();
-            Excel.Workbook workbook = x.Workbooks.Open(@"C:\Users\LENOVO\Desktop\excel_import.xlsx");
+            string duongdan = "";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                duongdan = dlg.FileName;
+            }
+            Excel.Workbook workbook = x.Workbooks.Open(duongdan);
             Excel._Worksheet sheet = workbook.Sheets[1];
             Excel.Range xlRange = sheet.UsedRange;
             DataTable dt = new DataTable();
@@ -312,13 +334,18 @@ namespace Admin
                 if (xlRange.Cells[i, 1] != null && xlRange.Cells[i, 1].Value2 != null)
                 {
                     dgvImport.Rows.Add(xlRange.Cells[i, 1].Text, xlRange.Cells[i, 2].Text, xlRange.Cells[i, 3].Text, xlRange.Cells[i, 4].Text, xlRange.Cells[i, 5].Text, xlRange.Cells[i, 6].Text);
+                    string tentkex = xlRange.Cells[i, 1].Text;
+                    int perex = int.Parse(xlRange.Cells[i, 5].Text);
+                    int lhidex = int.Parse(xlRange.Cells[i, 6].Text);
+                    t++;
                     using (var qltn = Utils.QLTN.getInstance())
                     {
                         string tentktemp = xlRange.Cells[i, 1].Text;
                         var tentk = qltn.TaiKhoans.Where(temp => temp.tentaikhoan == tentktemp).FirstOrDefault();
+
                         if (tentk == null)
                         {
-                            if (int.Parse(xlRange.Cells[i, 5].Text) != 2 && int.Parse(xlRange.Cells[i, 6].Text) != null)
+                            if (checkpermission(perex, lhidex) == true)  
                             { 
                                 TaiKhoan u = new TaiKhoan
                                 {
@@ -331,8 +358,9 @@ namespace Admin
                                 };
                                 qltn.TaiKhoans.InsertOnSubmit(u);
                                 qltn.SubmitChanges();
+                                c++;
                             }
-                            else if(int.Parse(xlRange.Cells[i, 5].Text) == 2 && xlRange.Cells[i, 6].Text == string.Empty)
+                            else if(checkpermission(perex, lhidex) == true)
                             {
                                 TaiKhoan u = new TaiKhoan
                                 {
@@ -344,20 +372,27 @@ namespace Admin
                                 };
                                 qltn.TaiKhoans.InsertOnSubmit(u);
                                 qltn.SubmitChanges();
+                                c++;
                             }
                             else
                             {
-                                MessageBox.Show("thong tin lophocID "+tentk.tentaikhoan+" khong dung");
+                                MessageBox.Show("Thông tin về lớp học ID của tài khoản " + tentkex + " không đúng");
                             }
                         }
                         else if(tentk != null)
                         {
-                            MessageBox.Show("ten tai khoan"+ tentk.tentaikhoan + "da ton tai");
+                            MessageBox.Show("Tên tài khoản " + tentk.tentaikhoan + " đã tồn tại");
                         }
 
                     };
                 }
             }
+            if(c == t)
+            {
+                MessageBox.Show("Thêm thành công tất cả các tài khoản");
+            }
+
+            load(-1);
             workbook.Close();
             x.Quit();
         }

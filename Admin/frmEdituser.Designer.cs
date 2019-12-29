@@ -60,22 +60,22 @@
             // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(257, 326);
-            this.btnhuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnhuy.Location = new System.Drawing.Point(242, 326);
+            this.btnhuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(83, 34);
+            this.btnhuy.Size = new System.Drawing.Size(98, 34);
             this.btnhuy.TabIndex = 56;
-            this.btnhuy.Text = "huy";
+            this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(115, 326);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(83, 34);
+            this.btnSua.Size = new System.Drawing.Size(90, 34);
             this.btnSua.TabIndex = 55;
-            this.btnSua.Text = "sua";
+            this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -83,7 +83,7 @@
             // 
             this.cbblophoc.FormattingEnabled = true;
             this.cbblophoc.Location = new System.Drawing.Point(115, 282);
-            this.cbblophoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbblophoc.Margin = new System.Windows.Forms.Padding(2);
             this.cbblophoc.Name = "cbblophoc";
             this.cbblophoc.Size = new System.Drawing.Size(225, 21);
             this.cbblophoc.TabIndex = 53;
@@ -97,7 +97,7 @@
             "GiaoVien",
             "Admin"});
             this.cbbper.Location = new System.Drawing.Point(115, 240);
-            this.cbbper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbper.Margin = new System.Windows.Forms.Padding(2);
             this.cbbper.Name = "cbbper";
             this.cbbper.Size = new System.Drawing.Size(225, 21);
             this.cbbper.TabIndex = 52;
@@ -106,7 +106,7 @@
             // txtUname
             // 
             this.txtUname.Location = new System.Drawing.Point(116, 159);
-            this.txtUname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUname.Margin = new System.Windows.Forms.Padding(2);
             this.txtUname.Name = "txtUname";
             this.txtUname.Size = new System.Drawing.Size(225, 20);
             this.txtUname.TabIndex = 50;
@@ -114,7 +114,7 @@
             // txtUpassword
             // 
             this.txtUpassword.Location = new System.Drawing.Point(116, 116);
-            this.txtUpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtUpassword.Name = "txtUpassword";
             this.txtUpassword.Size = new System.Drawing.Size(225, 20);
             this.txtUpassword.TabIndex = 49;
@@ -122,7 +122,7 @@
             // txtUusername
             // 
             this.txtUusername.Location = new System.Drawing.Point(116, 75);
-            this.txtUusername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUusername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUusername.Name = "txtUusername";
             this.txtUusername.Size = new System.Drawing.Size(225, 20);
             this.txtUusername.TabIndex = 48;

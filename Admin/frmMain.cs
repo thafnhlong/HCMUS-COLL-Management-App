@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Admin
 {
     public partial class frmMain : Form
@@ -21,20 +22,27 @@ namespace Admin
         {
             InitializeComponent();
             Load += FrmMain_Load;
-            FormClosed += (s, e) => { logout?.Invoke(null, null);  };
-            btnHuy.Click += (s1, e1) => { Close(); };
-            btnLogout.Click+=(s1,e1) => { Close(); };
+            FormClosed += (s, e) => { logout?.Invoke(null, null); };
+            btnHuy.Click += (s1, e1) => {
+                Close();
+            };
+            btnLogout.Click += (s1, e1) => { Close(); };
             idadmin = id;
         }
-        private bool checkConnection()
+        private bool checkConnection(string connectionStringtemp,int chose)
         {
             SqlConnection temp;
-            if (comboBox1.SelectedIndex == 1)
+            if (chose == 0)
             {
-                temp = new SqlConnection("Data Source=" + textBox1.Text + "  ;  Persist Security Info = True; User ID = " + textBox2.Text + "; Password = " + textBox3.Text);
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    temp = new SqlConnection("Data Source=" + connectionStringtemp + "  ;  Persist Security Info = True; User ID = " + textBox2.Text + "; Password = " + textBox3.Text);
+                }
+                else
+                    temp = new SqlConnection("Data Source=" + connectionStringtemp + "  ;  Integrated Security=True");
             }
             else
-                temp = new SqlConnection("Data Source="+textBox1.Text+ "  ;  Integrated Security=True");
+                temp = new SqlConnection(connectionStringtemp);
             try
             {
                 temp.Open();
@@ -58,7 +66,6 @@ namespace Admin
             {
                 temp.Close();
             }
-
         }
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -70,30 +77,29 @@ namespace Admin
             //{
             //    textBox1.Text = server[table.Columns["ServerName"]].ToString();
             //}
-            textBox1.Text = "DESKTOP-TLQ2TVU";
+            textBox1.Text = "DESKTOP-86CHR2F\\SQLEXPRESS1";
             button3.Enabled = false;
-            textBox4.Text = tabControl.Size.ToString() ;
         }
 
         private void btnNgdung_Click(object sender, EventArgs e)
         {
-            if (checkConnection() == true)
+            if (checkConnection(Utils.QLTN.ConnectionString,1) == true)
             {
                 frmQuanLy quanly = new frmQuanLy(idadmin);
                 quanly.swapform += (s, e1) => { Show(); FrmMain_Load(s, e1); };
                 quanly.Show();
-                Hide();
+                Hide();   
             }
             else
             {
-                MessageBox.Show("Nhap sai cac ket noi");
+                MessageBox.Show("Sai kết nối");
             }
 
         }
 
         private void btnBnR_Click(object sender, EventArgs e)
         {
-            if (checkConnection() == true)
+            if (checkConnection(Utils.QLTN.ConnectionString,1) == true)
             {
 
                 frmBnR bnr = new frmBnR(connectionString);
@@ -103,7 +109,7 @@ namespace Admin
             }
             else
             {
-                MessageBox.Show("Nhap sai cac ket noi");
+                MessageBox.Show("Sai kết nối");
             }
         }
 
@@ -111,78 +117,74 @@ namespace Admin
         {
             if (tabControl.SelectedTab == tabConnect)
             {
-                this.Width = 684;
-                this.Height = 417;
-                //Size = new Size(684, 417);
+                this.Width = 472;
+                this.Height = 310;
+                //Size = new Size(684, 417); 472, 310
             }
             else if (tabControl.SelectedTab == tabControls)
             {
-                this.Width = 522;
-                this.Height = 248;
-                //Size = new Size(522, 248);
+                this.Width = 359;
+                this.Height = 187;
+                //Size = new Size(522, 248); 359, 187
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //sql au
+            //sql xac thuc
             if (comboBox1.SelectedIndex == 1)
             {
-                label3.Visible = true;
-                textBox2.Visible = true;
+                label3.Enabled = true;
+                textBox2.Enabled = true;
 
-                label4.Visible = true;
-                textBox3.Visible = true;
-
-                btnHuy.Location = new Point(406, 276);
-                button2.Location = new Point(201, 276);
-                button3.Location = new Point(304, 276);
-                btnLogout.Location = new Point(510, 276);
+                label4.Enabled = true;
+                textBox3.Enabled = true;
 
                 
-
+                //button2.Location = new Point(134, 179);
+                //button3.Location = new Point(203, 179);
+                //btnHuy.Location = new Point(271, 179);
+                //btnLogout.Location = new Point(340, 179);
             }
-            //windows au
+            //windows xac thuc
             else
             {
+                textBox2.Text = "";
+                textBox3.Text = "";
 
-                label3.Visible = false;
-                textBox2.Visible = false;
+                label3.Enabled = false;
+                textBox2.Enabled = false;
 
-                label4.Visible = false;
-                textBox3.Visible = false;
+                label4.Enabled = false;
+                textBox3.Enabled = false;
 
-                btnHuy.Location = new Point(350, 170);
-                button2.Location = new Point(210, 170);
-                button3.Location = new Point(280, 170);
-                btnLogout.Location = new Point(510, 170);
+                //btnHuy.Location = new Point(134, 109);
+                //button2.Location = new Point(203, 109);
+                //button3.Location = new Point(271, 109);
+                //btnLogout.Location = new Point(340, 109);
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Utils.QLTN.ConnectionString = connectionString;
-            MessageBox.Show("da luu ket noi");
+            MessageBox.Show("Đã lưu kết nối");
         }
 
         private void button2_Click(object sender, EventArgs e)
+
         {
-            if (checkConnection() == true)
-            {
+            if (checkConnection(textBox1.Text,0) == true)
+            {  
                 button3.Enabled = true;
-                MessageBox.Show("Ket noi dung");
+                MessageBox.Show("Kết nối đúng");
             }
             else
             {
                 button3.Enabled = false;
-                MessageBox.Show("ket noi sai");
+                MessageBox.Show("Kết nối sai");
             }
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

@@ -245,7 +245,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRegister";
             this.Text = "frmRegister";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegister_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -39,6 +39,12 @@ namespace Main
             //button3.Click += (s, e) => { new Admin.frmMain(3).Show(); };
           
             Load += Form1_Load;
+            FormClosed += Form1_FormClosed;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,12 +56,12 @@ namespace Main
             RegexValidator rV = new RegexValidator();
             rV.Target = txtUsername;
             rV.Pattern = "^[a-z0-9_.-]+$";
-            rV.ErrorMessage = "Username is only [1-9]-[a-z]-[_,.,-]";
+            rV.ErrorMessage = "Tên tài khoản chỉ được trong [1-9]-[a-z]-[_,.,-]";
 
             RegexValidator rV1 = new RegexValidator();
             rV1.Target = txtPassword;
             rV1.Pattern = "^[a-z0-9]+$";
-            rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
+            rV1.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9] and > 3char";
 
         }
 
@@ -65,7 +71,7 @@ namespace Main
 
             if (!BaseValidator.CheckAll())
             {
-                MessageBox.Show("Please check your input");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin bạn nhập");
                 return;
             }
 
@@ -99,7 +105,7 @@ namespace Main
                 }
                 else
                 {
-                    MessageBox.Show("Tai khoan khong ton tai");
+                    MessageBox.Show("Tài khoản không tồn tại");
                 }
             }
         }
