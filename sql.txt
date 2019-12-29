@@ -13,5 +13,5 @@ DeThi_CauHoi(*dethiid,*cauhoiid)
 HocSinhLamBai(*hocsinhid,*dethiid,*cauhoiid,dungsai) : HocSinh <lam> CauHoi - DeThi
 HocSinhThamGia(*hocsinhid,*dethiid,socaudung,thoigianlambai) : HocSinh <thamgia> DeThi
 
-KyThi(*id,tenkythi,ngaybatdau,songay)
+KyThi(*id,tenkythi,ngaybatdau,songay,loaikythi)
 

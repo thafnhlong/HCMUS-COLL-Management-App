@@ -11,6 +11,7 @@
     <AssemblyName>HocSinh</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,65 +37,118 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exam\frmDoExam.cs">
+    <Compile Include="DongGop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exam\frmDoExam.Designer.cs">
-      <DependentUpon>frmDoExam.cs</DependentUpon>
+    <Compile Include="DongGop.Designer.cs">
+      <DependentUpon>DongGop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="InBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="InBangDiem.Designer.cs">
+      <DependentUpon>InBangDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Infomation\frmChangeInfo.cs">
+    <Compile Include="LBThi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Infomation\frmChangeInfo.Designer.cs">
-      <DependentUpon>frmChangeInfo.cs</DependentUpon>
+    <Compile Include="LBThi.Designer.cs">
+      <DependentUpon>LBThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LCMonThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LCMonThi.Designer.cs">
+      <DependentUpon>LCMonThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Exam\frmDoExam.resx">
-      <DependentUpon>frmDoExam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Infomation\frmChangeInfo.resx">
-      <DependentUpon>frmChangeInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+    <Compile Include="Report\ReportBangDiem.cs" />
+    <Compile Include="Report\ReportTKThiThu.cs" />
+    <Compile Include="TBKetQua.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    <Compile Include="TBKetQua.Designer.cs">
+      <DependentUpon>TBKetQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="TKThiThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKThiThu.Designer.cs">
+      <DependentUpon>TKThiThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTCN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTCN.Designer.cs">
+      <DependentUpon>TTCN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemKetQua.Designer.cs">
+      <DependentUpon>XemKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemLichThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemLichThi.Designer.cs">
+      <DependentUpon>XemLichThi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DongGop.resx">
+      <DependentUpon>DongGop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBangDiem.resx">
+      <DependentUpon>InBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBThi.resx">
+      <DependentUpon>LBThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LCMonThi.resx">
+      <DependentUpon>LCMonThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportBangDiem.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTKThiThu.rdlc" />
+    <EmbeddedResource Include="TBKetQua.resx">
+      <DependentUpon>TBKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKThiThu.resx">
+      <DependentUpon>TKThiThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTCN.resx">
+      <DependentUpon>TTCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemKetQua.resx">
+      <DependentUpon>XemKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemLichThi.resx">
+      <DependentUpon>XemLichThi.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\Utils.csproj">
@@ -102,7 +156,9 @@
       <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\DataSources\HocSinh.Report.ReportBangDiem.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
