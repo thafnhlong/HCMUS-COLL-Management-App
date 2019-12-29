@@ -31,13 +31,12 @@ namespace Admin
 
             RegexValidator rVpassword = new RegexValidator();
             rVpassword.Target = txtUpassword;
-            rVpassword.Pattern = "^[a-z0-9]+$";
-            rVpassword.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9]";
+            rVpassword.Pattern = "^[a-z0-9]{3,}$";
+            rVpassword.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9] và > 3 ký tự";
 
-            RegexValidator rVname = new RegexValidator();
+            EmptyValidator rVname = new EmptyValidator();
             rVname.Target = txtUname;
-            rVname.Pattern = "^[a-zA-Z]+$";
-            rVname.ErrorMessage = "Tên người dùng chỉ được trong [a-z]-[A-Z]";
+            rVname.ErrorMessage = "Tên người dùng không được rỗng";
 
             DOBValidator rVdob = new DOBValidator();
             rVdob.Target = dtpDOB;

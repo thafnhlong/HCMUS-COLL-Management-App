@@ -110,6 +110,8 @@ namespace Admin
                 {
                     saveExcelFile = dlg.SelectedPath;
                 }
+                else
+                    return;
                 //saveExcelFile = @"C:\Users\Admin\Desktop\abc.xlsx";
                 string filename = "\\ExPort.xlsx";  
                 saveExcelFile = saveExcelFile + filename;
@@ -324,6 +326,8 @@ namespace Admin
             {
                 duongdan = dlg.FileName;
             }
+            else
+                return;
             Excel.Workbook workbook = x.Workbooks.Open(duongdan);
             Excel._Worksheet sheet = workbook.Sheets[1];
             Excel.Range xlRange = sheet.UsedRange;

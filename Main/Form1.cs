@@ -39,12 +39,6 @@ namespace Main
             //button3.Click += (s, e) => { new Admin.frmMain(3).Show(); };
           
             Load += Form1_Load;
-            FormClosed += Form1_FormClosed;
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,8 +54,8 @@ namespace Main
 
             RegexValidator rV1 = new RegexValidator();
             rV1.Target = txtPassword;
-            rV1.Pattern = "^[a-z0-9]+$";
-            rV1.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9] and > 3char";
+            rV1.Pattern = "^[a-z0-9]{3,}$";
+            rV1.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9] và > 3 ký tự";
 
         }
 
