@@ -37,6 +37,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDuyetCH = new System.Windows.Forms.Button();
+            this.btnThongKeCauHoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnQLHS
@@ -118,11 +119,21 @@
             this.btnDuyetCH.Text = "Duyệt câu hỏi";
             this.btnDuyetCH.UseVisualStyleBackColor = true;
             // 
+            // btnThongKeCauHoi
+            // 
+            this.btnThongKeCauHoi.Location = new System.Drawing.Point(143, 196);
+            this.btnThongKeCauHoi.Name = "btnThongKeCauHoi";
+            this.btnThongKeCauHoi.Size = new System.Drawing.Size(103, 38);
+            this.btnThongKeCauHoi.TabIndex = 16;
+            this.btnThongKeCauHoi.Text = "Thống kê câu hỏi";
+            this.btnThongKeCauHoi.UseVisualStyleBackColor = true;
+            // 
             // FormLuaChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 311);
+            this.Controls.Add(this.btnThongKeCauHoi);
             this.Controls.Add(this.btnQLHS);
             this.Controls.Add(this.btnKyThi);
             this.Controls.Add(this.btnDeThi);
@@ -152,5 +163,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDuyetCH;
+        private System.Windows.Forms.Button btnThongKeCauHoi;
     }
 }

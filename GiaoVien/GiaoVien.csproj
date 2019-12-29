@@ -106,6 +106,13 @@
     <Compile Include="QuanLyKyThiForm.Designer.cs">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\ReportTKCauHoi.cs" />
+    <Compile Include="Report\TKCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\TKCauHoi.Designer.cs">
+      <DependentUpon>TKCauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaKyThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +169,12 @@
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTKCauHoi.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TKCauHoi.resx">
+      <DependentUpon>TKCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuaKyThiForm.resx">
       <DependentUpon>SuaKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,7 +186,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
+    <None Include="Properties\DataSources\GiaoVien.Report.ReportTKCauHoi.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

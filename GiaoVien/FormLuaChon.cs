@@ -25,6 +25,9 @@ namespace GiaoVien
             ID = id;
             btnDeThi.Click += BtnDeThi_Click;
             btnKyThi.Click += BtnKyThi_Click;
+
+            //
+            btnThongKeCauHoi.Click += (s, e) => new Report.TKCauHoi().ShowDialog();
         }
 
         private void BtnKyThi_Click(object sender, EventArgs e)
