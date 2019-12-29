@@ -42,7 +42,7 @@ namespace HocSinh
             Load += LCMonThi_Load;
 
             btnLamBai.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue).ShowDialog(); };
-            btnXemDapAn.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue,true).ShowDialog(); };
+            btnXemDapAn.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue, true).ShowDialog(); };
         }
 
         private void LCMonThi_Load(object sender, EventArgs e)
@@ -122,13 +122,15 @@ namespace HocSinh
             lblThoiGian.DataBindings.Add("Text", bs1, "thoigian");
 
             if (bs1.Count > 0)
+            {
                 btnLamBai.Enabled = true;
+                KyThiChanged(bs, null);
+            }
             else
             {
                 btnLamBai.Enabled = false;
                 btnXemDapAn.Visible = false;
             }
-            KyThiChanged(bs, null);
         }
 
         private void KyThiChanged(object sender, EventArgs e)

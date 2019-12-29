@@ -65,7 +65,7 @@ namespace Admin
             comboBox1.SelectedIndex = 0;
             tabControl.SelectedTab = tabConnect;
             tabControl.Show();
-            DataTable table = SqlDataSourceEnumerator.Instance.GetDataSources();
+            //DataTable table = SqlDataSourceEnumerator.Instance.GetDataSources();
             //foreach (DataRow server in table.Rows)
             //{
             //    textBox1.Text = server[table.Columns["ServerName"]].ToString();
