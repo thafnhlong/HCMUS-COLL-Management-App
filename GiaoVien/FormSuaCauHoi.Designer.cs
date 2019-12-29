@@ -110,7 +110,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nội dung đáp án";
-            this.columnHeader2.Width = 360;
+            this.columnHeader2.Width = 340;
             // 
             // columnHeader1
             // 
@@ -126,6 +126,7 @@
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
             this.lvDapAn.Location = new System.Drawing.Point(476, 60);
+            this.lvDapAn.MultiSelect = false;
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(416, 200);
             this.lvDapAn.TabIndex = 43;

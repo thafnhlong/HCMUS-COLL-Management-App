@@ -25,14 +25,11 @@ namespace GiaoVien
             ID = id;
             Load += FormQuanLyCauHoi_Load;
             // event
-            cbMonHoc.SelectedIndexChanged += CbMonHoc_SelectedIndexChanged;
-            cbCapHoc.SelectedIndexChanged += CbCapHoc_SelectedIndexChanged;
-            cbDoKhoa.SelectedIndexChanged += CbDoKhoa_SelectedIndexChanged;
             lvLoadCauHoi.SelectedIndexChanged += LvLoadCauHoi_SelectedIndexChanged;
             btnThemCauHoi.Click += BtnThemCauHoi_Click;
             btnSuaCauHoi.Click += BtnSuaCauHoi_Click;
-            
-        }  
+
+        }
 
         // event chọn câu hỏi
         private void LvLoadCauHoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,7 +39,7 @@ namespace GiaoVien
                 lvDapAn.Items.Clear();
                 int stt = int.Parse(lvLoadCauHoi.SelectedItems[0].SubItems[0].Text);
                 ch = dsCauHoi[stt - 1];
-                txtNoiDung.Text = ch.noidung;               
+                txtNoiDung.Text = ch.noidung;
                 using (var qltn = Utils.QLTN.getInstance())
                 {
                     dsDapAn = qltn.DapAns.Where(d => d.cauhoiid == ch.id).ToList();
@@ -50,7 +47,7 @@ namespace GiaoVien
                 int STT = 0;
                 string CheckTF;
                 foreach (var item in dsDapAn)
-                {              
+                {
                     ListViewItem lvi = new ListViewItem();
                     lvi.Text = (STT += 1).ToString();
                     lvi.SubItems.Add(item.noidung);
@@ -61,7 +58,7 @@ namespace GiaoVien
                     lvi.SubItems.Add(CheckTF);
                     lvDapAn.Items.Add(lvi);
                 }
-            }           
+            }
         }
 
 
@@ -86,8 +83,8 @@ namespace GiaoVien
         {
             LoadData();
         }
-        
-    
+
+
         // event form close forThemCauHoi
         private void FormThem_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -96,31 +93,10 @@ namespace GiaoVien
 
         // event click thêm câu hỏi
         private void BtnThemCauHoi_Click(object sender, EventArgs e)
-        {       
-            formThem =  new FormThemCauHoi(ID);
+        {
+            formThem = new FormThemCauHoi(ID);
             formThem.Show();
             formThem.FormClosed += FormThem_FormClosed;
-        }
-
-        // event combobox độ khóa
-        private void CbDoKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbMonHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1)
-                LoadData();
-        }
-
-        // event combobox cấp học
-        private void CbCapHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbMonHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1)
-                LoadData();
-        }
-
-        // event combobox môn học
-        private void CbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbMonHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1 && cbCapHoc.SelectedIndex > -1)
-                LoadData();
         }
 
         // event load  
@@ -129,11 +105,24 @@ namespace GiaoVien
             loadMonHoc();
             loadCapHoc();
             loadDoKho();
-            LoadData();
             loadLoaiCauHoi();
+
+            cbbLoaiCH.SelectedIndexChanged += CBB_Changed;
+            cbCapHoc.SelectedIndexChanged += CBB_Changed;
+            cbDoKhoa.SelectedIndexChanged += CBB_Changed;
+            cbMonHoc.SelectedIndexChanged += CBB_Changed;
+
+
+            CBB_Changed(cbMonHoc, null);
         }
 
-        
+        private void CBB_Changed(object sender, EventArgs e)
+        {
+            if ((sender as ComboBox).SelectedIndex > -1)
+                LoadData();
+        }
+
+
         //hàm xử lý
         public void LoadData()
         {
@@ -141,24 +130,17 @@ namespace GiaoVien
             int cbb1 = cbMonHoc.SelectedIndex;
             int cbb2 = cbCapHoc.SelectedIndex;
             int cbb3 = cbDoKhoa.SelectedIndex;
+            int cbb4 = cbbLoaiCH.SelectedIndex;
             using (var qltn = Utils.QLTN.getInstance())
             {
-                if (cbb1 == 0 && cbb2 == 0 && cbb3 == 0)
-                    dsCauHoi = qltn.CauHois.ToList();
-                else if (cbb1 == 0 && cbb2 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.dokho + 1 == cbb3).ToList();
-                else if (cbb2 == 0 && cbb3 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.monhocid == cbb1).ToList();
-                else if (cbb1 == 0 && cbb3 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.caphocid == cbb2).ToList();
-                else if (cbb1 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.caphocid == cbb2 && i.dokho + 1 == cbb3).ToList();
-                else if (cbb2 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.monhocid == cbb1 && i.dokho + 1 == cbb3).ToList();
-                else if (cbb3 == 0)
-                    dsCauHoi = qltn.CauHois.Where(i => i.monhocid == cbb1 && i.caphocid == cbb2).ToList();
-                else
-                    dsCauHoi = qltn.CauHois.Where(i => i.monhocid == cbb1 && i.caphocid == cbb2 && i.dokho + 1 == cbb3).ToList();
+
+                dsCauHoi = qltn.CauHois.Where(
+                    x => (cbb1 > 0 ? x.monhocid == cbb1 : true) &&
+                        (cbb2 > 0 ? x.caphocid == cbb2 : true) &&
+                        (cbb3 > 0 ? x.dokho == cbb3 - 1 : true) &&
+                        (cbb4 < 1 ? !x.trangthai.HasValue : (x.trangthai == true))
+                ).ToList();
+
                 for (int i = 0; i < dsCauHoi.Count(); i++)
                 {
                     ListViewItem lvi = new ListViewItem();
