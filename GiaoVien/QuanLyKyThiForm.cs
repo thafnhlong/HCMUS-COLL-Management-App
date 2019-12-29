@@ -174,6 +174,8 @@ namespace GiaoVien
         public void loadLVKyThi()
         {
             lvKyThi.Items.Clear();
+            lvThiSinh.Items.Clear();
+            lvDethi.Items.Clear();
             using (var qltn = Utils.QLTN.getInstance()) {
                 if (cbbLoaiKyThi.SelectedIndex == 0)
                 {

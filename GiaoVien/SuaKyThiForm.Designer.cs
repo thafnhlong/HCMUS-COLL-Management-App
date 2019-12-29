@@ -61,6 +61,7 @@
             // checkbox
             // 
             this.checkbox.AutoSize = true;
+            this.checkbox.Enabled = false;
             this.checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox.Location = new System.Drawing.Point(16, 284);
             this.checkbox.Name = "checkbox";
