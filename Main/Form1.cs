@@ -19,7 +19,6 @@ namespace Main
     {
         private string tk = "admin";
         private string mk = "123";
-
         SplashScreen.SplashForm splashForm;
 
         public Form1()
@@ -44,6 +43,8 @@ namespace Main
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            new HocSinh.Main(1).Show();
+            //
             Activate();
 
             BaseValidator.ClearList();
@@ -72,7 +73,10 @@ namespace Main
 
             if (txtUsername.Text == tk && txtPassword.Text == mk)
             {
-                new Admin.frmMain(3).Show();
+                Admin.frmMain u = new Admin.frmMain(0);
+                u.logout += (s1, e1) => { Show();Form1_Load(s1,e1);};
+                u.Show();
+                Hide();
             }
             else
             {
@@ -81,7 +85,7 @@ namespace Main
                 {
                     if (tk[1] == 0)
                     {
-                        new HocSinh.frmMain(tk[0]).Show();
+                        new HocSinh.Main(tk[0]).Show();
                     }
                     else if (tk[1] == 1)
                     {
@@ -89,7 +93,10 @@ namespace Main
                     }
                     else
                     {
-                        new Admin.frmMain(tk[0]).Show();
+                        Admin.frmMain u = new Admin.frmMain(tk[0]);
+                        u.logout += (s1, e1) => { Show(); Form1_Load(s1, e1); };
+                        u.Show();
+                        Hide();
                     }
                 }
                 else

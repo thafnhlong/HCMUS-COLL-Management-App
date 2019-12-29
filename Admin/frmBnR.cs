@@ -16,20 +16,18 @@ namespace Admin
         public EventHandler swampform;
         public string connectionStr;
         SqlConnection con;
-        public frmBnR()
+        public frmBnR(string connectionstring)
         {
+            connectionStr = connectionstring;
             InitializeComponent();
-            btnhuy.Click += (s, e1) => { swampform?.Invoke(null, null);Close(); };
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            btnhuy.Click += (s, e1) => { Close(); };
+            FormClosed+= (s, e1) => { swampform?.Invoke(null, null); };
 
         }
 
         private void FrmBnR_Load(object sender, EventArgs e)
         {
-            connectionStr = Utils.QLTN.ConnectionString;
+            MessageBox.Show(connectionStr);
             con = new SqlConnection(connectionStr);
         }
 
@@ -49,7 +47,7 @@ namespace Admin
             {
                 if(textBox1.Text==string.Empty)
                 {
-                    MessageBox.Show("nhap duong dan");
+                    MessageBox.Show("chua nhap duong dan");
                 }
                 else
                 {
@@ -94,18 +92,9 @@ namespace Admin
             }
             try
             {
-                string sqlStmt2 = string.Format("ALTER DATABASE [LTUDQL] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
-                SqlCommand bu2 = new SqlCommand(sqlStmt2, con);
-                bu2.ExecuteNonQuery();
-
                 string sqlStmt3 = "USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK='" + textBox2.Text + "'WITH REPLACE;";
                 SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
                 bu3.ExecuteNonQuery();
-
-                string sqlStmt4 = string.Format("ALTER DATABASE [LTUDQL] SET MULTI_USER");
-                SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
-                bu4.ExecuteNonQuery();
-
                 MessageBox.Show("Phuc hoi du lieu thanh cong");
                 con.Close();
 
