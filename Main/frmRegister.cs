@@ -25,27 +25,25 @@ namespace Main
             RegexValidator rVusername = new RegexValidator();
             rVusername.Target = txtReUsername;
             rVusername.Pattern = "^[a-z0-9_.-]+$";
-            rVusername.ErrorMessage = "Username is only [1-9]-[a-z]-[_,.,-]";
+            rVusername.ErrorMessage = "Tên tài khoản chỉ được trong [1-9]-[a-z]-[_,.,-]";
 
             RegexValidator rVpassword = new RegexValidator();
             rVpassword.Target = txtRePassword;
             rVpassword.Pattern = "^[a-z0-9]+$";
-            rVpassword.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
+            rVpassword.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9]";
 
             RegexValidator rVname = new RegexValidator();
             rVname.Target = txtReName;
             rVname.Pattern = "^[a-zA-Z]+$";
-            rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
+            rVname.ErrorMessage = "Tên người dùng chỉ được trong [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
             rVdob.Target = dtpDOB;
-            rVdob.ErrorMessage = "Date is invalidate";
+            rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
             btnDangki.Click += BtnDangki_Click;
-            btnHuy.Click += (s, e) => { swapForm?.Invoke(null, null); Close(); };
-
-
-
+            btnHuy.Click += (s, e) => {  Close(); };
+            FormClosed += (s, e) => { swapForm?.Invoke(null, null); };
         }
         public bool checkname(string name)
         {
@@ -69,12 +67,12 @@ namespace Main
 
             if (!BaseValidator.CheckAll() || cbbPer.SelectedIndex ==-1)
             {
-                MessageBox.Show("Please check your input");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin bạn nhập");
                 return;
             }
             if (checkname(txtReUsername.Text) == false)
             {
-                MessageBox.Show("Ten tai khoan da ton tai");
+                MessageBox.Show("Tên tài khoản đã được sử dụng");
                 return;
             }
             else
@@ -92,7 +90,7 @@ namespace Main
                             permission = cbbPer.SelectedIndex,
                             lophocid = int.Parse(cbbLophoc.SelectedValue.ToString())
                         };
-                        MessageBox.Show("Them thanh cong");
+                        MessageBox.Show("Đăng kí thành công");
                         qltn.TaiKhoans.InsertOnSubmit(u);
                         qltn.SubmitChanges();
 
@@ -111,7 +109,7 @@ namespace Main
                             ngaysinh = dtpDOB.Value,
                             permission = int.Parse(cbbPer.SelectedIndex.ToString())
                         };
-                        MessageBox.Show("Them thanh cong");
+                        MessageBox.Show("Đăng kí thành công");
                         qltn.TaiKhoans.InsertOnSubmit(u);
                         qltn.SubmitChanges();
                     }
@@ -132,10 +130,6 @@ namespace Main
             }
         }
 
-        private void frmRegister_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
 
         private void CbbPer_SelectedIndexChanged(object sender, EventArgs e)
         {

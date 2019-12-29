@@ -27,7 +27,6 @@ namespace Admin
 
         private void FrmBnR_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(connectionStr);
             con = new SqlConnection(connectionStr);
         }
 
@@ -47,7 +46,7 @@ namespace Admin
             {
                 if(textBox1.Text==string.Empty)
                 {
-                    MessageBox.Show("chua nhap duong dan");
+                    MessageBox.Show("Chưa nhập đường dẫn");
                 }
                 else
                 {
@@ -61,7 +60,7 @@ namespace Admin
                         }
                         command.ExecuteNonQuery();
                         con.Close();
-                        MessageBox.Show("Sao luu du lieu thanh cong");
+                        MessageBox.Show("Sao lưu dữ liệu thành công");
                         btnbackup.Enabled = false;
                     }
                 }
@@ -92,10 +91,21 @@ namespace Admin
             }
             try
             {
-                string sqlStmt3 = "USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK='" + textBox2.Text + "'WITH REPLACE;";
+                string sqlstmt2 = "USE MASTER ALTER DATABASE [LTUDQL] SET Single_User WITH Rollback Immediate";
+                SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
+                bu2.ExecuteNonQuery();
+
+
+                string sqlStmt3 = "USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'" + textBox2.Text + "'WITH REPLACE;";
                 SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
                 bu3.ExecuteNonQuery();
-                MessageBox.Show("Phuc hoi du lieu thanh cong");
+
+                string sqlStmt4 = "USE MASTER ALTER DATABASE [LTUDQL] SET Multi_User";
+                SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
+                bu4.ExecuteNonQuery();
+
+
+                MessageBox.Show("Phục hồi dữ liệu thành công");
                 con.Close();
 
             }

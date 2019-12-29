@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbbPer = new System.Windows.Forms.ComboBox();
             this.btnadduser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEdituser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
@@ -59,18 +59,20 @@
             this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDS.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvDS.Location = new System.Drawing.Point(0, 0);
+            this.dgvDS.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDS.Name = "dgvDS";
             this.dgvDS.RowTemplate.Height = 28;
             this.dgvDS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDS.Size = new System.Drawing.Size(994, 657);
+            this.dgvDS.Size = new System.Drawing.Size(663, 424);
             this.dgvDS.StandardTab = true;
             this.dgvDS.TabIndex = 0;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(58, 352);
+            this.btnHuy.Location = new System.Drawing.Point(26, 229);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(164, 55);
+            this.btnHuy.Size = new System.Drawing.Size(122, 36);
             this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -78,11 +80,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 112);
+            this.label2.Location = new System.Drawing.Point(23, 73);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Loại người dùng";
+            this.label2.Text = "Chọn quyền tài khoản :";
             // 
             // cbbPer
             // 
@@ -92,64 +95,71 @@
             "GiaoVien",
             "Admin",
             "TatCa"});
-            this.cbbPer.Location = new System.Drawing.Point(39, 158);
+            this.cbbPer.Location = new System.Drawing.Point(26, 103);
+            this.cbbPer.Margin = new System.Windows.Forms.Padding(2);
             this.cbbPer.Name = "cbbPer";
-            this.cbbPer.Size = new System.Drawing.Size(164, 28);
+            this.cbbPer.Size = new System.Drawing.Size(122, 21);
             this.cbbPer.TabIndex = 4;
             this.cbbPer.SelectedIndexChanged += new System.EventHandler(this.cbbPer_SelectedIndexChanged);
             // 
             // btnadduser
             // 
-            this.btnadduser.Location = new System.Drawing.Point(58, 38);
+            this.btnadduser.Location = new System.Drawing.Point(26, 25);
+            this.btnadduser.Margin = new System.Windows.Forms.Padding(2);
             this.btnadduser.Name = "btnadduser";
-            this.btnadduser.Size = new System.Drawing.Size(164, 55);
+            this.btnadduser.Size = new System.Drawing.Size(122, 36);
             this.btnadduser.TabIndex = 6;
-            this.btnadduser.Text = "them nguoi dung";
+            this.btnadduser.Text = "Thêm tài khoản";
             this.btnadduser.UseVisualStyleBackColor = true;
             this.btnadduser.Click += new System.EventHandler(this.btnadduser_Click);
             // 
-            // button1
+            // btnEdituser
             // 
-            this.button1.Location = new System.Drawing.Point(58, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 55);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "sua nguoi dung";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnEdituser.Location = new System.Drawing.Point(26, 76);
+            this.btnEdituser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdituser.Name = "btnEdituser";
+            this.btnEdituser.Size = new System.Drawing.Size(122, 36);
+            this.btnEdituser.TabIndex = 7;
+            this.btnEdituser.Text = "Cập nhật thông tin tài khoản";
+            this.btnEdituser.UseVisualStyleBackColor = true;
+            this.btnEdituser.Click += new System.EventHandler(this.Button1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnImport);
             this.groupBox1.Controls.Add(this.btnExport);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnEdituser);
             this.groupBox1.Controls.Add(this.btnadduser);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(994, 208);
+            this.groupBox1.Location = new System.Drawing.Point(663, 132);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 449);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(181, 292);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thao tac";
+            this.groupBox1.Text = "Thao tác";
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(58, 202);
+            this.btnImport.Location = new System.Drawing.Point(26, 126);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(2);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(164, 55);
+            this.btnImport.Size = new System.Drawing.Size(122, 36);
             this.btnImport.TabIndex = 9;
-            this.btnImport.Text = "Nhap tu exel";
+            this.btnImport.Text = "Thêm danh sách tài khoản từ excel";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(58, 275);
+            this.btnExport.Location = new System.Drawing.Point(26, 177);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(164, 55);
+            this.btnExport.Size = new System.Drawing.Size(122, 36);
             this.btnExport.TabIndex = 8;
-            this.btnExport.Text = "xuat ra excel";
+            this.btnExport.Text = "Xuất danh sách tài khoản ra excel";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -160,30 +170,34 @@
             this.groupBox2.Controls.Add(this.cbbPer);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(994, 0);
+            this.groupBox2.Location = new System.Drawing.Point(663, 0);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 202);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(181, 131);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thong tin";
+            this.groupBox2.Text = "Thông tin tài khoản";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 58);
+            this.label3.Location = new System.Drawing.Point(113, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "label3";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 58);
+            this.label1.Location = new System.Drawing.Point(23, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Tai Khoan: ";
+            this.label1.Text = "Tên tài khoản:";
             // 
             // dgvImport
             // 
@@ -195,10 +209,11 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgvImport.Location = new System.Drawing.Point(12, 403);
+            this.dgvImport.Location = new System.Drawing.Point(582, 381);
+            this.dgvImport.Margin = new System.Windows.Forms.Padding(2);
             this.dgvImport.Name = "dgvImport";
             this.dgvImport.RowTemplate.Height = 28;
-            this.dgvImport.Size = new System.Drawing.Size(741, 254);
+            this.dgvImport.Size = new System.Drawing.Size(81, 35);
             this.dgvImport.TabIndex = 10;
             this.dgvImport.Visible = false;
             // 
@@ -234,13 +249,14 @@
             // 
             // frmQuanLy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 657);
+            this.ClientSize = new System.Drawing.Size(844, 424);
             this.Controls.Add(this.dgvImport);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvDS);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLy";
             this.Text = "frmQuanLy";
             this.Load += new System.EventHandler(this.frmQuanLy_Load);
@@ -260,7 +276,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbPer;
         private System.Windows.Forms.Button btnadduser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEdituser;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;

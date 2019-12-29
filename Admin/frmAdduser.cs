@@ -26,30 +26,23 @@ namespace Admin
             RegexValidator rVusername = new RegexValidator();
             rVusername.Target = txtNusername;
             rVusername.Pattern = "^[a-z0-9_.-]+$";
-            rVusername.ErrorMessage = "Username is only [1-9]-[a-z]-[_,.,-]";
+            rVusername.ErrorMessage = "Tên tài khoản chỉ được trong [1-9]-[a-z]-[_,.,-]";
 
             RegexValidator rVpassword = new RegexValidator();
             rVpassword.Target = txtNpassword;
             rVpassword.Pattern = "^[a-z0-9]+$";
-            rVpassword.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
+            rVpassword.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9]";
 
             RegexValidator rVname = new RegexValidator();
             rVname.Target = txtNname;
             rVname.Pattern = "^[a-zA-Z]+$";
-            rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
+            rVname.ErrorMessage = "Tên người dùng chỉ được trong [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
             rVdob.Target = dtpDOB;
-            rVdob.ErrorMessage = "Date is invalidate";
+            rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
         }
-
-
-        private void frmAdduser_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         public bool checkname(string name)
         {
             using (var qltn = Utils.QLTN.getInstance())
@@ -71,12 +64,12 @@ namespace Admin
             ValidateChildren();
             if (!BaseValidator.CheckAll() || cbbper.SelectedIndex == -1)
             {
-                MessageBox.Show("Please check your input");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin bạn nhập");
                 return;
             }
             if (checkname(txtNusername.Text) == false)
             {
-                MessageBox.Show("Ten tai khoan da ton tai");
+                MessageBox.Show("Tên tài khoản đã tồn tại");
                 return;
             }
 
@@ -93,7 +86,7 @@ namespace Admin
                         permission = cbbper.SelectedIndex,
                         lophocid = int.Parse(cbblophoc.SelectedValue.ToString())
                     };
-                    MessageBox.Show("them thanh cong");
+                    MessageBox.Show("Thêm thành công");
                     qltn.TaiKhoans.InsertOnSubmit(u);
                     qltn.SubmitChanges();
 
@@ -112,10 +105,12 @@ namespace Admin
                         ngaysinh = dtpDOB.Value,
                         permission = int.Parse(cbbper.SelectedIndex.ToString())
                     };
+                    MessageBox.Show("Thêm thành công");
                     qltn.TaiKhoans.InsertOnSubmit(u);
                     qltn.SubmitChanges();
                 }
             }
+            Close();
         }
 
         private void Cbbper_SelectedIndexChanged(object sender, EventArgs e)

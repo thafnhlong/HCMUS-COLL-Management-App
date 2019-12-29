@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.btnhuy = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.cbbkhoi = new System.Windows.Forms.ComboBox();
@@ -45,7 +46,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,24 +76,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin";
             // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(115, 202);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(225, 20);
+            this.dtpDOB.TabIndex = 41;
+            // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(257, 371);
-            this.btnhuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnhuy.Location = new System.Drawing.Point(246, 371);
+            this.btnhuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(83, 34);
+            this.btnhuy.Size = new System.Drawing.Size(94, 34);
             this.btnhuy.TabIndex = 40;
-            this.btnhuy.Text = "huy";
+            this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
             // 
             // btnthem
             // 
             this.btnthem.Location = new System.Drawing.Point(115, 371);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnthem.Margin = new System.Windows.Forms.Padding(2);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(83, 34);
+            this.btnthem.Size = new System.Drawing.Size(89, 34);
             this.btnthem.TabIndex = 39;
-            this.btnthem.Text = "them";
+            this.btnthem.Text = "Thêm tài khoản";
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.Btnthem_Click);
             // 
@@ -101,7 +108,7 @@
             // 
             this.cbbkhoi.FormattingEnabled = true;
             this.cbbkhoi.Location = new System.Drawing.Point(115, 286);
-            this.cbbkhoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbkhoi.Margin = new System.Windows.Forms.Padding(2);
             this.cbbkhoi.Name = "cbbkhoi";
             this.cbbkhoi.Size = new System.Drawing.Size(225, 21);
             this.cbbkhoi.TabIndex = 38;
@@ -112,7 +119,7 @@
             // 
             this.cbblophoc.FormattingEnabled = true;
             this.cbblophoc.Location = new System.Drawing.Point(115, 328);
-            this.cbblophoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbblophoc.Margin = new System.Windows.Forms.Padding(2);
             this.cbblophoc.Name = "cbblophoc";
             this.cbblophoc.Size = new System.Drawing.Size(225, 21);
             this.cbblophoc.TabIndex = 37;
@@ -126,7 +133,7 @@
             "GiaoVien",
             "Admin"});
             this.cbbper.Location = new System.Drawing.Point(115, 242);
-            this.cbbper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbper.Margin = new System.Windows.Forms.Padding(2);
             this.cbbper.Name = "cbbper";
             this.cbbper.Size = new System.Drawing.Size(225, 21);
             this.cbbper.TabIndex = 36;
@@ -135,7 +142,7 @@
             // txtNname
             // 
             this.txtNname.Location = new System.Drawing.Point(115, 153);
-            this.txtNname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNname.Margin = new System.Windows.Forms.Padding(2);
             this.txtNname.Name = "txtNname";
             this.txtNname.Size = new System.Drawing.Size(225, 20);
             this.txtNname.TabIndex = 34;
@@ -143,7 +150,7 @@
             // txtNpassword
             // 
             this.txtNpassword.Location = new System.Drawing.Point(115, 110);
-            this.txtNpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtNpassword.Name = "txtNpassword";
             this.txtNpassword.Size = new System.Drawing.Size(225, 20);
             this.txtNpassword.TabIndex = 33;
@@ -151,7 +158,7 @@
             // txtNusername
             // 
             this.txtNusername.Location = new System.Drawing.Point(115, 69);
-            this.txtNusername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNusername.Margin = new System.Windows.Forms.Padding(2);
             this.txtNusername.Name = "txtNusername";
             this.txtNusername.Size = new System.Drawing.Size(225, 20);
             this.txtNusername.TabIndex = 32;
@@ -239,23 +246,15 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Tên tài khoản";
             // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Location = new System.Drawing.Point(115, 202);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(225, 20);
-            this.dtpDOB.TabIndex = 41;
-            // 
             // frmAdduser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 414);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdduser";
             this.Text = "frmAdduser";
-            this.Load += new System.EventHandler(this.frmAdduser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

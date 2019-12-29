@@ -27,21 +27,21 @@ namespace Admin
             RegexValidator rVusername = new RegexValidator();
             rVusername.Target = txtUusername;
             rVusername.Pattern = "^[a-z0-9_.-]+$";
-            rVusername.ErrorMessage = "Username is only [1-9]-[a-z]-[_,.,-]";
+            rVusername.ErrorMessage = "Tên tài khoản chỉ được trong [1-9]-[a-z]-[_,.,-]";
 
             RegexValidator rVpassword = new RegexValidator();
             rVpassword.Target = txtUpassword;
             rVpassword.Pattern = "^[a-z0-9]+$";
-            rVpassword.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
+            rVpassword.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9]";
 
             RegexValidator rVname = new RegexValidator();
             rVname.Target = txtUname;
             rVname.Pattern = "^[a-zA-Z]+$";
-            rVname.ErrorMessage = "Name is only [a-z]-[A-Z]";
+            rVname.ErrorMessage = "Tên người dùng chỉ được trong [a-z]-[A-Z]";
 
             DOBValidator rVdob = new DOBValidator();
             rVdob.Target = dtpDOB;
-            rVdob.ErrorMessage = "Date is invalidate";
+            rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
             Load += FrmEdituser_Load;
 
@@ -180,7 +180,7 @@ namespace Admin
                 }
                 else { hs.lophocid = null; }
                 qltn.SubmitChanges();
-                MessageBox.Show("cap nhat thong tin thanh cong");
+                MessageBox.Show("Cập nhật thông tin thành công");
             }
             Close();
 

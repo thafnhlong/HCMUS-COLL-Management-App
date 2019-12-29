@@ -51,7 +51,8 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 20);
-            this.textBox1.TabIndex = 0;            // 
+            this.textBox1.TabIndex = 0;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -71,7 +72,7 @@
             this.btnBbackup.Location = new System.Drawing.Point(346, 28);
             this.btnBbackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnBbackup.Name = "btnBbackup";
-            this.btnBbackup.Size = new System.Drawing.Size(77, 21);
+            this.btnBbackup.Size = new System.Drawing.Size(77, 22);
             this.btnBbackup.TabIndex = 3;
             this.btnBbackup.Text = "Chọn";
             this.btnBbackup.UseVisualStyleBackColor = true;
@@ -83,7 +84,7 @@
             this.btnbackup.Location = new System.Drawing.Point(427, 28);
             this.btnbackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnbackup.Name = "btnbackup";
-            this.btnbackup.Size = new System.Drawing.Size(77, 21);
+            this.btnbackup.Size = new System.Drawing.Size(77, 22);
             this.btnbackup.TabIndex = 4;
             this.btnbackup.Text = "Sao lưu";
             this.btnbackup.UseVisualStyleBackColor = true;
@@ -95,7 +96,7 @@
             this.btnRestore.Location = new System.Drawing.Point(427, 42);
             this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(77, 20);
+            this.btnRestore.Size = new System.Drawing.Size(77, 22);
             this.btnRestore.TabIndex = 6;
             this.btnRestore.Text = "Phục hồi";
             this.btnRestore.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@
             this.btnBrestore.Location = new System.Drawing.Point(346, 42);
             this.btnBrestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrestore.Name = "btnBrestore";
-            this.btnBrestore.Size = new System.Drawing.Size(77, 20);
+            this.btnBrestore.Size = new System.Drawing.Size(77, 22);
             this.btnBrestore.TabIndex = 5;
             this.btnBrestore.Text = "Chọn";
             this.btnBrestore.UseVisualStyleBackColor = true;
@@ -114,12 +115,12 @@
             // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(195, 75);
+            this.btnhuy.Location = new System.Drawing.Point(230, 73);
             this.btnhuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(77, 25);
+            this.btnhuy.Size = new System.Drawing.Size(98, 32);
             this.btnhuy.TabIndex = 7;
-            this.btnhuy.Text = "huy";
+            this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -131,7 +132,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(529, 95);
+            this.groupBox1.Size = new System.Drawing.Size(529, 79);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sao lưu dữ liệu";
@@ -154,9 +155,9 @@
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.btnhuy);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 95);
+            this.groupBox2.Location = new System.Drawing.Point(0, 79);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 112);
+            this.groupBox2.Size = new System.Drawing.Size(529, 110);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Phục hồi dữ liêu";
@@ -175,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 207);
+            this.ClientSize = new System.Drawing.Size(529, 189);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
