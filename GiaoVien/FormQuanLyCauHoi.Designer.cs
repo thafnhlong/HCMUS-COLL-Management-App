@@ -41,6 +41,15 @@
             this.btnThemCauHoi = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbLoaiCH = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNoiDung = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lvDapAn = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvLoadCauHoi
@@ -159,11 +168,90 @@
             this.cbbLoaiCH.Size = new System.Drawing.Size(121, 21);
             this.cbbLoaiCH.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(839, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Nội dung câu hỏi";
+            // 
+            // txtNoiDung
+            // 
+            this.txtNoiDung.Location = new System.Drawing.Point(861, 80);
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.Size = new System.Drawing.Size(368, 79);
+            this.txtNoiDung.TabIndex = 16;
+            this.txtNoiDung.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(839, 185);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Đáp án";
+            // 
+            // lvDapAn
+            // 
+            this.lvDapAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lvDapAn.GridLines = true;
+            this.lvDapAn.HideSelection = false;
+            this.lvDapAn.Location = new System.Drawing.Point(861, 213);
+            this.lvDapAn.Name = "lvDapAn";
+            this.lvDapAn.Size = new System.Drawing.Size(372, 149);
+            this.lvDapAn.TabIndex = 18;
+            this.lvDapAn.UseCompatibleStateImageBehavior = false;
+            this.lvDapAn.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đáp án";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Nội dung đáp án";
+            this.columnHeader4.Width = 200;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Đúng/Sai";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(277, 364);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(93, 38);
+            this.btnImport.TabIndex = 7;
+            this.btnImport.Text = "Import ";
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(376, 364);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(93, 38);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
             // FormQuanLyCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 416);
+            this.ClientSize = new System.Drawing.Size(1241, 436);
+            this.Controls.Add(this.lvDapAn);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtNoiDung);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lvLoadCauHoi);
             this.Controls.Add(this.cbbLoaiCH);
             this.Controls.Add(this.cbDoKhoa);
@@ -173,6 +261,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbMonHoc);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnSuaCauHoi);
             this.Controls.Add(this.btnThemCauHoi);
             this.Name = "FormQuanLyCauHoi";
@@ -197,5 +287,14 @@
         private System.Windows.Forms.Button btnThemCauHoi;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbLoaiCH;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox txtNoiDung;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListView lvDapAn;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnExport;
     }
 }

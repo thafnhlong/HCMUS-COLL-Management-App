@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnQLHS = new System.Windows.Forms.Button();
             this.btnKyThi = new System.Windows.Forms.Button();
             this.btnDeThi = new System.Windows.Forms.Button();
             this.btnQLCH = new System.Windows.Forms.Button();
@@ -37,16 +37,17 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDuyetCH = new System.Windows.Forms.Button();
+            this.btnThongKeCauHoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button4
+            // btnQLHS
             // 
-            this.button4.Location = new System.Drawing.Point(143, 138);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 38);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Quản lý học sinh";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnQLHS.Location = new System.Drawing.Point(143, 138);
+            this.btnQLHS.Name = "btnQLHS";
+            this.btnQLHS.Size = new System.Drawing.Size(103, 38);
+            this.btnQLHS.TabIndex = 12;
+            this.btnQLHS.Text = "Quản lý học sinh";
+            this.btnQLHS.UseVisualStyleBackColor = true;
             // 
             // btnKyThi
             // 
@@ -118,12 +119,22 @@
             this.btnDuyetCH.Text = "Duyệt câu hỏi";
             this.btnDuyetCH.UseVisualStyleBackColor = true;
             // 
+            // btnThongKeCauHoi
+            // 
+            this.btnThongKeCauHoi.Location = new System.Drawing.Point(143, 196);
+            this.btnThongKeCauHoi.Name = "btnThongKeCauHoi";
+            this.btnThongKeCauHoi.Size = new System.Drawing.Size(103, 38);
+            this.btnThongKeCauHoi.TabIndex = 16;
+            this.btnThongKeCauHoi.Text = "Thống kê câu hỏi";
+            this.btnThongKeCauHoi.UseVisualStyleBackColor = true;
+            // 
             // FormLuaChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 311);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnThongKeCauHoi);
+            this.Controls.Add(this.btnQLHS);
             this.Controls.Add(this.btnKyThi);
             this.Controls.Add(this.btnDeThi);
             this.Controls.Add(this.btnDuyetCH);
@@ -141,14 +152,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
+
+        private System.Windows.Forms.Button btnQLHS;
         private System.Windows.Forms.Button btnKyThi;
         private System.Windows.Forms.Button btnDeThi;
+
         private System.Windows.Forms.Button btnQLCH;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDuyetCH;
+        private System.Windows.Forms.Button btnThongKeCauHoi;
     }
 }

@@ -19,7 +19,6 @@ namespace Main
     {
         private string tk = "admin";
         private string mk = "123";
-
         SplashScreen.SplashForm splashForm;
 
         public Form1()
@@ -58,9 +57,6 @@ namespace Main
             rV1.Pattern = "^[a-z0-9]+$";
             rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
 
-
-            QuanLyKyThiForm f = new QuanLyKyThiForm();
-            f.Show();
         }
 
         private void BtnDangnhap_Click(object sender, EventArgs e)
@@ -75,7 +71,10 @@ namespace Main
 
             if (txtUsername.Text == tk && txtPassword.Text == mk)
             {
-                new Admin.frmMain(3).Show();
+                Admin.frmMain u = new Admin.frmMain(0);
+                u.logout += (s1, e1) => { Show();Form1_Load(s1,e1);};
+                u.Show();
+                Hide();
             }
             else
             {
@@ -84,7 +83,7 @@ namespace Main
                 {
                     if (tk[1] == 0)
                     {
-                        new HocSinh.frmMain(tk[0]).Show();
+                        new HocSinh.Main(tk[0]).Show();
                     }
                     else if (tk[1] == 1)
                     {
@@ -92,7 +91,10 @@ namespace Main
                     }
                     else
                     {
-                        new Admin.frmMain(tk[0]).Show();
+                        Admin.frmMain u = new Admin.frmMain(tk[0]);
+                        u.logout += (s1, e1) => { Show(); Form1_Load(s1, e1); };
+                        u.Show();
+                        Hide();
                     }
                 }
                 else

@@ -24,21 +24,7 @@ namespace GiaoVien
             btnXoa.Click += BtnXoa_Click;
             btnSua.Click += BtnSua_Click;
             lvDapAn.SelectedIndexChanged += LvDapAn_SelectedIndexChanged;
-            cbbLoaiCH.SelectedIndexChanged += CbbLoaiCH_SelectedIndexChanged;
             lvDapAn.ItemChecked += LvDapAn_ItemChecked;
-        }
-
-        private void CbbLoaiCH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbLoaiCH.SelectedIndex == 0)
-            {
-                txtGoiY.Text = "";
-                txtGoiY.Enabled = false;
-            }
-            else
-            {
-                txtGoiY.Enabled = true;
-            }
         }
 
         bool KiemTraLVDapAn()
@@ -145,9 +131,8 @@ namespace GiaoVien
             string strND = txtNoiDung.Text.ToString();
             int MonHoc = cbbMonHoc.SelectedIndex + 1;
             int CapHoc = cbbCapHoc.SelectedIndex + 1;
-            int DoKho = 1;
             bool LoaiCH = cbbLoaiCH.SelectedIndex == 0;
-            DoKho = cbbDoKho.SelectedIndex + 1;
+            int DoKho = cbbDoKho.SelectedIndex + 1;
             string strGopY = txtGoiY.Text.ToString();
             using (var qltn = Utils.QLTN.getInstance())
             {
@@ -175,9 +160,7 @@ namespace GiaoVien
                 }
                 qltn.SubmitChanges();
                 MessageBox.Show("Ban đã thêm câu hỏi thành công");
-                FormQuanLyCauHoi formQL = new FormQuanLyCauHoi(ID);
                 Close();
-                formQL.LoadData();
             }
         }   
 
