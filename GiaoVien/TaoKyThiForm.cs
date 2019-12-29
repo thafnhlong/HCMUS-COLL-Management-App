@@ -29,7 +29,7 @@ namespace GiaoVien
         {
             InitializeComponent();
             form = f;
-
+            
             Load += TaoKyThiForm_Load;
             btnTao.Click += BtnTao_Click;
             cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
@@ -58,8 +58,7 @@ namespace GiaoVien
             int idduoccheck = int.Parse(e.Item.SubItems[1].Text);
             if (e.Item.Checked)
             {
-                if (dsDethiDuocCheck.IndexOf(idduoccheck) == -1)
-                    dsDethiDuocCheck.Add(idduoccheck);
+                dsDethiDuocCheck.Add(idduoccheck);
             }
             else
             {
@@ -275,7 +274,8 @@ namespace GiaoVien
         {
             this.dethiid = dethiid;
         }
-        public int dethiid = -1;
+        public bool dcCheck;
+        public int dethiid;
         public List<int> hsDuocChon = new List<int>();
     }
 }

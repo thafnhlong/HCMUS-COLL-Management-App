@@ -18,6 +18,7 @@ namespace GiaoVien
         string[] StrKyThi = { "Tất cả" ,"Thi thật", "Thi thử/Ôn tập" };
         string[] StrCapHoc = { "Khối 10", "Khối 11", "Khối 12" };
         string[] StrMonHoc = { "Toán", "Lý", "Hóa" };
+        static public int kythiid;
         public QuanLyKyThiForm()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace GiaoVien
         {
             if (lvKyThi.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn đề thi");
+                MessageBox.Show("Vui lòng chọn kỳ thi");
                 return;
             }
             using (var qltn = Utils.QLTN.getInstance())
@@ -52,7 +53,7 @@ namespace GiaoVien
                     }
                 }
             }
-            SuaKyThiForm f = new SuaKyThiForm(int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text));
+            SuaKyThiForm f = new SuaKyThiForm(this,kythiid);
             f.Show();
         }
 
@@ -103,6 +104,8 @@ namespace GiaoVien
             {
                 lvDethi.Items.Clear();
                 lvThiSinh.Items.Clear();
+
+                kythiid = int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text);
                 loadLVDeThi(int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text));
             }
         }
