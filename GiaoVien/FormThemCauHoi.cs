@@ -24,21 +24,7 @@ namespace GiaoVien
             btnXoa.Click += BtnXoa_Click;
             btnSua.Click += BtnSua_Click;
             lvDapAn.SelectedIndexChanged += LvDapAn_SelectedIndexChanged;
-            cbbLoaiCH.SelectedIndexChanged += CbbLoaiCH_SelectedIndexChanged;
             lvDapAn.ItemChecked += LvDapAn_ItemChecked;
-        }
-
-        private void CbbLoaiCH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbLoaiCH.SelectedIndex == 0)
-            {
-                txtGoiY.Text = "";
-                txtGoiY.Enabled = false;
-            }
-            else
-            {
-                txtGoiY.Enabled = true;
-            }
         }
 
         bool KiemTraLVDapAn()
