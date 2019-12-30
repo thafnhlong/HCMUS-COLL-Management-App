@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,13 +24,14 @@ namespace Admin
             InitializeComponent();
             Load += FrmMain_Load;
             FormClosed += (s, e) => { logout?.Invoke(null, null); };
-            btnHuy.Click += (s1, e1) => {
+            btnHuy.Click += (s1, e1) =>
+            {
                 Close();
             };
             btnLogout.Click += (s1, e1) => { Close(); };
             idadmin = id;
         }
-        private bool checkConnection(string connectionStringtemp,int chose)
+        private bool checkConnection(string connectionStringtemp, int chose)
         {
             SqlConnection temp;
             if (chose == 0)
@@ -78,17 +80,38 @@ namespace Admin
             //    textBox1.Text = server[table.Columns["ServerName"]].ToString();
             //}
             textBox1.Text = "DESKTOP-86CHR2F\\SQLEXPRESS1";
+
+
+            if (Utils.QLTN.ConnectionString.Any())
+            {
+                var c = Utils.QLTN.ConnectionString;
+
+                var r = new Regex("Data Source=(.+?);").Match(c);
+                textBox1.Text = r.Groups[1].Value;
+
+                if (c.Contains("Integrated Security"))
+
+                    comboBox1.SelectedIndex = 0;
+                else
+                {
+                    comboBox1.SelectedIndex = 1;
+                    var rd = new Regex("User ID =(.+?); Password = (.*)$").Match(c);
+                    textBox2.Text = rd.Groups[1].Value;
+                    textBox3.Text = rd.Groups[2].Value;
+                }
+            }
+
             button3.Enabled = false;
         }
 
         private void btnNgdung_Click(object sender, EventArgs e)
         {
-            if (checkConnection(Utils.QLTN.ConnectionString,1) == true)
+            if (checkConnection(Utils.QLTN.ConnectionString, 1) == true)
             {
                 frmQuanLy quanly = new frmQuanLy(idadmin);
                 quanly.swapform += (s, e1) => { Show(); FrmMain_Load(s, e1); };
                 quanly.Show();
-                Hide();   
+                Hide();
             }
             else
             {
@@ -99,7 +122,7 @@ namespace Admin
 
         private void btnBnR_Click(object sender, EventArgs e)
         {
-            if (checkConnection(Utils.QLTN.ConnectionString,1) == true)
+            if (checkConnection(Utils.QLTN.ConnectionString, 1) == true)
             {
 
                 frmBnR bnr = new frmBnR(connectionString);
@@ -140,7 +163,7 @@ namespace Admin
                 label4.Enabled = true;
                 textBox3.Enabled = true;
 
-                
+
                 //button2.Location = new Point(134, 179);
                 //button3.Location = new Point(203, 179);
                 //btnHuy.Location = new Point(271, 179);
@@ -175,8 +198,8 @@ namespace Admin
         private void button2_Click(object sender, EventArgs e)
 
         {
-            if (checkConnection(textBox1.Text,0) == true)
-            {  
+            if (checkConnection(textBox1.Text, 0) == true)
+            {
                 button3.Enabled = true;
                 MessageBox.Show("Kết nối đúng");
             }
