@@ -81,6 +81,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="IE\LuaChon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IE\LuaChon.Designer.cs">
+      <DependentUpon>LuaChon.cs</DependentUpon>
+    </Compile>
     <Compile Include="InKyThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <EmbeddedResource Include="FormXemThongKeHocSinh.resx">
       <DependentUpon>FormXemThongKeHocSinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IE\LuaChon.resx">
+      <DependentUpon>LuaChon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InKyThiForm.resx">
       <DependentUpon>InKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +220,36 @@
     <None Include="Properties\DataSources\GiaoVien.Report.ReportDSKyThiKQ.datasource" />
     <None Include="Properties\DataSources\GiaoVien.Report.ReportTKCauHoi.datasource" />
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

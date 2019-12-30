@@ -29,6 +29,18 @@ namespace GiaoVien
             btnThemCauHoi.Click += BtnThemCauHoi_Click;
             btnSuaCauHoi.Click += BtnSuaCauHoi_Click;
 
+            btnExport.Click += BtnExport_Click;
+            btnImport.Click += BtnImport_Click;
+        }
+
+        private void BtnImport_Click(object sender, EventArgs e)
+        {
+            new IE.LuaChon(false).ShowDialog();
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            new IE.LuaChon().ShowDialog();
         }
 
         // event chọn câu hỏi
