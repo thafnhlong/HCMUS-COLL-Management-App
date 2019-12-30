@@ -27,11 +27,49 @@ namespace GiaoVien
             btnTaoDeThi.Click += BtnTaoDeThi_Click;
             Load += QuanLyDeThiForm_Load;
             btnXoa.Click += BtnXoa_Click;
+            btnSua.Click += BtnSua_Click;
+        }
+
+        private void BtnSua_Click(object sender, EventArgs e)
+        {
+            if (lvDethi.SelectedItems[0].BackColor == Color.Red)
+            {
+                MessageBox.Show("Không thể sửa đề thi được chọn");
+                return;
+            }
+            SuaDeThiForm f = new SuaDeThiForm(this);
+            f.Show();
         }
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (lvDethi.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn đề thi cần xóa");
+                return;
+            }
+            if (lvDethi.SelectedItems[0].BackColor == Color.Red)
+            {
+                MessageBox.Show("Không thể xóa đề thi được chọn");
+                return;
+            }
+            using(var qltn = Utils.QLTN.getInstance())
+            {
+                int dethiid = int.Parse(lvDethi.SelectedItems[0].SubItems[0].Text);
+                //xoa dethi_cauhoi
+                var dt_ch = qltn.DeThi_CauHois.Where(i => i.dethiid == dethiid).ToList();
+                qltn.DeThi_CauHois.DeleteAllOnSubmit(dt_ch);
+                //xoa hocsinhthamgia
+                var hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dethiid).ToList();
+                qltn.HocSinhThamGias.DeleteAllOnSubmit(hstg);
+                //xoa dethi
+                var dethi = qltn.DeThis.Where(i => i.id == dethiid).First();
+                qltn.DeThis.DeleteOnSubmit(dethi);
+                qltn.SubmitChanges();
+
+                loadLVDeThi();
+                MessageBox.Show("Xóa đề thi thành công");
+            }
         }
 
         private void BtnTaoDeThi_Click(object sender, EventArgs e)
@@ -54,7 +92,7 @@ namespace GiaoVien
             loadLVDeThi();
         }
 
-        void loadLVDeThi()
+        public void loadLVDeThi()
         {
             lvDethi.Items.Clear();
             int cbb1 = cbMonHoc.SelectedIndex;
@@ -97,14 +135,11 @@ namespace GiaoVien
 
         bool KiemTraDeThi(DeThi dt, QLTNDataContext qltn)
         {
-            List<HocSinhThamGia> hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id).ToList();
-            if (hstg != null)
+            var hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id && i.thoigianlambai!=null).ToList();
+            var hslb = qltn.HocSinhLamBais.Where(i => i.dethiid == dt.id).ToList();
+            if (hstg.Count > 0 || hslb.Count > 0)
             {
-                foreach(HocSinhThamGia i in hstg)
-                {
-                    if (i.thoigianlambai != null)
-                        return false;
-                }
+                return false;
             }
             return true;
         }

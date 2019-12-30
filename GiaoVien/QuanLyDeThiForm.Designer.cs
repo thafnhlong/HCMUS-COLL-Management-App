@@ -41,7 +41,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTaoDeThi = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -154,15 +154,15 @@
             this.btnTaoDeThi.Text = "Tạo đề thi";
             this.btnTaoDeThi.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSua
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(155, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 41);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Sửa đề thi";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(155, 403);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(113, 41);
+            this.btnSua.TabIndex = 22;
+            this.btnSua.Text = "Sửa đề thi";
+            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
@@ -180,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 469);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnTaoDeThi);
             this.Controls.Add(this.lvDethi);
             this.Controls.Add(this.cbbLoaiDeThi);
@@ -210,7 +210,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnTaoDeThi;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.ColumnHeader columnHeader5;
     }

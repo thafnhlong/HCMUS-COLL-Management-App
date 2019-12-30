@@ -137,7 +137,8 @@ namespace GiaoVien
                 lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.noidung);
                 lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.dokho.ToString());
                 lvCauHoi.Items.Add(lvi);
-            }  
+            }
+            lblSoLuong.Text = "0";
         }
 
         void loadCapHoc()
