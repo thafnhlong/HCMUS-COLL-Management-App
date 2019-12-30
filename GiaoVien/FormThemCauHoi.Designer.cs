@@ -43,11 +43,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtDapAn = new System.Windows.Forms.RichTextBox();
             this.lvDapAn = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.cbbLoaiCH = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(106, 39);
             this.btnCapNhat.TabIndex = 24;
-            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.Text = "Thêm";
             this.btnCapNhat.UseVisualStyleBackColor = true;
             // 
             // cbbDoKho
@@ -200,6 +200,15 @@
             this.lvDapAn.UseCompatibleStateImageBehavior = false;
             this.lvDapAn.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Đúng/Sai";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nội dung";
+            this.columnHeader2.Width = 360;
+            // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,15 +238,6 @@
             this.btnSua.TabIndex = 26;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Đúng/Sai";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nội dung";
-            this.columnHeader2.Width = 360;
             // 
             // label7
             // 

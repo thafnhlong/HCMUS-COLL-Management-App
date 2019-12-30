@@ -172,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(839, 50);
+            this.label5.Location = new System.Drawing.Point(818, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 16);
             this.label5.TabIndex = 15;
@@ -180,9 +180,9 @@
             // 
             // txtNoiDung
             // 
-            this.txtNoiDung.Location = new System.Drawing.Point(861, 80);
+            this.txtNoiDung.Location = new System.Drawing.Point(821, 36);
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(368, 79);
+            this.txtNoiDung.Size = new System.Drawing.Size(408, 146);
             this.txtNoiDung.TabIndex = 16;
             this.txtNoiDung.Text = "";
             // 
@@ -190,7 +190,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(839, 185);
+            this.label6.Location = new System.Drawing.Point(818, 185);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 16);
             this.label6.TabIndex = 17;
@@ -204,9 +204,9 @@
             this.columnHeader5});
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
-            this.lvDapAn.Location = new System.Drawing.Point(861, 213);
+            this.lvDapAn.Location = new System.Drawing.Point(821, 204);
             this.lvDapAn.Name = "lvDapAn";
-            this.lvDapAn.Size = new System.Drawing.Size(372, 149);
+            this.lvDapAn.Size = new System.Drawing.Size(408, 198);
             this.lvDapAn.TabIndex = 18;
             this.lvDapAn.UseCompatibleStateImageBehavior = false;
             this.lvDapAn.View = System.Windows.Forms.View.Details;
@@ -227,7 +227,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(277, 364);
+            this.btnImport.Location = new System.Drawing.Point(609, 364);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(93, 38);
             this.btnImport.TabIndex = 7;
@@ -236,7 +236,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(376, 364);
+            this.btnExport.Location = new System.Drawing.Point(708, 364);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(93, 38);
             this.btnExport.TabIndex = 7;
@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 436);
+            this.ClientSize = new System.Drawing.Size(1241, 410);
             this.Controls.Add(this.lvDapAn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNoiDung);
