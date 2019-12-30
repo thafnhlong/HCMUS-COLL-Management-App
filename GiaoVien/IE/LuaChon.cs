@@ -89,8 +89,85 @@ namespace GiaoVien.IE
                 if (IsExport) new Utils.frmWaiting(() => ExportData(fd.FileName)).ShowDialog();
                 else new Utils.frmWaiting(() => ImportData(fd.FileName)).ShowDialog();
 
+                //importcauhoi(fd.FileName);
+
             }
         }
+        /*
+        void importcauhoi(string fileName)
+        {
+            var xlApp = new Excel.Application();
+            try
+            {
+                if (xlApp == null)
+                {
+                    MessageBox.Show("Thư viện excel chưa được cài đặt");
+                    return;
+                }
+                xlApp.Visible = false;
+
+                var workbook = xlApp.Workbooks.Open(fileName);
+
+                Excel.Worksheet worksheet = workbook.Worksheets[ int.Parse(textBox1.Text) ];
+                int lastrow = worksheet.UsedRange.Rows.Count;
+
+                bool? trangthaich = true;
+
+                if (loaicauhoi == 0)
+                    trangthaich = null;
+
+                using (var qltn = Utils.QLTN.getInstance())
+                {
+                    for (int i = 2; i <= lastrow; i++)
+                    {
+                        int col = 1;
+                        var ch = new CauHoi
+                        {
+                            noidung = worksheet.Cells[i, col++].Text,
+                            goiy = worksheet.Cells[i, col++].Text,
+                            dokho = int.Parse(worksheet.Cells[i, col++].Text) - int.Parse(textBox2.Text),
+                            monhocid = mon,
+                            caphocid = cap,
+                            trangthai = trangthaich
+                        };
+                        qltn.CauHois.InsertOnSubmit(ch);
+
+                        int stt = 1;
+                        while (true)
+                        {
+                            string ds = worksheet.Cells[i, col + 1].Text;
+                            if (!ds.Any())
+                                break;
+                            var da = new DapAn
+                            {
+                                stt = stt++,
+                                noidung = worksheet.Cells[i, col].Text,
+                                dungsai = int.Parse(ds) == 1,
+                                CauHoi = ch
+                            };
+                            qltn.DapAns.InsertOnSubmit(da);
+                            col += 2;
+                        }
+                    }
+                    qltn.SubmitChanges();
+
+                }
+                
+                MessageBox.Show("Đã import thành công");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi " + e.ToString());
+            }
+            finally
+            {
+                xlApp.Quit();
+            }
+            
+            
+        }
+        */
+
 
         int loaicauhoi;
         int mon;
@@ -100,62 +177,69 @@ namespace GiaoVien.IE
         void ImportData(string fileName)
         {
             var xlApp = new Excel.Application();
-            System.Threading.Thread.Sleep(2000);
+
             if (xlApp == null)
             {
                 MessageBox.Show("Thư viện excel chưa được cài đặt");
                 return;
             }
-            xlApp.Visible = false;
-
-            var workbook = xlApp.Workbooks.Open(fileName);
-
-            Excel.Worksheet worksheet = workbook.Worksheets[1];
-            int lastrow = worksheet.UsedRange.Rows.Count;
-
-            bool? trangthaich = null;
-
-            if (loaicauhoi == 0)
-                trangthaich = true;
-
-            using (var qltn = Utils.QLTN.getInstance())
+            try
             {
-                for (int i = 2; i <= lastrow; i++)
+                xlApp.Visible = false;
+
+                var workbook = xlApp.Workbooks.Open(fileName);
+
+                Excel.Worksheet worksheet = workbook.Worksheets[1];
+                int lastrow = worksheet.UsedRange.Rows.Count;
+
+                bool? trangthaich = null;
+
+                if (loaicauhoi == 0)
+                    trangthaich = true;
+
+                using (var qltn = Utils.QLTN.getInstance())
                 {
-                    int col = 1;
-                    var ch = new CauHoi
+                    for (int i = 2; i <= lastrow; i++)
                     {
-                        noidung = worksheet.Cells[i, col++].Text,
-                        goiy = worksheet.Cells[i, col++].Text,
-                        dokho = int.Parse(worksheet.Cells[i, col++].Text),
-                        monhocid = mon,
-                        caphocid = cap,
-                        trangthai = trangthaich
-                    };
-                    qltn.CauHois.InsertOnSubmit(ch);
-
-                    int stt = 1;
-                    while (true)
-                    {
-                        string ds = worksheet.Cells[i, col + 1].Text;
-                        if (!ds.Any())
-                            break;
-                        var da = new DapAn
+                        int col = 1;
+                        var ch = new CauHoi
                         {
-                            stt = stt++,
-                            noidung = worksheet.Cells[i, col].Text,
-                            dungsai = bool.Parse(ds),
-                            CauHoi = ch
+                            noidung = worksheet.Cells[i, col++].Text,
+                            goiy = worksheet.Cells[i, col++].Text,
+                            dokho = int.Parse(worksheet.Cells[i, col++].Text),
+                            monhocid = mon,
+                            caphocid = cap,
+                            trangthai = trangthaich
                         };
-                        qltn.DapAns.InsertOnSubmit(da);
-                        col += 2;
-                    }
-                }
-                qltn.SubmitChanges();
+                        qltn.CauHois.InsertOnSubmit(ch);
 
+                        int stt = 1;
+                        while (true)
+                        {
+                            string ds = worksheet.Cells[i, col + 1].Text;
+                            if (!ds.Any())
+                                break;
+                            var da = new DapAn
+                            {
+                                stt = stt++,
+                                noidung = worksheet.Cells[i, col].Text,
+                                dungsai = bool.Parse(ds),
+                                CauHoi = ch
+                            };
+                            qltn.DapAns.InsertOnSubmit(da);
+                            col += 2;
+                        }
+                    }
+                    qltn.SubmitChanges();
+
+                }
+                MessageBox.Show("Đã import thành công");
             }
-            xlApp.Quit();
-            MessageBox.Show("Đã import thành công");
+            catch (Exception e) { MessageBox.Show("Lỗi: " + e.ToString()); }
+            finally
+            {
+                xlApp.Quit();
+            }
 
         }
         void ExportData(string fileName)
@@ -167,72 +251,78 @@ namespace GiaoVien.IE
                 MessageBox.Show("Thư viện excel chưa được cài đặt");
                 return;
             }
-            xlApp.Visible = false;
-
-            object misValue = System.Reflection.Missing.Value;
-
-            var workbook = xlApp.Workbooks.Add(misValue);
-
-            Excel.Worksheet worksheet = workbook.Worksheets[1];
-
-            worksheet.Name = tenmon;
-
-            worksheet.Cells[1, 1] = "Nội dung";
-            worksheet.Cells[1, 2] = "Gợi ý";
-            worksheet.Cells[1, 3] = "Độ khó";
-
-            worksheet.Cells[1, 4] = "Đáp án 1";
-            worksheet.Cells[1, 5] = "Đ/S";
-
-            worksheet.Cells[1, 6] = "Đáp án 2";
-            worksheet.Cells[1, 7] = "Đ/S";
-
-            worksheet.Cells[1, 8] = "Đáp án 3";
-            worksheet.Cells[1, 9] = "Đ/S";
-
-            worksheet.Cells[1, 10] = "Đáp án 4";
-            worksheet.Cells[1, 11] = "Đ/S";
-
-            worksheet.Cells[1, 12] = "Đáp án 5";
-            worksheet.Cells[1, 13] = "Đ/S";
-
-            worksheet.Cells[1, 14] = "Đáp án 6";
-            worksheet.Cells[1, 15] = "Đ/S";
-
-            using (var qltn = Utils.QLTN.getInstance())
+            try
             {
-                var ds = qltn.CauHois.Where(x => x.monhocid.Value == mon
-                    && x.caphocid == cap
-                    && loaicauhoi == 0 ? !x.trangthai.HasValue : x.trangthai.Value
-                ).Select(x => new
-                {
-                    x.noidung,
-                    x.goiy,
-                    dokho = x.dokho.Value,
-                    dsdapan = x.DapAns.Select(a => new { a.noidung, ds = a.dungsai.Value })
-                });
+                xlApp.Visible = false;
 
-                int row = 1;
-                foreach (var ch in ds)
-                {
-                    row++;
-                    int col = 1;
-                    worksheet.Cells[row, col++] = ch.noidung;
-                    worksheet.Cells[row, col++] = ch.goiy;
-                    worksheet.Cells[row, col++] = ch.dokho;
+                object misValue = System.Reflection.Missing.Value;
 
-                    foreach (var da in ch.dsdapan)
+                var workbook = xlApp.Workbooks.Add(misValue);
+
+                Excel.Worksheet worksheet = workbook.Worksheets[1];
+
+                worksheet.Name = tenmon;
+
+                worksheet.Cells[1, 1] = "Nội dung";
+                worksheet.Cells[1, 2] = "Gợi ý";
+                worksheet.Cells[1, 3] = "Độ khó";
+
+                worksheet.Cells[1, 4] = "Đáp án 1";
+                worksheet.Cells[1, 5] = "Đ/S";
+
+                worksheet.Cells[1, 6] = "Đáp án 2";
+                worksheet.Cells[1, 7] = "Đ/S";
+
+                worksheet.Cells[1, 8] = "Đáp án 3";
+                worksheet.Cells[1, 9] = "Đ/S";
+
+                worksheet.Cells[1, 10] = "Đáp án 4";
+                worksheet.Cells[1, 11] = "Đ/S";
+
+                worksheet.Cells[1, 12] = "Đáp án 5";
+                worksheet.Cells[1, 13] = "Đ/S";
+
+                worksheet.Cells[1, 14] = "Đáp án 6";
+                worksheet.Cells[1, 15] = "Đ/S";
+
+                using (var qltn = Utils.QLTN.getInstance())
+                {
+                    var ds = qltn.CauHois.Where(x => x.monhocid.Value == mon
+                        && x.caphocid == cap
+                        && loaicauhoi == 0 ? !x.trangthai.HasValue : x.trangthai.Value
+                    ).Select(x => new
                     {
-                        worksheet.Cells[row, col++] = da.noidung;
-                        worksheet.Cells[row, col++] = da.ds;
+                        x.noidung,
+                        x.goiy,
+                        dokho = x.dokho.Value,
+                        dsdapan = x.DapAns.Select(a => new { a.noidung, ds = a.dungsai.Value })
+                    });
+
+                    int row = 1;
+                    foreach (var ch in ds)
+                    {
+                        row++;
+                        int col = 1;
+                        worksheet.Cells[row, col++] = ch.noidung;
+                        worksheet.Cells[row, col++] = ch.goiy;
+                        worksheet.Cells[row, col++] = ch.dokho;
+
+                        foreach (var da in ch.dsdapan)
+                        {
+                            worksheet.Cells[row, col++] = da.noidung;
+                            worksheet.Cells[row, col++] = da.ds;
+                        }
                     }
                 }
+
+                workbook.SaveAs(fileName);
+                MessageBox.Show("Đã export thành công tại " + fileName);
             }
-
-            workbook.SaveAs(fileName);
-
-            xlApp.Quit();
-            MessageBox.Show("Đã export thành công tại " + fileName);
+            catch (Exception e) { MessageBox.Show("Lỗi: " + e.ToString()); }
+            finally
+            {
+                xlApp.Quit();
+            }
         }
     }
 }

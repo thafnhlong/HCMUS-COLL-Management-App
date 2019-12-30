@@ -1,0 +1,23 @@
+Thi thật (có gợi ý): Toán 10 ,
+          ko       : con lai
+          
+Thi Thử (có gợi ý): Ly 10 , Hoa 10
+        ko        : con lai
+
+
+Thu 
+Toan 10 (that)
+Ly 10 (thu)
+Hoa 10 (thu)
+
+De 1:
+Toan 11(that)
+Ly 11(that)
+Hoa 11 (that)
+
+De 2:
+Toan Ly Hoa 12 (that)
+
+De 3:
+Toan Ly Hoa 12 (thu)
+
