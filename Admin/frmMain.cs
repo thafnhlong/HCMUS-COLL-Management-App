@@ -87,18 +87,22 @@ namespace Admin
                 var c = Utils.QLTN.ConnectionString;
 
                 var r = new Regex("Data Source=(.+?);").Match(c);
-                textBox1.Text = r.Groups[1].Value;
-
-                if (c.Contains("Integrated Security"))
-
-                    comboBox1.SelectedIndex = 0;
-                else
+                try
                 {
-                    comboBox1.SelectedIndex = 1;
-                    var rd = new Regex("User ID =(.+?); Password = (.*)$").Match(c);
-                    textBox2.Text = rd.Groups[1].Value;
-                    textBox3.Text = rd.Groups[2].Value;
+                    textBox1.Text = r.Groups[1].Value;
+
+                    if (c.Contains("Integrated Security"))
+
+                        comboBox1.SelectedIndex = 0;
+                    else
+                    {
+                        comboBox1.SelectedIndex = 1;
+                        var rd = new Regex("User ID =(.+?); Password = (.*)$").Match(c);
+                        textBox2.Text = rd.Groups[1].Value;
+                        textBox3.Text = rd.Groups[2].Value;
+                    }
                 }
+                catch (Exception) { }
             }
 
             button3.Enabled = false;
