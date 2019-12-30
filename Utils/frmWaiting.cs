@@ -24,7 +24,7 @@ namespace Utils
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Task.Factory.StartNew(Worker).ContinueWith(t => { Close(); TaskScheduler.FromCurrentSynchronizationContext(); });
+            Task.Factory.StartNew(Worker).ContinueWith(t => { this.Invoke(new Action(() => { Close(); })); });
         }
     }
 }

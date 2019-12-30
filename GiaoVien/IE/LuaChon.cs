@@ -81,11 +81,21 @@ namespace GiaoVien.IE
 
             if (fd.ShowDialog() == DialogResult.OK)
             {
+                loaicauhoi = (int)cbbLoaiCauHoi.SelectedValue;
+                mon = (int)cbbMon.SelectedValue;
+                cap = (int)cbbCapHoc.SelectedValue;
+                tenmon = cbbMon.Text;
+
                 if (IsExport) new Utils.frmWaiting(() => ExportData(fd.FileName)).ShowDialog();
                 else new Utils.frmWaiting(() => ImportData(fd.FileName)).ShowDialog();
 
             }
         }
+
+        int loaicauhoi;
+        int mon;
+        int cap;
+        string tenmon;
 
         void ImportData(string fileName)
         {
@@ -105,7 +115,7 @@ namespace GiaoVien.IE
 
             bool? trangthaich = null;
 
-            if ((int)cbbLoaiCauHoi.SelectedValue == 0)
+            if (loaicauhoi == 0)
                 trangthaich = true;
 
             using (var qltn = Utils.QLTN.getInstance())
@@ -118,8 +128,8 @@ namespace GiaoVien.IE
                         noidung = worksheet.Cells[i, col++].Text,
                         goiy = worksheet.Cells[i, col++].Text,
                         dokho = int.Parse(worksheet.Cells[i, col++].Text),
-                        monhocid = (int)cbbMon.SelectedValue,
-                        caphocid = (int)cbbCapHoc.SelectedValue,
+                        monhocid = mon,
+                        caphocid = cap,
                         trangthai = trangthaich
                     };
                     qltn.CauHois.InsertOnSubmit(ch);
@@ -165,7 +175,7 @@ namespace GiaoVien.IE
 
             Excel.Worksheet worksheet = workbook.Worksheets[1];
 
-            worksheet.Name = cbbMon.Text;
+            worksheet.Name = tenmon;
 
             worksheet.Cells[1, 1] = "Nội dung";
             worksheet.Cells[1, 2] = "Gợi ý";
@@ -191,9 +201,9 @@ namespace GiaoVien.IE
 
             using (var qltn = Utils.QLTN.getInstance())
             {
-                var ds = qltn.CauHois.Where(x => x.monhocid.Value == (int)cbbMon.SelectedValue
-                    && x.caphocid == (int)cbbCapHoc.SelectedValue
-                    && (int)cbbLoaiCauHoi.SelectedValue == 0 ? !x.trangthai.HasValue : x.trangthai.Value
+                var ds = qltn.CauHois.Where(x => x.monhocid.Value == mon
+                    && x.caphocid == cap
+                    && loaicauhoi == 0 ? !x.trangthai.HasValue : x.trangthai.Value
                 ).Select(x => new
                 {
                     x.noidung,
