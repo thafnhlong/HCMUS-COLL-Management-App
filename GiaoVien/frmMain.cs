@@ -12,22 +12,49 @@ namespace GiaoVien
 {
     public partial class frmMain : Form
     {
-        GiaoVien.FormLuaChon frmLuaChon;
+        public EventHandler logout;
+
         int ID;
         public frmMain(int id)
         {
             InitializeComponent();
             ID = id;
+
+            FormClosed += FrmMain_FormClosed;
+
             btnGiaoVien.Click += BtnGiaoVien_Click;
-            btnExit.Click += (s, e) => Application.Exit();
+            btnExit.Click += (s, e) => Close();
             //frmLuaChon = new GiaoVien.FormLuaChon(this);
+
+            btnHocSinh.Click += BtnHocSinh_Click;
+        }
+
+        bool isLog = true;
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isLog)
+                Application.Exit();
+        }
+
+        private void BtnHocSinh_Click(object sender, EventArgs e)
+        {
+            isLog = false;
+            var hsform = new HocSinh.Main(ID);
+            hsform.DangXuatEvent += (s, e1) =>
+            {
+                logout?.Invoke(null, null);
+            };
+            Close();
+            hsform.Show();
         }
 
         private void BtnGiaoVien_Click(object sender, EventArgs e)
         {
-            frmLuaChon = new GiaoVien.FormLuaChon(ID);
-            this.Hide();
+            isLog = false;
+            var frmLuaChon = new GiaoVien.FormLuaChon(ID);
             frmLuaChon.Show();
+            Close();
         }
     }
 }

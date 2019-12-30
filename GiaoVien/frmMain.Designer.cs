@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnGiaoVien = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button2
+            // btnHocSinh
             // 
-            this.button2.Location = new System.Drawing.Point(201, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Học sinh";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHocSinh.Location = new System.Drawing.Point(201, 54);
+            this.btnHocSinh.Name = "btnHocSinh";
+            this.btnHocSinh.Size = new System.Drawing.Size(106, 46);
+            this.btnHocSinh.TabIndex = 1;
+            this.btnHocSinh.Text = "Học sinh";
+            this.btnHocSinh.UseVisualStyleBackColor = true;
             // 
             // btnGiaoVien
             // 
@@ -66,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 154);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnHocSinh);
             this.Controls.Add(this.btnGiaoVien);
             this.Name = "frmMain";
             this.Text = "frmMain";
@@ -76,7 +76,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHocSinh;
         private System.Windows.Forms.Button btnGiaoVien;
         private System.Windows.Forms.Button btnExit;
     }

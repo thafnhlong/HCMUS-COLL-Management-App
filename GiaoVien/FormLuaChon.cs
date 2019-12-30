@@ -12,13 +12,11 @@ namespace GiaoVien
 {
     public partial class FormLuaChon : Form
     {
-        FormQuanLyCauHoi formQLCH;
-        FormQuanLyHocSinh FormQuanLyHocSinh;
         int ID;
         public FormLuaChon(int id)
         {
             InitializeComponent();
-            FormClosed += (s, e) => { Hide(); };
+            FormClosed += (s, e) => Application.Exit();
             btnQLCH.Click += BtnQLCH_Click;
             btnQLHS.Click += BtnQLHS_Click;
             //formQLCH = new FormQuanLyCauHoi();      
@@ -30,6 +28,18 @@ namespace GiaoVien
             btnThongKeCauHoi.Click += (s, e) => new Report.TKCauHoi().ShowDialog();
             btnInDSKyThi.Click += (s, e) => new Report.DSKyThi().ShowDialog();
             btnInDSKyThiKQ.Click += (s, e) => new Report.DSKyThiKQ().ShowDialog();
+
+            Load += FormLuaChon_Load;
+        }
+
+        private void FormLuaChon_Load(object sender, EventArgs e)
+        {
+            using (var qltn = Utils.QLTN.getInstance())
+            {
+                var tk = qltn.TaiKhoans.Single(x => x.id == ID);
+                lblHoTen.Text = tk.hoten;
+                lblNamSinh.Text = tk.ngaysinh.Value.ToString("dd-MM-yyyy");
+            }
         }
 
         private void BtnKyThi_Click(object sender, EventArgs e)
@@ -46,16 +56,14 @@ namespace GiaoVien
 
         private void BtnQLHS_Click(object sender, EventArgs e)
         {
-            FormQuanLyHocSinh = new FormQuanLyHocSinh();
-            FormQuanLyHocSinh.Show();
-            Close();
+            var TKHS = new FormXemThongKeHocSinh();
+            TKHS.ShowDialog();
         }
 
         private void BtnQLCH_Click(object sender, EventArgs e)
         {
-            formQLCH = new FormQuanLyCauHoi(ID);
-            formQLCH.Show();
-            Close();
+            var formQLCH = new FormQuanLyCauHoi(ID);
+            formQLCH.ShowDialog();
         }
 
     }

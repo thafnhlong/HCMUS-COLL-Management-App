@@ -132,7 +132,7 @@ namespace GiaoVien
             int MonHoc = cbbMonHoc.SelectedIndex + 1;
             int CapHoc = cbbCapHoc.SelectedIndex + 1;
             bool LoaiCH = cbbLoaiCH.SelectedIndex == 0;
-            int DoKho = cbbDoKho.SelectedIndex + 1;
+            int DoKho = cbbDoKho.SelectedIndex;
             string strGopY = txtGoiY.Text.ToString();
             using (var qltn = Utils.QLTN.getInstance())
             {

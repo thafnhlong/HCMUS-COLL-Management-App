@@ -83,19 +83,23 @@ namespace Main
                 {
                     if (tk[1] == 0)
                     {
-                        new HocSinh.Main(tk[0]).Show();
+                        var u =new HocSinh.Main(tk[0]);
+                        u.DangXuatEvent += (s1, e1) => { Show(); Form1_Load(s1, e1); };
+                        u.Show();
                     }
                     else if (tk[1] == 1)
                     {
-                        new GiaoVien.frmMain(tk[0]).Show();
+                        var u = new GiaoVien.frmMain(tk[0]);
+                        u.logout += (s1, e1) => { Show(); Form1_Load(s1, e1); };
+                        u.Show();
                     }
                     else
                     {
                         Admin.frmMain u = new Admin.frmMain(tk[0]);
                         u.logout += (s1, e1) => { Show(); Form1_Load(s1, e1); };
                         u.Show();
-                        Hide();
                     }
+                    Hide();
                 }
                 else
                 {
@@ -103,19 +107,7 @@ namespace Main
                 }
             }
         }
-        private bool isHs()
-        {
-            using (var qltn = Utils.QLTN.getInstance())
-            {
-                var Lhid = qltn.TaiKhoans.Where(x => x.tentaikhoan == txtUsername.Text && x.matkhau == txtPassword.Text).SingleOrDefault();
-                if (Lhid.lophocid == null)
-                {
-                    return false;
-                }
-                else
-                    return true;
-            }
-        }
+        
         int[] GetTK()
         {
             using (var qltn = Utils.QLTN.getInstance())

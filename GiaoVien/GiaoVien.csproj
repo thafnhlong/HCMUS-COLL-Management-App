@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormQuanLyHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQuanLyHocSinh.Designer.cs">
-      <DependentUpon>FormQuanLyHocSinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSuaCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,15 +141,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HocSinh\HocSinh.csproj">
+      <Project>{38248d55-823d-4b4e-bab6-ef6b936fee65}</Project>
+      <Name>HocSinh</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{cfb87e57-0ea8-476c-8e9d-cc8d9ccb11b4}</Project>
       <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormQuanLyHocSinh.resx">
-      <DependentUpon>FormQuanLyHocSinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSuaCauHoi.resx">
       <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,6 +40,8 @@
             this.btnThongKeCauHoi = new System.Windows.Forms.Button();
             this.btnInDSKyThi = new System.Windows.Forms.Button();
             this.btnInDSKyThiKQ = new System.Windows.Forms.Button();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.lblNamSinh = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnQLHS
@@ -148,6 +150,24 @@
             this.btnInDSKyThiKQ.Text = "In DS kỳ thi + KQ";
             this.btnInDSKyThiKQ.UseVisualStyleBackColor = true;
             // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Location = new System.Drawing.Point(78, 14);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(50, 13);
+            this.lblHoTen.TabIndex = 9;
+            this.lblHoTen.Text = "lblHoTen";
+            // 
+            // lblNamSinh
+            // 
+            this.lblNamSinh.AutoSize = true;
+            this.lblNamSinh.Location = new System.Drawing.Point(78, 36);
+            this.lblNamSinh.Name = "lblNamSinh";
+            this.lblNamSinh.Size = new System.Drawing.Size(60, 13);
+            this.lblNamSinh.TabIndex = 11;
+            this.lblNamSinh.Text = "lblNamSinh";
+            // 
             // FormLuaChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,8 +182,10 @@
             this.Controls.Add(this.btnDuyetCH);
             this.Controls.Add(this.btnQLCH);
             this.Controls.Add(this.lblYear);
+            this.Controls.Add(this.lblNamSinh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.label1);
             this.Name = "FormLuaChon";
             this.Text = "FormLuaChon";
@@ -188,5 +210,7 @@
         private System.Windows.Forms.Button btnThongKeCauHoi;
         private System.Windows.Forms.Button btnInDSKyThi;
         private System.Windows.Forms.Button btnInDSKyThiKQ;
+        private System.Windows.Forms.Label lblHoTen;
+        private System.Windows.Forms.Label lblNamSinh;
     }
 }
