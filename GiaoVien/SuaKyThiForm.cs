@@ -132,10 +132,19 @@ namespace GiaoVien
                     checkbox.Checked = true;
                     dtNgay.Value = dethi.NgayThi;
                 }
-                if (lvDeThi.SelectedItems[0].SubItems[5].Text.Length > 0)
+                if (!dethi.CoNgayThi)
+                {
+                    checkbox.Checked = false;
+                }
+                string ngaythi = lvDeThi.SelectedItems[0].SubItems[5].Text;
+                if (ngaythi.Length > 0)
                 {
                     checkbox.Checked = true;
-                    dtNgay.Value = DateTime.Parse(lvDeThi.SelectedItems[0].SubItems[5].Text);
+                    dtNgay.Value = DateTime.Parse(ngaythi);
+                }
+                else
+                {
+                    checkbox.Checked = false;
                 }
                 checkbox.Enabled = true;
                 checkLVHocSinh = false;

@@ -79,7 +79,7 @@ namespace GiaoVien
 
         private void BtnTaoDeThi_Click(object sender, EventArgs e)
         {
-            TaoDeThiForm f = new TaoDeThiForm();
+            TaoDeThiForm f = new TaoDeThiForm(this);
             f.Show();
         }
 
