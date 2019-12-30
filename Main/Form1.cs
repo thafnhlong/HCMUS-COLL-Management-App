@@ -57,8 +57,6 @@ namespace Main
             rV1.Pattern = "^[a-z0-9]{3,}$";
             rV1.ErrorMessage = "Mật khẩu chỉ được trong [a-z]-[1-9] và > 3 ký tự";
 
-            QuanLyDeThiForm f = new QuanLyDeThiForm();
-            f.Show();
         }
 
         private void BtnDangnhap_Click(object sender, EventArgs e)
