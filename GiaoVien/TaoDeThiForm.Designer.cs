@@ -131,9 +131,9 @@
             this.columnHeader4});
             this.lvCauHoi.GridLines = true;
             this.lvCauHoi.HideSelection = false;
-            this.lvCauHoi.Location = new System.Drawing.Point(21, 98);
+            this.lvCauHoi.Location = new System.Drawing.Point(3, 98);
             this.lvCauHoi.Name = "lvCauHoi";
-            this.lvCauHoi.Size = new System.Drawing.Size(415, 307);
+            this.lvCauHoi.Size = new System.Drawing.Size(454, 307);
             this.lvCauHoi.TabIndex = 28;
             this.lvCauHoi.UseCompatibleStateImageBehavior = false;
             this.lvCauHoi.View = System.Windows.Forms.View.Details;

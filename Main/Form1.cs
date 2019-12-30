@@ -57,6 +57,8 @@ namespace Main
             rV1.Pattern = "^[a-z0-9]+$";
             rV1.ErrorMessage = "Password is only [a-z]-[1-9] and > 3char";
 
+            QuanLyDeThiForm f = new QuanLyDeThiForm();
+            f.Show();
         }
 
         private void BtnDangnhap_Click(object sender, EventArgs e)

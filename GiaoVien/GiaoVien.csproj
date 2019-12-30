@@ -113,6 +113,12 @@
     <Compile Include="Report\TKCauHoi.Designer.cs">
       <DependentUpon>TKCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaDeThiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaDeThiForm.Designer.cs">
+      <DependentUpon>SuaDeThiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaKyThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\TKCauHoi.resx">
       <DependentUpon>TKCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaDeThiForm.resx">
+      <DependentUpon>SuaDeThiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaKyThiForm.resx">
       <DependentUpon>SuaKyThiForm.cs</DependentUpon>

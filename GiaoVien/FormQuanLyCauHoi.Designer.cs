@@ -80,6 +80,7 @@
             // 
             // cbDoKhoa
             // 
+            this.cbDoKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDoKhoa.FormattingEnabled = true;
             this.cbDoKhoa.Location = new System.Drawing.Point(464, 9);
             this.cbDoKhoa.Name = "cbDoKhoa";
@@ -88,6 +89,7 @@
             // 
             // cbCapHoc
             // 
+            this.cbCapHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.Location = new System.Drawing.Point(277, 9);
             this.cbCapHoc.Name = "cbCapHoc";
@@ -126,6 +128,7 @@
             // 
             // cbMonHoc
             // 
+            this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
             this.cbMonHoc.Location = new System.Drawing.Point(83, 9);
             this.cbMonHoc.Name = "cbMonHoc";
@@ -162,6 +165,7 @@
             // 
             // cbbLoaiCH
             // 
+            this.cbbLoaiCH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLoaiCH.FormattingEnabled = true;
             this.cbbLoaiCH.Location = new System.Drawing.Point(680, 9);
             this.cbbLoaiCH.Name = "cbbLoaiCH";
@@ -172,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(839, 50);
+            this.label5.Location = new System.Drawing.Point(827, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 16);
             this.label5.TabIndex = 15;
@@ -180,8 +184,9 @@
             // 
             // txtNoiDung
             // 
-            this.txtNoiDung.Location = new System.Drawing.Point(861, 80);
+            this.txtNoiDung.Location = new System.Drawing.Point(830, 64);
             this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.ReadOnly = true;
             this.txtNoiDung.Size = new System.Drawing.Size(368, 79);
             this.txtNoiDung.TabIndex = 16;
             this.txtNoiDung.Text = "";
@@ -190,7 +195,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(839, 185);
+            this.label6.Location = new System.Drawing.Point(827, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 16);
             this.label6.TabIndex = 17;
@@ -204,7 +209,7 @@
             this.columnHeader5});
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
-            this.lvDapAn.Location = new System.Drawing.Point(861, 213);
+            this.lvDapAn.Location = new System.Drawing.Point(830, 197);
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(372, 149);
             this.lvDapAn.TabIndex = 18;
