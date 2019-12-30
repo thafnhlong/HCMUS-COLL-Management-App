@@ -32,6 +32,11 @@ namespace GiaoVien
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
+            if (lvDethi.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn đề thi cần sửa");
+                return;
+            }
             if (lvDethi.SelectedItems[0].BackColor == Color.Red)
             {
                 MessageBox.Show("Không thể sửa đề thi được chọn");
@@ -74,7 +79,7 @@ namespace GiaoVien
 
         private void BtnTaoDeThi_Click(object sender, EventArgs e)
         {
-            TaoDeThiForm f = new TaoDeThiForm();
+            TaoDeThiForm f = new TaoDeThiForm(this);
             f.Show();
         }
 

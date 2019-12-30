@@ -18,9 +18,11 @@ namespace GiaoVien
         string[] StrMonHoc = { "Toán", "Lý", "Hóa" };
         string[] StrLoaiDeThi = { "Thi Thật", "Thi Thử" };
         bool check = false;
-        public TaoDeThiForm()
+        QuanLyDeThiForm f;
+        public TaoDeThiForm(QuanLyDeThiForm form)
         {
             InitializeComponent();
+            f = form;
             cbMonHoc.SelectedIndexChanged += CbMonHoc_SelectedIndexChanged;
             cbCapHoc.SelectedIndexChanged += CbMonHoc_SelectedIndexChanged;
             cbbLoaiDeThi.SelectedIndexChanged += CbMonHoc_SelectedIndexChanged;
@@ -86,6 +88,8 @@ namespace GiaoVien
                     }
                 }
                 MessageBox.Show("Tao thanh cong");
+                f.loadLVDeThi();
+                Close();
             }
         }
 
