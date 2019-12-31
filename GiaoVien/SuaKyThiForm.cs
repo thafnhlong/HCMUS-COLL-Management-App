@@ -202,12 +202,13 @@ namespace GiaoVien
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = tk.hoten);
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = tk.ngaysinh.ToString());
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = dsLopHoc.Where(x => x.id == tk.lophocid).FirstOrDefault().tenlop);
-                    lvHocSinh.Items.Add(lvi);
 
                     if (dethicustom.hocsinhid.IndexOf(tk.id) != -1)
                     {
                         lvi.Checked = true;
                     }
+
+                    lvHocSinh.Items.Add(lvi);
                 }
             }
         }
@@ -249,7 +250,7 @@ namespace GiaoVien
                     var dethicustom = new DeThiCusTom();
                     dethicustom.deThiid = i.id;
                     dethicustom.DuocCheck = (i.kythiid == kythiid ? true : false);
-
+                    dethicustom.loaidethi = i.loaidethi.Value;
                     if (i.ngaythi.HasValue)
                     {
                         dethicustom.CoNgayThi = true;
@@ -283,7 +284,7 @@ namespace GiaoVien
             }
             if (!KiemTraNgayThi())
             {
-                MessageBox.Show("Ngày thi phải diễn ra cùng hoặc sau Ngày bắt đầu của kỳ thi");
+                MessageBox.Show("Ngày thi của đề thi phải diễn ra trong khoảng thời gian cua kỳ thi");
                 return;
             }
             //xoa du lieu hien tai
@@ -308,6 +309,8 @@ namespace GiaoVien
             var dethi = qltn.DeThis.ToList();
             foreach(DeThiCusTom dethicustom in dsDeThiCustom)
             {
+                if (dethicustom.loaidethi != (cb.SelectedIndex == 0 ? true : false))
+                    continue;
                 try
                 {
                     if (dethicustom.DuocCheck)
@@ -453,5 +456,6 @@ namespace GiaoVien
         public int deThiid;
         public bool DuocCheck = false;
         public List<int> hocsinhid = new List<int>();
+        public bool loaidethi;
     }
 }

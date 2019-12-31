@@ -76,6 +76,7 @@ namespace GiaoVien
                         MessageBox.Show("Kỳ thi này đã có thí sinh làm bài");
                         return;
                     }
+                    qltn.HocSinhThamGias.DeleteAllOnSubmit(Hstg);
                 }
                 foreach(DeThi dt in dsDeThi)
                 {

@@ -165,7 +165,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Thời gian tối đa";
-            this.columnHeader4.Width = 131;
+            this.columnHeader4.Width = 88;
             // 
             // columnHeader6
             // 
