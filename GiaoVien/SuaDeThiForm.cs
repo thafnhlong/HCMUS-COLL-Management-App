@@ -61,7 +61,7 @@ namespace GiaoVien
 
         bool KiemTraThoiGian()
         {
-            if (numericThoiGian.Value < 0)
+            if (numericThoiGian.Value <= 0)
                 return false;
             return true;
         }
