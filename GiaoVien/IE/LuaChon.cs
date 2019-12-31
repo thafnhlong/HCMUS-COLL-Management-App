@@ -289,7 +289,7 @@ namespace GiaoVien.IE
                 {
                     var ds = qltn.CauHois.Where(x => x.monhocid.Value == mon
                         && x.caphocid == cap
-                        && loaicauhoi == 0 ? !x.trangthai.HasValue : x.trangthai.Value
+                        && (loaicauhoi == 0 ? !x.trangthai.HasValue : x.trangthai.Value)
                     ).Select(x => new
                     {
                         x.noidung,
