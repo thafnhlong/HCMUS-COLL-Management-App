@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,8 +96,9 @@ namespace Admin
                 SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
                 bu2.ExecuteNonQuery();
 
+                var path = Path.GetDirectoryName(textBox2.Text);
 
-                string sqlStmt3 = "USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'" + textBox2.Text + "'WITH REPLACE;";
+                string sqlStmt3 = $"USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'{textBox2.Text}' WITH REPLACE, move 'LTUDQL' to N'{path}\\db.mdf', move 'LTUDQL_log' to N'{path}\\db.ldf'";
                 SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
                 bu3.ExecuteNonQuery();
 
