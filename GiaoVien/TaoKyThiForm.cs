@@ -15,6 +15,7 @@ namespace GiaoVien
     {
         bool CoNgayThi = false;
 
+        List<int> ngayThi = new List<int>();
         List<int> dsDethiDuocCheck = new List<int>();
         List<ChonDeThi> dsDeThiDuocSelect = new List<ChonDeThi>();
         List<DeThi> dsDeThi = new List<DeThi>();

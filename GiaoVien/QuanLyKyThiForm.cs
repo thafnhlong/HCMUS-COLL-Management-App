@@ -13,7 +13,6 @@ namespace GiaoVien
 {
     public partial class QuanLyKyThiForm : Form
     {
-        List<KyThi> dsKyThi = new List<KyThi>();
         List<LopHoc> dsLopHoc = new List<LopHoc>();
         string[] StrKyThi = { "Tất cả" ,"Thi thật", "Thi thử/Ôn tập" };
         string[] StrCapHoc = { "Khối 10", "Khối 11", "Khối 12" };
@@ -54,7 +53,7 @@ namespace GiaoVien
                 }
             }
             SuaKyThiForm f = new SuaKyThiForm(this,kythiid);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void BtnXoa_Click(object sender, EventArgs e)
@@ -86,7 +85,7 @@ namespace GiaoVien
         private void BtnTao_Click(object sender, EventArgs e)
         {
             TaoKyThiForm f = new TaoKyThiForm(this);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void LvDethi_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,25 +175,26 @@ namespace GiaoVien
             lvKyThi.Items.Clear();
             lvThiSinh.Items.Clear();
             lvDethi.Items.Clear();
+
             using (var qltn = Utils.QLTN.getInstance()) {
-                if (cbbLoaiKyThi.SelectedIndex == 0)
+                var dsKyThi = qltn.KyThis.Select(i => 
+                new { KyThi = i, check = i.DeThis.Where(c => c.HocSinhThamGias.Where(j => j.thoigianlambai.Length > 0).ToList().Count > 0).ToList().Count > 0 ? true : false }).ToList();
+                if (cbbLoaiKyThi.SelectedIndex != 0)
                 {
-                    dsKyThi = qltn.KyThis.ToList();
+                    dsKyThi = dsKyThi.Where(i => i.KyThi.loaikythi == (cbbLoaiKyThi.SelectedIndex == 1 ? true : false)).ToList();
                 }
-                else
+                foreach (var i in dsKyThi)
                 {
-                    dsKyThi = qltn.KyThis.Where(i => i.loaikythi == (cbbLoaiKyThi.SelectedIndex == 1 ? true : false)).ToList();
+                    ListViewItem lvi = new ListViewItem();
+                    if (i.check == true)
+                        lvi.BackColor = Color.Red;
+                    lvi.Text = i.KyThi.id.ToString();
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.tenkythi);
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.ngaybatdau.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.songay.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = (i.KyThi.loaikythi == true ? "Thi Thật" : "Thi thử/Ôn tập"));
+                    lvKyThi.Items.Add(lvi);
                 }
-            }
-            foreach(KyThi i in dsKyThi)
-            {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = i.id.ToString();
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.tenkythi);
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.ngaybatdau.ToString());
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.songay.ToString());
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = (i.loaikythi == true ? "Thi Thật" : "Thi thử/Ôn tập"));
-                lvKyThi.Items.Add(lvi);
             }
         }
 

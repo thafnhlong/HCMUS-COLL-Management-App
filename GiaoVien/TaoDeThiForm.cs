@@ -136,6 +136,8 @@ namespace GiaoVien
             }
             foreach(CauHoi i in dsCauHoi)
             {
+                if (i.DeThi_CauHois.Count > 0)
+                    continue;
                 ListViewItem lvi = new ListViewItem();
                 lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
                 lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.noidung);

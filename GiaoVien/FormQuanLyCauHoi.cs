@@ -147,9 +147,9 @@ namespace GiaoVien
             {
 
                 dsCauHoi = qltn.CauHois.Where(
-                    x => (cbb1 > 0 ? x.monhocid == cbb1 : true) &&
-                        (cbb2 > 0 ? x.caphocid == cbb2 : true) &&
-                        (cbb3 > 0 ? x.dokho == cbb3 - 1 : true) &&
+                    x => (cbb1 >= 0 ? x.monhocid == cbb1 + 1 : false) &&
+                        (cbb2 >= 0 ? x.caphocid == cbb2 + 1 : false) &&
+                        (cbb3 >= 0 ? x.dokho == cbb3 : false) &&
                         (cbb4 < 1 ? !x.trangthai.HasValue : (x.trangthai == true))
                 ).ToList();
 
@@ -166,8 +166,6 @@ namespace GiaoVien
         void loadCapHoc()
         {
             cbCapHoc.Items.Clear();
-            cbCapHoc.Items.Add("Tất cả");
-            cbCapHoc.SelectedIndex = 0;
             using (var qltn = Utils.QLTN.getInstance())
             {
                 var dsCapHoc = qltn.CapHocs.ToList();
@@ -176,13 +174,12 @@ namespace GiaoVien
                     cbCapHoc.Items.Add(dsCapHoc[i].tencap);
                 }
             }
+            cbCapHoc.SelectedIndex = 0;
         }
 
         void loadMonHoc()
         {
             cbMonHoc.Items.Clear();
-            cbMonHoc.Items.Add("Tất cả");
-            cbMonHoc.SelectedIndex = 0;
             using (var qltn = Utils.QLTN.getInstance())
             {
                 var dsMonHoc = qltn.MonHocs.ToList();
@@ -191,17 +188,17 @@ namespace GiaoVien
                     cbMonHoc.Items.Add(dsMonHoc[i].tenmonhoc);
                 }
             }
+            cbMonHoc.SelectedIndex = 0;
         }
 
         void loadDoKho()
         {
             cbDoKhoa.Items.Clear();
-            cbDoKhoa.Items.Add("Tất cả");
-            cbDoKhoa.SelectedIndex = 0;
             cbDoKhoa.Items.Add("Dễ");
             cbDoKhoa.Items.Add("Trung bình");
             cbDoKhoa.Items.Add("Khó");
             cbDoKhoa.Items.Add("Rất khó");
+            cbDoKhoa.SelectedIndex = 0;
         }
 
         void loadLoaiCauHoi()
