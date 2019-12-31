@@ -42,6 +42,20 @@ namespace GiaoVien
             checkbox.CheckedChanged += Checkbox_CheckedChanged1;
             dtNgay.ValueChanged += DtNgay_ValueChanged;
             cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
+            dtNgay.ValueChanged += DtNgay_ValueChanged1;
+        }
+
+        private void DtNgay_ValueChanged1(object sender, EventArgs e)
+        {
+            int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
+            try
+            {
+                var ngay = dsDeThiCustom.Where(i => i.deThiid == dethiid).First();
+                ngay.NgayThi = dtNgay.Value;
+                if (ngay.CoNgayThi)
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = ngay.NgayThi.ToString();
+            }
+            catch { }
         }
 
         private void Cb_SelectedIndexChanged(object sender, EventArgs e)
