@@ -59,7 +59,6 @@
             // cbbLoaiKyThi
             // 
             this.cbbLoaiKyThi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLoaiKyThi.Enabled = false;
             this.cbbLoaiKyThi.FormattingEnabled = true;
             this.cbbLoaiKyThi.Location = new System.Drawing.Point(87, 21);
             this.cbbLoaiKyThi.Name = "cbbLoaiKyThi";
