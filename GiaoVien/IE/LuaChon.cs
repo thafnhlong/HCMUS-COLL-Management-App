@@ -192,10 +192,10 @@ namespace GiaoVien.IE
                 Excel.Worksheet worksheet = workbook.Worksheets[1];
                 int lastrow = worksheet.UsedRange.Rows.Count;
 
-                bool? trangthaich = null;
+                bool? trangthaich = true;
 
                 if (loaicauhoi == 0)
-                    trangthaich = true;
+                    trangthaich = null;
 
                 using (var qltn = Utils.QLTN.getInstance())
                 {

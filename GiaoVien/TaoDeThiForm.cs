@@ -133,6 +133,9 @@ namespace GiaoVien
                     dsCauHoi = qltn.CauHois.Where(i => i.trangthai.HasValue == false && i.monhocid == cbb1 + 1 && i.caphocid == cbb2 + 1).ToList();
                 else
                     dsCauHoi = qltn.CauHois.Where(i => i.trangthai == true  && i.monhocid == cbb1 + 1 && i.caphocid == cbb2 + 1).ToList();
+
+                dsCauHoi = dsCauHoi.OrderBy(x => x.dokho).ToList();
+
                 foreach (CauHoi i in dsCauHoi)
                 {
                     if (i.DeThi_CauHois.Count > 0)
