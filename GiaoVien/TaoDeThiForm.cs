@@ -133,16 +133,16 @@ namespace GiaoVien
                     dsCauHoi = qltn.CauHois.Where(i => i.trangthai.HasValue == false && i.monhocid == cbb1 + 1 && i.caphocid == cbb2 + 1).ToList();
                 else
                     dsCauHoi = qltn.CauHois.Where(i => i.trangthai == true  && i.monhocid == cbb1 + 1 && i.caphocid == cbb2 + 1).ToList();
-            }
-            foreach(CauHoi i in dsCauHoi)
-            {
-                if (i.DeThi_CauHois.Count > 0)
-                    continue;
-                ListViewItem lvi = new ListViewItem();
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.noidung);
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.dokho.ToString());
-                lvCauHoi.Items.Add(lvi);
+                foreach (CauHoi i in dsCauHoi)
+                {
+                    if (i.DeThi_CauHois.Count > 0)
+                        continue;
+                    ListViewItem lvi = new ListViewItem();
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.noidung);
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.dokho.ToString());
+                    lvCauHoi.Items.Add(lvi);
+                }
             }
             lblSoLuong.Text = "0";
         }
