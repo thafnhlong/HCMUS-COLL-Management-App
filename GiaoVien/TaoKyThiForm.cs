@@ -15,7 +15,7 @@ namespace GiaoVien
     {
         bool CoNgayThi = false;
 
-        List<int> ngayThi = new List<int>();
+        List<DeThi_NgayThi> ngayThi = new List<DeThi_NgayThi>();
         List<int> dsDethiDuocCheck = new List<int>();
         List<ChonDeThi> dsDeThiDuocSelect = new List<ChonDeThi>();
         List<DeThi> dsDeThi = new List<DeThi>();
@@ -38,6 +38,7 @@ namespace GiaoVien
             lvHocSinh.ItemChecked += LvHocSinh_ItemChecked;
             lvDeThi.ItemChecked += LvDeThi_ItemChecked;
             checkbox.CheckedChanged += Checkbox_CheckedChanged;
+            checkbox.Checked = false;
         }
 
         private void Checkbox_CheckedChanged(object sender, EventArgs e)
@@ -46,11 +47,25 @@ namespace GiaoVien
             {
                 dtNgay.Enabled = true;
                 CoNgayThi = true;
+                if (lvDeThi.SelectedItems.Count > 0)
+                {
+                    ngayThi.Add(new DeThi_NgayThi(int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text),dtNgay.Value));
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+                }
             }
             else
             {
                 dtNgay.Enabled = false;
                 CoNgayThi = false;
+                if (lvDeThi.SelectedItems.Count > 0)
+                {
+                    foreach(DeThi_NgayThi i in ngayThi)
+                    {
+                        if (i.dethiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text))
+                            i.dethiid = 0;
+                    }
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = "";
+                }
             }
         }
 
@@ -90,8 +105,18 @@ namespace GiaoVien
             lvHocSinh.Items.Clear();
             if (lvDeThi.SelectedItems.Count > 0)
             {
-                if (dsDeThiDuocSelect.Find(x => x.dethiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text))==null)
-                    dsDeThiDuocSelect.Add(new ChonDeThi(int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)));
+                int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
+                var check = ngayThi.Where(i => i.dethiid == dethiid).ToList();
+                if (check.Count > 0)
+                    checkbox.Checked = true;
+                else
+                    checkbox.Checked = false;
+                if (dsDeThiDuocSelect.Find(x => x.dethiid == dethiid) ==null)
+                    dsDeThiDuocSelect.Add(new ChonDeThi(dethiid));
+                if (lvDeThi.SelectedItems[0].SubItems[5].Text.Length > 0)
+                    checkbox.Checked = true;
+                else
+                    checkbox.Checked = false;
                 loadLVHocSinh(strCapHoc.IndexOf(lvDeThi.SelectedItems[0].SubItems[3].Text) + 1);
             }
         }
@@ -155,6 +180,8 @@ namespace GiaoVien
                 ListViewItem lvi = new ListViewItem();
                 lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
                 string monhoc = null;
+                if (i.ngaythi.HasValue)
+                    ngayThi.Add(new DeThi_NgayThi(i.id,i.ngaythi.Value));
                 foreach(MonHoc mh in dsMonHoc)
                 {
                     if (i.monhocid == mh.id)
@@ -196,11 +223,15 @@ namespace GiaoVien
                 kt = qltn.KyThis.ToList().Last();
                 foreach (int i in dsDethiDuocCheck)
                 {
-                    //update kythiid cua kythi
+                    //update kythiid cua dethi
                     DeThi dt = qltn.DeThis.Where(x => x.id == i).First();
                     dt.kythiid = kt.id;
-                    if (CoNgayThi)
-                        dt.ngaythi = dtNgay.Value;
+                    try
+                    {
+                        var congaythi = ngayThi.Where(x => x.dethiid == dt.id).First();
+                        dt.ngaythi = congaythi.ngaythi;
+                    }
+                    catch { }
                     qltn.SubmitChanges();
 
                     //insert HocSinhThamGia
@@ -278,5 +309,16 @@ namespace GiaoVien
         public bool dcCheck;
         public int dethiid;
         public List<int> hsDuocChon = new List<int>();
+    }
+
+    public class DeThi_NgayThi
+    {
+        public int dethiid { get; set; }
+        public DateTime ngaythi { get; set; }
+        public DeThi_NgayThi(int id,DateTime ngay)
+        {
+            dethiid = id;
+            ngaythi = ngay;
+        }
     }
 }

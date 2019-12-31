@@ -41,6 +41,20 @@ namespace GiaoVien
             checkbox.CheckedChanged += Checkbox_CheckedChanged;
             checkbox.CheckedChanged += Checkbox_CheckedChanged1;
             dtNgay.ValueChanged += DtNgay_ValueChanged;
+            cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
+        }
+
+        private void Cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb.SelectedIndex == 0)
+            {
+                checkbox.Checked = true;
+                checkbox.Enabled = false;
+            }
+            if (cb.SelectedIndex == 1)
+            {
+                checkbox.Enabled = true;
+            }
         }
 
         private void DtNgay_ValueChanged(object sender, EventArgs e)
