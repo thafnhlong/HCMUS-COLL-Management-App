@@ -34,7 +34,7 @@ namespace GiaoVien
         {
             if (lvKyThi.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn kỳ thi");
+                MessageBox.Show("Hãy chọn kỳ thi muốn sửa");
                 return;
             }
             using (var qltn = Utils.QLTN.getInstance())
@@ -58,6 +58,11 @@ namespace GiaoVien
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
+            if (lvKyThi.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn kỳ thi muốn xóa");
+                return;
+            }
             using(var qltn = Utils.QLTN.getInstance())
             {
                 var kythi = qltn.KyThis.Where(i => i.id == int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text)).First();
