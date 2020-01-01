@@ -44,7 +44,6 @@ namespace HocSinh
 
         private void InBangDiem_Load(object sender, EventArgs e)
         {
-            rvBangDiem.RefreshReport();
 
             using (var qltn = Utils.QLTN.getInstance())
             {

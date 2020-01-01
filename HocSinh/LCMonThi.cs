@@ -42,7 +42,7 @@ namespace HocSinh
             Load += LCMonThi_Load;
 
             btnLamBai.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue).ShowDialog(); };
-            btnXemDapAn.Click += (s, e) => { Hide(); Close(); new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue, true).ShowDialog(); };
+            btnXemDapAn.Click += (s, e) => { new LBThi(HocSinhID, (int)cbbMonThi.SelectedValue, true).ShowDialog(); };
         }
 
         private void LCMonThi_Load(object sender, EventArgs e)
