@@ -305,7 +305,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "SuaKyThiForm";
-            this.Text = "SuaKyThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sửa kỳ thi";
             ((System.ComponentModel.ISupportInitialize)(this.numericSoNgay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

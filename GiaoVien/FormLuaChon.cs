@@ -12,6 +12,8 @@ namespace GiaoVien
 {
     public partial class FormLuaChon : Form
     {
+        public EventHandler DangXuatEvent; 
+
         int ID;
         public FormLuaChon(int id)
         {
@@ -30,6 +32,13 @@ namespace GiaoVien
             btnInDSKyThiKQ.Click += (s, e) => new Report.DSKyThiKQ().ShowDialog();
 
             Load += FormLuaChon_Load;
+            btnDangXuat.Click += (s, e) =>
+            {
+                Hide(); Dispose();
+                DangXuatEvent?.Invoke(s, e);
+            };
+
+            FormClosed += (s, e) => Application.Exit();
         }
 
         private void FormLuaChon_Load(object sender, EventArgs e)
@@ -45,13 +54,13 @@ namespace GiaoVien
         private void BtnKyThi_Click(object sender, EventArgs e)
         {
             QuanLyKyThiForm f = new QuanLyKyThiForm();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void BtnDeThi_Click(object sender, EventArgs e)
         {
             QuanLyDeThiForm f = new QuanLyDeThiForm();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void BtnQLHS_Click(object sender, EventArgs e)
@@ -65,6 +74,5 @@ namespace GiaoVien
             var formQLCH = new FormQuanLyCauHoi(ID);
             formQLCH.ShowDialog();
         }
-
     }
 }

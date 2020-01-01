@@ -302,7 +302,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "TaoKyThiForm";
-            this.Text = "TaoKyThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tạo kỳ thi";
             ((System.ComponentModel.ISupportInitialize)(this.numericSoNgay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -335,7 +336,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button btnTao;
         private System.Windows.Forms.NumericUpDown numericSoNgay;
-        private System.Windows.Forms.DateTimePicker dtNgayThi;
         private System.Windows.Forms.DateTimePicker dtNgay;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkbox;

@@ -47,7 +47,7 @@
             this.btnGiaoVien.Location = new System.Drawing.Point(50, 54);
             this.btnGiaoVien.Name = "btnGiaoVien";
             this.btnGiaoVien.Size = new System.Drawing.Size(106, 46);
-            this.btnGiaoVien.TabIndex = 2;
+            this.btnGiaoVien.TabIndex = 0;
             this.btnGiaoVien.Text = "Giáo viên";
             this.btnGiaoVien.UseVisualStyleBackColor = true;
             // 
@@ -56,7 +56,7 @@
             this.btnExit.Location = new System.Drawing.Point(364, 54);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 46);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
@@ -64,11 +64,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 154);
+            this.ClientSize = new System.Drawing.Size(547, 151);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHocSinh);
             this.Controls.Add(this.btnGiaoVien);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.ResumeLayout(false);
 

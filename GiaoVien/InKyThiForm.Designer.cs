@@ -47,7 +47,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "InKyThiForm";
-            this.Text = "InKyThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "In kỳ thi";
             this.Load += new System.EventHandler(this.InKyThiForm_Load);
             this.ResumeLayout(false);
 

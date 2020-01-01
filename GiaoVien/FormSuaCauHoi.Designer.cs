@@ -315,7 +315,8 @@
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.label1);
             this.Name = "FormSuaCauHoi";
-            this.Text = "FormSuaCauHoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sửa câu hỏi";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -54,7 +54,7 @@
             this.lvShow.FullRowSelect = true;
             this.lvShow.GridLines = true;
             this.lvShow.HideSelection = false;
-            this.lvShow.Location = new System.Drawing.Point(12, 76);
+            this.lvShow.Location = new System.Drawing.Point(15, 40);
             this.lvShow.Name = "lvShow";
             this.lvShow.Size = new System.Drawing.Size(367, 395);
             this.lvShow.TabIndex = 0;
@@ -85,9 +85,9 @@
             this.columnHeader5});
             this.lvChiTiet.GridLines = true;
             this.lvChiTiet.HideSelection = false;
-            this.lvChiTiet.Location = new System.Drawing.Point(486, 76);
+            this.lvChiTiet.Location = new System.Drawing.Point(399, 40);
             this.lvChiTiet.Name = "lvChiTiet";
-            this.lvChiTiet.Size = new System.Drawing.Size(440, 395);
+            this.lvChiTiet.Size = new System.Drawing.Size(472, 395);
             this.lvChiTiet.TabIndex = 1;
             this.lvChiTiet.UseCompatibleStateImageBehavior = false;
             this.lvChiTiet.View = System.Windows.Forms.View.Details;
@@ -114,7 +114,7 @@
             // 
             // txtTenHS
             // 
-            this.txtTenHS.Location = new System.Drawing.Point(541, 30);
+            this.txtTenHS.Location = new System.Drawing.Point(595, 10);
             this.txtTenHS.Name = "txtTenHS";
             this.txtTenHS.Size = new System.Drawing.Size(145, 20);
             this.txtTenHS.TabIndex = 2;
@@ -123,7 +123,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(451, 32);
+            this.label1.Location = new System.Drawing.Point(504, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 3;
@@ -132,7 +132,7 @@
             // cbKhoiHoc
             // 
             this.cbKhoiHoc.FormattingEnabled = true;
-            this.cbKhoiHoc.Location = new System.Drawing.Point(105, 29);
+            this.cbKhoiHoc.Location = new System.Drawing.Point(88, 10);
             this.cbKhoiHoc.Name = "cbKhoiHoc";
             this.cbKhoiHoc.Size = new System.Drawing.Size(151, 21);
             this.cbKhoiHoc.TabIndex = 5;
@@ -141,7 +141,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 32);
+            this.label3.Location = new System.Drawing.Point(12, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(700, 34);
+            this.label2.Location = new System.Drawing.Point(254, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 8;
@@ -160,7 +160,7 @@
             // cbbKyThi
             // 
             this.cbbKyThi.FormattingEnabled = true;
-            this.cbbKyThi.Location = new System.Drawing.Point(786, 32);
+            this.cbbKyThi.Location = new System.Drawing.Point(340, 10);
             this.cbbKyThi.Name = "cbbKyThi";
             this.cbbKyThi.Size = new System.Drawing.Size(140, 21);
             this.cbbKyThi.TabIndex = 7;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 531);
+            this.ClientSize = new System.Drawing.Size(884, 449);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbKyThi);
             this.Controls.Add(this.label3);
@@ -179,7 +179,8 @@
             this.Controls.Add(this.lvChiTiet);
             this.Controls.Add(this.lvShow);
             this.Name = "FormXemThongKeHocSinh";
-            this.Text = "FormXemThongKeHocSinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thống kê học sinh";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -42,45 +42,46 @@
             this.btnInDSKyThiKQ = new System.Windows.Forms.Button();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.lblNamSinh = new System.Windows.Forms.Label();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnQLHS
             // 
             this.btnQLHS.Location = new System.Drawing.Point(161, 170);
-            this.btnQLHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLHS.Name = "btnQLHS";
             this.btnQLHS.Size = new System.Drawing.Size(137, 47);
-            this.btnQLHS.TabIndex = 12;
+            this.btnQLHS.TabIndex = 4;
             this.btnQLHS.Text = "Quản lý học sinh";
             this.btnQLHS.UseVisualStyleBackColor = true;
             // 
             // btnKyThi
             // 
             this.btnKyThi.Location = new System.Drawing.Point(161, 100);
-            this.btnKyThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKyThi.Margin = new System.Windows.Forms.Padding(4);
             this.btnKyThi.Name = "btnKyThi";
             this.btnKyThi.Size = new System.Drawing.Size(137, 47);
-            this.btnKyThi.TabIndex = 13;
+            this.btnKyThi.TabIndex = 1;
             this.btnKyThi.Text = "Quản lý kỳ thi";
             this.btnKyThi.UseVisualStyleBackColor = true;
             // 
             // btnDeThi
             // 
             this.btnDeThi.Location = new System.Drawing.Point(16, 170);
-            this.btnDeThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeThi.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeThi.Name = "btnDeThi";
             this.btnDeThi.Size = new System.Drawing.Size(137, 47);
-            this.btnDeThi.TabIndex = 14;
+            this.btnDeThi.TabIndex = 3;
             this.btnDeThi.Text = "Quản lý đề thi";
             this.btnDeThi.UseVisualStyleBackColor = true;
             // 
             // btnQLCH
             // 
             this.btnQLCH.Location = new System.Drawing.Point(16, 100);
-            this.btnQLCH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLCH.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLCH.Name = "btnQLCH";
             this.btnQLCH.Size = new System.Drawing.Size(137, 47);
-            this.btnQLCH.TabIndex = 15;
+            this.btnQLCH.TabIndex = 0;
             this.btnQLCH.Text = "Quản lý câu hỏi";
             this.btnQLCH.UseVisualStyleBackColor = true;
             // 
@@ -99,9 +100,9 @@
             this.label4.Location = new System.Drawing.Point(12, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 17);
+            this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Năm sinh:";
+            this.label4.Text = "Ngày sinh:";
             // 
             // lblName
             // 
@@ -125,40 +126,40 @@
             // btnDuyetCH
             // 
             this.btnDuyetCH.Location = new System.Drawing.Point(16, 241);
-            this.btnDuyetCH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDuyetCH.Margin = new System.Windows.Forms.Padding(4);
             this.btnDuyetCH.Name = "btnDuyetCH";
             this.btnDuyetCH.Size = new System.Drawing.Size(137, 47);
-            this.btnDuyetCH.TabIndex = 15;
+            this.btnDuyetCH.TabIndex = 6;
             this.btnDuyetCH.Text = "Duyệt câu hỏi";
             this.btnDuyetCH.UseVisualStyleBackColor = true;
             // 
             // btnThongKeCauHoi
             // 
             this.btnThongKeCauHoi.Location = new System.Drawing.Point(161, 241);
-            this.btnThongKeCauHoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThongKeCauHoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThongKeCauHoi.Name = "btnThongKeCauHoi";
             this.btnThongKeCauHoi.Size = new System.Drawing.Size(137, 47);
-            this.btnThongKeCauHoi.TabIndex = 16;
+            this.btnThongKeCauHoi.TabIndex = 7;
             this.btnThongKeCauHoi.Text = "Thống kê câu hỏi";
             this.btnThongKeCauHoi.UseVisualStyleBackColor = true;
             // 
             // btnInDSKyThi
             // 
             this.btnInDSKyThi.Location = new System.Drawing.Point(309, 170);
-            this.btnInDSKyThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInDSKyThi.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDSKyThi.Name = "btnInDSKyThi";
             this.btnInDSKyThi.Size = new System.Drawing.Size(137, 47);
-            this.btnInDSKyThi.TabIndex = 16;
+            this.btnInDSKyThi.TabIndex = 5;
             this.btnInDSKyThi.Text = "In DS kỳ thi";
             this.btnInDSKyThi.UseVisualStyleBackColor = true;
             // 
             // btnInDSKyThiKQ
             // 
             this.btnInDSKyThiKQ.Location = new System.Drawing.Point(309, 100);
-            this.btnInDSKyThiKQ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInDSKyThiKQ.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDSKyThiKQ.Name = "btnInDSKyThiKQ";
             this.btnInDSKyThiKQ.Size = new System.Drawing.Size(137, 47);
-            this.btnInDSKyThiKQ.TabIndex = 16;
+            this.btnInDSKyThiKQ.TabIndex = 2;
             this.btnInDSKyThiKQ.Text = "In DS kỳ thi + KQ";
             this.btnInDSKyThiKQ.UseVisualStyleBackColor = true;
             // 
@@ -182,6 +183,16 @@
             this.lblNamSinh.TabIndex = 11;
             this.lblNamSinh.Text = "lblNamSinh";
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Location = new System.Drawing.Point(309, 241);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(137, 47);
+            this.btnDangXuat.TabIndex = 8;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            // 
             // FormLuaChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,6 +200,7 @@
             this.ClientSize = new System.Drawing.Size(459, 298);
             this.Controls.Add(this.btnInDSKyThiKQ);
             this.Controls.Add(this.btnInDSKyThi);
+            this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnThongKeCauHoi);
             this.Controls.Add(this.btnQLHS);
             this.Controls.Add(this.btnKyThi);
@@ -203,12 +215,12 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLuaChon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLuaChon";
+            this.Text = "Giáo Viên";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Button btnInDSKyThiKQ;
         private System.Windows.Forms.Label lblHoTen;
         private System.Windows.Forms.Label lblNamSinh;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }

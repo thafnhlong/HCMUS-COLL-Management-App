@@ -266,7 +266,8 @@
             this.Controls.Add(this.btnSuaCauHoi);
             this.Controls.Add(this.btnThemCauHoi);
             this.Name = "FormQuanLyCauHoi";
-            this.Text = "FormQuanLyCauHoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý câu hỏi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

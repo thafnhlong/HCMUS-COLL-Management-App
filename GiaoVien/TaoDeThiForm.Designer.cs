@@ -203,7 +203,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbMonHoc);
             this.Name = "TaoDeThiForm";
-            this.Text = "TaoDeThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tạo đề thi";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

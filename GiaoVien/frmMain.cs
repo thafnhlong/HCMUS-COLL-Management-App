@@ -53,8 +53,12 @@ namespace GiaoVien
         {
             isLog = false;
             var frmLuaChon = new GiaoVien.FormLuaChon(ID);
-            frmLuaChon.Show();
+            frmLuaChon.DangXuatEvent += (s, e1) =>
+            {
+                logout?.Invoke(null, null);
+            };
             Close();
+            frmLuaChon.Show();
         }
     }
 }

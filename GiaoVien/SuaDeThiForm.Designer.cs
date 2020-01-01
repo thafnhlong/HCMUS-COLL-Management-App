@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCapHoc = new System.Windows.Forms.Label();
+            this.lblLoaiDeThi = new System.Windows.Forms.Label();
             this.lblMonHoc = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numericThoiGian = new System.Windows.Forms.NumericUpDown();
@@ -42,8 +44,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSuu = new System.Windows.Forms.Button();
-            this.lblCapHoc = new System.Windows.Forms.Label();
-            this.lblLoaiDeThi = new System.Windows.Forms.Label();
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -69,6 +69,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đề thi";
+            // 
+            // lblCapHoc
+            // 
+            this.lblCapHoc.AutoSize = true;
+            this.lblCapHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapHoc.Location = new System.Drawing.Point(80, 61);
+            this.lblCapHoc.Name = "lblCapHoc";
+            this.lblCapHoc.Size = new System.Drawing.Size(45, 16);
+            this.lblCapHoc.TabIndex = 24;
+            this.lblCapHoc.Text = "label5";
+            // 
+            // lblLoaiDeThi
+            // 
+            this.lblLoaiDeThi.AutoSize = true;
+            this.lblLoaiDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiDeThi.Location = new System.Drawing.Point(332, 32);
+            this.lblLoaiDeThi.Name = "lblLoaiDeThi";
+            this.lblLoaiDeThi.Size = new System.Drawing.Size(45, 16);
+            this.lblLoaiDeThi.TabIndex = 24;
+            this.lblLoaiDeThi.Text = "label5";
             // 
             // lblMonHoc
             // 
@@ -186,26 +206,6 @@
             this.btnSuu.Text = "Sửa";
             this.btnSuu.UseVisualStyleBackColor = true;
             // 
-            // lblCapHoc
-            // 
-            this.lblCapHoc.AutoSize = true;
-            this.lblCapHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapHoc.Location = new System.Drawing.Point(80, 61);
-            this.lblCapHoc.Name = "lblCapHoc";
-            this.lblCapHoc.Size = new System.Drawing.Size(45, 16);
-            this.lblCapHoc.TabIndex = 24;
-            this.lblCapHoc.Text = "label5";
-            // 
-            // lblLoaiDeThi
-            // 
-            this.lblLoaiDeThi.AutoSize = true;
-            this.lblLoaiDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaiDeThi.Location = new System.Drawing.Point(332, 32);
-            this.lblLoaiDeThi.Name = "lblLoaiDeThi";
-            this.lblLoaiDeThi.Size = new System.Drawing.Size(45, 16);
-            this.lblLoaiDeThi.TabIndex = 24;
-            this.lblLoaiDeThi.Text = "label5";
-            // 
             // lblSoLuong
             // 
             this.lblSoLuong.AutoSize = true;
@@ -235,6 +235,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "SuaDeThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa đề thi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

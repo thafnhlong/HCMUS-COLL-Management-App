@@ -273,7 +273,8 @@
             this.Controls.Add(this.cbbLoaiKyThi);
             this.Controls.Add(this.label3);
             this.Name = "QuanLyKyThiForm";
-            this.Text = "QuanLyKyThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quàn lý kỳ thi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

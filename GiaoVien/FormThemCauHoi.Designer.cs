@@ -284,7 +284,8 @@
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.label1);
             this.Name = "FormThemCauHoi";
-            this.Text = "FormThemCauHoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm câu hỏi";
             this.Load += new System.EventHandler(this.FormThemCauHoi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

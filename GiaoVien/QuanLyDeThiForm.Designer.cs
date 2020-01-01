@@ -190,7 +190,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbMonHoc);
             this.Name = "QuanLyDeThiForm";
-            this.Text = "QuanLyDeThiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quàn lý đề thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
