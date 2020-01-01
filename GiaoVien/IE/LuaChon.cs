@@ -262,7 +262,8 @@ namespace GiaoVien.IE
                 Excel.Worksheet worksheet = workbook.Worksheets[1];
 
                 worksheet.Name = tenmon;
-
+                worksheet.Cells.NumberFormat = "@";
+                
                 worksheet.Cells[1, 1] = "Nội dung";
                 worksheet.Cells[1, 2] = "Gợi ý";
                 worksheet.Cells[1, 3] = "Độ khó";
@@ -303,7 +304,7 @@ namespace GiaoVien.IE
                     {
                         row++;
                         int col = 1;
-                        worksheet.Cells[row, col++] = ch.noidung;
+                        worksheet.Cells[row, col++].Value2 = ch.noidung;
                         worksheet.Cells[row, col++] = ch.goiy;
                         worksheet.Cells[row, col++] = ch.dokho;
 
@@ -314,6 +315,7 @@ namespace GiaoVien.IE
                         }
                     }
                 }
+
 
                 workbook.SaveAs(fileName);
                 MessageBox.Show("Đã export thành công tại " + fileName);

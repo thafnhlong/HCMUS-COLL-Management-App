@@ -103,29 +103,32 @@ namespace Admin
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            try
+
+            string saveExcelFile = "";
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Excel 2010|*.xlsx";
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
-                string saveExcelFile = "";
-                SaveFileDialog dlg = new SaveFileDialog();
-                dlg.Filter = "Excel 2010|*.xlsx";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    saveExcelFile = dlg.FileName;
-                }
-                else
-                    return;
-                //saveExcelFile = @"C:\Users\Admin\Desktop\abc.xlsx";
-                Excel.Application xlApp = new Excel.Application();
+                saveExcelFile = dlg.FileName;
+            }
+            else
+                return;
 
-                xlApp.Interactive = false;
+            Excel.Application xlApp = new Excel.Application();
 
-                if (xlApp == null)
-                {
-                    MessageBox.Show("Lỗi không thể sử dụng được thư viện EXCEL");
-                    return;
-                }
+            xlApp.Interactive = false;
 
-                new Utils.frmWaiting(() =>
+            if (xlApp == null)
+            {
+                MessageBox.Show("Lỗi không thể sử dụng được thư viện EXCEL");
+                xlApp.Quit();
+                return;
+            }
+            int permission = cbbPer.SelectedIndex;
+
+            new Utils.frmWaiting(() =>
+            {
+                try
                 {
 
                     xlApp.Visible = false;
@@ -141,6 +144,8 @@ namespace Admin
                         MessageBox.Show("Không thể tạo được WorkSheet");
                         return;
                     }
+
+                    ws.Cells.NumberFormat = "@";
                     int row = 1;
                     string fontName = "Times New Roman";
                     int fontSizeTieuDe = 18;
@@ -228,19 +233,18 @@ namespace Admin
 
                     row = 3;//dữ liệu xuất bắt đầu từ dòng số 4 trong file Excel (khai báo 3 để vào vòng lặp nó ++ thành 4)
 
-                    int permission = cbbPer.SelectedIndex;
                     if (permission == 3) permission = -1;
 
                     using (var qltn = Utils.QLTN.getInstance())
                     {
                         List<TaiKhoan> tk = qltn.TaiKhoans.Where(x =>
-                             permission < 0 ? true : x.permission == permission
-                        ).ToList();
+                                 permission < 0 ? true : x.permission == permission
+                            ).ToList();
 
                         foreach (TaiKhoan tk1 in tk)
                         {
                             row++;
-                            dynamic[] arr = { tk1.id, tk1.tentaikhoan, tk1.matkhau, tk1.hoten, tk1.ngaysinh.Value.ToString("dd.MM.yyyy"), tk1.permission, tk1.lophocid };
+                            dynamic[] arr = { tk1.id, tk1.tentaikhoan, tk1.matkhau, tk1.hoten, tk1.ngaysinh.Value.ToString(), tk1.permission, tk1.lophocid };
                             Range rowData = ws.get_Range("A" + row, "G" + row);//Lấy dòng thứ row ra để đổ dữ liệu
                             rowData.Font.Size = fontSizeNoiDung;
                             rowData.Font.Name = fontName;
@@ -258,20 +262,20 @@ namespace Admin
 
                     //đóng file để hoàn tất quá trình lưu trữ
                     wb.Close(true, misValue, misValue);
-                    //thoát và thu hồi bộ nhớ cho COM
-                    xlApp.Quit();
-                    releaseObject(ws);
-                    releaseObject(wb);
-                    releaseObject(xlApp);
 
 
                     MessageBox.Show("Đã xuất dữ liệu thành công tại: " + saveExcelFile);
-                }).ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    xlApp.Quit();
+                }
+            }).ShowDialog();
         }
         private void BorderAround(Range range)
         {
@@ -332,11 +336,8 @@ namespace Admin
         }
         private void btnImport_Click(object sender, EventArgs e)
         {
-            int c = 0, t = 0;
-
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "Excel 2010|*.xlsx";
-            Excel.Application x = new Excel.Application();
             string duongdan = "";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -350,6 +351,7 @@ namespace Admin
             if (xlApp == null)
             {
                 MessageBox.Show("Thư viện excel chưa được cài đặt");
+                xlApp.Quit();
                 return;
             }
 
@@ -379,7 +381,7 @@ namespace Admin
                                 tentaikhoan = worksheet.Cells[i, col++].Text,
                                 matkhau = worksheet.Cells[i, col++].Text,
                                 hoten = worksheet.Cells[i, col++].Text,
-                                ngaysinh = DateTime.ParseExact(worksheet.Cells[i, col++].Text, "dd.MM.yyyy", null),
+                                ngaysinh = DateTime.Parse(worksheet.Cells[i, col++].Text),
                                 permission = int.Parse(worksheet.Cells[i, col].Text),
                                 lophocid = int.Parse(worksheet.Cells[i, col++].Text) == 2 ? Lophoc : int.Parse(worksheet.Cells[i, col].Text),
                             };
