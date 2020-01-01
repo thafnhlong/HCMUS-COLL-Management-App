@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cbbKhoi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtReUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng kí";
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(121, 200);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(226, 20);
+            this.dtpDOB.TabIndex = 33;
             // 
             // cbbKhoi
             // 
@@ -200,6 +207,7 @@
             // 
             this.txtRePassword.Location = new System.Drawing.Point(122, 111);
             this.txtRePassword.Name = "txtRePassword";
+            this.txtRePassword.PasswordChar = '*';
             this.txtRePassword.Size = new System.Drawing.Size(225, 20);
             this.txtRePassword.TabIndex = 19;
             // 
@@ -229,13 +237,6 @@
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "Tên tài khoản";
-            // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Location = new System.Drawing.Point(121, 200);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(226, 20);
-            this.dtpDOB.TabIndex = 33;
             // 
             // frmRegister
             // 

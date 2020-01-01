@@ -51,24 +51,31 @@ namespace Admin
                 }
                 else
                 {
-                    string cmd = "BACKUP DATABASE [LTUDQL] TO DISK='" + textBox1.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
-
-                    using (SqlCommand command = new SqlCommand(cmd, con))
+                    new Utils.frmWaiting(() =>
                     {
-                        if (con.State != ConnectionState.Open)
+
+                        string cmd = "BACKUP DATABASE [LTUDQL] TO DISK='" + textBox1.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
+
+                        using (SqlCommand command = new SqlCommand(cmd, con))
                         {
-                            con.Open();
+                            if (con.State != ConnectionState.Open)
+                            {
+                                con.Open();
+                            }
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Sao lưu dữ liệu thành công");
+                            btnbackup.Enabled = false;
                         }
-                        command.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("Sao lưu dữ liệu thành công");
-                        btnbackup.Enabled = false;
-                    }
+                    }).ShowDialog();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
@@ -92,28 +99,34 @@ namespace Admin
             }
             try
             {
-                string sqlstmt2 = "USE MASTER ALTER DATABASE [LTUDQL] SET Single_User WITH Rollback Immediate";
-                SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
-                bu2.ExecuteNonQuery();
+                new Utils.frmWaiting(() =>
+                {
+                    string sqlstmt2 = "USE MASTER ALTER DATABASE [LTUDQL] SET Single_User WITH Rollback Immediate";
+                    SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
+                    bu2.ExecuteNonQuery();
 
-                var path = Path.GetDirectoryName(textBox2.Text);
+                    var path = Path.GetDirectoryName(textBox2.Text);
 
-                string sqlStmt3 = $"USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'{textBox2.Text}' WITH REPLACE, move 'LTUDQL' to N'{path}\\db.mdf', move 'LTUDQL_log' to N'{path}\\db.ldf'";
-                SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
-                bu3.ExecuteNonQuery();
+                    string sqlStmt3 = $"USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'{textBox2.Text}' WITH REPLACE, move 'LTUDQL' to N'{path}\\db.mdf', move 'LTUDQL_log' to N'{path}\\db.ldf'";
+                    SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
+                    bu3.ExecuteNonQuery();
 
-                string sqlStmt4 = "USE MASTER ALTER DATABASE [LTUDQL] SET Multi_User";
-                SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
-                bu4.ExecuteNonQuery();
+                    string sqlStmt4 = "USE MASTER ALTER DATABASE [LTUDQL] SET Multi_User";
+                    SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
+                    bu4.ExecuteNonQuery();
 
 
-                MessageBox.Show("Phục hồi dữ liệu thành công");
-                con.Close();
+                    MessageBox.Show("Phục hồi dữ liệu thành công");
+                }).ShowDialog();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

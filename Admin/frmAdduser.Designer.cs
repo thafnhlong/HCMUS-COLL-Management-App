@@ -152,6 +152,7 @@
             this.txtNpassword.Location = new System.Drawing.Point(115, 110);
             this.txtNpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtNpassword.Name = "txtNpassword";
+            this.txtNpassword.PasswordChar = '*';
             this.txtNpassword.Size = new System.Drawing.Size(225, 20);
             this.txtNpassword.TabIndex = 33;
             // 

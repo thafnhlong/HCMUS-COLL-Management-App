@@ -23,8 +23,8 @@ namespace Admin
         public frmQuanLy(int id)
         {
             InitializeComponent();
-            btnHuy.Click += (s, e) => {  Close(); };
-            FormClosed+= (s, e) => { swapform?.Invoke(null, null); };
+            btnHuy.Click += (s, e) => { Close(); };
+            FormClosed += (s, e) => { swapform?.Invoke(null, null); };
             idadmin = id;
         }
 
@@ -49,18 +49,19 @@ namespace Admin
         {
             using (var qltn = Utils.QLTN.getInstance())
             {
-                if (permission != -1)
+                var ds = qltn.TaiKhoans.Where(x =>
+                    permission < 0 ? true : x.permission == permission
+                ).Select(x => new
                 {
-                    var u = qltn.TaiKhoans.Where(x => x.permission == permission);
-                    dgvDS.DataSource = u.ToList();
-                    dgvDS.Columns["lophoc"].Visible = false;
-                }
-                else
-                {
-                    var u = qltn.TaiKhoans.Select(x => x);
-                    dgvDS.DataSource = u.ToList();
-                    dgvDS.Columns["lophoc"].Visible = false;
-                }
+                    x.id,
+                    x.tentaikhoan,
+                    x.matkhau,
+                    x.hoten,
+                    ngaysinh = x.ngaysinh.Value,
+                    quyenhan = x.permission.Value == 0 ? "Học sinh" : (x.permission.Value == 1 ? "Giao viên" : "Admin"),
+                    lophoc = x.LopHoc != null ? x.LopHoc.tenlop : ""
+                });
+                dgvDS.DataSource = ds.ToList();
             }
         }
         private void cbbPer_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,16 +106,15 @@ namespace Admin
             try
             {
                 string saveExcelFile = "";
-                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                SaveFileDialog dlg = new SaveFileDialog();
+                dlg.Filter = "Excel 2010|*.xlsx";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    saveExcelFile = dlg.SelectedPath;
+                    saveExcelFile = dlg.FileName;
                 }
                 else
                     return;
                 //saveExcelFile = @"C:\Users\Admin\Desktop\abc.xlsx";
-                string filename = "\\ExPort.xlsx";  
-                saveExcelFile = saveExcelFile + filename;
                 Excel.Application xlApp = new Excel.Application();
 
                 xlApp.Interactive = false;
@@ -124,134 +124,149 @@ namespace Admin
                     MessageBox.Show("Lỗi không thể sử dụng được thư viện EXCEL");
                     return;
                 }
-                xlApp.Visible = false;
 
-                object misValue = System.Reflection.Missing.Value;
-
-                Workbook wb = xlApp.Workbooks.Add(misValue);
-
-                Worksheet ws = (Worksheet)wb.Worksheets[1];
-
-                if (ws == null)
+                new Utils.frmWaiting(() =>
                 {
-                    MessageBox.Show("Không thể tạo được WorkSheet");
-                    return;
-                }
-                int row = 1;
-                string fontName = "Times New Roman";
-                int fontSizeTieuDe = 18;
-                int fontSizeTenTruong = 14;
-                int fontSizeNoiDung = 12;
-                //Xuất dòng Tiêu đề của File báo cáo: Lưu ý
-                Range row1_DSTK = ws.get_Range("A1", "E1");
-                row1_DSTK.Merge();
-                row1_DSTK.Font.Size = fontSizeTieuDe;
-                row1_DSTK.Font.Name = fontName;
-                row1_DSTK.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-                row1_DSTK.Value2 = "Danh sách tài khoản";
 
-                //Tạo Ô ID
-                Range row23_ID = ws.get_Range("A2", "A3");//Cột A dòng 2 và dòng 3
-                row23_ID.Merge();
-                row23_ID.Font.Size = fontSizeTenTruong;
-                row23_ID.Font.Name = fontName;
-                row23_ID.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_ID.Value2 = "ID";
+                    xlApp.Visible = false;
 
-                //Tạo Ô Tên tài khoản
-                Range row23_TenTK = ws.get_Range("B2", "B3");//Cột B dòng 2 và dòng 3
-                row23_TenTK.Merge();
-                row23_TenTK.Font.Size = fontSizeTenTruong;
-                row23_TenTK.Font.Name = fontName;
-                row23_TenTK.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_TenTK.Value2 = "Tên tài khoản";
-                row23_TenTK.ColumnWidth = 20;
+                    object misValue = System.Reflection.Missing.Value;
 
-                //Tạo Ô Mật khẩu
-                Range row23_MatKhau = ws.get_Range("C2", "C3");//Cột C dòng 2 và dòng 3
-                row23_MatKhau.Merge();
-                row23_MatKhau.Font.Size = fontSizeTenTruong;
-                row23_MatKhau.Font.Name = fontName;
-                row23_MatKhau.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_MatKhau.ColumnWidth = 20;
-                row23_MatKhau.Value2 = "Mật khẩu";
+                    Workbook wb = xlApp.Workbooks.Add(misValue);
 
-                //Tạo Ô Họ tên
-                Range row23_Hoten = ws.get_Range("D2", "D3");//Cột D dong 2 3
-                row23_Hoten.Merge();
-                row23_Hoten.Font.Size = fontSizeTenTruong;
-                row23_Hoten.Font.Name = fontName;
-                row23_Hoten.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_Hoten.ColumnWidth = 20;
-                row23_Hoten.Value2 = "Họ và Tên";
+                    Worksheet ws = (Worksheet)wb.Worksheets[1];
 
-                //O Ngsinh
-                Range row23_Ngsinh = ws.get_Range("E2", "E3");
-                row23_Ngsinh.Merge();
-                row23_Ngsinh.Font.Size = fontSizeTenTruong;
-                row23_Ngsinh.Font.Name = fontName;
-                row23_Ngsinh.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_Ngsinh.ColumnWidth = 20;
-                row23_Ngsinh.Value2 = "Ngay Sinh";
-
-                // Quyen
-                Range row23_Per = ws.get_Range("F2", "F3");
-                row23_Per.Merge();
-                row23_Per.Font.Size = fontSizeTenTruong;
-                row23_Per.Font.Name = fontName;
-                row23_Per.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_Per.ColumnWidth = 20;
-                row23_Per.Value2 = "Quyen";
-
-                //ClassID
-                Range row23_classID = ws.get_Range("G2", "G3");
-                row23_classID.Merge();
-                row23_classID.Font.Size = fontSizeTenTruong;
-                row23_classID.Font.Name = fontName;
-                row23_classID.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                row23_classID.ColumnWidth = 20;
-                row23_classID.Value2 = "Lop hoc ID";
-
-                //
-                //Tô nền vàng các cột tiêu đề:
-                Range row23_CotTieuDe = ws.get_Range("A2", "G3");
-                //nền vàng
-                row23_CotTieuDe.Interior.Color = ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                //in đậm
-                row23_CotTieuDe.Font.Bold = true;
-                //chữ đen
-                row23_CotTieuDe.Font.Color = ColorTranslator.ToOle(System.Drawing.Color.Black);
-
-                row = 3;//dữ liệu xuất bắt đầu từ dòng số 4 trong file Excel (khai báo 3 để vào vòng lặp nó ++ thành 4)
-                using (var qltn = Utils.QLTN.getInstance())
-                {
-                    List<TaiKhoan> tk = dgvDS.DataSource as List<TaiKhoan>;
-                    foreach (TaiKhoan tk1 in tk)
+                    if (ws == null)
                     {
-                        row++;
-                        dynamic[] arr = { tk1.id, tk1.tentaikhoan, tk1.matkhau, tk1.hoten, tk1.ngaysinh.ToString(), tk1.permission, tk1.lophocid };
-                        Range rowData = ws.get_Range("A" + row, "G" + row);//Lấy dòng thứ row ra để đổ dữ liệu
-                        rowData.Font.Size = fontSizeNoiDung;
-                        rowData.Font.Name = fontName;
-                        rowData.Value2 = arr;
+                        MessageBox.Show("Không thể tạo được WorkSheet");
+                        return;
                     }
-                }
-                //Kẻ khung toàn bộ
-                BorderAround(ws.get_Range("A2", "G" + row));
+                    int row = 1;
+                    string fontName = "Times New Roman";
+                    int fontSizeTieuDe = 18;
+                    int fontSizeTenTruong = 14;
+                    int fontSizeNoiDung = 12;
+                    //Xuất dòng Tiêu đề của File báo cáo: Lưu ý
+                    Range row1_DSTK = ws.get_Range("A1", "E1");
+                    row1_DSTK.Merge();
+                    row1_DSTK.Font.Size = fontSizeTieuDe;
+                    row1_DSTK.Font.Name = fontName;
+                    row1_DSTK.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    row1_DSTK.Value2 = "Danh sách tài khoản";
 
-                //Lưu file excel xuống Ổ cứng
-                wb.SaveAs(saveExcelFile);
+                    //Tạo Ô ID
+                    Range row23_ID = ws.get_Range("A2", "A3");//Cột A dòng 2 và dòng 3
+                    row23_ID.Merge();
+                    row23_ID.Font.Size = fontSizeTenTruong;
+                    row23_ID.Font.Name = fontName;
+                    row23_ID.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_ID.Value2 = "ID";
 
-                //đóng file để hoàn tất quá trình lưu trữ
-                wb.Close(true, misValue, misValue);
-                //thoát và thu hồi bộ nhớ cho COM
-                xlApp.Quit();
-                releaseObject(ws);
-                releaseObject(wb);
-                releaseObject(xlApp);
+                    //Tạo Ô Tên tài khoản
+                    Range row23_TenTK = ws.get_Range("B2", "B3");//Cột B dòng 2 và dòng 3
+                    row23_TenTK.Merge();
+                    row23_TenTK.Font.Size = fontSizeTenTruong;
+                    row23_TenTK.Font.Name = fontName;
+                    row23_TenTK.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_TenTK.Value2 = "Tên tài khoản";
+                    row23_TenTK.ColumnWidth = 20;
 
-                //Mở File excel sau khi Xuất thành công
-                System.Diagnostics.Process.Start(saveExcelFile);
+                    //Tạo Ô Mật khẩu
+                    Range row23_MatKhau = ws.get_Range("C2", "C3");//Cột C dòng 2 và dòng 3
+                    row23_MatKhau.Merge();
+                    row23_MatKhau.Font.Size = fontSizeTenTruong;
+                    row23_MatKhau.Font.Name = fontName;
+                    row23_MatKhau.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_MatKhau.ColumnWidth = 20;
+                    row23_MatKhau.Value2 = "Mật khẩu";
+
+                    //Tạo Ô Họ tên
+                    Range row23_Hoten = ws.get_Range("D2", "D3");//Cột D dong 2 3
+                    row23_Hoten.Merge();
+                    row23_Hoten.Font.Size = fontSizeTenTruong;
+                    row23_Hoten.Font.Name = fontName;
+                    row23_Hoten.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_Hoten.ColumnWidth = 20;
+                    row23_Hoten.Value2 = "Họ và Tên";
+
+                    //O Ngsinh
+                    Range row23_Ngsinh = ws.get_Range("E2", "E3");
+                    row23_Ngsinh.Merge();
+                    row23_Ngsinh.Font.Size = fontSizeTenTruong;
+                    row23_Ngsinh.Font.Name = fontName;
+                    row23_Ngsinh.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_Ngsinh.ColumnWidth = 20;
+                    row23_Ngsinh.Value2 = "Ngay Sinh";
+
+                    // Quyen
+                    Range row23_Per = ws.get_Range("F2", "F3");
+                    row23_Per.Merge();
+                    row23_Per.Font.Size = fontSizeTenTruong;
+                    row23_Per.Font.Name = fontName;
+                    row23_Per.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_Per.ColumnWidth = 20;
+                    row23_Per.Value2 = "Quyen";
+
+                    //ClassID
+                    Range row23_classID = ws.get_Range("G2", "G3");
+                    row23_classID.Merge();
+                    row23_classID.Font.Size = fontSizeTenTruong;
+                    row23_classID.Font.Name = fontName;
+                    row23_classID.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    row23_classID.ColumnWidth = 20;
+                    row23_classID.Value2 = "Lop hoc ID";
+
+                    //
+                    //Tô nền vàng các cột tiêu đề:
+                    Range row23_CotTieuDe = ws.get_Range("A2", "G3");
+                    //nền vàng
+                    row23_CotTieuDe.Interior.Color = ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                    //in đậm
+                    row23_CotTieuDe.Font.Bold = true;
+                    //chữ đen
+                    row23_CotTieuDe.Font.Color = ColorTranslator.ToOle(System.Drawing.Color.Black);
+
+                    row = 3;//dữ liệu xuất bắt đầu từ dòng số 4 trong file Excel (khai báo 3 để vào vòng lặp nó ++ thành 4)
+
+                    int permission = cbbPer.SelectedIndex;
+                    if (permission == 3) permission = -1;
+
+                    using (var qltn = Utils.QLTN.getInstance())
+                    {
+                        List<TaiKhoan> tk = qltn.TaiKhoans.Where(x =>
+                             permission < 0 ? true : x.permission == permission
+                        ).ToList();
+
+                        foreach (TaiKhoan tk1 in tk)
+                        {
+                            row++;
+                            dynamic[] arr = { tk1.id, tk1.tentaikhoan, tk1.matkhau, tk1.hoten, tk1.ngaysinh.Value.ToString("dd.MM.yyyy"), tk1.permission, tk1.lophocid };
+                            Range rowData = ws.get_Range("A" + row, "G" + row);//Lấy dòng thứ row ra để đổ dữ liệu
+                            rowData.Font.Size = fontSizeNoiDung;
+                            rowData.Font.Name = fontName;
+                            rowData.Value2 = arr;
+                        }
+                    }
+
+
+
+                    //Kẻ khung toàn bộ
+                    BorderAround(ws.get_Range("A2", "G" + row));
+
+                    //Lưu file excel xuống Ổ cứng
+                    wb.SaveAs(saveExcelFile);
+
+                    //đóng file để hoàn tất quá trình lưu trữ
+                    wb.Close(true, misValue, misValue);
+                    //thoát và thu hồi bộ nhớ cho COM
+                    xlApp.Quit();
+                    releaseObject(ws);
+                    releaseObject(wb);
+                    releaseObject(xlApp);
+
+
+                    MessageBox.Show("Đã xuất dữ liệu thành công tại: " + saveExcelFile);
+                }).ShowDialog();
             }
             catch (Exception ex)
             {
@@ -306,7 +321,7 @@ namespace Admin
             {
                 return true;
             }
-            else if (per == 2 && lhid != 0) 
+            else if (per == 2 && lhid != 0)
             {
                 return true;
             }
@@ -317,9 +332,10 @@ namespace Admin
         }
         private void btnImport_Click(object sender, EventArgs e)
         {
-            int c = 0,t=0;
+            int c = 0, t = 0;
 
-            OpenFileDialog dlg = new OpenFileDialog();   
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Excel 2010|*.xlsx";
             Excel.Application x = new Excel.Application();
             string duongdan = "";
             if (dlg.ShowDialog() == DialogResult.OK)
@@ -328,77 +344,59 @@ namespace Admin
             }
             else
                 return;
-            Excel.Workbook workbook = x.Workbooks.Open(duongdan);
-            Excel._Worksheet sheet = workbook.Sheets[1];
-            Excel.Range xlRange = sheet.UsedRange;
-            DataTable dt = new DataTable();
-            List<TaiKhoan> listtk = new List<TaiKhoan>();
-            for (int i = 4; i <= xlRange.Rows.Count; i++)
+
+            var xlApp = new Excel.Application();
+
+            if (xlApp == null)
             {
-                if (xlRange.Cells[i, 1] != null && xlRange.Cells[i, 1].Value2 != null)
+                MessageBox.Show("Thư viện excel chưa được cài đặt");
+                return;
+            }
+
+            new Utils.frmWaiting(() =>
+            {
+
+                try
                 {
-                    dgvImport.Rows.Add(xlRange.Cells[i, 1].Text, xlRange.Cells[i, 2].Text, xlRange.Cells[i, 3].Text, xlRange.Cells[i, 4].Text, xlRange.Cells[i, 5].Text, xlRange.Cells[i, 6].Text);
-                    string tentkex = xlRange.Cells[i, 1].Text;
-                    int perex = int.Parse(xlRange.Cells[i, 5].Text);
-                    int lhidex = int.Parse(xlRange.Cells[i, 6].Text);
-                    t++;
+                    xlApp.Visible = false;
+
+                    var workbook = xlApp.Workbooks.Open(duongdan);
+
+                    Excel.Worksheet worksheet = workbook.Worksheets[1];
+                    int lastrow = worksheet.UsedRange.Rows.Count;
+
+
                     using (var qltn = Utils.QLTN.getInstance())
                     {
-                        string tentktemp = xlRange.Cells[i, 1].Text;
-                        var tentk = qltn.TaiKhoans.Where(temp => temp.tentaikhoan == tentktemp).FirstOrDefault();
-
-                        if (tentk == null)
+                        for (int i = 4; i <= lastrow; i++)
                         {
-                            if (checkpermission(perex, lhidex) == true)  
-                            { 
-                                TaiKhoan u = new TaiKhoan
-                                {
-                                    tentaikhoan = xlRange.Cells[i, 1].Text,
-                                    matkhau = xlRange.Cells[i, 2].Text,
-                                    hoten = xlRange.Cells[i, 3].Text,
-                                    ngaysinh = DateTime.ParseExact(xlRange.Cells[i, 4].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                                    permission = int.Parse(xlRange.Cells[i, 5].Text),
-                                    lophocid = int.Parse(xlRange.Cells[i, 6].Text),
-                                };
-                                qltn.TaiKhoans.InsertOnSubmit(u);
-                                qltn.SubmitChanges();
-                                c++;
-                            }
-                            else if(checkpermission(perex, lhidex) == true)
-                            {
-                                TaiKhoan u = new TaiKhoan
-                                {
-                                    tentaikhoan = xlRange.Cells[i, 1].Text,
-                                    matkhau = xlRange.Cells[i, 2].Text,
-                                    hoten = xlRange.Cells[i, 3].Text,
-                                    ngaysinh = DateTime.ParseExact(xlRange.Cells[i, 4].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                                    permission = int.Parse(xlRange.Cells[i, 5].Text),
-                                };
-                                qltn.TaiKhoans.InsertOnSubmit(u);
-                                qltn.SubmitChanges();
-                                c++;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thông tin về lớp học ID của tài khoản " + tentkex + " không đúng");
-                            }
-                        }
-                        else if(tentk != null)
-                        {
-                            MessageBox.Show("Tên tài khoản " + tentk.tentaikhoan + " đã tồn tại");
-                        }
+                            int? Lophoc = null;
 
-                    };
+                            int col = 2;
+
+                            var ch = new TaiKhoan
+                            {
+                                tentaikhoan = worksheet.Cells[i, col++].Text,
+                                matkhau = worksheet.Cells[i, col++].Text,
+                                hoten = worksheet.Cells[i, col++].Text,
+                                ngaysinh = DateTime.ParseExact(worksheet.Cells[i, col++].Text, "dd.MM.yyyy", null),
+                                permission = int.Parse(worksheet.Cells[i, col].Text),
+                                lophocid = int.Parse(worksheet.Cells[i, col++].Text) == 2 ? Lophoc : int.Parse(worksheet.Cells[i, col].Text),
+                            };
+                            qltn.TaiKhoans.InsertOnSubmit(ch);
+                        }
+                        qltn.SubmitChanges();
+
+                    }
+                    MessageBox.Show("Đã import thành công");
                 }
-            }
-            if(c == t)
-            {
-                MessageBox.Show("Thêm thành công tất cả các tài khoản");
-            }
-
+                catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.ToString()); }
+                finally
+                {
+                    xlApp.Quit();
+                }
+            }).ShowDialog();
             load(-1);
-            workbook.Close();
-            x.Quit();
         }
     }
 }

@@ -40,27 +40,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvImport = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDS
             // 
+            this.dgvDS.AllowUserToAddRows = false;
+            this.dgvDS.AllowUserToDeleteRows = false;
             this.dgvDS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDS.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvDS.Location = new System.Drawing.Point(0, 0);
             this.dgvDS.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDS.Name = "dgvDS";
+            this.dgvDS.ReadOnly = true;
             this.dgvDS.RowTemplate.Height = 28;
             this.dgvDS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDS.Size = new System.Drawing.Size(663, 424);
@@ -199,60 +194,11 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Tên tài khoản:";
             // 
-            // dgvImport
-            // 
-            this.dgvImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dgvImport.Location = new System.Drawing.Point(582, 381);
-            this.dgvImport.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvImport.Name = "dgvImport";
-            this.dgvImport.RowTemplate.Height = 28;
-            this.dgvImport.Size = new System.Drawing.Size(81, 35);
-            this.dgvImport.TabIndex = 10;
-            this.dgvImport.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "tentaikhoan";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "matkhau";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "hoten";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "ngsinh";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "per";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "lophocid";
-            this.Column7.Name = "Column7";
-            // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 424);
-            this.Controls.Add(this.dgvImport);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvDS);
@@ -264,7 +210,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,12 +228,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.DataGridView dgvImport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

@@ -45,6 +45,8 @@ namespace Main
         {
             Activate();
 
+            txtUsername.Text = txtPassword.Text = "";
+
             BaseValidator.ClearList();
 
             RegexValidator rV = new RegexValidator();

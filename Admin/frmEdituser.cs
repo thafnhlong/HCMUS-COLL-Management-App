@@ -16,6 +16,7 @@ namespace Admin
     {
         public EventHandler swapform;
         public string tk;
+        int id;
         public frmEdituser()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace Admin
             using (var qltn = Utils.QLTN.getInstance())
             {
                 var u = qltn.TaiKhoans.Where(x => x.tentaikhoan == tk).SingleOrDefault();
+                id = u.id;
                 if (u.permission == 0 || u.permission == 1)
                 {
                     var infoHS = qltn.TaiKhoans
@@ -161,8 +163,17 @@ namespace Admin
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin bạn nhập");
                 return;
             }
+
             using (var qltn = Utils.QLTN.getInstance())
             {
+                bool isTrung = qltn.TaiKhoans.Where(x => x.tentaikhoan == txtUusername.Text && id != x.id).Count() > 0;
+
+                if (isTrung)
+                {
+                    MessageBox.Show("Tên tài khoản đã tồn tại");
+                    return;
+                }
+
                 var hs = qltn.TaiKhoans
                 .Where(x => x.tentaikhoan == tk)
                 .FirstOrDefault();

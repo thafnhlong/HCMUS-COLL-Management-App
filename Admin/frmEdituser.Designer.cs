@@ -116,6 +116,7 @@
             this.txtUpassword.Location = new System.Drawing.Point(116, 116);
             this.txtUpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtUpassword.Name = "txtUpassword";
+            this.txtUpassword.PasswordChar = '*';
             this.txtUpassword.Size = new System.Drawing.Size(225, 20);
             this.txtUpassword.TabIndex = 49;
             // 
