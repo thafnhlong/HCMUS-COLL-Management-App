@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class Main : Form
+    public partial class Main : MetroFramework.Forms.MetroForm
     {
         public EventHandler DangXuatEvent;
 

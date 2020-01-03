@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class DongGop : Form
+    public partial class DongGop : MetroFramework.Forms.MetroForm
     {
 
         int HocSinhID;

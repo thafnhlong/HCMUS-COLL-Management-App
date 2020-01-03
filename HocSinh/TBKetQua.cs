@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class TBKetQua : Form
+    public partial class TBKetQua : MetroFramework.Forms.MetroForm
     {
         private string SoCauHoanThanh;
         private string ThoiGianHoanThanh;

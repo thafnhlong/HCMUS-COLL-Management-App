@@ -13,7 +13,7 @@ using Utils.Linq2Sql;
 
 namespace HocSinh
 {
-    public partial class LCMonThi : Form
+    public partial class LCMonThi : MetroFramework.Forms.MetroForm
     {
         class KyThiBS
         {

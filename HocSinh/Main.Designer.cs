@@ -28,217 +28,184 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblHoTen = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblLopHoc = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnTTCN = new System.Windows.Forms.Button();
-            this.btnLichThi = new System.Windows.Forms.Button();
-            this.btnLamBaiThi = new System.Windows.Forms.Button();
-            this.btnInBangDiem = new System.Windows.Forms.Button();
-            this.btnXemKQ = new System.Windows.Forms.Button();
-            this.btnDongGop = new System.Windows.Forms.Button();
-            this.btnTKThiThu = new System.Windows.Forms.Button();
-            this.btnDangXuat = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblHoTen = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lblNgaySinh = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.lblLopHoc = new MetroFramework.Controls.MetroLabel();
+            this.btnTTCN = new MetroFramework.Controls.MetroTile();
+            this.btnLichThi = new MetroFramework.Controls.MetroTile();
+            this.btnLamBaiThi = new MetroFramework.Controls.MetroTile();
+            this.btnInBangDiem = new MetroFramework.Controls.MetroTile();
+            this.btnXemKQ = new MetroFramework.Controls.MetroTile();
+            this.btnTKThiThu = new MetroFramework.Controls.MetroTile();
+            this.btnDongGop = new MetroFramework.Controls.MetroTile();
+            this.btnDangXuat = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // label1
+            // metroLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(222, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thông tin cá nhân";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Họ và tên: ";
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 93);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Họ và tên: ";
             // 
             // lblHoTen
             // 
-            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTen.Location = new System.Drawing.Point(171, 62);
-            this.lblHoTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHoTen.Location = new System.Drawing.Point(101, 93);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(409, 21);
-            this.lblHoTen.TabIndex = 2;
-            this.lblHoTen.Text = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(438, 19);
+            this.lblHoTen.TabIndex = 1;
+            this.lblHoTen.Text = "metroLabel2";
             // 
-            // label4
+            // metroLabel3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 98);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ngày sinh: ";
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 140);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Ngày sinh: ";
             // 
             // lblNgaySinh
             // 
-            this.lblNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgaySinh.Location = new System.Drawing.Point(171, 98);
-            this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNgaySinh.Location = new System.Drawing.Point(101, 140);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(409, 21);
-            this.lblNgaySinh.TabIndex = 4;
-            this.lblNgaySinh.Text = "lblNgaySinh";
+            this.lblNgaySinh.Size = new System.Drawing.Size(438, 19);
+            this.lblNgaySinh.TabIndex = 3;
+            this.lblNgaySinh.Text = "metroLabel2";
             // 
-            // label6
+            // metroLabel5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 135);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Lớp học: ";
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(23, 187);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel5.TabIndex = 4;
+            this.metroLabel5.Text = "Lớp học: ";
             // 
             // lblLopHoc
             // 
-            this.lblLopHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLopHoc.Location = new System.Drawing.Point(171, 135);
-            this.lblLopHoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLopHoc.Location = new System.Drawing.Point(101, 187);
             this.lblLopHoc.Name = "lblLopHoc";
-            this.lblLopHoc.Size = new System.Drawing.Size(409, 21);
-            this.lblLopHoc.TabIndex = 6;
-            this.lblLopHoc.Text = "lblLopHoc";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 185);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Chức năng";
+            this.lblLopHoc.Size = new System.Drawing.Size(438, 19);
+            this.lblLopHoc.TabIndex = 5;
+            this.lblLopHoc.Text = "metroLabel2";
             // 
             // btnTTCN
             // 
-            this.btnTTCN.Location = new System.Drawing.Point(21, 224);
-            this.btnTTCN.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTTCN.ActiveControl = null;
+            this.btnTTCN.Location = new System.Drawing.Point(23, 236);
             this.btnTTCN.Name = "btnTTCN";
-            this.btnTTCN.Size = new System.Drawing.Size(182, 53);
-            this.btnTTCN.TabIndex = 8;
+            this.btnTTCN.Size = new System.Drawing.Size(255, 41);
+            this.btnTTCN.TabIndex = 6;
             this.btnTTCN.Text = "Sửa thông tin cá nhân";
-            this.btnTTCN.UseVisualStyleBackColor = true;
+            this.btnTTCN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTTCN.UseSelectable = true;
             // 
             // btnLichThi
             // 
-            this.btnLichThi.Location = new System.Drawing.Point(21, 285);
-            this.btnLichThi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLichThi.ActiveControl = null;
+            this.btnLichThi.Location = new System.Drawing.Point(23, 283);
             this.btnLichThi.Name = "btnLichThi";
-            this.btnLichThi.Size = new System.Drawing.Size(182, 53);
-            this.btnLichThi.TabIndex = 9;
+            this.btnLichThi.Size = new System.Drawing.Size(255, 41);
+            this.btnLichThi.TabIndex = 7;
             this.btnLichThi.Text = "Xem lịch thi";
-            this.btnLichThi.UseVisualStyleBackColor = true;
+            this.btnLichThi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichThi.UseSelectable = true;
             // 
             // btnLamBaiThi
             // 
-            this.btnLamBaiThi.Location = new System.Drawing.Point(21, 346);
-            this.btnLamBaiThi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamBaiThi.ActiveControl = null;
+            this.btnLamBaiThi.Location = new System.Drawing.Point(23, 330);
             this.btnLamBaiThi.Name = "btnLamBaiThi";
-            this.btnLamBaiThi.Size = new System.Drawing.Size(182, 53);
-            this.btnLamBaiThi.TabIndex = 10;
+            this.btnLamBaiThi.Size = new System.Drawing.Size(255, 41);
+            this.btnLamBaiThi.TabIndex = 8;
             this.btnLamBaiThi.Text = "Làm bài thi";
-            this.btnLamBaiThi.UseVisualStyleBackColor = true;
+            this.btnLamBaiThi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamBaiThi.UseSelectable = true;
             // 
             // btnInBangDiem
             // 
-            this.btnInBangDiem.Location = new System.Drawing.Point(211, 224);
-            this.btnInBangDiem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInBangDiem.ActiveControl = null;
+            this.btnInBangDiem.Location = new System.Drawing.Point(23, 377);
             this.btnInBangDiem.Name = "btnInBangDiem";
-            this.btnInBangDiem.Size = new System.Drawing.Size(182, 53);
-            this.btnInBangDiem.TabIndex = 11;
+            this.btnInBangDiem.Size = new System.Drawing.Size(255, 41);
+            this.btnInBangDiem.TabIndex = 9;
             this.btnInBangDiem.Text = "In bảng điểm";
-            this.btnInBangDiem.UseVisualStyleBackColor = true;
+            this.btnInBangDiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInBangDiem.UseSelectable = true;
             // 
             // btnXemKQ
             // 
-            this.btnXemKQ.Location = new System.Drawing.Point(211, 285);
-            this.btnXemKQ.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXemKQ.ActiveControl = null;
+            this.btnXemKQ.Location = new System.Drawing.Point(284, 236);
             this.btnXemKQ.Name = "btnXemKQ";
-            this.btnXemKQ.Size = new System.Drawing.Size(182, 53);
-            this.btnXemKQ.TabIndex = 12;
+            this.btnXemKQ.Size = new System.Drawing.Size(255, 41);
+            this.btnXemKQ.TabIndex = 10;
             this.btnXemKQ.Text = "Xem kết quả thi";
-            this.btnXemKQ.UseVisualStyleBackColor = true;
-            // 
-            // btnDongGop
-            // 
-            this.btnDongGop.Location = new System.Drawing.Point(398, 224);
-            this.btnDongGop.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDongGop.Name = "btnDongGop";
-            this.btnDongGop.Size = new System.Drawing.Size(182, 53);
-            this.btnDongGop.TabIndex = 14;
-            this.btnDongGop.Text = "Đóng góp câu hỏi";
-            this.btnDongGop.UseVisualStyleBackColor = true;
+            this.btnXemKQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemKQ.UseSelectable = true;
             // 
             // btnTKThiThu
             // 
-            this.btnTKThiThu.Location = new System.Drawing.Point(211, 346);
-            this.btnTKThiThu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTKThiThu.ActiveControl = null;
+            this.btnTKThiThu.Location = new System.Drawing.Point(284, 283);
             this.btnTKThiThu.Name = "btnTKThiThu";
-            this.btnTKThiThu.Size = new System.Drawing.Size(182, 53);
-            this.btnTKThiThu.TabIndex = 13;
+            this.btnTKThiThu.Size = new System.Drawing.Size(255, 41);
+            this.btnTKThiThu.TabIndex = 11;
             this.btnTKThiThu.Text = "Thống kê thi thử";
-            this.btnTKThiThu.UseVisualStyleBackColor = true;
+            this.btnTKThiThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTKThiThu.UseSelectable = true;
+            // 
+            // btnDongGop
+            // 
+            this.btnDongGop.ActiveControl = null;
+            this.btnDongGop.Location = new System.Drawing.Point(284, 330);
+            this.btnDongGop.Name = "btnDongGop";
+            this.btnDongGop.Size = new System.Drawing.Size(255, 41);
+            this.btnDongGop.TabIndex = 12;
+            this.btnDongGop.Text = "Đóng góp câu hỏi";
+            this.btnDongGop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDongGop.UseSelectable = true;
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Location = new System.Drawing.Point(398, 285);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangXuat.ActiveControl = null;
+            this.btnDangXuat.Location = new System.Drawing.Point(284, 377);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(182, 114);
-            this.btnDangXuat.TabIndex = 15;
+            this.btnDangXuat.Size = new System.Drawing.Size(255, 41);
+            this.btnDangXuat.TabIndex = 13;
             this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.UseSelectable = true;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 430);
-            this.Controls.Add(this.btnLamBaiThi);
-            this.Controls.Add(this.btnLichThi);
-            this.Controls.Add(this.btnTKThiThu);
+            this.ClientSize = new System.Drawing.Size(564, 435);
             this.Controls.Add(this.btnDangXuat);
-            this.Controls.Add(this.btnDongGop);
-            this.Controls.Add(this.btnXemKQ);
             this.Controls.Add(this.btnInBangDiem);
+            this.Controls.Add(this.btnDongGop);
+            this.Controls.Add(this.btnLamBaiThi);
+            this.Controls.Add(this.btnTKThiThu);
+            this.Controls.Add(this.btnLichThi);
+            this.Controls.Add(this.btnXemKQ);
             this.Controls.Add(this.btnTTCN);
             this.Controls.Add(this.lblLopHoc);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.lblNgaySinh);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.lblHoTen);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Resizable = false;
             this.Text = "Trang sinh viên";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,21 +214,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblHoTen;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblNgaySinh;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblLopHoc;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnTTCN;
-        private System.Windows.Forms.Button btnLichThi;
-        private System.Windows.Forms.Button btnLamBaiThi;
-        private System.Windows.Forms.Button btnInBangDiem;
-        private System.Windows.Forms.Button btnXemKQ;
-        private System.Windows.Forms.Button btnDongGop;
-        private System.Windows.Forms.Button btnTKThiThu;
-        private System.Windows.Forms.Button btnDangXuat;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel lblHoTen;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel lblNgaySinh;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel lblLopHoc;
+        private MetroFramework.Controls.MetroTile btnTTCN;
+        private MetroFramework.Controls.MetroTile btnLichThi;
+        private MetroFramework.Controls.MetroTile btnLamBaiThi;
+        private MetroFramework.Controls.MetroTile btnInBangDiem;
+        private MetroFramework.Controls.MetroTile btnXemKQ;
+        private MetroFramework.Controls.MetroTile btnTKThiThu;
+        private MetroFramework.Controls.MetroTile btnDongGop;
+        private MetroFramework.Controls.MetroTile btnDangXuat;
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class TKThiThu : Form
+    public partial class TKThiThu : MetroFramework.Forms.MetroForm
     {
         private int HocSinhID;
 

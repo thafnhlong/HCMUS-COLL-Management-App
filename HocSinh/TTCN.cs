@@ -11,7 +11,7 @@ using Utils.Validator;
 
 namespace HocSinh
 {
-    public partial class TTCN : Form
+    public partial class TTCN : MetroFramework.Forms.MetroForm
     {
         public EventHandler SuaEvent;
 

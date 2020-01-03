@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class InBangDiem : Form
+    public partial class InBangDiem : MetroFramework.Forms.MetroForm
     {
         class KyThiBS
         {

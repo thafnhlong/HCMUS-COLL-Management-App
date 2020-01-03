@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class XemLichThi : Form
+    public partial class XemLichThi : MetroFramework.Forms.MetroForm
     {
         class DeThiBS
         {
