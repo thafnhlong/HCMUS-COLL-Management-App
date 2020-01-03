@@ -28,252 +28,286 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.cbbKhoi = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnDangki = new System.Windows.Forms.Button();
-            this.cbbLophoc = new System.Windows.Forms.ComboBox();
-            this.cbbPer = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtReName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtRePassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtReUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.txtReUsername = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtRePassword = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.txtReName = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.dtpDOB = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.label8 = new MetroFramework.Controls.MetroLabel();
+            this.cbbPer = new MetroFramework.Controls.MetroComboBox();
+            this.cbbKhoi = new MetroFramework.Controls.MetroComboBox();
+            this.label1 = new MetroFramework.Controls.MetroLabel();
+            this.cbbLophoc = new MetroFramework.Controls.MetroComboBox();
+            this.btnDangky = new MetroFramework.Controls.MetroButton();
+            this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // metroLabel1
             // 
-            this.groupBox1.Controls.Add(this.dtpDOB);
-            this.groupBox1.Controls.Add(this.cbbKhoi);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.btnHuy);
-            this.groupBox1.Controls.Add(this.btnDangki);
-            this.groupBox1.Controls.Add(this.cbbLophoc);
-            this.groupBox1.Controls.Add(this.cbbPer);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtReName);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtRePassword);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtReUsername);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(388, 420);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Đăng kí";
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 81);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Tên tài khoản";
+            // 
+            // txtReUsername
+            // 
+            // 
+            // 
+            // 
+            this.txtReUsername.CustomButton.Image = null;
+            this.txtReUsername.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtReUsername.CustomButton.Name = "";
+            this.txtReUsername.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtReUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtReUsername.CustomButton.TabIndex = 1;
+            this.txtReUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtReUsername.CustomButton.UseSelectable = true;
+            this.txtReUsername.CustomButton.Visible = false;
+            this.txtReUsername.Lines = new string[0];
+            this.txtReUsername.Location = new System.Drawing.Point(125, 81);
+            this.txtReUsername.MaxLength = 32767;
+            this.txtReUsername.Name = "txtReUsername";
+            this.txtReUsername.PasswordChar = '\0';
+            this.txtReUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtReUsername.SelectedText = "";
+            this.txtReUsername.SelectionLength = 0;
+            this.txtReUsername.SelectionStart = 0;
+            this.txtReUsername.ShortcutsEnabled = true;
+            this.txtReUsername.Size = new System.Drawing.Size(240, 23);
+            this.txtReUsername.TabIndex = 1;
+            this.txtReUsername.UseSelectable = true;
+            this.txtReUsername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtReUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 125);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.TabIndex = 0;
+            this.metroLabel2.Text = "Mặt khẩu";
+            // 
+            // txtRePassword
+            // 
+            // 
+            // 
+            // 
+            this.txtRePassword.CustomButton.Image = null;
+            this.txtRePassword.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtRePassword.CustomButton.Name = "";
+            this.txtRePassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtRePassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtRePassword.CustomButton.TabIndex = 1;
+            this.txtRePassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtRePassword.CustomButton.UseSelectable = true;
+            this.txtRePassword.CustomButton.Visible = false;
+            this.txtRePassword.Lines = new string[0];
+            this.txtRePassword.Location = new System.Drawing.Point(125, 123);
+            this.txtRePassword.MaxLength = 32767;
+            this.txtRePassword.Name = "txtRePassword";
+            this.txtRePassword.PasswordChar = '*';
+            this.txtRePassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtRePassword.SelectedText = "";
+            this.txtRePassword.SelectionLength = 0;
+            this.txtRePassword.SelectionStart = 0;
+            this.txtRePassword.ShortcutsEnabled = true;
+            this.txtRePassword.Size = new System.Drawing.Size(240, 23);
+            this.txtRePassword.TabIndex = 2;
+            this.txtRePassword.UseSelectable = true;
+            this.txtRePassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtRePassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 169);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel3.TabIndex = 0;
+            this.metroLabel3.Text = "Họ và tên";
+            // 
+            // txtReName
+            // 
+            // 
+            // 
+            // 
+            this.txtReName.CustomButton.Image = null;
+            this.txtReName.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtReName.CustomButton.Name = "";
+            this.txtReName.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtReName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtReName.CustomButton.TabIndex = 1;
+            this.txtReName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtReName.CustomButton.UseSelectable = true;
+            this.txtReName.CustomButton.Visible = false;
+            this.txtReName.Lines = new string[0];
+            this.txtReName.Location = new System.Drawing.Point(125, 165);
+            this.txtReName.MaxLength = 32767;
+            this.txtReName.Name = "txtReName";
+            this.txtReName.PasswordChar = '\0';
+            this.txtReName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtReName.SelectedText = "";
+            this.txtReName.SelectionLength = 0;
+            this.txtReName.SelectionStart = 0;
+            this.txtReName.ShortcutsEnabled = true;
+            this.txtReName.Size = new System.Drawing.Size(240, 23);
+            this.txtReName.TabIndex = 3;
+            this.txtReName.UseSelectable = true;
+            this.txtReName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtReName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 213);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel4.TabIndex = 0;
+            this.metroLabel4.Text = "Ngày sinh";
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(121, 200);
+            this.dtpDOB.Location = new System.Drawing.Point(125, 207);
+            this.dtpDOB.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(226, 20);
-            this.dtpDOB.TabIndex = 33;
+            this.dtpDOB.Size = new System.Drawing.Size(240, 29);
+            this.dtpDOB.TabIndex = 4;
             // 
-            // cbbKhoi
+            // metroLabel5
             // 
-            this.cbbKhoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbKhoi.FormattingEnabled = true;
-            this.cbbKhoi.Location = new System.Drawing.Point(123, 288);
-            this.cbbKhoi.Name = "cbbKhoi";
-            this.cbbKhoi.Size = new System.Drawing.Size(225, 21);
-            this.cbbKhoi.TabIndex = 32;
-            this.cbbKhoi.Visible = false;
-            this.cbbKhoi.SelectedIndexChanged += new System.EventHandler(this.cbbKhoi_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 332);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Lớp học";
-            this.label1.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(122, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(225, 33);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Đăng kí tài khoản";
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(253, 366);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(93, 33);
-            this.btnHuy.TabIndex = 29;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            // 
-            // btnDangki
-            // 
-            this.btnDangki.Location = new System.Drawing.Point(121, 366);
-            this.btnDangki.Name = "btnDangki";
-            this.btnDangki.Size = new System.Drawing.Size(88, 33);
-            this.btnDangki.TabIndex = 28;
-            this.btnDangki.Text = "Đăng kí";
-            this.btnDangki.UseVisualStyleBackColor = true;
-            // 
-            // cbbLophoc
-            // 
-            this.cbbLophoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLophoc.FormattingEnabled = true;
-            this.cbbLophoc.Location = new System.Drawing.Point(123, 330);
-            this.cbbLophoc.Name = "cbbLophoc";
-            this.cbbLophoc.Size = new System.Drawing.Size(225, 21);
-            this.cbbLophoc.TabIndex = 27;
-            this.cbbLophoc.Visible = false;
-            // 
-            // cbbPer
-            // 
-            this.cbbPer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPer.FormattingEnabled = true;
-            this.cbbPer.Items.AddRange(new object[] {
-            "HocSinh",
-            "GiaoVien",
-            "Admin"});
-            this.cbbPer.Location = new System.Drawing.Point(122, 246);
-            this.cbbPer.Name = "cbbPer";
-            this.cbbPer.Size = new System.Drawing.Size(226, 21);
-            this.cbbPer.TabIndex = 26;
-            this.cbbPer.SelectedIndexChanged += new System.EventHandler(this.CbbPer_SelectedIndexChanged);
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(23, 257);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel5.TabIndex = 0;
+            this.metroLabel5.Text = "Phân quyền";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 290);
+            this.label8.Location = new System.Drawing.Point(23, 301);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 17);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Khối";
-            this.label8.Visible = false;
+            this.label8.Size = new System.Drawing.Size(63, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Khối/Cấp";
             // 
-            // label7
+            // cbbPer
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 246);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 17);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Phân quyền";
+            this.cbbPer.FormattingEnabled = true;
+            this.cbbPer.ItemHeight = 23;
+            this.cbbPer.Items.AddRange(new object[] {
+            "Học Sinh",
+            "Giáo Viên",
+            "Admin"});
+            this.cbbPer.Location = new System.Drawing.Point(125, 251);
+            this.cbbPer.Name = "cbbPer";
+            this.cbbPer.Size = new System.Drawing.Size(240, 29);
+            this.cbbPer.TabIndex = 5;
+            this.cbbPer.UseSelectable = true;
             // 
-            // label6
+            // cbbKhoi
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Ngày sinh";
+            this.cbbKhoi.FormattingEnabled = true;
+            this.cbbKhoi.ItemHeight = 23;
+            this.cbbKhoi.Location = new System.Drawing.Point(125, 297);
+            this.cbbKhoi.Name = "cbbKhoi";
+            this.cbbKhoi.Size = new System.Drawing.Size(240, 29);
+            this.cbbKhoi.TabIndex = 6;
+            this.cbbKhoi.UseSelectable = true;
             // 
-            // txtReName
+            // label1
             // 
-            this.txtReName.Location = new System.Drawing.Point(122, 153);
-            this.txtReName.Name = "txtReName";
-            this.txtReName.Size = new System.Drawing.Size(225, 20);
-            this.txtReName.TabIndex = 21;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 345);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lớp học";
             // 
-            // label5
+            // cbbLophoc
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 17);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Họ và Tên";
+            this.cbbLophoc.FormattingEnabled = true;
+            this.cbbLophoc.ItemHeight = 23;
+            this.cbbLophoc.Location = new System.Drawing.Point(125, 344);
+            this.cbbLophoc.Name = "cbbLophoc";
+            this.cbbLophoc.Size = new System.Drawing.Size(240, 29);
+            this.cbbLophoc.TabIndex = 7;
+            this.cbbLophoc.UseSelectable = true;
             // 
-            // txtRePassword
+            // btnDangky
             // 
-            this.txtRePassword.Location = new System.Drawing.Point(122, 111);
-            this.txtRePassword.Name = "txtRePassword";
-            this.txtRePassword.PasswordChar = '*';
-            this.txtRePassword.Size = new System.Drawing.Size(225, 20);
-            this.txtRePassword.TabIndex = 19;
+            this.btnDangky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDangky.Location = new System.Drawing.Point(125, 401);
+            this.btnDangky.Name = "btnDangky";
+            this.btnDangky.Size = new System.Drawing.Size(96, 36);
+            this.btnDangky.TabIndex = 8;
+            this.btnDangky.Text = "Đăng ký";
+            this.btnDangky.UseSelectable = true;
             // 
-            // label4
+            // btnHuy
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Mật khẩu";
-            // 
-            // txtReUsername
-            // 
-            this.txtReUsername.Location = new System.Drawing.Point(122, 69);
-            this.txtReUsername.Name = "txtReUsername";
-            this.txtReUsername.Size = new System.Drawing.Size(225, 20);
-            this.txtReUsername.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Tên tài khoản";
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHuy.Location = new System.Drawing.Point(269, 401);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(96, 36);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseSelectable = true;
             // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 420);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(388, 451);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnDangky);
+            this.Controls.Add(this.cbbLophoc);
+            this.Controls.Add(this.cbbKhoi);
+            this.Controls.Add(this.cbbPer);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpDOB);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.txtReName);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.txtRePassword);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.txtReUsername);
+            this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
             this.Name = "frmRegister";
-            this.Text = "frmRegister";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Resizable = false;
+            this.Text = "Đăng ký";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnDangki;
-        private System.Windows.Forms.ComboBox cbbLophoc;
-        private System.Windows.Forms.ComboBox cbbPer;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtReName;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtRePassword;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtReUsername;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbbKhoi;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroTextBox txtReUsername;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtRePassword;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox txtReName;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroDateTime dtpDOB;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel label8;
+        private MetroFramework.Controls.MetroComboBox cbbPer;
+        private MetroFramework.Controls.MetroComboBox cbbKhoi;
+        private MetroFramework.Controls.MetroLabel label1;
+        private MetroFramework.Controls.MetroComboBox cbbLophoc;
+        private MetroFramework.Controls.MetroButton btnDangky;
+        private MetroFramework.Controls.MetroButton btnHuy;
     }
 }

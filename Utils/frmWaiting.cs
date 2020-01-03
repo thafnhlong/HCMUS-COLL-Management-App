@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Utils
 {
-    public partial class frmWaiting : Form
+    public partial class frmWaiting : MetroForm
     {
         public Action Worker { get; set; }
         public frmWaiting(Action worker, string text = "Vui lòng chờ giây lát...")
@@ -19,7 +20,7 @@ namespace Utils
             if (worker == null) { throw new ArgumentException(); }
 
             Worker = worker;
-            label1.Text = text;
+            Label1.Text = text;
         }
         protected override void OnLoad(EventArgs e)
         {

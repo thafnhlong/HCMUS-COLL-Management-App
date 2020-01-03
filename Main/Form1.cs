@@ -1,4 +1,5 @@
 ﻿using GiaoVien;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ using Utils.Validator;
 
 namespace Main
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroForm
     {
         private string tk = "admin";
         private string mk = "123";
@@ -31,14 +32,13 @@ namespace Main
 
             CloseSplash();
 
-            btnhuy1.Click += (s, e) =>
-            {
-                this.Close();
-            };
             //btnDangnhap.Click += (s, e) => { new GiaoVien.frmMain(2).Show(); };
             //button3.Click += (s, e) => { new Admin.frmMain(3).Show(); };
           
             Load += Form1_Load;
+
+            btnDangKy.Click += BtnDangky_Click;
+            btnDangNhap.Click += BtnDangnhap_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace Main
             return null;
         }
 
-        private void BtnDangki_Click(object sender, EventArgs e)
+        private void BtnDangky_Click(object sender, EventArgs e)
         {
             frmRegister regisForm = new frmRegister();
             regisForm.swapForm += (s, e1) => { Show(); Form1_Load(s, e1); };

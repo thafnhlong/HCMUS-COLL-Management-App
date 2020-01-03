@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using Utils.Validator;
 
 namespace Main
 {
-    public partial class frmRegister : Form
+    public partial class frmRegister : MetroForm
     {
         public EventHandler swapForm;
 
@@ -40,9 +41,12 @@ namespace Main
             rVdob.Target = dtpDOB;
             rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
-            btnDangki.Click += BtnDangki_Click;
+            btnDangky.Click += BtnDangki_Click;
             btnHuy.Click += (s, e) => {  Close(); };
             FormClosed += (s, e) => { swapForm?.Invoke(null, null); };
+
+            cbbKhoi.SelectedIndexChanged += cbbKhoi_SelectedIndexChanged;
+            cbbPer.SelectedIndexChanged += CbbPer_SelectedIndexChanged;
         }
         public bool checkname(string name)
         {

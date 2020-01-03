@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             this.dobValidator1 = new Utils.Validator.DOBValidator();
-            this.btnDangki = new System.Windows.Forms.Button();
-            this.btnhuy1 = new System.Windows.Forms.Button();
-            this.btnDangnhap = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox2.SuspendLayout();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
+            this.btnDangNhap = new MetroFramework.Controls.MetroButton();
+            this.btnDangKy = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // dobValidator1
@@ -46,124 +42,130 @@
             this.dobValidator1.ErrorMessage = "_ERROR_";
             this.dobValidator1.Target = null;
             // 
-            // btnDangki
+            // metroLabel2
             // 
-            this.btnDangki.Location = new System.Drawing.Point(138, 150);
-            this.btnDangki.Name = "btnDangki";
-            this.btnDangki.Size = new System.Drawing.Size(88, 33);
-            this.btnDangki.TabIndex = 4;
-            this.btnDangki.Text = "Đăng kí";
-            this.btnDangki.UseVisualStyleBackColor = true;
-            this.btnDangki.Click += new System.EventHandler(this.BtnDangki_Click);
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(28, 117);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "Mật khẩu";
             // 
-            // btnhuy1
+            // metroLabel3
             // 
-            this.btnhuy1.Location = new System.Drawing.Point(264, 150);
-            this.btnhuy1.Name = "btnhuy1";
-            this.btnhuy1.Size = new System.Drawing.Size(88, 33);
-            this.btnhuy1.TabIndex = 5;
-            this.btnhuy1.Text = "Hủy";
-            this.btnhuy1.UseVisualStyleBackColor = true;
-            // 
-            // btnDangnhap
-            // 
-            this.btnDangnhap.Location = new System.Drawing.Point(19, 150);
-            this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Size = new System.Drawing.Size(88, 33);
-            this.btnDangnhap.TabIndex = 3;
-            this.btnDangnhap.Text = "Đăng nhập";
-            this.btnDangnhap.UseVisualStyleBackColor = true;
-            this.btnDangnhap.Click += new System.EventHandler(this.BtnDangnhap_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(112, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 33);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Đăng nhập";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(112, 112);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(240, 20);
-            this.txtPassword.TabIndex = 2;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(28, 79);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Tên đăng nhập";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(112, 67);
+            // 
+            // 
+            // 
+            this.txtUsername.CustomButton.Image = null;
+            this.txtUsername.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtUsername.CustomButton.Name = "";
+            this.txtUsername.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUsername.CustomButton.TabIndex = 1;
+            this.txtUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUsername.CustomButton.UseSelectable = true;
+            this.txtUsername.CustomButton.Visible = false;
+            this.txtUsername.Lines = new string[0];
+            this.txtUsername.Location = new System.Drawing.Point(129, 79);
+            this.txtUsername.MaxLength = 32767;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(240, 20);
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.SelectionLength = 0;
+            this.txtUsername.SelectionStart = 0;
+            this.txtUsername.ShortcutsEnabled = true;
+            this.txtUsername.Size = new System.Drawing.Size(232, 23);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.UseSelectable = true;
+            this.txtUsername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label4
+            // txtPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Mật khẩu";
             // 
-            // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Tên tài khoản";
             // 
-            // groupBox2
+            this.txtPassword.CustomButton.Image = null;
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtPassword.CustomButton.Name = "";
+            this.txtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPassword.CustomButton.TabIndex = 1;
+            this.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPassword.CustomButton.UseSelectable = true;
+            this.txtPassword.CustomButton.Visible = false;
+            this.txtPassword.Lines = new string[0];
+            this.txtPassword.Location = new System.Drawing.Point(129, 117);
+            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.ShortcutsEnabled = true;
+            this.txtPassword.Size = new System.Drawing.Size(232, 23);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.UseSelectable = true;
+            this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.btnDangki);
-            this.groupBox2.Controls.Add(this.btnhuy1);
-            this.groupBox2.Controls.Add(this.btnDangnhap);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtPassword);
-            this.groupBox2.Controls.Add(this.txtUsername);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 211);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Đăng nhập";
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Location = new System.Drawing.Point(129, 157);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(91, 30);
+            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseSelectable = true;
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.Location = new System.Drawing.Point(270, 157);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(91, 30);
+            this.btnDangKy.TabIndex = 4;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseSelectable = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 211);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(411, 210);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.btnDangNhap);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "SBTC-Thi trắc nghiệm";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Resizable = false;
+            this.Text = "Đăng nhập";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private Utils.Validator.DOBValidator dobValidator1;
-        private System.Windows.Forms.Button btnDangki;
-        private System.Windows.Forms.Button btnhuy1;
-        private System.Windows.Forms.Button btnDangnhap;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox txtUsername;
+        private MetroFramework.Controls.MetroTextBox txtPassword;
+        private MetroFramework.Controls.MetroButton btnDangNhap;
+        private MetroFramework.Controls.MetroButton btnDangKy;
     }
 }
 

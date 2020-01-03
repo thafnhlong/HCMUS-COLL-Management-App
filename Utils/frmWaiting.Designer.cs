@@ -28,62 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.Label1 = new MetroFramework.Controls.MetroLabel();
+            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.SuspendLayout();
             // 
-            // panel1
+            // Label1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 102);
-            this.panel1.TabIndex = 4;
+            this.Label1.Location = new System.Drawing.Point(23, 18);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(235, 47);
+            this.Label1.TabIndex = 0;
+            this.Label1.Text = "Please Wait...";
+            this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // progressBar1
+            // metroProgressSpinner1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(10, 56);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(232, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Processing...";
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(53, 83);
+            this.metroProgressSpinner1.Maximum = 100;
+            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(160, 160);
+            this.metroProgressSpinner1.TabIndex = 1;
+            this.metroProgressSpinner1.UseSelectable = true;
             // 
             // frmWaiting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(255, 102);
+            this.ClientSize = new System.Drawing.Size(274, 299);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.metroProgressSpinner1);
+            this.Controls.Add(this.Label1);
             this.Name = "frmWaiting";
+            this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmWaiting";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroLabel Label1;
+        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
     }
 }
