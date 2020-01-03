@@ -85,6 +85,7 @@
             // 
             // cbbKhoi
             // 
+            this.cbbKhoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKhoi.FormattingEnabled = true;
             this.cbbKhoi.Location = new System.Drawing.Point(123, 288);
             this.cbbKhoi.Name = "cbbKhoi";
@@ -135,6 +136,7 @@
             // 
             // cbbLophoc
             // 
+            this.cbbLophoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLophoc.FormattingEnabled = true;
             this.cbbLophoc.Location = new System.Drawing.Point(123, 330);
             this.cbbLophoc.Name = "cbbLophoc";
@@ -144,6 +146,7 @@
             // 
             // cbbPer
             // 
+            this.cbbPer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPer.FormattingEnabled = true;
             this.cbbPer.Items.AddRange(new object[] {
             "HocSinh",
@@ -151,7 +154,7 @@
             "Admin"});
             this.cbbPer.Location = new System.Drawing.Point(122, 246);
             this.cbbPer.Name = "cbbPer";
-            this.cbbPer.Size = new System.Drawing.Size(221, 21);
+            this.cbbPer.Size = new System.Drawing.Size(226, 21);
             this.cbbPer.TabIndex = 26;
             this.cbbPer.SelectedIndexChanged += new System.EventHandler(this.CbbPer_SelectedIndexChanged);
             // 

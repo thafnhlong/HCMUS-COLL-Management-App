@@ -84,6 +84,7 @@
             // 
             // cbbPer
             // 
+            this.cbbPer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPer.FormattingEnabled = true;
             this.cbbPer.Items.AddRange(new object[] {
             "HocSinh",

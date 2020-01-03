@@ -80,6 +80,7 @@
             // 
             // cbDoKhoa
             // 
+            this.cbDoKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDoKhoa.FormattingEnabled = true;
             this.cbDoKhoa.Location = new System.Drawing.Point(464, 9);
             this.cbDoKhoa.Name = "cbDoKhoa";
@@ -88,6 +89,7 @@
             // 
             // cbCapHoc
             // 
+            this.cbCapHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.Location = new System.Drawing.Point(277, 9);
             this.cbCapHoc.Name = "cbCapHoc";
@@ -126,6 +128,7 @@
             // 
             // cbMonHoc
             // 
+            this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
             this.cbMonHoc.Location = new System.Drawing.Point(83, 9);
             this.cbMonHoc.Name = "cbMonHoc";
@@ -162,6 +165,7 @@
             // 
             // cbbLoaiCH
             // 
+            this.cbbLoaiCH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLoaiCH.FormattingEnabled = true;
             this.cbbLoaiCH.Location = new System.Drawing.Point(680, 9);
             this.cbbLoaiCH.Name = "cbbLoaiCH";

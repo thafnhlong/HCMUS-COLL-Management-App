@@ -61,7 +61,7 @@
             // btnNgdung
             // 
             this.btnNgdung.Location = new System.Drawing.Point(179, 42);
-            this.btnNgdung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNgdung.Margin = new System.Windows.Forms.Padding(2);
             this.btnNgdung.Name = "btnNgdung";
             this.btnNgdung.Size = new System.Drawing.Size(134, 40);
             this.btnNgdung.TabIndex = 3;
@@ -72,7 +72,7 @@
             // btnBnR
             // 
             this.btnBnR.Location = new System.Drawing.Point(7, 42);
-            this.btnBnR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBnR.Margin = new System.Windows.Forms.Padding(2);
             this.btnBnR.Name = "btnBnR";
             this.btnBnR.Size = new System.Drawing.Size(134, 40);
             this.btnBnR.TabIndex = 4;
@@ -120,7 +120,7 @@
             this.tabConnect.Controls.Add(this.label16);
             this.tabConnect.Location = new System.Drawing.Point(4, 22);
             this.tabConnect.Name = "tabConnect";
-            this.tabConnect.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabConnect.Padding = new System.Windows.Forms.Padding(3);
             this.tabConnect.Size = new System.Drawing.Size(448, 245);
             this.tabConnect.TabIndex = 0;
             this.tabConnect.Text = "Kết nối dữ liệu";
@@ -200,12 +200,13 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
             this.comboBox1.Location = new System.Drawing.Point(134, 79);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(270, 21);
             this.comboBox1.TabIndex = 21;
@@ -241,7 +242,7 @@
             this.tabControls.Controls.Add(this.btnNgdung);
             this.tabControls.Location = new System.Drawing.Point(4, 22);
             this.tabControls.Name = "tabControls";
-            this.tabControls.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabControls.Padding = new System.Windows.Forms.Padding(3);
             this.tabControls.Size = new System.Drawing.Size(448, 245);
             this.tabControls.TabIndex = 1;
             this.tabControls.Text = "Quản lý";

@@ -184,6 +184,12 @@ namespace GiaoVien
                 checkLVHocSinh = false;
                 loadHocSinh();
                 checkLVHocSinh = true;
+
+                if (cb.SelectedIndex == 0)
+                {
+                    checkbox.Checked = true;
+                    checkbox.Enabled = false;
+                }
             }
         }
 
@@ -373,6 +379,12 @@ namespace GiaoVien
             loadDeThi();
             checkLVDeThi = true;
             checkLVHocSinh = true;
+
+            if (cb.SelectedIndex == 0)
+            {
+                checkbox.Checked = true;
+                checkbox.Enabled = false;
+            }
         }
 
         void loadLoaiKyThi()

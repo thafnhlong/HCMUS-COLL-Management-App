@@ -106,6 +106,7 @@
             // 
             // cbbkhoi
             // 
+            this.cbbkhoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbkhoi.FormattingEnabled = true;
             this.cbbkhoi.Location = new System.Drawing.Point(115, 286);
             this.cbbkhoi.Margin = new System.Windows.Forms.Padding(2);
@@ -117,6 +118,7 @@
             // 
             // cbblophoc
             // 
+            this.cbblophoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbblophoc.FormattingEnabled = true;
             this.cbblophoc.Location = new System.Drawing.Point(115, 328);
             this.cbblophoc.Margin = new System.Windows.Forms.Padding(2);
@@ -127,6 +129,7 @@
             // 
             // cbbper
             // 
+            this.cbbper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbper.FormattingEnabled = true;
             this.cbbper.Items.AddRange(new object[] {
             "HocSinh",
