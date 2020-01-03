@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Admin
 {
-    public partial class frmBnR : Form
+    public partial class frmBnR : MetroForm
     {
         public EventHandler swampform;
         public string connectionStr;
@@ -21,9 +22,11 @@ namespace Admin
         {
             connectionStr = connectionstring;
             InitializeComponent();
-            btnhuy.Click += (s, e1) => { Close(); };
             FormClosed+= (s, e1) => { swampform?.Invoke(null, null); };
-
+            btnBBackup.Click += BtnBbackup_Click;
+            btnbackup.Click += Btnbackup_Click;
+            btnBRestore.Click += BtnBrestore_Click;
+            btnRestore.Click += BtnRestore_Click;
         }
 
         private void FrmBnR_Load(object sender, EventArgs e)
@@ -87,7 +90,7 @@ namespace Admin
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 textBox2.Text = dlg.FileName;
-                btnRestore.Enabled = true;
+                btnbackup.Enabled = true;
             }
         }
 

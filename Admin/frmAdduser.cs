@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using Utils.Validator;
 
 namespace Admin
 {
-    public partial class frmAdduser : Form
+    public partial class frmAdduser : MetroForm
     {
         public EventHandler swapform;
         public frmAdduser()
@@ -41,7 +42,17 @@ namespace Admin
             rVdob.Target = dtpDOB;
             rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
+            Load += FrmAdduser_Load;
+            cbbper.SelectedIndexChanged += Cbbper_SelectedIndexChanged;
+            cbbkhoi.SelectedIndexChanged += Cbbkhoi_SelectedIndexChanged;
+            btnthem.Click += Btnthem_Click;
         }
+
+        private void FrmAdduser_Load(object sender, EventArgs e)
+        {
+            cbbper.SelectedIndex = 0;
+        }
+
         public bool checkname(string name)
         {
             using (var qltn = Utils.QLTN.getInstance())
@@ -114,7 +125,7 @@ namespace Admin
 
         private void Cbbper_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbper.SelectedIndex ==0 || cbbper.SelectedIndex == 1)
+            if (cbbper.SelectedIndex == 0 || cbbper.SelectedIndex == 1)
             {
                 label9.Visible = true;
                 cbbkhoi.Visible = true;

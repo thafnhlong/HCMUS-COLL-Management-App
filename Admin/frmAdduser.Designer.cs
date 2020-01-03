@@ -28,262 +28,285 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.btnhuy = new System.Windows.Forms.Button();
-            this.btnthem = new System.Windows.Forms.Button();
-            this.cbbkhoi = new System.Windows.Forms.ComboBox();
-            this.cbblophoc = new System.Windows.Forms.ComboBox();
-            this.cbbper = new System.Windows.Forms.ComboBox();
-            this.txtNname = new System.Windows.Forms.TextBox();
-            this.txtNpassword = new System.Windows.Forms.TextBox();
-            this.txtNusername = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnhuy = new MetroFramework.Controls.MetroButton();
+            this.btnthem = new MetroFramework.Controls.MetroButton();
+            this.cbblophoc = new MetroFramework.Controls.MetroComboBox();
+            this.cbbkhoi = new MetroFramework.Controls.MetroComboBox();
+            this.cbbper = new MetroFramework.Controls.MetroComboBox();
+            this.label9 = new MetroFramework.Controls.MetroLabel();
+            this.dtpDOB = new MetroFramework.Controls.MetroDateTime();
+            this.label11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.txtNname = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.txtNpassword = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtNusername = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dtpDOB);
-            this.groupBox1.Controls.Add(this.btnhuy);
-            this.groupBox1.Controls.Add(this.btnthem);
-            this.groupBox1.Controls.Add(this.cbbkhoi);
-            this.groupBox1.Controls.Add(this.cbblophoc);
-            this.groupBox1.Controls.Add(this.cbbper);
-            this.groupBox1.Controls.Add(this.txtNname);
-            this.groupBox1.Controls.Add(this.txtNpassword);
-            this.groupBox1.Controls.Add(this.txtNusername);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 414);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Admin";
-            // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Location = new System.Drawing.Point(115, 202);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(225, 20);
-            this.dtpDOB.TabIndex = 41;
             // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(246, 371);
-            this.btnhuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnhuy.Location = new System.Drawing.Point(269, 388);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(94, 34);
-            this.btnhuy.TabIndex = 40;
-            this.btnhuy.Text = "Hủy";
-            this.btnhuy.UseVisualStyleBackColor = true;
+            this.btnhuy.Size = new System.Drawing.Size(96, 36);
+            this.btnhuy.TabIndex = 8;
+            this.btnhuy.Text = "Hủy";
+            this.btnhuy.UseSelectable = true;
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(115, 371);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnthem.Location = new System.Drawing.Point(125, 388);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(89, 34);
-            this.btnthem.TabIndex = 39;
-            this.btnthem.Text = "Thêm tài khoản";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.Btnthem_Click);
-            // 
-            // cbbkhoi
-            // 
-            this.cbbkhoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbkhoi.FormattingEnabled = true;
-            this.cbbkhoi.Location = new System.Drawing.Point(115, 286);
-            this.cbbkhoi.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbkhoi.Name = "cbbkhoi";
-            this.cbbkhoi.Size = new System.Drawing.Size(225, 21);
-            this.cbbkhoi.TabIndex = 38;
-            this.cbbkhoi.Visible = false;
-            this.cbbkhoi.SelectedIndexChanged += new System.EventHandler(this.Cbbkhoi_SelectedIndexChanged);
+            this.btnthem.Size = new System.Drawing.Size(96, 36);
+            this.btnthem.TabIndex = 7;
+            this.btnthem.Text = "Thêm tài khoản";
+            this.btnthem.UseSelectable = true;
             // 
             // cbblophoc
             // 
-            this.cbblophoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbblophoc.FormattingEnabled = true;
-            this.cbblophoc.Location = new System.Drawing.Point(115, 328);
-            this.cbblophoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cbblophoc.ItemHeight = 23;
+            this.cbblophoc.Location = new System.Drawing.Point(125, 344);
             this.cbblophoc.Name = "cbblophoc";
-            this.cbblophoc.Size = new System.Drawing.Size(225, 21);
-            this.cbblophoc.TabIndex = 37;
-            this.cbblophoc.Visible = false;
+            this.cbblophoc.Size = new System.Drawing.Size(240, 29);
+            this.cbblophoc.TabIndex = 6;
+            this.cbblophoc.UseSelectable = true;
+            // 
+            // cbbkhoi
+            // 
+            this.cbbkhoi.FormattingEnabled = true;
+            this.cbbkhoi.ItemHeight = 23;
+            this.cbbkhoi.Location = new System.Drawing.Point(125, 297);
+            this.cbbkhoi.Name = "cbbkhoi";
+            this.cbbkhoi.Size = new System.Drawing.Size(240, 29);
+            this.cbbkhoi.TabIndex = 5;
+            this.cbbkhoi.UseSelectable = true;
             // 
             // cbbper
             // 
-            this.cbbper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbper.FormattingEnabled = true;
+            this.cbbper.ItemHeight = 23;
             this.cbbper.Items.AddRange(new object[] {
-            "HocSinh",
-            "GiaoVien",
+            "Học Sinh",
+            "Giáo Viên",
             "Admin"});
-            this.cbbper.Location = new System.Drawing.Point(115, 242);
-            this.cbbper.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbper.Location = new System.Drawing.Point(125, 251);
             this.cbbper.Name = "cbbper";
-            this.cbbper.Size = new System.Drawing.Size(225, 21);
-            this.cbbper.TabIndex = 36;
-            this.cbbper.SelectedIndexChanged += new System.EventHandler(this.Cbbper_SelectedIndexChanged);
-            // 
-            // txtNname
-            // 
-            this.txtNname.Location = new System.Drawing.Point(115, 153);
-            this.txtNname.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNname.Name = "txtNname";
-            this.txtNname.Size = new System.Drawing.Size(225, 20);
-            this.txtNname.TabIndex = 34;
-            // 
-            // txtNpassword
-            // 
-            this.txtNpassword.Location = new System.Drawing.Point(115, 110);
-            this.txtNpassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNpassword.Name = "txtNpassword";
-            this.txtNpassword.PasswordChar = '*';
-            this.txtNpassword.Size = new System.Drawing.Size(225, 20);
-            this.txtNpassword.TabIndex = 33;
-            // 
-            // txtNusername
-            // 
-            this.txtNusername.Location = new System.Drawing.Point(115, 69);
-            this.txtNusername.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNusername.Name = "txtNusername";
-            this.txtNusername.Size = new System.Drawing.Size(225, 20);
-            this.txtNusername.TabIndex = 32;
+            this.cbbper.Size = new System.Drawing.Size(240, 29);
+            this.cbbper.TabIndex = 4;
+            this.cbbper.UseSelectable = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 332);
+            this.label9.Location = new System.Drawing.Point(23, 345);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 17);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Lớp học";
-            this.label9.Visible = false;
+            this.label9.Size = new System.Drawing.Size(56, 19);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Lớp học";
             // 
-            // label10
+            // dtpDOB
             // 
-            this.label10.AutoSize = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(85, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 33);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Thêm tài khoản";
+            this.dtpDOB.Location = new System.Drawing.Point(125, 207);
+            this.dtpDOB.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(240, 29);
+            this.dtpDOB.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 290);
+            this.label11.Location = new System.Drawing.Point(23, 301);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 17);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Khối";
-            this.label11.Visible = false;
+            this.label11.Size = new System.Drawing.Size(63, 19);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Khối/Cấp";
             // 
-            // label12
+            // metroLabel5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 246);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 17);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Phân quyền";
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(23, 257);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "Phân quyền";
             // 
-            // label13
+            // metroLabel4
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(14, 203);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 17);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Ngày sinh";
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 213);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel4.TabIndex = 13;
+            this.metroLabel4.Text = "Ngày sinh";
             // 
-            // label14
+            // txtNname
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(14, 156);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 17);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Họ và Tên";
             // 
-            // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(14, 112);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 17);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Mật khẩu";
             // 
-            // label16
+            this.txtNname.CustomButton.Image = null;
+            this.txtNname.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtNname.CustomButton.Name = "";
+            this.txtNname.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNname.CustomButton.TabIndex = 1;
+            this.txtNname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNname.CustomButton.UseSelectable = true;
+            this.txtNname.CustomButton.Visible = false;
+            this.txtNname.Lines = new string[0];
+            this.txtNname.Location = new System.Drawing.Point(125, 165);
+            this.txtNname.MaxLength = 32767;
+            this.txtNname.Name = "txtNname";
+            this.txtNname.PasswordChar = '\0';
+            this.txtNname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNname.SelectedText = "";
+            this.txtNname.SelectionLength = 0;
+            this.txtNname.SelectionStart = 0;
+            this.txtNname.ShortcutsEnabled = true;
+            this.txtNname.Size = new System.Drawing.Size(240, 23);
+            this.txtNname.TabIndex = 2;
+            this.txtNname.UseSelectable = true;
+            this.txtNname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(14, 72);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 17);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Tên tài khoản";
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 169);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel3.TabIndex = 14;
+            this.metroLabel3.Text = "Họ và tên";
+            // 
+            // txtNpassword
+            // 
+            // 
+            // 
+            // 
+            this.txtNpassword.CustomButton.Image = null;
+            this.txtNpassword.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtNpassword.CustomButton.Name = "";
+            this.txtNpassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNpassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNpassword.CustomButton.TabIndex = 1;
+            this.txtNpassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNpassword.CustomButton.UseSelectable = true;
+            this.txtNpassword.CustomButton.Visible = false;
+            this.txtNpassword.Lines = new string[0];
+            this.txtNpassword.Location = new System.Drawing.Point(125, 123);
+            this.txtNpassword.MaxLength = 32767;
+            this.txtNpassword.Name = "txtNpassword";
+            this.txtNpassword.PasswordChar = '*';
+            this.txtNpassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNpassword.SelectedText = "";
+            this.txtNpassword.SelectionLength = 0;
+            this.txtNpassword.SelectionStart = 0;
+            this.txtNpassword.ShortcutsEnabled = true;
+            this.txtNpassword.Size = new System.Drawing.Size(240, 23);
+            this.txtNpassword.TabIndex = 1;
+            this.txtNpassword.UseSelectable = true;
+            this.txtNpassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNpassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 125);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.TabIndex = 15;
+            this.metroLabel2.Text = "Mặt khẩu";
+            // 
+            // txtNusername
+            // 
+            // 
+            // 
+            // 
+            this.txtNusername.CustomButton.Image = null;
+            this.txtNusername.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtNusername.CustomButton.Name = "";
+            this.txtNusername.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNusername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNusername.CustomButton.TabIndex = 1;
+            this.txtNusername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNusername.CustomButton.UseSelectable = true;
+            this.txtNusername.CustomButton.Visible = false;
+            this.txtNusername.Lines = new string[0];
+            this.txtNusername.Location = new System.Drawing.Point(125, 81);
+            this.txtNusername.MaxLength = 32767;
+            this.txtNusername.Name = "txtNusername";
+            this.txtNusername.PasswordChar = '\0';
+            this.txtNusername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNusername.SelectedText = "";
+            this.txtNusername.SelectionLength = 0;
+            this.txtNusername.SelectionStart = 0;
+            this.txtNusername.ShortcutsEnabled = true;
+            this.txtNusername.Size = new System.Drawing.Size(240, 23);
+            this.txtNusername.TabIndex = 0;
+            this.txtNusername.UseSelectable = true;
+            this.txtNusername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNusername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 81);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel1.TabIndex = 16;
+            this.metroLabel1.Text = "Tên tài khoản";
             // 
             // frmAdduser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 414);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(388, 437);
+            this.Controls.Add(this.btnhuy);
+            this.Controls.Add(this.btnthem);
+            this.Controls.Add(this.cbblophoc);
+            this.Controls.Add(this.cbbkhoi);
+            this.Controls.Add(this.cbbper);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dtpDOB);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.txtNname);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.txtNpassword);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.txtNusername);
+            this.Controls.Add(this.metroLabel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmAdduser";
-            this.Text = "frmAdduser";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Resizable = false;
+            this.Text = "Thêm tài khoản";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnhuy;
-        private System.Windows.Forms.Button btnthem;
-        private System.Windows.Forms.ComboBox cbbkhoi;
-        private System.Windows.Forms.ComboBox cbblophoc;
-        private System.Windows.Forms.ComboBox cbbper;
-        private System.Windows.Forms.TextBox txtNname;
-        private System.Windows.Forms.TextBox txtNpassword;
-        private System.Windows.Forms.TextBox txtNusername;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private MetroFramework.Controls.MetroButton btnhuy;
+        private MetroFramework.Controls.MetroButton btnthem;
+        private MetroFramework.Controls.MetroComboBox cbblophoc;
+        private MetroFramework.Controls.MetroComboBox cbbkhoi;
+        private MetroFramework.Controls.MetroComboBox cbbper;
+        private MetroFramework.Controls.MetroLabel label9;
+        private MetroFramework.Controls.MetroDateTime dtpDOB;
+        private MetroFramework.Controls.MetroLabel label11;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTextBox txtNname;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox txtNpassword;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtNusername;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

@@ -47,7 +47,14 @@ namespace Main
 
             cbbKhoi.SelectedIndexChanged += cbbKhoi_SelectedIndexChanged;
             cbbPer.SelectedIndexChanged += CbbPer_SelectedIndexChanged;
+            Load += FrmRegister_Load;
         }
+
+        private void FrmRegister_Load(object sender, EventArgs e)
+        {
+            cbbPer.SelectedIndex = 0;
+        }
+
         public bool checkname(string name)
         {
             using (var qltn = Utils.QLTN.getInstance())

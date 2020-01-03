@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Admin
 {
-    public partial class frmMain : Form
+    public partial class frmMain : MetroForm
     {
         public EventHandler logout;
         public string connectionString;
@@ -24,12 +25,14 @@ namespace Admin
             InitializeComponent();
             Load += FrmMain_Load;
             FormClosed += (s, e) => { logout?.Invoke(null, null); };
-            btnHuy.Click += (s1, e1) =>
-            {
-                Close();
-            };
             btnLogout.Click += (s1, e1) => { Close(); };
             idadmin = id;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            button2.Click += button2_Click;
+            button3.Click += button3_Click;
+            tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
+            btnBnR.Click += btnBnR_Click;
+            btnNgdung.Click += btnNgdung_Click;
         }
         private bool checkConnection(string connectionStringtemp, int chose)
         {
@@ -142,18 +145,18 @@ namespace Admin
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl.SelectedTab == tabConnect)
-            {
-                this.Width = 472;
-                this.Height = 310;
-                //Size = new Size(684, 417); 472, 310
-            }
-            else if (tabControl.SelectedTab == tabControls)
-            {
-                this.Width = 359;
-                this.Height = 187;
-                //Size = new Size(522, 248); 359, 187
-            }
+            //if (tabControl.SelectedTab == tabConnect)
+            //{
+            //    this.Width = 472;
+            //    this.Height = 310;
+            //    //Size = new Size(684, 417); 472, 310
+            //}
+            //else if (tabControl.SelectedTab == tabControls)
+            //{
+            //    this.Width = 359;
+            //    this.Height = 187;
+            //    //Size = new Size(522, 248); 359, 187
+            //}
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -213,5 +216,6 @@ namespace Admin
                 MessageBox.Show("Kết nối sai");
             }
         }
+
     }
 }

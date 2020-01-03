@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dobValidator1 = new Utils.Validator.DOBValidator();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
@@ -36,11 +35,6 @@
             this.btnDangNhap = new MetroFramework.Controls.MetroButton();
             this.btnDangKy = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
-            // 
-            // dobValidator1
-            // 
-            this.dobValidator1.ErrorMessage = "_ERROR_";
-            this.dobValidator1.Target = null;
             // 
             // metroLabel2
             // 
@@ -108,7 +102,7 @@
             this.txtPassword.Location = new System.Drawing.Point(129, 117);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -159,7 +153,6 @@
         }
 
         #endregion
-        private Utils.Validator.DOBValidator dobValidator1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtUsername;

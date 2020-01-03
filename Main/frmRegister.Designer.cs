@@ -243,8 +243,7 @@
             // 
             // btnDangky
             // 
-            this.btnDangky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDangky.Location = new System.Drawing.Point(125, 401);
+            this.btnDangky.Location = new System.Drawing.Point(125, 388);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(96, 36);
             this.btnDangky.TabIndex = 8;
@@ -253,8 +252,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHuy.Location = new System.Drawing.Point(269, 401);
+            this.btnHuy.Location = new System.Drawing.Point(269, 388);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(96, 36);
             this.btnHuy.TabIndex = 9;
@@ -265,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 451);
+            this.ClientSize = new System.Drawing.Size(388, 437);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDangky);
             this.Controls.Add(this.cbbLophoc);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using Utils.Validator;
 
 namespace Admin
 {
-    public partial class frmEdituser : Form
+    public partial class frmEdituser : MetroForm
     {
         public EventHandler swapform;
         public string tk;
@@ -44,7 +45,9 @@ namespace Admin
             rVdob.ErrorMessage = "Ngày tháng không hợp lệ";
 
             Load += FrmEdituser_Load;
-
+            cbbper.SelectedIndexChanged += cbbper_SelectedIndexChanged;
+            cbblophoc.SelectedIndexChanged += cbbper_SelectedIndexChanged;
+            btnsua.Click += btnSua_Click;
         }
         private void load()
         {

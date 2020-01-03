@@ -12,10 +12,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using DataTable = System.Data.DataTable;
 using System.Globalization;
+using MetroFramework.Forms;
 
 namespace Admin
 {
-    public partial class frmQuanLy : Form
+    public partial class frmQuanLy : MetroForm
     {
 
         public EventHandler swapform;
@@ -26,6 +27,11 @@ namespace Admin
             btnHuy.Click += (s, e) => { Close(); };
             FormClosed += (s, e) => { swapform?.Invoke(null, null); };
             idadmin = id;
+            cbbPer.SelectedIndexChanged += cbbPer_SelectedIndexChanged;
+            btnadduser.Click += btnadduser_Click;
+            btnEdituser.Click += Button1_Click;
+            btnImport.Click += btnImport_Click;
+            btnExport.Click += btnExport_Click;
         }
 
         private void frmQuanLy_Load(object sender, EventArgs e)
@@ -400,6 +406,7 @@ namespace Admin
             }).ShowDialog();
             load(-1);
         }
+
     }
 }
 
