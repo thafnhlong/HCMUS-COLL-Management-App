@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using Utils.Linq2Sql;
 
 namespace GiaoVien
 {
-    public partial class FormThemCauHoi : Form
+    public partial class FormThemCauHoi : MetroForm
     {
         int ID;
         public FormThemCauHoi(int id)

@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHocSinh = new System.Windows.Forms.Button();
-            this.btnGiaoVien = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnGiaoVien = new MetroFramework.Controls.MetroButton();
+            this.btnHocSinh = new MetroFramework.Controls.MetroButton();
+            this.btnExit = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
-            // 
-            // btnHocSinh
-            // 
-            this.btnHocSinh.Location = new System.Drawing.Point(201, 54);
-            this.btnHocSinh.Name = "btnHocSinh";
-            this.btnHocSinh.Size = new System.Drawing.Size(106, 46);
-            this.btnHocSinh.TabIndex = 1;
-            this.btnHocSinh.Text = "Học sinh";
-            this.btnHocSinh.UseVisualStyleBackColor = true;
             // 
             // btnGiaoVien
             // 
-            this.btnGiaoVien.Location = new System.Drawing.Point(50, 54);
+            this.btnGiaoVien.Location = new System.Drawing.Point(91, 83);
             this.btnGiaoVien.Name = "btnGiaoVien";
-            this.btnGiaoVien.Size = new System.Drawing.Size(106, 46);
+            this.btnGiaoVien.Size = new System.Drawing.Size(158, 62);
             this.btnGiaoVien.TabIndex = 0;
-            this.btnGiaoVien.Text = "Giáo viên";
-            this.btnGiaoVien.UseVisualStyleBackColor = true;
+            this.btnGiaoVien.Text = "Giáo Viên";
+            this.btnGiaoVien.UseSelectable = true;
+            // 
+            // btnHocSinh
+            // 
+            this.btnHocSinh.Location = new System.Drawing.Point(91, 199);
+            this.btnHocSinh.Name = "btnHocSinh";
+            this.btnHocSinh.Size = new System.Drawing.Size(158, 62);
+            this.btnHocSinh.TabIndex = 1;
+            this.btnHocSinh.Text = "Học Sinh";
+            this.btnHocSinh.UseSelectable = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(364, 54);
+            this.btnExit.Location = new System.Drawing.Point(91, 317);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(106, 46);
+            this.btnExit.Size = new System.Drawing.Size(158, 62);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Text = "Hủy";
+            this.btnExit.UseSelectable = true;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 151);
+            this.ClientSize = new System.Drawing.Size(340, 460);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHocSinh);
             this.Controls.Add(this.btnGiaoVien);
+            this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMain";
+            this.Resizable = false;
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnHocSinh;
-        private System.Windows.Forms.Button btnGiaoVien;
-        private System.Windows.Forms.Button btnExit;
+        private MetroFramework.Controls.MetroButton btnGiaoVien;
+        private MetroFramework.Controls.MetroButton btnHocSinh;
+        private MetroFramework.Controls.MetroButton btnExit;
     }
 }
