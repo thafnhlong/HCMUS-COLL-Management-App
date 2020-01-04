@@ -82,7 +82,7 @@
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -93,7 +93,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 591);
+            this.splitContainer1.Size = new System.Drawing.Size(1144, 593);
             this.splitContainer1.SplitterDistance = 352;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -121,7 +121,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(352, 591);
+            this.splitContainer2.Size = new System.Drawing.Size(352, 593);
             this.splitContainer2.SplitterDistance = 208;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -228,7 +228,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flpCauHoi);
-            this.splitContainer3.Size = new System.Drawing.Size(352, 379);
+            this.splitContainer3.Size = new System.Drawing.Size(352, 381);
             this.splitContainer3.SplitterDistance = 88;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -279,11 +279,12 @@
             this.flpCauHoi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpCauHoi.Location = new System.Drawing.Point(0, 0);
             this.flpCauHoi.Name = "flpCauHoi";
-            this.flpCauHoi.Size = new System.Drawing.Size(350, 285);
+            this.flpCauHoi.Size = new System.Drawing.Size(350, 287);
             this.flpCauHoi.TabIndex = 0;
             // 
             // splitContainer4
             // 
+            this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
@@ -298,8 +299,8 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtbGoiY);
             this.splitContainer4.Panel2MinSize = 88;
-            this.splitContainer4.Size = new System.Drawing.Size(826, 589);
-            this.splitContainer4.SplitterDistance = 497;
+            this.splitContainer4.Size = new System.Drawing.Size(788, 593);
+            this.splitContainer4.SplitterDistance = 501;
             this.splitContainer4.TabIndex = 0;
             // 
             // groupBox2
@@ -309,10 +310,10 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(826, 497);
+            this.groupBox2.Size = new System.Drawing.Size(786, 499);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bài làm";
+            this.groupBox2.Text = "Câu hỏi: ";
             // 
             // tlpDapAn
             // 
@@ -334,7 +335,7 @@
             this.tlpDapAn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
             this.tlpDapAn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
             this.tlpDapAn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
-            this.tlpDapAn.Size = new System.Drawing.Size(820, 298);
+            this.tlpDapAn.Size = new System.Drawing.Size(780, 300);
             this.tlpDapAn.TabIndex = 2;
             // 
             // cbDapAn5
@@ -343,7 +344,7 @@
             this.cbDapAn5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn5.Location = new System.Drawing.Point(3, 199);
             this.cbDapAn5.Name = "cbDapAn5";
-            this.cbDapAn5.Size = new System.Drawing.Size(814, 43);
+            this.cbDapAn5.Size = new System.Drawing.Size(774, 43);
             this.cbDapAn5.TabIndex = 4;
             this.cbDapAn5.Text = "cbDapAn5";
             this.cbDapAn5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -355,7 +356,7 @@
             this.cbDapAn4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn4.Location = new System.Drawing.Point(3, 150);
             this.cbDapAn4.Name = "cbDapAn4";
-            this.cbDapAn4.Size = new System.Drawing.Size(814, 43);
+            this.cbDapAn4.Size = new System.Drawing.Size(774, 43);
             this.cbDapAn4.TabIndex = 3;
             this.cbDapAn4.Text = "cbDapAn4";
             this.cbDapAn4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -367,7 +368,7 @@
             this.cbDapAn3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn3.Location = new System.Drawing.Point(3, 101);
             this.cbDapAn3.Name = "cbDapAn3";
-            this.cbDapAn3.Size = new System.Drawing.Size(814, 43);
+            this.cbDapAn3.Size = new System.Drawing.Size(774, 43);
             this.cbDapAn3.TabIndex = 2;
             this.cbDapAn3.Text = "cbDapAn3";
             this.cbDapAn3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -379,7 +380,7 @@
             this.cbDapAn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn2.Location = new System.Drawing.Point(3, 52);
             this.cbDapAn2.Name = "cbDapAn2";
-            this.cbDapAn2.Size = new System.Drawing.Size(814, 43);
+            this.cbDapAn2.Size = new System.Drawing.Size(774, 43);
             this.cbDapAn2.TabIndex = 1;
             this.cbDapAn2.Text = "cbDapAn2";
             this.cbDapAn2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -391,7 +392,7 @@
             this.cbDapAn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn1.Location = new System.Drawing.Point(3, 3);
             this.cbDapAn1.Name = "cbDapAn1";
-            this.cbDapAn1.Size = new System.Drawing.Size(814, 43);
+            this.cbDapAn1.Size = new System.Drawing.Size(774, 43);
             this.cbDapAn1.TabIndex = 0;
             this.cbDapAn1.Text = "cbDapAn1";
             this.cbDapAn1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -403,7 +404,7 @@
             this.cbDapAn6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbDapAn6.Location = new System.Drawing.Point(3, 248);
             this.cbDapAn6.Name = "cbDapAn6";
-            this.cbDapAn6.Size = new System.Drawing.Size(814, 47);
+            this.cbDapAn6.Size = new System.Drawing.Size(774, 49);
             this.cbDapAn6.TabIndex = 5;
             this.cbDapAn6.Text = "cbDapAn6";
             this.cbDapAn6.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -415,18 +416,20 @@
             this.lblCauHoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCauHoi.Location = new System.Drawing.Point(3, 19);
             this.lblCauHoi.Name = "lblCauHoi";
-            this.lblCauHoi.Size = new System.Drawing.Size(820, 177);
+            this.lblCauHoi.Size = new System.Drawing.Size(780, 177);
             this.lblCauHoi.TabIndex = 1;
             this.lblCauHoi.Text = "lblCauHoi";
             this.lblCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rtbGoiY
             // 
+            this.rtbGoiY.BackColor = System.Drawing.Color.White;
+            this.rtbGoiY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbGoiY.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbGoiY.Location = new System.Drawing.Point(0, 0);
             this.rtbGoiY.Name = "rtbGoiY";
             this.rtbGoiY.ReadOnly = true;
-            this.rtbGoiY.Size = new System.Drawing.Size(826, 88);
+            this.rtbGoiY.Size = new System.Drawing.Size(786, 86);
             this.rtbGoiY.TabIndex = 1;
             this.rtbGoiY.Text = "rtbGoiY";
             // 
@@ -438,13 +441,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 591);
+            this.ClientSize = new System.Drawing.Size(1184, 673);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "LBThi";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Làm bài thi";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

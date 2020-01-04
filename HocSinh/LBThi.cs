@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HocSinh
 {
-    public partial class LBThi : Form
+    public partial class LBThi : MetroFramework.Forms.MetroForm
     {
         public static string FileNameBakup = "LBThi.bk";
 
@@ -243,6 +243,8 @@ namespace HocSinh
 
         private void LBThi_Load(object sender, EventArgs e)
         {
+            TopMost = true;
+
             LoadHocSinh();
             if (!LoadDeThi()) return;
 
@@ -360,6 +362,7 @@ namespace HocSinh
                     });
 
                     var x = new Button { Text = i.ToString(), Size = new Size(40, 40), Tag = i - 1 };
+                    x.UseVisualStyleBackColor = true;
                     x.Click += DoiCauHoiEvent;
                     flpCauHoi.Controls.Add(x);
 
