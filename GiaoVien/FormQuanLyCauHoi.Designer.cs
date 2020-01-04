@@ -38,18 +38,18 @@
             this.cbbLoaiCH = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.lvDapAn = new MetroFramework.Controls.MetroListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnThemCauHoi = new MetroFramework.Controls.MetroButton();
             this.btnSuaCauHoi = new MetroFramework.Controls.MetroButton();
             this.btnImport = new MetroFramework.Controls.MetroButton();
             this.btnExport = new MetroFramework.Controls.MetroButton();
             this.txtNoiDung = new MetroFramework.Controls.MetroTextBox();
-            this.lvLoadCauHoi = new MetroFramework.Controls.MetroListView();
+            this.lvLoadCauHoi = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvDapAn = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -136,58 +136,25 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel5.Location = new System.Drawing.Point(852, 90);
+            this.metroLabel5.Location = new System.Drawing.Point(804, 59);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(71, 19);
             this.metroLabel5.TabIndex = 9;
-            this.metroLabel5.Text = "Loại Câu Hỏi";
+            this.metroLabel5.Text = "Nội dung";
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel6.Location = new System.Drawing.Point(852, 263);
+            this.metroLabel6.Location = new System.Drawing.Point(804, 219);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(56, 19);
             this.metroLabel6.TabIndex = 10;
-            this.metroLabel6.Text = "Loại Câu Hỏi";
-            // 
-            // lvDapAn
-            // 
-            this.lvDapAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.lvDapAn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvDapAn.FullRowSelect = true;
-            this.lvDapAn.GridLines = true;
-            this.lvDapAn.Location = new System.Drawing.Point(852, 297);
-            this.lvDapAn.Name = "lvDapAn";
-            this.lvDapAn.OwnerDraw = true;
-            this.lvDapAn.Size = new System.Drawing.Size(403, 161);
-            this.lvDapAn.TabIndex = 12;
-            this.lvDapAn.UseCompatibleStateImageBehavior = false;
-            this.lvDapAn.UseSelectable = true;
-            this.lvDapAn.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đáp Án";
-            this.columnHeader3.Width = 105;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Nội Dung";
-            this.columnHeader4.Width = 282;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Đúng Sai";
-            this.columnHeader5.Width = 305;
+            this.metroLabel6.Text = "Đáp án";
             // 
             // btnThemCauHoi
             // 
-            this.btnThemCauHoi.Location = new System.Drawing.Point(53, 484);
+            this.btnThemCauHoi.Location = new System.Drawing.Point(23, 453);
             this.btnThemCauHoi.Name = "btnThemCauHoi";
             this.btnThemCauHoi.Size = new System.Drawing.Size(103, 45);
             this.btnThemCauHoi.TabIndex = 13;
@@ -196,7 +163,7 @@
             // 
             // btnSuaCauHoi
             // 
-            this.btnSuaCauHoi.Location = new System.Drawing.Point(216, 484);
+            this.btnSuaCauHoi.Location = new System.Drawing.Point(151, 453);
             this.btnSuaCauHoi.Name = "btnSuaCauHoi";
             this.btnSuaCauHoi.Size = new System.Drawing.Size(119, 45);
             this.btnSuaCauHoi.TabIndex = 14;
@@ -205,7 +172,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(514, 484);
+            this.btnImport.Location = new System.Drawing.Point(523, 453);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(119, 45);
             this.btnImport.TabIndex = 15;
@@ -214,7 +181,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(680, 484);
+            this.btnExport.Location = new System.Drawing.Point(670, 453);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(119, 45);
             this.btnExport.TabIndex = 16;
@@ -227,25 +194,26 @@
             // 
             // 
             this.txtNoiDung.CustomButton.Image = null;
-            this.txtNoiDung.CustomButton.Location = new System.Drawing.Point(313, 1);
+            this.txtNoiDung.CustomButton.Location = new System.Drawing.Point(285, 2);
             this.txtNoiDung.CustomButton.Name = "";
-            this.txtNoiDung.CustomButton.Size = new System.Drawing.Size(97, 97);
+            this.txtNoiDung.CustomButton.Size = new System.Drawing.Size(115, 115);
             this.txtNoiDung.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNoiDung.CustomButton.TabIndex = 1;
             this.txtNoiDung.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNoiDung.CustomButton.UseSelectable = true;
             this.txtNoiDung.CustomButton.Visible = false;
             this.txtNoiDung.Lines = new string[0];
-            this.txtNoiDung.Location = new System.Drawing.Point(852, 136);
+            this.txtNoiDung.Location = new System.Drawing.Point(804, 81);
             this.txtNoiDung.MaxLength = 32767;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.PasswordChar = '\0';
+            this.txtNoiDung.ReadOnly = true;
             this.txtNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNoiDung.SelectedText = "";
             this.txtNoiDung.SelectionLength = 0;
             this.txtNoiDung.SelectionStart = 0;
             this.txtNoiDung.ShortcutsEnabled = true;
-            this.txtNoiDung.Size = new System.Drawing.Size(411, 99);
+            this.txtNoiDung.Size = new System.Drawing.Size(403, 120);
             this.txtNoiDung.TabIndex = 17;
             this.txtNoiDung.UseSelectable = true;
             this.txtNoiDung.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -256,29 +224,69 @@
             this.lvLoadCauHoi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lvLoadCauHoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lvLoadCauHoi.FullRowSelect = true;
-            this.lvLoadCauHoi.Location = new System.Drawing.Point(23, 90);
+            this.lvLoadCauHoi.GridLines = true;
+            this.lvLoadCauHoi.HideSelection = false;
+            this.lvLoadCauHoi.Location = new System.Drawing.Point(23, 81);
             this.lvLoadCauHoi.Name = "lvLoadCauHoi";
-            this.lvLoadCauHoi.OwnerDraw = true;
-            this.lvLoadCauHoi.Size = new System.Drawing.Size(766, 368);
+            this.lvLoadCauHoi.Size = new System.Drawing.Size(766, 346);
             this.lvLoadCauHoi.TabIndex = 18;
             this.lvLoadCauHoi.UseCompatibleStateImageBehavior = false;
-            this.lvLoadCauHoi.UseSelectable = true;
             this.lvLoadCauHoi.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 38;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nội dung câu hỏi";
+            this.columnHeader2.Width = 717;
+            // 
+            // lvDapAn
+            // 
+            this.lvDapAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lvDapAn.FullRowSelect = true;
+            this.lvDapAn.GridLines = true;
+            this.lvDapAn.HideSelection = false;
+            this.lvDapAn.Location = new System.Drawing.Point(804, 241);
+            this.lvDapAn.Name = "lvDapAn";
+            this.lvDapAn.Size = new System.Drawing.Size(403, 186);
+            this.lvDapAn.TabIndex = 19;
+            this.lvDapAn.UseCompatibleStateImageBehavior = false;
+            this.lvDapAn.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "STT";
+            this.columnHeader3.Width = 42;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Nội dung đáp án";
+            this.columnHeader4.Width = 285;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Đúng/Sai";
+            this.columnHeader5.Width = 71;
             // 
             // FormQuanLyCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 552);
+            this.ClientSize = new System.Drawing.Size(1224, 519);
+            this.Controls.Add(this.lvDapAn);
             this.Controls.Add(this.lvLoadCauHoi);
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnSuaCauHoi);
             this.Controls.Add(this.btnThemCauHoi);
-            this.Controls.Add(this.lvDapAn);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.cbbLoaiCH);
@@ -289,7 +297,9 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
             this.Name = "FormQuanLyCauHoi";
+            this.Resizable = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,17 +317,17 @@
         private MetroFramework.Controls.MetroComboBox cbbLoaiCH;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroListView lvDapAn;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private MetroFramework.Controls.MetroButton btnThemCauHoi;
         private MetroFramework.Controls.MetroButton btnSuaCauHoi;
         private MetroFramework.Controls.MetroButton btnImport;
         private MetroFramework.Controls.MetroButton btnExport;
         private MetroFramework.Controls.MetroTextBox txtNoiDung;
-        private MetroFramework.Controls.MetroListView lvLoadCauHoi;
+        private System.Windows.Forms.ListView lvLoadCauHoi;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ListView lvDapAn;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

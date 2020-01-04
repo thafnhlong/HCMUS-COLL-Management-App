@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvDethi = new MetroFramework.Controls.MetroListView();
-            this.lvThiSinh = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbbLoaiKyThi = new MetroFramework.Controls.MetroComboBox();
             this.btnTao = new MetroFramework.Controls.MetroButton();
             this.btnXoa = new MetroFramework.Controls.MetroButton();
             this.btnSua = new MetroFramework.Controls.MetroButton();
-            this.lvKyThi = new MetroFramework.Controls.MetroListView();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lvKyThi = new System.Windows.Forms.ListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvDethi = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvThiSinh = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,117 +65,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(74, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Loại kì thi";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(19, 199);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(127, 19);
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Danh sách thí sinh";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(19, 35);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(118, 19);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Danh sách đề thi";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lvThiSinh);
-            this.groupBox1.Controls.Add(this.lvDethi);
-            this.groupBox1.Controls.Add(this.metroLabel3);
-            this.groupBox1.Controls.Add(this.metroLabel2);
-            this.groupBox1.Location = new System.Drawing.Point(649, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 401);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin chi tiết";
-            // 
-            // lvDethi
-            // 
-            this.lvDethi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvDethi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvDethi.FullRowSelect = true;
-            this.lvDethi.GridLines = true;
-            this.lvDethi.Location = new System.Drawing.Point(19, 67);
-            this.lvDethi.Name = "lvDethi";
-            this.lvDethi.OwnerDraw = true;
-            this.lvDethi.Size = new System.Drawing.Size(370, 117);
-            this.lvDethi.TabIndex = 3;
-            this.lvDethi.UseCompatibleStateImageBehavior = false;
-            this.lvDethi.UseSelectable = true;
-            this.lvDethi.View = System.Windows.Forms.View.Details;
-            // 
-            // lvThiSinh
-            // 
-            this.lvThiSinh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lvThiSinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvThiSinh.FullRowSelect = true;
-            this.lvThiSinh.GridLines = true;
-            this.lvThiSinh.Location = new System.Drawing.Point(19, 233);
-            this.lvThiSinh.Name = "lvThiSinh";
-            this.lvThiSinh.OwnerDraw = true;
-            this.lvThiSinh.Size = new System.Drawing.Size(370, 148);
-            this.lvThiSinh.TabIndex = 4;
-            this.lvThiSinh.UseCompatibleStateImageBehavior = false;
-            this.lvThiSinh.UseSelectable = true;
-            this.lvThiSinh.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 47;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Thời gian tối đa";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Cấp học";
-            this.columnHeader3.Width = 103;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Môn học";
-            this.columnHeader4.Width = 186;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID";
-            this.columnHeader5.Width = 50;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Họ và tên";
-            this.columnHeader6.Width = 121;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Ngày sinh";
-            this.columnHeader7.Width = 126;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Lớp học";
-            this.columnHeader8.Width = 187;
             // 
             // cbbLoaiKyThi
             // 
@@ -214,56 +103,164 @@
             this.btnSua.Text = "Sửa kì thi";
             this.btnSua.UseSelectable = true;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(19, 199);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(127, 19);
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "Danh sách thí sinh";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.Location = new System.Drawing.Point(19, 20);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(118, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Danh sách đề thi";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lvThiSinh);
+            this.groupBox1.Controls.Add(this.lvDethi);
+            this.groupBox1.Controls.Add(this.metroLabel3);
+            this.groupBox1.Controls.Add(this.metroLabel2);
+            this.groupBox1.Location = new System.Drawing.Point(649, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(419, 401);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin chi tiết";
+            // 
             // lvKyThi
             // 
             this.lvKyThi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20});
+            this.lvKyThi.FullRowSelect = true;
+            this.lvKyThi.GridLines = true;
+            this.lvKyThi.HideSelection = false;
+            this.lvKyThi.Location = new System.Drawing.Point(23, 74);
+            this.lvKyThi.MultiSelect = false;
+            this.lvKyThi.Name = "lvKyThi";
+            this.lvKyThi.Size = new System.Drawing.Size(610, 401);
+            this.lvKyThi.TabIndex = 11;
+            this.lvKyThi.UseCompatibleStateImageBehavior = false;
+            this.lvKyThi.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "ID";
+            this.columnHeader15.Width = 38;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Tên kì thi";
+            this.columnHeader16.Width = 128;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Ngày bắt đầu";
+            this.columnHeader17.Width = 117;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Số ngày";
+            this.columnHeader18.Width = 102;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Loại kì thi";
+            this.columnHeader19.Width = 111;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Trạng thái";
+            this.columnHeader20.Width = 110;
+            // 
+            // lvDethi
+            // 
+            this.lvDethi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14});
-            this.lvKyThi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvKyThi.FullRowSelect = true;
-            this.lvKyThi.GridLines = true;
-            this.lvKyThi.Location = new System.Drawing.Point(23, 74);
-            this.lvKyThi.Name = "lvKyThi";
-            this.lvKyThi.OwnerDraw = true;
-            this.lvKyThi.Size = new System.Drawing.Size(603, 401);
-            this.lvKyThi.TabIndex = 10;
-            this.lvKyThi.UseCompatibleStateImageBehavior = false;
-            this.lvKyThi.UseSelectable = true;
-            this.lvKyThi.View = System.Windows.Forms.View.Details;
+            this.columnHeader12});
+            this.lvDethi.FullRowSelect = true;
+            this.lvDethi.GridLines = true;
+            this.lvDethi.HideSelection = false;
+            this.lvDethi.Location = new System.Drawing.Point(6, 42);
+            this.lvDethi.MultiSelect = false;
+            this.lvDethi.Name = "lvDethi";
+            this.lvDethi.Size = new System.Drawing.Size(407, 154);
+            this.lvDethi.TabIndex = 5;
+            this.lvDethi.UseCompatibleStateImageBehavior = false;
+            this.lvDethi.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "ID";
-            this.columnHeader9.Width = 40;
+            this.columnHeader9.Width = 46;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Tên kì thi";
-            this.columnHeader10.Width = 124;
+            this.columnHeader10.Text = "Thời gian tối đa";
+            this.columnHeader10.Width = 121;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "Ngày bắt đầu";
-            this.columnHeader11.Width = 118;
+            this.columnHeader11.Text = "Cấp học";
+            this.columnHeader11.Width = 97;
             // 
             // columnHeader12
             // 
-            this.columnHeader12.Text = "Số ngày thi";
-            this.columnHeader12.Width = 102;
+            this.columnHeader12.Text = "Môn học";
+            this.columnHeader12.Width = 98;
             // 
-            // columnHeader13
+            // lvThiSinh
             // 
-            this.columnHeader13.Text = "Loại kì thi";
-            this.columnHeader13.Width = 111;
+            this.lvThiSinh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvThiSinh.FullRowSelect = true;
+            this.lvThiSinh.GridLines = true;
+            this.lvThiSinh.HideSelection = false;
+            this.lvThiSinh.Location = new System.Drawing.Point(6, 221);
+            this.lvThiSinh.MultiSelect = false;
+            this.lvThiSinh.Name = "lvThiSinh";
+            this.lvThiSinh.Size = new System.Drawing.Size(407, 174);
+            this.lvThiSinh.TabIndex = 6;
+            this.lvThiSinh.UseCompatibleStateImageBehavior = false;
+            this.lvThiSinh.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader14
+            // columnHeader1
             // 
-            this.columnHeader14.Text = "Trạng thái";
-            this.columnHeader14.Width = 115;
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 46;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Họ và tên";
+            this.columnHeader2.Width = 126;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày sinh";
+            this.columnHeader3.Width = 117;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Lớp học";
+            this.columnHeader4.Width = 76;
             // 
             // QuanLyKyThiForm
             // 
@@ -277,7 +274,9 @@
             this.Controls.Add(this.cbbLoaiKyThi);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
             this.Name = "QuanLyKyThiForm";
+            this.Resizable = false;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -288,29 +287,29 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroListView lvThiSinh;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private MetroFramework.Controls.MetroListView lvDethi;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private MetroFramework.Controls.MetroComboBox cbbLoaiKyThi;
         private MetroFramework.Controls.MetroButton btnTao;
         private MetroFramework.Controls.MetroButton btnXoa;
         private MetroFramework.Controls.MetroButton btnSua;
-        private MetroFramework.Controls.MetroListView lvKyThi;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView lvKyThi;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ListView lvThiSinh;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ListView lvDethi;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }

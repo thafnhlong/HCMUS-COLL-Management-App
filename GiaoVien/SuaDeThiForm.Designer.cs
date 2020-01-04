@@ -38,14 +38,14 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lvCauHoi = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lblSoLuong = new MetroFramework.Controls.MetroLabel();
             this.btnSuu = new MetroFramework.Controls.MetroButton();
+            this.lvCauHoi = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericThoiGian)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.metroLabel3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 40);
+            this.groupBox1.Location = new System.Drawing.Point(14, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 122);
             this.groupBox1.TabIndex = 0;
@@ -145,58 +145,18 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lvCauHoi);
-            this.groupBox2.Location = new System.Drawing.Point(13, 182);
+            this.groupBox2.Location = new System.Drawing.Point(14, 205);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(507, 273);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách câu hỏi";
             // 
-            // lvCauHoi
-            // 
-            this.lvCauHoi.CheckBoxes = true;
-            this.lvCauHoi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvCauHoi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvCauHoi.FullRowSelect = true;
-            this.lvCauHoi.GridLines = true;
-            this.lvCauHoi.Location = new System.Drawing.Point(9, 19);
-            this.lvCauHoi.Name = "lvCauHoi";
-            this.lvCauHoi.OwnerDraw = true;
-            this.lvCauHoi.Size = new System.Drawing.Size(492, 248);
-            this.lvCauHoi.TabIndex = 0;
-            this.lvCauHoi.UseCompatibleStateImageBehavior = false;
-            this.lvCauHoi.UseSelectable = true;
-            this.lvCauHoi.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            this.columnHeader1.Width = 35;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "ID";
-            this.columnHeader2.Width = 51;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Nội dung câu hỏi";
-            this.columnHeader3.Width = 301;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Độ khó";
-            this.columnHeader4.Width = 100;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 469);
+            this.metroLabel1.Location = new System.Drawing.Point(24, 490);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(110, 19);
             this.metroLabel1.TabIndex = 2;
@@ -205,7 +165,7 @@
             // lblSoLuong
             // 
             this.lblSoLuong.AutoSize = true;
-            this.lblSoLuong.Location = new System.Drawing.Point(139, 469);
+            this.lblSoLuong.Location = new System.Drawing.Point(140, 490);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(16, 19);
             this.lblSoLuong.TabIndex = 3;
@@ -213,24 +173,66 @@
             // 
             // btnSuu
             // 
-            this.btnSuu.Location = new System.Drawing.Point(43, 501);
+            this.btnSuu.Location = new System.Drawing.Point(24, 521);
             this.btnSuu.Name = "btnSuu";
             this.btnSuu.Size = new System.Drawing.Size(101, 44);
             this.btnSuu.TabIndex = 4;
             this.btnSuu.Text = "Sửa";
             this.btnSuu.UseSelectable = true;
             // 
+            // lvCauHoi
+            // 
+            this.lvCauHoi.CheckBoxes = true;
+            this.lvCauHoi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lvCauHoi.FullRowSelect = true;
+            this.lvCauHoi.GridLines = true;
+            this.lvCauHoi.HideSelection = false;
+            this.lvCauHoi.Location = new System.Drawing.Point(6, 19);
+            this.lvCauHoi.MultiSelect = false;
+            this.lvCauHoi.Name = "lvCauHoi";
+            this.lvCauHoi.Size = new System.Drawing.Size(492, 248);
+            this.lvCauHoi.TabIndex = 2;
+            this.lvCauHoi.UseCompatibleStateImageBehavior = false;
+            this.lvCauHoi.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "";
+            this.columnHeader5.Width = 38;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 46;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nội dung câu hỏi";
+            this.columnHeader7.Width = 305;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Độ khó";
+            this.columnHeader8.Width = 94;
+            // 
             // SuaDeThiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 553);
+            this.ClientSize = new System.Drawing.Size(540, 588);
             this.Controls.Add(this.btnSuu);
             this.Controls.Add(this.lblSoLuong);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "SuaDeThiForm";
+            this.Resizable = false;
+            this.Text = "Sửa đề thi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericThoiGian)).EndInit();
@@ -252,13 +254,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroListView lvCauHoi;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel lblSoLuong;
         private MetroFramework.Controls.MetroButton btnSuu;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ListView lvCauHoi;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
