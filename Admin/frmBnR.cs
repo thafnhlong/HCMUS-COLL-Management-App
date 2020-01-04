@@ -22,7 +22,7 @@ namespace Admin
         {
             connectionStr = connectionstring;
             InitializeComponent();
-            FormClosed+= (s, e1) => { swampform?.Invoke(null, null); };
+            FormClosed += (s, e1) => { swampform?.Invoke(null, null); };
             btnBBackup.Click += BtnBbackup_Click;
             btnbackup.Click += Btnbackup_Click;
             btnBRestore.Click += BtnBrestore_Click;
@@ -36,28 +36,30 @@ namespace Admin
 
         private void BtnBbackup_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            if(dlg.ShowDialog()==DialogResult.OK)
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "SQL SERVER database backup files|*.bak";
+            dlg.Title = "Database backup";
+            dlg.FileName = "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak";
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = dlg.SelectedPath;
-                btnbackup.Enabled = true;
+                textBox1.Text = dlg.FileName;
             }
         }
 
         private void Btnbackup_Click(object sender, EventArgs e)
         {
-            try
+            if (textBox1.Text == string.Empty)
             {
-                if(textBox1.Text==string.Empty)
+                MessageBox.Show("Chưa nhập đường dẫn");
+            }
+            else
+            {
+                string pathfile = textBox1.Text;
+                new Utils.frmWaiting(() =>
                 {
-                    MessageBox.Show("Chưa nhập đường dẫn");
-                }
-                else
-                {
-                    new Utils.frmWaiting(() =>
+                    try
                     {
-
-                        string cmd = "BACKUP DATABASE [LTUDQL] TO DISK='" + textBox1.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
+                        string cmd = "BACKUP DATABASE [LTUDQL] TO DISK=N'" + pathfile + "'";
 
                         using (SqlCommand command = new SqlCommand(cmd, con))
                         {
@@ -66,19 +68,18 @@ namespace Admin
                                 con.Open();
                             }
                             command.ExecuteNonQuery();
-                            MessageBox.Show("Sao lưu dữ liệu thành công");
-                            btnbackup.Enabled = false;
                         }
-                    }).ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
+                        MessageBox.Show("Sao lưu dữ liệu thành công");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }).ShowDialog();
             }
         }
 
@@ -90,46 +91,51 @@ namespace Admin
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 textBox2.Text = dlg.FileName;
-                btnbackup.Enabled = true;
             }
         }
 
         private void BtnRestore_Click(object sender, EventArgs e)
         {
-            if (con.State != ConnectionState.Open)
+            if (textBox2.Text == string.Empty)
             {
-                con.Open();
+                MessageBox.Show("Chưa nhập đường dẫn");
             }
-            try
+            else
             {
+                var filename = textBox2.Text;
+                var path = Path.GetDirectoryName(filename);
+
                 new Utils.frmWaiting(() =>
                 {
-                    string sqlstmt2 = "USE MASTER ALTER DATABASE [LTUDQL] SET Single_User WITH Rollback Immediate";
-                    SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
-                    bu2.ExecuteNonQuery();
+                    if (con.State != ConnectionState.Open)
+                    {
+                        con.Open();
+                    }
+                    try
+                    {
+                        string sqlstmt2 = "USE MASTER ALTER DATABASE [LTUDQL] SET Single_User WITH Rollback Immediate";
+                        SqlCommand bu2 = new SqlCommand(sqlstmt2, con);
+                        bu2.ExecuteNonQuery();
 
-                    var path = Path.GetDirectoryName(textBox2.Text);
+                        string sqlStmt3 = $"USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'{filename}' WITH REPLACE, move 'LTUDQL' to N'{path}\\db.mdf', move 'LTUDQL_log' to N'{path}\\db.ldf'";
+                        SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
+                        bu3.ExecuteNonQuery();
 
-                    string sqlStmt3 = $"USE MASTER RESTORE DATABASE [LTUDQL] FROM DISK= N'{textBox2.Text}' WITH REPLACE, move 'LTUDQL' to N'{path}\\db.mdf', move 'LTUDQL_log' to N'{path}\\db.ldf'";
-                    SqlCommand bu3 = new SqlCommand(sqlStmt3, con);
-                    bu3.ExecuteNonQuery();
+                        string sqlStmt4 = "USE MASTER ALTER DATABASE [LTUDQL] SET Multi_User";
+                        SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
+                        bu4.ExecuteNonQuery();
 
-                    string sqlStmt4 = "USE MASTER ALTER DATABASE [LTUDQL] SET Multi_User";
-                    SqlCommand bu4 = new SqlCommand(sqlStmt4, con);
-                    bu4.ExecuteNonQuery();
-
-
-                    MessageBox.Show("Phục hồi dữ liệu thành công");
+                        MessageBox.Show("Phục hồi dữ liệu thành công");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }).ShowDialog();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
             }
         }
     }
