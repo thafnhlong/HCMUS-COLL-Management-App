@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GiaoVien
 {
-    public partial class FormLuaChon : Form
+    public partial class FormLuaChon : MetroForm
     {
-        public EventHandler DangXuatEvent; 
+        public EventHandler DangXuatEvent;
 
         int ID;
         public FormLuaChon(int id)
@@ -74,5 +76,6 @@ namespace GiaoVien
             var formQLCH = new FormQuanLyCauHoi(ID);
             formQLCH.ShowDialog();
         }
+
     }
 }

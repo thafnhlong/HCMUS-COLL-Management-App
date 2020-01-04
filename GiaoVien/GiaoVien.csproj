@@ -54,17 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormSuaCauHoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSuaCauHoi.Designer.cs">
-      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLuaChon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLuaChon.Designer.cs">
       <DependentUpon>FormLuaChon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaCauHoi.Designer.cs">
+      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLyCauHoi.cs">
       <SubType>Form</SubType>
@@ -172,11 +172,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormSuaCauHoi.resx">
-      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLuaChon.resx">
       <DependentUpon>FormLuaChon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaCauHoi.resx">
+      <DependentUpon>FormSuaCauHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyCauHoi.resx">
       <DependentUpon>FormQuanLyCauHoi.cs</DependentUpon>
