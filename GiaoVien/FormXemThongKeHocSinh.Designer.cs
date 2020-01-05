@@ -51,9 +51,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(33, 69);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(80, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Theo Khối";
+            this.metroLabel1.Text = "Theo Khối:";
             // 
             // metroLabel2
             // 
@@ -61,9 +61,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(314, 69);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(90, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Theo Kỳ Thi";
+            this.metroLabel2.Text = "Theo Kỳ Thi:";
             // 
             // metroLabel3
             // 
@@ -71,9 +71,9 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.Location = new System.Drawing.Point(605, 69);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(99, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Tên Học Sinh";
+            this.metroLabel3.Text = "Tên Học Sinh:";
             // 
             // cbKhoiHoc
             // 
@@ -82,7 +82,7 @@
             this.cbKhoiHoc.Location = new System.Drawing.Point(133, 64);
             this.cbKhoiHoc.Name = "cbKhoiHoc";
             this.cbKhoiHoc.Size = new System.Drawing.Size(145, 29);
-            this.cbKhoiHoc.TabIndex = 3;
+            this.cbKhoiHoc.TabIndex = 0;
             this.cbKhoiHoc.UseSelectable = true;
             // 
             // cbbKyThi
@@ -92,7 +92,7 @@
             this.cbbKyThi.Location = new System.Drawing.Point(414, 64);
             this.cbbKyThi.Name = "cbbKyThi";
             this.cbbKyThi.Size = new System.Drawing.Size(145, 29);
-            this.cbbKyThi.TabIndex = 4;
+            this.cbbKyThi.TabIndex = 1;
             this.cbbKyThi.UseSelectable = true;
             // 
             // txtTenHS
@@ -120,7 +120,7 @@
             this.txtTenHS.SelectionStart = 0;
             this.txtTenHS.ShortcutsEnabled = true;
             this.txtTenHS.Size = new System.Drawing.Size(160, 30);
-            this.txtTenHS.TabIndex = 8;
+            this.txtTenHS.TabIndex = 2;
             this.txtTenHS.UseSelectable = true;
             this.txtTenHS.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTenHS.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -138,7 +138,7 @@
             this.lvShow.MultiSelect = false;
             this.lvShow.Name = "lvShow";
             this.lvShow.Size = new System.Drawing.Size(355, 373);
-            this.lvShow.TabIndex = 9;
+            this.lvShow.TabIndex = 3;
             this.lvShow.UseCompatibleStateImageBehavior = false;
             this.lvShow.View = System.Windows.Forms.View.Details;
             // 
@@ -171,7 +171,7 @@
             this.lvChiTiet.MultiSelect = false;
             this.lvChiTiet.Name = "lvChiTiet";
             this.lvChiTiet.Size = new System.Drawing.Size(476, 373);
-            this.lvChiTiet.TabIndex = 10;
+            this.lvChiTiet.TabIndex = 4;
             this.lvChiTiet.UseCompatibleStateImageBehavior = false;
             this.lvChiTiet.View = System.Windows.Forms.View.Details;
             // 

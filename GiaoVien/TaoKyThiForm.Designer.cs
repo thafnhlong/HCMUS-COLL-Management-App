@@ -156,9 +156,9 @@
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel7.Location = new System.Drawing.Point(158, 366);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(70, 19);
             this.metroLabel7.TabIndex = 74;
-            this.metroLabel7.Text = "Ngày thi";
+            this.metroLabel7.Text = "Ngày thi:";
             // 
             // metroLabel5
             // 
@@ -176,9 +176,9 @@
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.Location = new System.Drawing.Point(367, 111);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(67, 19);
             this.metroLabel4.TabIndex = 72;
-            this.metroLabel4.Text = "Số ngày";
+            this.metroLabel4.Text = "Số ngày:";
             // 
             // metroLabel3
             // 
@@ -196,9 +196,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(368, 68);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 70;
-            this.metroLabel2.Text = "Loại kì thi";
+            this.metroLabel2.Text = "Loại kì thi:";
             // 
             // metroLabel1
             // 

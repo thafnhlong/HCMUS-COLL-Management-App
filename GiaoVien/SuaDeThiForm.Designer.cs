@@ -38,14 +38,14 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.lblSoLuong = new MetroFramework.Controls.MetroLabel();
-            this.btnSuu = new MetroFramework.Controls.MetroButton();
             this.lvCauHoi = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblSoLuong = new MetroFramework.Controls.MetroLabel();
+            this.btnSuu = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericThoiGian)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,7 +100,7 @@
             this.numericThoiGian.Location = new System.Drawing.Point(343, 78);
             this.numericThoiGian.Name = "numericThoiGian";
             this.numericThoiGian.Size = new System.Drawing.Size(61, 20);
-            this.numericThoiGian.TabIndex = 19;
+            this.numericThoiGian.TabIndex = 0;
             // 
             // metroLabel6
             // 
@@ -152,6 +152,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách câu hỏi";
             // 
+            // lvCauHoi
+            // 
+            this.lvCauHoi.CheckBoxes = true;
+            this.lvCauHoi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lvCauHoi.FullRowSelect = true;
+            this.lvCauHoi.GridLines = true;
+            this.lvCauHoi.HideSelection = false;
+            this.lvCauHoi.Location = new System.Drawing.Point(6, 19);
+            this.lvCauHoi.MultiSelect = false;
+            this.lvCauHoi.Name = "lvCauHoi";
+            this.lvCauHoi.Size = new System.Drawing.Size(492, 248);
+            this.lvCauHoi.TabIndex = 1;
+            this.lvCauHoi.UseCompatibleStateImageBehavior = false;
+            this.lvCauHoi.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "";
+            this.columnHeader5.Width = 38;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 46;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nội dung câu hỏi";
+            this.columnHeader7.Width = 305;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Độ khó";
+            this.columnHeader8.Width = 94;
+            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -176,48 +215,9 @@
             this.btnSuu.Location = new System.Drawing.Point(24, 521);
             this.btnSuu.Name = "btnSuu";
             this.btnSuu.Size = new System.Drawing.Size(101, 44);
-            this.btnSuu.TabIndex = 4;
+            this.btnSuu.TabIndex = 2;
             this.btnSuu.Text = "Sửa";
             this.btnSuu.UseSelectable = true;
-            // 
-            // lvCauHoi
-            // 
-            this.lvCauHoi.CheckBoxes = true;
-            this.lvCauHoi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lvCauHoi.FullRowSelect = true;
-            this.lvCauHoi.GridLines = true;
-            this.lvCauHoi.HideSelection = false;
-            this.lvCauHoi.Location = new System.Drawing.Point(6, 19);
-            this.lvCauHoi.MultiSelect = false;
-            this.lvCauHoi.Name = "lvCauHoi";
-            this.lvCauHoi.Size = new System.Drawing.Size(492, 248);
-            this.lvCauHoi.TabIndex = 2;
-            this.lvCauHoi.UseCompatibleStateImageBehavior = false;
-            this.lvCauHoi.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "";
-            this.columnHeader5.Width = 38;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "ID";
-            this.columnHeader6.Width = 46;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Nội dung câu hỏi";
-            this.columnHeader7.Width = 305;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Độ khó";
-            this.columnHeader8.Width = 94;
             // 
             // SuaDeThiForm
             // 

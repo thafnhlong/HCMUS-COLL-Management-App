@@ -74,9 +74,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(361, 67);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Loại kì thi";
+            this.metroLabel2.Text = "Loại kì thi:";
             // 
             // metroLabel3
             // 
@@ -94,9 +94,9 @@
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.Location = new System.Drawing.Point(361, 107);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(67, 19);
             this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Số ngày";
+            this.metroLabel4.Text = "Số ngày:";
             // 
             // metroLabel5
             // 
@@ -112,11 +112,11 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(196, 351);
+            this.metroLabel7.Location = new System.Drawing.Point(196, 353);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(70, 19);
             this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "Ngày thi";
+            this.metroLabel7.Text = "Ngày thi:";
             // 
             // txtTen
             // 
@@ -150,6 +150,7 @@
             // 
             // cb
             // 
+            this.cb.Enabled = false;
             this.cb.FormattingEnabled = true;
             this.cb.ItemHeight = 23;
             this.cb.Location = new System.Drawing.Point(441, 62);
@@ -167,7 +168,7 @@
             // 
             // dtNgay
             // 
-            this.dtNgay.Location = new System.Drawing.Point(268, 345);
+            this.dtNgay.Location = new System.Drawing.Point(268, 348);
             this.dtNgay.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtNgay.Name = "dtNgay";
             this.dtNgay.Size = new System.Drawing.Size(200, 29);
@@ -176,7 +177,7 @@
             // checkbox
             // 
             this.checkbox.AutoSize = true;
-            this.checkbox.Location = new System.Drawing.Point(22, 351);
+            this.checkbox.Location = new System.Drawing.Point(54, 355);
             this.checkbox.Name = "checkbox";
             this.checkbox.Size = new System.Drawing.Size(84, 15);
             this.checkbox.TabIndex = 5;

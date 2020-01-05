@@ -54,7 +54,8 @@
             // 
             // metroLabel1
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(14, 62);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 63);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(142, 23);
             this.metroLabel1.TabIndex = 0;
@@ -62,7 +63,8 @@
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(14, 205);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 206);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(48, 23);
             this.metroLabel2.TabIndex = 1;
@@ -70,7 +72,8 @@
             // 
             // metroLabel3
             // 
-            this.metroLabel3.Location = new System.Drawing.Point(488, 62);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.Location = new System.Drawing.Point(497, 63);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(142, 23);
             this.metroLabel3.TabIndex = 2;
@@ -91,7 +94,7 @@
             this.txtNoiDung.CustomButton.UseSelectable = true;
             this.txtNoiDung.CustomButton.Visible = false;
             this.txtNoiDung.Lines = new string[0];
-            this.txtNoiDung.Location = new System.Drawing.Point(14, 88);
+            this.txtNoiDung.Location = new System.Drawing.Point(23, 89);
             this.txtNoiDung.MaxLength = 32767;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.PasswordChar = '\0';
@@ -121,7 +124,7 @@
             this.txtGoiY.CustomButton.UseSelectable = true;
             this.txtGoiY.CustomButton.Visible = false;
             this.txtGoiY.Lines = new string[0];
-            this.txtGoiY.Location = new System.Drawing.Point(14, 231);
+            this.txtGoiY.Location = new System.Drawing.Point(23, 232);
             this.txtGoiY.MaxLength = 32767;
             this.txtGoiY.Name = "txtGoiY";
             this.txtGoiY.PasswordChar = '\0';
@@ -138,33 +141,37 @@
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Location = new System.Drawing.Point(14, 345);
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 346);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(63, 23);
+            this.metroLabel4.Size = new System.Drawing.Size(77, 23);
             this.metroLabel4.TabIndex = 6;
             this.metroLabel4.Text = "Cấp Học:";
             // 
             // metroLabel5
             // 
-            this.metroLabel5.Location = new System.Drawing.Point(246, 299);
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.Location = new System.Drawing.Point(239, 300);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(58, 23);
+            this.metroLabel5.Size = new System.Drawing.Size(68, 23);
             this.metroLabel5.TabIndex = 7;
             this.metroLabel5.Text = "Độ Khó:";
             // 
             // metroLabel6
             // 
-            this.metroLabel6.Location = new System.Drawing.Point(14, 299);
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel6.Location = new System.Drawing.Point(23, 300);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(68, 23);
+            this.metroLabel6.Size = new System.Drawing.Size(77, 23);
             this.metroLabel6.TabIndex = 8;
             this.metroLabel6.Text = "Môn Học:";
             // 
             // metroLabel7
             // 
-            this.metroLabel7.Location = new System.Drawing.Point(246, 345);
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel7.Location = new System.Drawing.Point(239, 346);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(90, 23);
+            this.metroLabel7.Size = new System.Drawing.Size(100, 23);
             this.metroLabel7.TabIndex = 9;
             this.metroLabel7.Text = "Loại Câu Hỏi:";
             // 
@@ -172,9 +179,9 @@
             // 
             this.cbbMonHoc.FormattingEnabled = true;
             this.cbbMonHoc.ItemHeight = 23;
-            this.cbbMonHoc.Location = new System.Drawing.Point(83, 293);
+            this.cbbMonHoc.Location = new System.Drawing.Point(106, 294);
             this.cbbMonHoc.Name = "cbbMonHoc";
-            this.cbbMonHoc.Size = new System.Drawing.Size(141, 29);
+            this.cbbMonHoc.Size = new System.Drawing.Size(113, 29);
             this.cbbMonHoc.TabIndex = 6;
             this.cbbMonHoc.UseSelectable = true;
             // 
@@ -182,7 +189,7 @@
             // 
             this.cbbDoKho.FormattingEnabled = true;
             this.cbbDoKho.ItemHeight = 23;
-            this.cbbDoKho.Location = new System.Drawing.Point(336, 293);
+            this.cbbDoKho.Location = new System.Drawing.Point(345, 294);
             this.cbbDoKho.Name = "cbbDoKho";
             this.cbbDoKho.Size = new System.Drawing.Size(126, 29);
             this.cbbDoKho.TabIndex = 7;
@@ -192,9 +199,9 @@
             // 
             this.cbbCapHoc.FormattingEnabled = true;
             this.cbbCapHoc.ItemHeight = 23;
-            this.cbbCapHoc.Location = new System.Drawing.Point(83, 339);
+            this.cbbCapHoc.Location = new System.Drawing.Point(106, 340);
             this.cbbCapHoc.Name = "cbbCapHoc";
-            this.cbbCapHoc.Size = new System.Drawing.Size(141, 29);
+            this.cbbCapHoc.Size = new System.Drawing.Size(113, 29);
             this.cbbCapHoc.TabIndex = 8;
             this.cbbCapHoc.UseSelectable = true;
             // 
@@ -202,7 +209,7 @@
             // 
             this.cbbLoaiCH.FormattingEnabled = true;
             this.cbbLoaiCH.ItemHeight = 23;
-            this.cbbLoaiCH.Location = new System.Drawing.Point(336, 339);
+            this.cbbLoaiCH.Location = new System.Drawing.Point(345, 340);
             this.cbbLoaiCH.Name = "cbbLoaiCH";
             this.cbbLoaiCH.Size = new System.Drawing.Size(126, 29);
             this.cbbLoaiCH.TabIndex = 9;
@@ -210,7 +217,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(488, 231);
+            this.btnThem.Location = new System.Drawing.Point(497, 232);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(90, 37);
             this.btnThem.TabIndex = 3;
@@ -219,7 +226,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(721, 231);
+            this.btnSua.Location = new System.Drawing.Point(730, 232);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(85, 37);
             this.btnSua.TabIndex = 5;
@@ -228,7 +235,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(607, 231);
+            this.btnXoa.Location = new System.Drawing.Point(616, 232);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(90, 37);
             this.btnXoa.TabIndex = 4;
@@ -237,7 +244,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(97, 394);
+            this.btnCapNhat.Location = new System.Drawing.Point(106, 395);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(98, 37);
             this.btnCapNhat.TabIndex = 11;
@@ -246,7 +253,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(270, 390);
+            this.btnHuy.Location = new System.Drawing.Point(279, 391);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(90, 37);
             this.btnHuy.TabIndex = 12;
@@ -268,7 +275,7 @@
             this.txtDapAn.CustomButton.UseSelectable = true;
             this.txtDapAn.CustomButton.Visible = false;
             this.txtDapAn.Lines = new string[0];
-            this.txtDapAn.Location = new System.Drawing.Point(488, 88);
+            this.txtDapAn.Location = new System.Drawing.Point(497, 89);
             this.txtDapAn.MaxLength = 32767;
             this.txtDapAn.Name = "txtDapAn";
             this.txtDapAn.PasswordChar = '\0';
@@ -292,7 +299,7 @@
             this.lvDapAn.FullRowSelect = true;
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
-            this.lvDapAn.Location = new System.Drawing.Point(488, 293);
+            this.lvDapAn.Location = new System.Drawing.Point(497, 294);
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(311, 134);
             this.lvDapAn.TabIndex = 10;
@@ -312,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 457);
+            this.ClientSize = new System.Drawing.Size(846, 464);
             this.Controls.Add(this.lvDapAn);
             this.Controls.Add(this.txtDapAn);
             this.Controls.Add(this.btnHuy);
