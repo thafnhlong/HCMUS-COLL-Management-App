@@ -14,7 +14,7 @@ namespace GiaoVien
 {
     public partial class SuaKyThiForm : MetroForm
     {
-        bool DoiNgayThi = false;
+        bool DoiNgayThi = true;
         bool checkLVDeThi = false;
         bool checkLVHocSinh = false;
         int kythiid;
@@ -62,14 +62,12 @@ namespace GiaoVien
         {
             if (DoiNgayThi == false)
                 return;
-            lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
             int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
             try
             {
                 var ngay = dsDeThiCustom.Where(i => i.deThiid == dethiid).First();
                 ngay.NgayThi = dtNgay.Value;
-                if (ngay.CoNgayThi)
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = ngay.NgayThi.ToString();
+                lvDeThi.SelectedItems[0].SubItems[5].Text = ngay.NgayThi.ToString();
             }
             catch { }
         }
@@ -82,7 +80,7 @@ namespace GiaoVien
             {
                 dtNgay.Enabled = true;
                 CoNgayThi = true;
-                if (lvDeThi.SelectedItems.Count > 0) 
+                if (lvDeThi.SelectedItems.Count > 0)
                     lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
             }
             else
@@ -97,7 +95,6 @@ namespace GiaoVien
                 if (checkbox.Checked)
                 {
                     var dethi = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
-                    dethi.NgayThi = dtNgay.Value;
                     dethi.CoNgayThi = true;
                 }
                 else
@@ -168,7 +165,6 @@ namespace GiaoVien
                     checkbox.Checked = false;
                 }
 
-                checkbox.Enabled = true;
                 checkLVHocSinh = false;
                 loadHocSinh();
                 checkLVHocSinh = true;
@@ -185,12 +181,12 @@ namespace GiaoVien
         void loadHocSinh()
         {
             lvHocSinh.Items.Clear();
-            var dethi = qltn.DeThis.Where(i => i.id == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).FirstOrDefault();            
-            var hs= qltn.TaiKhoans.Where(i => i.permission == 0 && i.LopHoc.caphocid == dethi.caphocid).ToList();
+            var dethi = qltn.DeThis.Where(i => i.id == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).FirstOrDefault();
+            var hs = qltn.TaiKhoans.Where(i => i.permission == 0 && i.LopHoc.caphocid == dethi.caphocid).ToList();
             var dethicustom = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
             if (hs.Count > 0)
             {
-                foreach(TaiKhoan tk in hs)
+                foreach (TaiKhoan tk in hs)
                 {
                     ListViewItem lvi = new ListViewItem();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = tk.id.ToString());
@@ -220,7 +216,7 @@ namespace GiaoVien
             var dsdethi = qltn.DeThis.Where(i => i.loaidethi == (cb.SelectedIndex == 0 ? true : false)).ToList();
             if (dsdethi.Count > 0)
             {
-                foreach(DeThi i in dsdethi)
+                foreach (DeThi i in dsdethi)
                 {
                     if (i.kythiid.HasValue == true && i.kythiid != kythiid)
                         continue;
@@ -249,7 +245,7 @@ namespace GiaoVien
                     if (i.ngaythi.HasValue)
                     {
                         dethicustom.CoNgayThi = true;
-                        dethicustom.NgayThi = dtNgay.Value;
+                        dethicustom.NgayThi = i.ngaythi.Value;
                     }
                     else
                     {
@@ -258,7 +254,7 @@ namespace GiaoVien
                     try
                     {
                         var hstg = qltn.HocSinhThamGias.Where(x => x.dethiid == i.id).ToList();
-                        foreach(HocSinhThamGia hs in hstg)
+                        foreach (HocSinhThamGia hs in hstg)
                         {
                             dethicustom.hocsinhid.Add(hs.hocsinhid);
                         }
@@ -276,7 +272,8 @@ namespace GiaoVien
                 MessageBox.Show("Tên kỳ thi không được để trống");
                 return;
             }
-            if(!KiemTraSoNgay()){
+            if (!KiemTraSoNgay())
+            {
                 MessageBox.Show("Số ngày không được nhỏ hơn 0");
                 return;
             }
@@ -305,7 +302,7 @@ namespace GiaoVien
 
             //them du lieu moi
             var dethi = qltn.DeThis.ToList();
-            foreach(DeThiCusTom dethicustom in dsDeThiCustom)
+            foreach (DeThiCusTom dethicustom in dsDeThiCustom)
             {
                 if (dethicustom.loaidethi != (cb.SelectedIndex == 0 ? true : false))
                     continue;

@@ -51,20 +51,20 @@
             this.cbbKyThi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbKyThi.FormattingEnabled = true;
-            this.cbbKyThi.ItemHeight = 23;
+            this.cbbKyThi.ItemHeight = 24;
             this.cbbKyThi.Location = new System.Drawing.Point(324, 73);
             this.cbbKyThi.Name = "cbbKyThi";
-            this.cbbKyThi.Size = new System.Drawing.Size(401, 29);
+            this.cbbKyThi.Size = new System.Drawing.Size(401, 30);
             this.cbbKyThi.TabIndex = 15;
             this.cbbKyThi.UseSelectable = true;
             // 
             // cbbLoaiKyThi
             // 
             this.cbbLoaiKyThi.FormattingEnabled = true;
-            this.cbbLoaiKyThi.ItemHeight = 23;
+            this.cbbLoaiKyThi.ItemHeight = 24;
             this.cbbLoaiKyThi.Location = new System.Drawing.Point(117, 73);
             this.cbbLoaiKyThi.Name = "cbbLoaiKyThi";
-            this.cbbLoaiKyThi.Size = new System.Drawing.Size(134, 29);
+            this.cbbLoaiKyThi.Size = new System.Drawing.Size(134, 30);
             this.cbbLoaiKyThi.TabIndex = 14;
             this.cbbLoaiKyThi.UseSelectable = true;
             // 
@@ -74,7 +74,7 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(264, 78);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(54, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(57, 20);
             this.metroLabel2.TabIndex = 12;
             this.metroLabel2.Text = "Kỳ thi: ";
             // 
@@ -84,7 +84,7 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(25, 78);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(89, 20);
             this.metroLabel1.TabIndex = 13;
             this.metroLabel1.Text = "Loại kỳ thi: ";
             // 
@@ -100,7 +100,7 @@
             // 
             // TKKyThi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 485);
             this.Controls.Add(this.btnXDS);
@@ -112,7 +112,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TKKyThi";
-            this.Text = "In danh sách học sinh và kết quả của kỳ thi";
+            this.Text = "Thống kê theo kỳ thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

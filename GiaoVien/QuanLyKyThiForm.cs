@@ -59,6 +59,11 @@ namespace GiaoVien
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
+            if (lvKyThi.SelectedItems[0].BackColor==Color.Red)
+            {
+                MessageBox.Show("Không thể xóa kỳ thi này");
+                return;
+            }
             if (lvKyThi.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Hãy chọn kỳ thi muốn xóa");
@@ -71,16 +76,12 @@ namespace GiaoVien
                 var dsDeThi = qltn.DeThis.Where(i => i.kythiid == kt.id).ToList();
                 foreach(DeThi dt in dsDeThi)
                 {
-                    var Hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id && i.thoigianlambai.Length > 0);
-                    if (Hstg.ToList().Count > 0)
-                    {
-                        MessageBox.Show("Kỳ thi này đã có thí sinh làm bài");
-                        return;
-                    }
+                    var Hstg = qltn.HocSinhThamGias.Where(i => i.dethiid == dt.id);
                     qltn.HocSinhThamGias.DeleteAllOnSubmit(Hstg);
                 }
                 foreach(DeThi dt in dsDeThi)
                 {
+                    dt.ngaythi = null;
                     dt.kythiid = null;
                 }
                 qltn.KyThis.DeleteOnSubmit(kythi);
