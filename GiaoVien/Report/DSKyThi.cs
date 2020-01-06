@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using MetroFramework.Forms;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace GiaoVien.Report
 {
-    public partial class DSKyThi : Form
+    public partial class DSKyThi : MetroForm
     {
         public class KyThiBS
         {

@@ -170,9 +170,8 @@
             this.txtTenHS.AutoSize = true;
             this.txtTenHS.Location = new System.Drawing.Point(710, 69);
             this.txtTenHS.Name = "txtTenHS";
-            this.txtTenHS.Size = new System.Drawing.Size(83, 19);
+            this.txtTenHS.Size = new System.Drawing.Size(0, 0);
             this.txtTenHS.TabIndex = 5;
-            this.txtTenHS.Text = "metroLabel4";
             // 
             // FormXemThongKeHocSinh
             // 

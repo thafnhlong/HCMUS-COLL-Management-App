@@ -300,6 +300,7 @@
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
             this.lvDapAn.Location = new System.Drawing.Point(497, 294);
+            this.lvDapAn.MultiSelect = false;
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(311, 134);
             this.lvDapAn.TabIndex = 10;

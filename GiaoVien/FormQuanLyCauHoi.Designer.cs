@@ -228,6 +228,7 @@
             this.lvLoadCauHoi.GridLines = true;
             this.lvLoadCauHoi.HideSelection = false;
             this.lvLoadCauHoi.Location = new System.Drawing.Point(23, 81);
+            this.lvLoadCauHoi.MultiSelect = false;
             this.lvLoadCauHoi.Name = "lvLoadCauHoi";
             this.lvLoadCauHoi.Size = new System.Drawing.Size(766, 346);
             this.lvLoadCauHoi.TabIndex = 4;
@@ -254,6 +255,7 @@
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
             this.lvDapAn.Location = new System.Drawing.Point(804, 241);
+            this.lvDapAn.MultiSelect = false;
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(403, 186);
             this.lvDapAn.TabIndex = 6;

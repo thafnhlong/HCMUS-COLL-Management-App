@@ -1,4 +1,5 @@
 ﻿
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GiaoVien.IE
 {
-    public partial class LuaChon : Form
+    public partial class LuaChon : MetroForm
     {
         bool IsExport;
         public LuaChon(bool isExport = true)
