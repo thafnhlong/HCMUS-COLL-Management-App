@@ -77,7 +77,7 @@ namespace GiaoVien
                         var dethidcchon = qltn.DeThis.Where(i => i.id == dt.deThiid).First();
                         dethidcchon.kythiid = kythi.id;
                         if (dt.CoNgayThi)
-                            dethidcchon.ngaythi = dt.NgayThi;
+                            dethidcchon.ngaythi = dt.NgayThi.Date;
                         //them hocsinh thamgia
                         foreach(int i in dt.hocsinhid)
                         {
@@ -101,7 +101,7 @@ namespace GiaoVien
                 MessageBox.Show("Ngày bắt đầu của kỳ thi không hợp lệ");
                 return;
             }
-            ngaybdcu = dtNgayBD.Value;
+            ngaybdcu = dtNgayBD.Value.Date;
         }
 
         private void DtNgay_ValueChanged(object sender, EventArgs e)
@@ -116,10 +116,10 @@ namespace GiaoVien
 
             if (lvDeThi.SelectedItems.Count > 0)
             {
-                lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+                lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.Date.ToString("dd/MM/yyyy");
                 int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
                 var dethicustom = dsDeThiCustom.Where(i => i.deThiid == dethiid).First();
-                dethicustom.NgayThi = dtNgay.Value;
+                dethicustom.NgayThi = dtNgay.Value.Date;
             }
         }
 
@@ -146,17 +146,17 @@ namespace GiaoVien
                 checkLVHocSinh = true;
                 if (checkbox.Checked)
                 {
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.Date.ToString("dd/MM/yyyy");
                     var dethicustom = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
                     dethicustom.CoNgayThi = true;
-                    dethicustom.NgayThi = dtNgay.Value;
+                    dethicustom.NgayThi = dtNgay.Value.Date;
                 }
                 else
                 {
                     lvDeThi.SelectedItems[0].SubItems[5].Text = "";
                     var dethicustom = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
                     dethicustom.CoNgayThi = false;
-                    dethicustom.NgayThi = dtNgay.Value;
+                    dethicustom.NgayThi = dtNgay.Value.Date;
                 }
             }
         }
@@ -174,7 +174,7 @@ namespace GiaoVien
                     ListViewItem lvi = new ListViewItem();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.hoten);
-                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.ngaysinh.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.ngaysinh.Value.ToString("dd/MM/yyyy"));
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.LopHoc.tenlop);                    
 
                     var dethicustom = dsDeThiCustom.Where(x => x.deThiid == dethi.id).First();
@@ -210,7 +210,7 @@ namespace GiaoVien
                 dtNgay.Enabled = true;
                 if (lvDeThi.SelectedItems.Count > 0)
                 {
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.Date.ToString("dd/MM/yyyy");
                     var dethicustom = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
                     dethicustom.CoNgayThi = true;
                     dethicustom.NgayThi = dtNgay.Value;
@@ -285,7 +285,10 @@ namespace GiaoVien
                         lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = monhoc);
                         lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = strCapHoc[dt.caphocid.Value - 1]);
                         lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = dt.thoigiantoida.ToString());
-                        lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = dt.ngaythi.ToString());
+                        if (dt.ngaythi.HasValue)
+                            lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = dt.ngaythi.Value.ToString("dd/MM/yyyy"));
+                        else
+                            lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = "");
                         lvDeThi.Items.Add(lvi);
 
                         var dethicustom = new DeThiCusTom();

@@ -140,7 +140,7 @@ namespace GiaoVien
                     ListViewItem lvi = new ListViewItem();
                     lvi.Text = i.id.ToString();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.hoten);
-                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.ngaysinh.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.ngaysinh.Value.ToString("dd/MM/yyyy"));
                     string tenlop = null;
                     foreach (LopHoc item in dsLopHoc)
                     {
@@ -198,7 +198,7 @@ namespace GiaoVien
                         lvi.BackColor = Color.Red;
                     lvi.Text = i.KyThi.id.ToString();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.tenkythi);
-                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.ngaybatdau.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.ngaybatdau.Value.Date.ToString("dd/MM/yyyy"));
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.KyThi.songay.ToString());
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = (i.KyThi.loaikythi == true ? "Thi Thật" : "Thi thử/Ôn tập"));
                     lvKyThi.Items.Add(lvi);
