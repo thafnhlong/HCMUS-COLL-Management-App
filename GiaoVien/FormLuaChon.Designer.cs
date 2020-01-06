@@ -137,7 +137,7 @@
             this.btnQLHS.Name = "btnQLHS";
             this.btnQLHS.Size = new System.Drawing.Size(159, 65);
             this.btnQLHS.TabIndex = 4;
-            this.btnQLHS.Text = "Quản lý học sinh";
+            this.btnQLHS.Text = "Thống kê học sinh";
             this.btnQLHS.UseSelectable = true;
             // 
             // btnInDSKyThi

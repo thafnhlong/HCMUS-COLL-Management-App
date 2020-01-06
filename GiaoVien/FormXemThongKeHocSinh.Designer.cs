@@ -33,7 +33,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.cbKhoiHoc = new MetroFramework.Controls.MetroComboBox();
             this.cbbKyThi = new MetroFramework.Controls.MetroComboBox();
-            this.txtTenHS = new MetroFramework.Controls.MetroTextBox();
             this.lvShow = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +42,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtTenHS = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -94,36 +94,6 @@
             this.cbbKyThi.Size = new System.Drawing.Size(145, 29);
             this.cbbKyThi.TabIndex = 1;
             this.cbbKyThi.UseSelectable = true;
-            // 
-            // txtTenHS
-            // 
-            // 
-            // 
-            // 
-            this.txtTenHS.CustomButton.Image = null;
-            this.txtTenHS.CustomButton.Location = new System.Drawing.Point(132, 2);
-            this.txtTenHS.CustomButton.Name = "";
-            this.txtTenHS.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtTenHS.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTenHS.CustomButton.TabIndex = 1;
-            this.txtTenHS.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTenHS.CustomButton.UseSelectable = true;
-            this.txtTenHS.CustomButton.Visible = false;
-            this.txtTenHS.Lines = new string[0];
-            this.txtTenHS.Location = new System.Drawing.Point(720, 63);
-            this.txtTenHS.MaxLength = 32767;
-            this.txtTenHS.Name = "txtTenHS";
-            this.txtTenHS.PasswordChar = '\0';
-            this.txtTenHS.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTenHS.SelectedText = "";
-            this.txtTenHS.SelectionLength = 0;
-            this.txtTenHS.SelectionStart = 0;
-            this.txtTenHS.ShortcutsEnabled = true;
-            this.txtTenHS.Size = new System.Drawing.Size(160, 30);
-            this.txtTenHS.TabIndex = 2;
-            this.txtTenHS.UseSelectable = true;
-            this.txtTenHS.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTenHS.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lvShow
             // 
@@ -195,14 +165,23 @@
             this.columnHeader11.Text = "Loại kỳ thi";
             this.columnHeader11.Width = 129;
             // 
+            // txtTenHS
+            // 
+            this.txtTenHS.AutoSize = true;
+            this.txtTenHS.Location = new System.Drawing.Point(710, 69);
+            this.txtTenHS.Name = "txtTenHS";
+            this.txtTenHS.Size = new System.Drawing.Size(83, 19);
+            this.txtTenHS.TabIndex = 5;
+            this.txtTenHS.Text = "metroLabel4";
+            // 
             // FormXemThongKeHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 500);
+            this.Controls.Add(this.txtTenHS);
             this.Controls.Add(this.lvChiTiet);
             this.Controls.Add(this.lvShow);
-            this.Controls.Add(this.txtTenHS);
             this.Controls.Add(this.cbbKyThi);
             this.Controls.Add(this.cbKhoiHoc);
             this.Controls.Add(this.metroLabel3);
@@ -224,7 +203,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox cbKhoiHoc;
         private MetroFramework.Controls.MetroComboBox cbbKyThi;
-        private MetroFramework.Controls.MetroTextBox txtTenHS;
         private System.Windows.Forms.ListView lvShow;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
@@ -234,5 +212,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private MetroFramework.Controls.MetroLabel txtTenHS;
     }
 }
