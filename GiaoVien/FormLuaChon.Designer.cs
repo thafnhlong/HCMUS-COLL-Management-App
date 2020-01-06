@@ -39,7 +39,7 @@
             this.btnDeThi = new MetroFramework.Controls.MetroTile();
             this.btnQLHS = new MetroFramework.Controls.MetroTile();
             this.btnInDSKyThi = new MetroFramework.Controls.MetroTile();
-            this.btnDuyetCH = new MetroFramework.Controls.MetroTile();
+            this.btnThongKeKyThi = new MetroFramework.Controls.MetroTile();
             this.btnThongKeCauHoi = new MetroFramework.Controls.MetroTile();
             this.btnDangXuat = new MetroFramework.Controls.MetroTile();
             this.groupBox1.SuspendLayout();
@@ -150,15 +150,15 @@
             this.btnInDSKyThi.Text = "In danh sách kỳ thi";
             this.btnInDSKyThi.UseSelectable = true;
             // 
-            // btnDuyetCH
+            // btnThongKeKyThi
             // 
-            this.btnDuyetCH.ActiveControl = null;
-            this.btnDuyetCH.Location = new System.Drawing.Point(21, 280);
-            this.btnDuyetCH.Name = "btnDuyetCH";
-            this.btnDuyetCH.Size = new System.Drawing.Size(159, 65);
-            this.btnDuyetCH.TabIndex = 6;
-            this.btnDuyetCH.Text = "Duyệt câu hỏi";
-            this.btnDuyetCH.UseSelectable = true;
+            this.btnThongKeKyThi.ActiveControl = null;
+            this.btnThongKeKyThi.Location = new System.Drawing.Point(21, 280);
+            this.btnThongKeKyThi.Name = "btnThongKeKyThi";
+            this.btnThongKeKyThi.Size = new System.Drawing.Size(159, 65);
+            this.btnThongKeKyThi.TabIndex = 6;
+            this.btnThongKeKyThi.Text = "Thống kê kỳ thi";
+            this.btnThongKeKyThi.UseSelectable = true;
             // 
             // btnThongKeCauHoi
             // 
@@ -187,7 +187,7 @@
             this.ClientSize = new System.Drawing.Size(532, 363);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnThongKeCauHoi);
-            this.Controls.Add(this.btnDuyetCH);
+            this.Controls.Add(this.btnThongKeKyThi);
             this.Controls.Add(this.btnInDSKyThi);
             this.Controls.Add(this.btnInDSKyThiKQ);
             this.Controls.Add(this.btnQLHS);
@@ -215,7 +215,7 @@
         private MetroFramework.Controls.MetroTile btnDeThi;
         private MetroFramework.Controls.MetroTile btnQLHS;
         private MetroFramework.Controls.MetroTile btnInDSKyThi;
-        private MetroFramework.Controls.MetroTile btnDuyetCH;
+        private MetroFramework.Controls.MetroTile btnThongKeKyThi;
         private MetroFramework.Controls.MetroTile btnThongKeCauHoi;
         private MetroFramework.Controls.MetroTile btnDangXuat;
     }

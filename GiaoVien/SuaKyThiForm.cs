@@ -14,6 +14,7 @@ namespace GiaoVien
 {
     public partial class SuaKyThiForm : MetroForm
     {
+        bool DoiNgayThi = false;
         bool checkLVDeThi = false;
         bool checkLVHocSinh = false;
         int kythiid;
@@ -40,23 +41,8 @@ namespace GiaoVien
             lvDeThi.ItemChecked += LvDeThi_ItemChecked;
             lvHocSinh.ItemChecked += LvHocSinh_ItemChecked;
             checkbox.CheckedChanged += Checkbox_CheckedChanged;
-            checkbox.CheckedChanged += Checkbox_CheckedChanged1;
             dtNgay.ValueChanged += DtNgay_ValueChanged;
             cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
-            dtNgay.ValueChanged += DtNgay_ValueChanged1;
-        }
-
-        private void DtNgay_ValueChanged1(object sender, EventArgs e)
-        {
-            int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
-            try
-            {
-                var ngay = dsDeThiCustom.Where(i => i.deThiid == dethiid).First();
-                ngay.NgayThi = dtNgay.Value;
-                if (ngay.CoNgayThi)
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = ngay.NgayThi.ToString();
-            }
-            catch { }
         }
 
         private void Cb_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,11 +60,38 @@ namespace GiaoVien
 
         private void DtNgay_ValueChanged(object sender, EventArgs e)
         {
+            if (DoiNgayThi == false)
+                return;
             lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+            int dethiid = int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text);
+            try
+            {
+                var ngay = dsDeThiCustom.Where(i => i.deThiid == dethiid).First();
+                ngay.NgayThi = dtNgay.Value;
+                if (ngay.CoNgayThi)
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = ngay.NgayThi.ToString();
+            }
+            catch { }
         }
 
-        private void Checkbox_CheckedChanged1(object sender, EventArgs e)
+        private void Checkbox_CheckedChanged(object sender, EventArgs e)
         {
+            if (!DoiNgayThi)
+                return;
+            if (checkbox.Checked)
+            {
+                dtNgay.Enabled = true;
+                CoNgayThi = true;
+                if (lvDeThi.SelectedItems.Count > 0) 
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
+            }
+            else
+            {
+                dtNgay.Enabled = false;
+                CoNgayThi = false;
+                if (lvDeThi.SelectedItems.Count > 0)
+                    lvDeThi.SelectedItems[0].SubItems[5].Text = "";
+            }
             try
             {
                 if (checkbox.Checked)
@@ -94,24 +107,6 @@ namespace GiaoVien
                 }
             }
             catch { }
-        }
-
-        private void Checkbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkbox.Checked)
-            {
-                dtNgay.Enabled = true;
-                CoNgayThi = true;
-                if (lvDeThi.SelectedItems.Count > 0) 
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = dtNgay.Value.ToString();
-            }
-            else
-            {
-                dtNgay.Enabled = false;
-                CoNgayThi = false;
-                if (lvDeThi.SelectedItems.Count > 0)
-                    lvDeThi.SelectedItems[0].SubItems[5].Text = "";
-            }
         }
 
         private void LvHocSinh_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -159,6 +154,7 @@ namespace GiaoVien
 
         private void LvDeThi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DoiNgayThi = false;
             if (lvDeThi.SelectedItems.Count > 0)
             {
                 var dethi = dsDeThiCustom.Where(i => i.deThiid == int.Parse(lvDeThi.SelectedItems[0].SubItems[1].Text)).First();
@@ -171,16 +167,7 @@ namespace GiaoVien
                 {
                     checkbox.Checked = false;
                 }
-                string ngaythi = lvDeThi.SelectedItems[0].SubItems[5].Text;
-                if (ngaythi.Length > 0)
-                {
-                    checkbox.Checked = true;
-                    dtNgay.Value = DateTime.Parse(ngaythi);
-                }
-                else
-                {
-                    checkbox.Checked = false;
-                }
+
                 checkbox.Enabled = true;
                 checkLVHocSinh = false;
                 loadHocSinh();
@@ -192,6 +179,7 @@ namespace GiaoVien
                     checkbox.Enabled = false;
                 }
             }
+            DoiNgayThi = true;
         }
 
         void loadHocSinh()
@@ -263,7 +251,10 @@ namespace GiaoVien
                         dethicustom.CoNgayThi = true;
                         dethicustom.NgayThi = dtNgay.Value;
                     }
-
+                    else
+                    {
+                        dethicustom.CoNgayThi = false;
+                    }
                     try
                     {
                         var hstg = qltn.HocSinhThamGias.Where(x => x.dethiid == i.id).ToList();
