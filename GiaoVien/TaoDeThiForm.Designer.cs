@@ -56,7 +56,7 @@
             this.btnLuu.Location = new System.Drawing.Point(32, 503);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(101, 44);
-            this.btnLuu.TabIndex = 9;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseSelectable = true;
             // 
@@ -65,7 +65,7 @@
             this.numericUpDown1.Location = new System.Drawing.Point(381, 80);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(96, 20);
-            this.numericUpDown1.TabIndex = 19;
+            this.numericUpDown1.TabIndex = 3;
             // 
             // metroLabel6
             // 
@@ -83,9 +83,9 @@
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel5.Location = new System.Drawing.Point(249, 33);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(83, 19);
             this.metroLabel5.TabIndex = 7;
-            this.metroLabel5.Text = "Loại Đề Thi:";
+            this.metroLabel5.Text = "Loại đề thi:";
             // 
             // metroLabel4
             // 
@@ -150,7 +150,7 @@
             this.cbCapHoc.Location = new System.Drawing.Point(86, 79);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(135, 29);
-            this.cbCapHoc.TabIndex = 22;
+            this.cbCapHoc.TabIndex = 2;
             this.cbCapHoc.UseSelectable = true;
             // 
             // cbMonHoc
@@ -160,7 +160,7 @@
             this.cbMonHoc.Location = new System.Drawing.Point(86, 33);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(135, 29);
-            this.cbMonHoc.TabIndex = 21;
+            this.cbMonHoc.TabIndex = 0;
             this.cbMonHoc.UseSelectable = true;
             // 
             // cbbLoaiDeThi
@@ -170,7 +170,7 @@
             this.cbbLoaiDeThi.Location = new System.Drawing.Point(342, 33);
             this.cbbLoaiDeThi.Name = "cbbLoaiDeThi";
             this.cbbLoaiDeThi.Size = new System.Drawing.Size(135, 29);
-            this.cbbLoaiDeThi.TabIndex = 20;
+            this.cbbLoaiDeThi.TabIndex = 1;
             this.cbbLoaiDeThi.UseSelectable = true;
             // 
             // groupBox2
@@ -198,7 +198,7 @@
             this.lvCauHoi.MultiSelect = false;
             this.lvCauHoi.Name = "lvCauHoi";
             this.lvCauHoi.Size = new System.Drawing.Size(492, 248);
-            this.lvCauHoi.TabIndex = 1;
+            this.lvCauHoi.TabIndex = 4;
             this.lvCauHoi.UseCompatibleStateImageBehavior = false;
             this.lvCauHoi.View = System.Windows.Forms.View.Details;
             // 

@@ -49,86 +49,86 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 33);
+            this.metroLabel1.Location = new System.Drawing.Point(22, 67);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(74, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Môn Học";
+            this.metroLabel1.Text = "Môn Học:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(249, 33);
+            this.metroLabel2.Location = new System.Drawing.Point(248, 67);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(70, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Cấp Học";
+            this.metroLabel2.Text = "Cấp Học:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(476, 33);
+            this.metroLabel3.Location = new System.Drawing.Point(475, 67);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(87, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Loại Đề Thi";
+            this.metroLabel3.Text = "Loại Đề Thi:";
             // 
             // cbMonHoc
             // 
             this.cbMonHoc.FormattingEnabled = true;
             this.cbMonHoc.ItemHeight = 23;
-            this.cbMonHoc.Location = new System.Drawing.Point(99, 28);
+            this.cbMonHoc.Location = new System.Drawing.Point(98, 62);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(133, 29);
-            this.cbMonHoc.TabIndex = 3;
+            this.cbMonHoc.TabIndex = 0;
             this.cbMonHoc.UseSelectable = true;
             // 
             // cbCapHoc
             // 
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.ItemHeight = 23;
-            this.cbCapHoc.Location = new System.Drawing.Point(321, 28);
+            this.cbCapHoc.Location = new System.Drawing.Point(320, 62);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(133, 29);
-            this.cbCapHoc.TabIndex = 4;
+            this.cbCapHoc.TabIndex = 1;
             this.cbCapHoc.UseSelectable = true;
             // 
             // cbbLoaiDeThi
             // 
             this.cbbLoaiDeThi.FormattingEnabled = true;
             this.cbbLoaiDeThi.ItemHeight = 23;
-            this.cbbLoaiDeThi.Location = new System.Drawing.Point(565, 28);
+            this.cbbLoaiDeThi.Location = new System.Drawing.Point(564, 62);
             this.cbbLoaiDeThi.Name = "cbbLoaiDeThi";
             this.cbbLoaiDeThi.Size = new System.Drawing.Size(128, 29);
-            this.cbbLoaiDeThi.TabIndex = 5;
+            this.cbbLoaiDeThi.TabIndex = 2;
             this.cbbLoaiDeThi.UseSelectable = true;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(341, 410);
+            this.btnXoa.Location = new System.Drawing.Point(340, 444);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(104, 45);
-            this.btnXoa.TabIndex = 7;
+            this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa Đề Thi";
             this.btnXoa.UseSelectable = true;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(180, 410);
+            this.btnSua.Location = new System.Drawing.Point(179, 444);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(104, 45);
-            this.btnSua.TabIndex = 8;
+            this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa Đề Thi";
             this.btnSua.UseSelectable = true;
             // 
             // btnTaoDeThi
             // 
-            this.btnTaoDeThi.Location = new System.Drawing.Point(24, 410);
+            this.btnTaoDeThi.Location = new System.Drawing.Point(23, 444);
             this.btnTaoDeThi.Name = "btnTaoDeThi";
             this.btnTaoDeThi.Size = new System.Drawing.Size(104, 45);
-            this.btnTaoDeThi.TabIndex = 9;
+            this.btnTaoDeThi.TabIndex = 4;
             this.btnTaoDeThi.Text = "Tạo Đề Thi";
             this.btnTaoDeThi.UseSelectable = true;
             // 
@@ -143,11 +143,11 @@
             this.lvDethi.FullRowSelect = true;
             this.lvDethi.GridLines = true;
             this.lvDethi.HideSelection = false;
-            this.lvDethi.Location = new System.Drawing.Point(24, 73);
+            this.lvDethi.Location = new System.Drawing.Point(23, 107);
             this.lvDethi.MultiSelect = false;
             this.lvDethi.Name = "lvDethi";
             this.lvDethi.Size = new System.Drawing.Size(669, 313);
-            this.lvDethi.TabIndex = 10;
+            this.lvDethi.TabIndex = 3;
             this.lvDethi.UseCompatibleStateImageBehavior = false;
             this.lvDethi.View = System.Windows.Forms.View.Details;
             // 
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 488);
+            this.ClientSize = new System.Drawing.Size(718, 511);
             this.Controls.Add(this.lvDethi);
             this.Controls.Add(this.btnTaoDeThi);
             this.Controls.Add(this.btnSua);
@@ -194,6 +194,7 @@
             this.MaximizeBox = false;
             this.Name = "QuanLyDeThiForm";
             this.Resizable = false;
+            this.Text = "Quản lý đề thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

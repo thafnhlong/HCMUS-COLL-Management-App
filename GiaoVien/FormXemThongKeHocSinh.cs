@@ -49,7 +49,11 @@ namespace GiaoVien
         private void CBB_Changed(object sender, EventArgs e)
         {
             if ((sender as ComboBox).SelectedIndex > -1)
+            {
+                cbbKyThi.Items.Clear();
+                txtTenHS.Text = "";
                 LoadData();
+            }
         }
         private void LoadData()
         {

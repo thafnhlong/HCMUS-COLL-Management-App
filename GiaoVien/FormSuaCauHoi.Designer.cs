@@ -112,7 +112,7 @@
             this.txtNoiDung.SelectionStart = 0;
             this.txtNoiDung.ShortcutsEnabled = true;
             this.txtNoiDung.Size = new System.Drawing.Size(459, 120);
-            this.txtNoiDung.TabIndex = 18;
+            this.txtNoiDung.TabIndex = 0;
             this.txtNoiDung.UseSelectable = true;
             this.txtNoiDung.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNoiDung.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -142,7 +142,7 @@
             this.txtGoiY.SelectionStart = 0;
             this.txtGoiY.ShortcutsEnabled = true;
             this.txtGoiY.Size = new System.Drawing.Size(459, 99);
-            this.txtGoiY.TabIndex = 19;
+            this.txtGoiY.TabIndex = 1;
             this.txtGoiY.UseSelectable = true;
             this.txtGoiY.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGoiY.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -184,7 +184,7 @@
             this.cbbMonHoc.Location = new System.Drawing.Point(99, 368);
             this.cbbMonHoc.Name = "cbbMonHoc";
             this.cbbMonHoc.Size = new System.Drawing.Size(141, 29);
-            this.cbbMonHoc.TabIndex = 23;
+            this.cbbMonHoc.TabIndex = 8;
             this.cbbMonHoc.UseSelectable = true;
             // 
             // cbbDoKho
@@ -194,7 +194,7 @@
             this.cbbDoKho.Location = new System.Drawing.Point(350, 367);
             this.cbbDoKho.Name = "cbbDoKho";
             this.cbbDoKho.Size = new System.Drawing.Size(132, 29);
-            this.cbbDoKho.TabIndex = 24;
+            this.cbbDoKho.TabIndex = 9;
             this.cbbDoKho.UseSelectable = true;
             // 
             // cbbCapHoc
@@ -204,7 +204,7 @@
             this.cbbCapHoc.Location = new System.Drawing.Point(99, 416);
             this.cbbCapHoc.Name = "cbbCapHoc";
             this.cbbCapHoc.Size = new System.Drawing.Size(141, 29);
-            this.cbbCapHoc.TabIndex = 25;
+            this.cbbCapHoc.TabIndex = 10;
             this.cbbCapHoc.UseSelectable = true;
             // 
             // metroLabel7
@@ -223,9 +223,9 @@
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel8.Location = new System.Drawing.Point(528, 423);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(74, 19);
             this.metroLabel8.TabIndex = 27;
-            this.metroLabel8.Text = "Môn Học";
+            this.metroLabel8.Text = "Đúng/Sai:";
             // 
             // txtEditND
             // 
@@ -252,7 +252,7 @@
             this.txtEditND.SelectionStart = 0;
             this.txtEditND.ShortcutsEnabled = true;
             this.txtEditND.Size = new System.Drawing.Size(312, 35);
-            this.txtEditND.TabIndex = 28;
+            this.txtEditND.TabIndex = 2;
             this.txtEditND.UseSelectable = true;
             this.txtEditND.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEditND.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -263,7 +263,7 @@
             this.ckDung.Location = new System.Drawing.Point(646, 423);
             this.ckDung.Name = "ckDung";
             this.ckDung.Size = new System.Drawing.Size(52, 15);
-            this.ckDung.TabIndex = 35;
+            this.ckDung.TabIndex = 3;
             this.ckDung.Text = "Đúng";
             this.ckDung.UseSelectable = true;
             // 
@@ -273,7 +273,7 @@
             this.ckSai.Location = new System.Drawing.Point(739, 423);
             this.ckSai.Name = "ckSai";
             this.ckSai.Size = new System.Drawing.Size(38, 15);
-            this.ckSai.TabIndex = 30;
+            this.ckSai.TabIndex = 4;
             this.ckSai.Text = "Sai";
             this.ckSai.UseSelectable = true;
             // 
@@ -282,7 +282,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(85, 470);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(91, 46);
-            this.btnCapNhat.TabIndex = 36;
+            this.btnCapNhat.TabIndex = 11;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseSelectable = true;
             // 
@@ -291,7 +291,7 @@
             this.btnHuy.Location = new System.Drawing.Point(241, 470);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(91, 46);
-            this.btnHuy.TabIndex = 37;
+            this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseSelectable = true;
             // 
@@ -300,7 +300,7 @@
             this.btnThem.Location = new System.Drawing.Point(528, 470);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 46);
-            this.btnThem.TabIndex = 38;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseSelectable = true;
             // 
@@ -309,7 +309,7 @@
             this.btnSua.Location = new System.Drawing.Point(685, 470);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 46);
-            this.btnSua.TabIndex = 39;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseSelectable = true;
             // 
@@ -318,7 +318,7 @@
             this.btnXoa.Location = new System.Drawing.Point(846, 470);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 46);
-            this.btnXoa.TabIndex = 40;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseSelectable = true;
             // 
@@ -335,6 +335,7 @@
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
             this.lvDapAn.Location = new System.Drawing.Point(498, 92);
+            this.lvDapAn.MultiSelect = false;
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(452, 261);
             this.lvDapAn.TabIndex = 41;

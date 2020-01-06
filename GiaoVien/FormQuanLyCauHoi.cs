@@ -51,7 +51,7 @@ namespace GiaoVien
             {
                 lvDapAn.Items.Clear();
                 int stt = int.Parse(lvLoadCauHoi.SelectedItems[0].SubItems[0].Text);
-                ch = dsCauHoi[stt - 1];
+                ch = dsCauHoi.Where(i=>i.id==stt).First();
                 txtNoiDung.Text = ch.noidung;
                 using (var qltn = Utils.QLTN.getInstance())
                 {
@@ -78,7 +78,11 @@ namespace GiaoVien
         // event click Sửa câu hỏi
         private void BtnSuaCauHoi_Click(object sender, EventArgs e)
         {
-
+            if(lvLoadCauHoi.SelectedItems[0].BackColor==Color.Red)
+            {
+                MessageBox.Show("Không thể sửa câu hỏi này");
+                return;
+            }
             if (lvLoadCauHoi.SelectedItems.Count > 0)
             {
                 frmSua = new FormSuaCauHoi(ch);
@@ -146,7 +150,6 @@ namespace GiaoVien
             int cbb4 = cbbLoaiCH.SelectedIndex;
             using (var qltn = Utils.QLTN.getInstance())
             {
-
                 dsCauHoi = qltn.CauHois.Where(
                     x => (cbb1 >= 0 ? x.monhocid == cbb1 + 1 : false) &&
                         (cbb2 >= 0 ? x.caphocid == cbb2 + 1 : false) &&
@@ -157,7 +160,9 @@ namespace GiaoVien
                 for (int i = 0; i < dsCauHoi.Count(); i++)
                 {
                     ListViewItem lvi = new ListViewItem();
-                    lvi.Text = (i + 1).ToString();
+                    if (qltn.HocSinhLamBais.Where(x => x.cauhoiid == dsCauHoi[i].id).Count() > 0)
+                        lvi.BackColor = Color.Red;
+                    lvi.Text = dsCauHoi[i].id.ToString();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = dsCauHoi[i].noidung);
                     lvLoadCauHoi.Items.Add(lvi);
                 }

@@ -58,9 +58,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(23, 38);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(74, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Môn học";
+            this.metroLabel1.Text = "Môn Học:";
             // 
             // metroLabel2
             // 
@@ -68,9 +68,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(216, 38);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(70, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Cấp Học";
+            this.metroLabel2.Text = "Cấp Học:";
             // 
             // metroLabel3
             // 
@@ -78,9 +78,9 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.Location = new System.Drawing.Point(398, 38);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(62, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Độ Khó";
+            this.metroLabel3.Text = "Độ Khó:";
             // 
             // metroLabel4
             // 
@@ -88,48 +88,48 @@
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.Location = new System.Drawing.Point(580, 38);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(98, 19);
             this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Loại Câu Hỏi";
+            this.metroLabel4.Text = "Loại Câu Hỏi:";
             // 
             // cbMonHoc
             // 
             this.cbMonHoc.FormattingEnabled = true;
             this.cbMonHoc.ItemHeight = 23;
-            this.cbMonHoc.Location = new System.Drawing.Point(90, 33);
+            this.cbMonHoc.Location = new System.Drawing.Point(103, 33);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(102, 29);
-            this.cbMonHoc.TabIndex = 4;
+            this.cbMonHoc.TabIndex = 0;
             this.cbMonHoc.UseSelectable = true;
             // 
             // cbCapHoc
             // 
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.ItemHeight = 23;
-            this.cbCapHoc.Location = new System.Drawing.Point(282, 33);
+            this.cbCapHoc.Location = new System.Drawing.Point(292, 33);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(95, 29);
-            this.cbCapHoc.TabIndex = 5;
+            this.cbCapHoc.TabIndex = 1;
             this.cbCapHoc.UseSelectable = true;
             // 
             // cbDoKhoa
             // 
             this.cbDoKhoa.FormattingEnabled = true;
             this.cbDoKhoa.ItemHeight = 23;
-            this.cbDoKhoa.Location = new System.Drawing.Point(456, 33);
+            this.cbDoKhoa.Location = new System.Drawing.Point(466, 33);
             this.cbDoKhoa.Name = "cbDoKhoa";
             this.cbDoKhoa.Size = new System.Drawing.Size(99, 29);
-            this.cbDoKhoa.TabIndex = 6;
+            this.cbDoKhoa.TabIndex = 2;
             this.cbDoKhoa.UseSelectable = true;
             // 
             // cbbLoaiCH
             // 
             this.cbbLoaiCH.FormattingEnabled = true;
             this.cbbLoaiCH.ItemHeight = 23;
-            this.cbbLoaiCH.Location = new System.Drawing.Point(680, 33);
+            this.cbbLoaiCH.Location = new System.Drawing.Point(684, 33);
             this.cbbLoaiCH.Name = "cbbLoaiCH";
             this.cbbLoaiCH.Size = new System.Drawing.Size(109, 29);
-            this.cbbLoaiCH.TabIndex = 7;
+            this.cbbLoaiCH.TabIndex = 3;
             this.cbbLoaiCH.UseSelectable = true;
             // 
             // metroLabel5
@@ -157,7 +157,7 @@
             this.btnThemCauHoi.Location = new System.Drawing.Point(23, 453);
             this.btnThemCauHoi.Name = "btnThemCauHoi";
             this.btnThemCauHoi.Size = new System.Drawing.Size(103, 45);
-            this.btnThemCauHoi.TabIndex = 13;
+            this.btnThemCauHoi.TabIndex = 7;
             this.btnThemCauHoi.Text = "Thêm Câu Hỏi";
             this.btnThemCauHoi.UseSelectable = true;
             // 
@@ -166,7 +166,7 @@
             this.btnSuaCauHoi.Location = new System.Drawing.Point(151, 453);
             this.btnSuaCauHoi.Name = "btnSuaCauHoi";
             this.btnSuaCauHoi.Size = new System.Drawing.Size(119, 45);
-            this.btnSuaCauHoi.TabIndex = 14;
+            this.btnSuaCauHoi.TabIndex = 8;
             this.btnSuaCauHoi.Text = "Sửa Câu Hỏi";
             this.btnSuaCauHoi.UseSelectable = true;
             // 
@@ -175,7 +175,7 @@
             this.btnImport.Location = new System.Drawing.Point(523, 453);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(119, 45);
-            this.btnImport.TabIndex = 15;
+            this.btnImport.TabIndex = 9;
             this.btnImport.Text = "IMPORT";
             this.btnImport.UseSelectable = true;
             // 
@@ -184,7 +184,7 @@
             this.btnExport.Location = new System.Drawing.Point(670, 453);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(119, 45);
-            this.btnExport.TabIndex = 16;
+            this.btnExport.TabIndex = 10;
             this.btnExport.Text = "EXPORT";
             this.btnExport.UseSelectable = true;
             // 
@@ -214,7 +214,7 @@
             this.txtNoiDung.SelectionStart = 0;
             this.txtNoiDung.ShortcutsEnabled = true;
             this.txtNoiDung.Size = new System.Drawing.Size(403, 120);
-            this.txtNoiDung.TabIndex = 17;
+            this.txtNoiDung.TabIndex = 5;
             this.txtNoiDung.UseSelectable = true;
             this.txtNoiDung.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNoiDung.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -228,9 +228,10 @@
             this.lvLoadCauHoi.GridLines = true;
             this.lvLoadCauHoi.HideSelection = false;
             this.lvLoadCauHoi.Location = new System.Drawing.Point(23, 81);
+            this.lvLoadCauHoi.MultiSelect = false;
             this.lvLoadCauHoi.Name = "lvLoadCauHoi";
             this.lvLoadCauHoi.Size = new System.Drawing.Size(766, 346);
-            this.lvLoadCauHoi.TabIndex = 18;
+            this.lvLoadCauHoi.TabIndex = 4;
             this.lvLoadCauHoi.UseCompatibleStateImageBehavior = false;
             this.lvLoadCauHoi.View = System.Windows.Forms.View.Details;
             // 
@@ -254,9 +255,10 @@
             this.lvDapAn.GridLines = true;
             this.lvDapAn.HideSelection = false;
             this.lvDapAn.Location = new System.Drawing.Point(804, 241);
+            this.lvDapAn.MultiSelect = false;
             this.lvDapAn.Name = "lvDapAn";
             this.lvDapAn.Size = new System.Drawing.Size(403, 186);
-            this.lvDapAn.TabIndex = 19;
+            this.lvDapAn.TabIndex = 6;
             this.lvDapAn.UseCompatibleStateImageBehavior = false;
             this.lvDapAn.View = System.Windows.Forms.View.Details;
             // 

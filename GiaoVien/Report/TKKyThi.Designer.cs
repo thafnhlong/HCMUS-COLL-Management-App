@@ -1,6 +1,6 @@
 ﻿namespace GiaoVien.Report
 {
-    partial class DSKyThiKQ
+    partial class TKKyThi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnIn = new MetroFramework.Controls.MetroButton();
             this.btnXDS = new MetroFramework.Controls.MetroButton();
             this.cbbKyThi = new MetroFramework.Controls.MetroComboBox();
             this.cbbLoaiKyThi = new MetroFramework.Controls.MetroComboBox();
@@ -37,22 +36,12 @@
             this.rvTK = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // btnIn
-            // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.Location = new System.Drawing.Point(742, 76);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(101, 23);
-            this.btnIn.TabIndex = 17;
-            this.btnIn.Text = "In";
-            this.btnIn.UseSelectable = true;
-            // 
             // btnXDS
             // 
             this.btnXDS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXDS.Location = new System.Drawing.Point(637, 76);
+            this.btnXDS.Location = new System.Drawing.Point(744, 78);
             this.btnXDS.Name = "btnXDS";
-            this.btnXDS.Size = new System.Drawing.Size(101, 23);
+            this.btnXDS.Size = new System.Drawing.Size(122, 23);
             this.btnXDS.TabIndex = 16;
             this.btnXDS.Text = "Xem DS";
             this.btnXDS.UseSelectable = true;
@@ -62,20 +51,20 @@
             this.cbbKyThi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbKyThi.FormattingEnabled = true;
-            this.cbbKyThi.ItemHeight = 23;
+            this.cbbKyThi.ItemHeight = 24;
             this.cbbKyThi.Location = new System.Drawing.Point(324, 73);
             this.cbbKyThi.Name = "cbbKyThi";
-            this.cbbKyThi.Size = new System.Drawing.Size(297, 29);
+            this.cbbKyThi.Size = new System.Drawing.Size(401, 30);
             this.cbbKyThi.TabIndex = 15;
             this.cbbKyThi.UseSelectable = true;
             // 
             // cbbLoaiKyThi
             // 
             this.cbbLoaiKyThi.FormattingEnabled = true;
-            this.cbbLoaiKyThi.ItemHeight = 23;
+            this.cbbLoaiKyThi.ItemHeight = 24;
             this.cbbLoaiKyThi.Location = new System.Drawing.Point(117, 73);
             this.cbbLoaiKyThi.Name = "cbbLoaiKyThi";
-            this.cbbLoaiKyThi.Size = new System.Drawing.Size(134, 29);
+            this.cbbLoaiKyThi.Size = new System.Drawing.Size(134, 30);
             this.cbbLoaiKyThi.TabIndex = 14;
             this.cbbLoaiKyThi.UseSelectable = true;
             // 
@@ -85,7 +74,7 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(264, 78);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(54, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(57, 20);
             this.metroLabel2.TabIndex = 12;
             this.metroLabel2.Text = "Kỳ thi: ";
             // 
@@ -95,7 +84,7 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(25, 78);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(89, 20);
             this.metroLabel1.TabIndex = 13;
             this.metroLabel1.Text = "Loại kỳ thi: ";
             // 
@@ -109,12 +98,11 @@
             this.rvTK.Size = new System.Drawing.Size(856, 334);
             this.rvTK.TabIndex = 11;
             // 
-            // DSKyThiKQ
+            // TKKyThi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 485);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnXDS);
             this.Controls.Add(this.cbbKyThi);
             this.Controls.Add(this.cbbLoaiKyThi);
@@ -123,16 +111,14 @@
             this.Controls.Add(this.rvTK);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "DSKyThiKQ";
-            this.Text = "In danh sách học sinh và kết quả của kỳ thi";
+            this.Name = "TKKyThi";
+            this.Text = "Thống kê theo kỳ thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton btnIn;
         private MetroFramework.Controls.MetroButton btnXDS;
         private MetroFramework.Controls.MetroComboBox cbbKyThi;
         private MetroFramework.Controls.MetroComboBox cbbLoaiKyThi;

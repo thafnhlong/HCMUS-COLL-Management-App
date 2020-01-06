@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using MetroFramework.Forms;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace GiaoVien.Report
 {
-    public partial class DSKyThiKQ : Form
+    public partial class DSKyThiKQ : MetroForm
     {
         public class KyThiBS
         {
@@ -32,6 +33,7 @@ namespace GiaoVien.Report
 
         private void DSKyThi_Load(object sender, EventArgs e)
         {
+            var today = DateTime.Today;
             var dsloaikythi = new string[] { "Thi thật", "Thi thử" };
             using (var qltn = Utils.QLTN.getInstance())
             {
@@ -39,7 +41,9 @@ namespace GiaoVien.Report
                 x => new
                 {
                     loaikythi = x,
-                    listkythi = qltn.KyThis.Where(a => a.loaikythi == (x.Equals("Thi thật") ? true : false)).Select(
+                    listkythi = qltn.KyThis.Where(a => a.loaikythi == (x.Equals("Thi thật") ? true : false) &&
+                        today.AddDays(a.songay.Value*-1) > a.ngaybatdau.Value)
+                    .Select(
                             a => new KyThiBS
                             {
                                 tenkythi = a.tenkythi,

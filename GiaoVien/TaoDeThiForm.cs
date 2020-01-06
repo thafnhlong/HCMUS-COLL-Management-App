@@ -18,6 +18,7 @@ namespace GiaoVien
         string[] StrCapHoc = { "Khối 10", "Khối 11", "Khối 12" };
         string[] StrMonHoc = { "Toán", "Lý", "Hóa" };
         string[] StrLoaiDeThi = { "Thi Thật", "Thi Thử" };
+        string[] StrDoKho = { "Dễ", "Trung bình", "Khó", "Rất khó" };
         bool check = false;
         QuanLyDeThiForm f;
         public TaoDeThiForm(QuanLyDeThiForm form)
@@ -56,12 +57,12 @@ namespace GiaoVien
         {
             if (!KiemTraChonCauHoi())
             {
-                MessageBox.Show("So cau hoi duoc chon phai lon hon 0");
+                MessageBox.Show("Số câu hỏi được chọn phải lớn hơn 0");
                 return;
             }
             if (!KiemTraThoiGian())
             {
-                MessageBox.Show("Thoi gian lam bai phai lon hon 0");
+                MessageBox.Show("Thời gian làm bài phải lớn hơn 0");
                 return;
             }
             using(var qltn = Utils.QLTN.getInstance())
@@ -88,7 +89,7 @@ namespace GiaoVien
                         qltn.SubmitChanges();
                     }
                 }
-                MessageBox.Show("Tao thanh cong");
+                MessageBox.Show("Tạo đề thi mới thành công");
                 f.loadLVDeThi();
                 Close();
             }
@@ -144,7 +145,7 @@ namespace GiaoVien
                     ListViewItem lvi = new ListViewItem();
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.id.ToString());
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.noidung);
-                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem().Text = i.dokho.ToString());
+                    lvi.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = StrDoKho[i.dokho.Value] });
                     lvCauHoi.Items.Add(lvi);
                 }
             }

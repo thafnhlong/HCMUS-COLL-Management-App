@@ -115,6 +115,12 @@
     <Compile Include="QuanLyKyThiForm.Designer.cs">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\TKKyThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\TKKyThi.Designer.cs">
+      <DependentUpon>TKKyThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\DSKyThiKQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyKyThiForm.resx">
       <DependentUpon>QuanLyKyThiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTKKyThi.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TKKyThi.resx">
+      <DependentUpon>TKKyThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\DSKyThiKQ.resx">
       <DependentUpon>DSKyThiKQ.cs</DependentUpon>

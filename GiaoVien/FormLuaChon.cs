@@ -32,6 +32,7 @@ namespace GiaoVien
             btnThongKeCauHoi.Click += (s, e) => new Report.TKCauHoi().ShowDialog();
             btnInDSKyThi.Click += (s, e) => new Report.DSKyThi().ShowDialog();
             btnInDSKyThiKQ.Click += (s, e) => new Report.DSKyThiKQ().ShowDialog();
+            btnThongKeKyThi.Click += (s, e) => new Report.TKKyThi().ShowDialog();
 
             Load += FormLuaChon_Load;
             btnDangXuat.Click += (s, e) =>

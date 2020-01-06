@@ -12,27 +12,28 @@ using System.Windows.Forms;
 
 namespace GiaoVien.Report
 {
-    public partial class DSKyThi : MetroForm
+    public partial class TKKyThi : MetroForm
     {
         public class KyThiBS
         {
             public string tenkythi { get; set; }
             public DateTime ngaybd { get; set; }
             public int songay { get; set; }
-            public List<Report.ReportDSKyThi> dshocsinh { get; set; }
+            public List<Report.ReportDSKyThiKQ> dshocsinh { get; set; }
         }
 
-        public DSKyThi()
+        public TKKyThi()
         {
             InitializeComponent();
 
-            rvTK.LocalReport.ReportPath = "Report/ReportDSKyThi.rdlc";
+            rvTK.LocalReport.ReportPath = "Report/ReportTKKythi.rdlc";
 
             Load += DSKyThi_Load;
         }
 
         private void DSKyThi_Load(object sender, EventArgs e)
         {
+            var today = DateTime.Today;
             var dsloaikythi = new string[] { "Thi thật", "Thi thử" };
             using (var qltn = Utils.QLTN.getInstance())
             {
@@ -40,26 +41,31 @@ namespace GiaoVien.Report
                 x => new
                 {
                     loaikythi = x,
-                    listkythi = qltn.KyThis.Where(a => a.loaikythi == (x.Equals("Thi thật") ? true : false)).Select(
+                    listkythi = qltn.KyThis.Where(a => a.loaikythi == (x.Equals("Thi thật") ? true : false))
+                    .Select(
                             a => new KyThiBS
                             {
                                 tenkythi = a.tenkythi,
                                 ngaybd = a.ngaybatdau.Value,
                                 songay = a.songay.Value,
-                                dshocsinh = a.DeThis.Select(
+                                dshocsinh = a.DeThis.Where(
+                                    b => b.HocSinhThamGias != null
+                                ).Select(
                                     b => new
                                     {
                                         dshs = b.HocSinhThamGias.Select(
-                                            c => new Report.ReportDSKyThi
+                                            c => new Report.ReportDSKyThiKQ
                                             {
+                                                id = c.TaiKhoan.id,
                                                 hoten = c.TaiKhoan.hoten,
                                                 ngaysinh = c.TaiKhoan.ngaysinh.Value,
-                                                lophoc = c.TaiKhoan.LopHoc.tenlop
+                                                lophoc = c.TaiKhoan.LopHoc.tenlop,
+                                                tenmonthi = b.CapHoc_MonHoc.MonHoc.tenmonhoc + (a.loaikythi == false ? " - " + b.id : ""),
+                                                diemso = ((float)c.socaudung.Value / b.DeThi_CauHois.Count * 10).ToString()
                                             }
-
                                         )
                                     }
-                                ).SelectMany(b => b.dshs).Distinct().ToList()
+                                ).SelectMany(b => b.dshs).OrderBy(b => b.id).ToList()
                             }).ToList()
                 });
 
@@ -74,14 +80,10 @@ namespace GiaoVien.Report
             }
 
             btnXDS.Click += XemDanhSach;
-            btnIn.Click += (s, e1) => rvTK.PrintDialog();
-
-            btnIn.Enabled = false;
         }
 
         private void XemDanhSach(object sender, EventArgs e)
         {
-            btnIn.Enabled = false;
             if (cbbKyThi.SelectedItem == null) return;
 
             rvTK.LocalReport.DataSources.Clear();
@@ -98,7 +100,6 @@ namespace GiaoVien.Report
             rvTK.LocalReport.DataSources.Add(new ReportDataSource("hsds", cbbKyThi.SelectedValue));
 
             rvTK.RefreshReport();
-            btnIn.Enabled = true;
         }
     }
 }

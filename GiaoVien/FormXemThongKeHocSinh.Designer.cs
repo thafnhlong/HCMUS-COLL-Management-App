@@ -33,7 +33,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.cbKhoiHoc = new MetroFramework.Controls.MetroComboBox();
             this.cbbKyThi = new MetroFramework.Controls.MetroComboBox();
-            this.txtTenHS = new MetroFramework.Controls.MetroTextBox();
             this.lvShow = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +42,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtTenHS = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -51,9 +51,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(33, 69);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(80, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Theo Khối";
+            this.metroLabel1.Text = "Theo Khối:";
             // 
             // metroLabel2
             // 
@@ -61,9 +61,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(314, 69);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(90, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Theo Kỳ Thi";
+            this.metroLabel2.Text = "Theo Kỳ Thi:";
             // 
             // metroLabel3
             // 
@@ -71,9 +71,9 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.Location = new System.Drawing.Point(605, 69);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(99, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Tên Học Sinh";
+            this.metroLabel3.Text = "Tên Học Sinh:";
             // 
             // cbKhoiHoc
             // 
@@ -82,7 +82,7 @@
             this.cbKhoiHoc.Location = new System.Drawing.Point(133, 64);
             this.cbKhoiHoc.Name = "cbKhoiHoc";
             this.cbKhoiHoc.Size = new System.Drawing.Size(145, 29);
-            this.cbKhoiHoc.TabIndex = 3;
+            this.cbKhoiHoc.TabIndex = 0;
             this.cbKhoiHoc.UseSelectable = true;
             // 
             // cbbKyThi
@@ -92,38 +92,8 @@
             this.cbbKyThi.Location = new System.Drawing.Point(414, 64);
             this.cbbKyThi.Name = "cbbKyThi";
             this.cbbKyThi.Size = new System.Drawing.Size(145, 29);
-            this.cbbKyThi.TabIndex = 4;
+            this.cbbKyThi.TabIndex = 1;
             this.cbbKyThi.UseSelectable = true;
-            // 
-            // txtTenHS
-            // 
-            // 
-            // 
-            // 
-            this.txtTenHS.CustomButton.Image = null;
-            this.txtTenHS.CustomButton.Location = new System.Drawing.Point(132, 2);
-            this.txtTenHS.CustomButton.Name = "";
-            this.txtTenHS.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtTenHS.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTenHS.CustomButton.TabIndex = 1;
-            this.txtTenHS.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTenHS.CustomButton.UseSelectable = true;
-            this.txtTenHS.CustomButton.Visible = false;
-            this.txtTenHS.Lines = new string[0];
-            this.txtTenHS.Location = new System.Drawing.Point(720, 63);
-            this.txtTenHS.MaxLength = 32767;
-            this.txtTenHS.Name = "txtTenHS";
-            this.txtTenHS.PasswordChar = '\0';
-            this.txtTenHS.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTenHS.SelectedText = "";
-            this.txtTenHS.SelectionLength = 0;
-            this.txtTenHS.SelectionStart = 0;
-            this.txtTenHS.ShortcutsEnabled = true;
-            this.txtTenHS.Size = new System.Drawing.Size(160, 30);
-            this.txtTenHS.TabIndex = 8;
-            this.txtTenHS.UseSelectable = true;
-            this.txtTenHS.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTenHS.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lvShow
             // 
@@ -138,7 +108,7 @@
             this.lvShow.MultiSelect = false;
             this.lvShow.Name = "lvShow";
             this.lvShow.Size = new System.Drawing.Size(355, 373);
-            this.lvShow.TabIndex = 9;
+            this.lvShow.TabIndex = 3;
             this.lvShow.UseCompatibleStateImageBehavior = false;
             this.lvShow.View = System.Windows.Forms.View.Details;
             // 
@@ -171,7 +141,7 @@
             this.lvChiTiet.MultiSelect = false;
             this.lvChiTiet.Name = "lvChiTiet";
             this.lvChiTiet.Size = new System.Drawing.Size(476, 373);
-            this.lvChiTiet.TabIndex = 10;
+            this.lvChiTiet.TabIndex = 4;
             this.lvChiTiet.UseCompatibleStateImageBehavior = false;
             this.lvChiTiet.View = System.Windows.Forms.View.Details;
             // 
@@ -195,14 +165,22 @@
             this.columnHeader11.Text = "Loại kỳ thi";
             this.columnHeader11.Width = 129;
             // 
+            // txtTenHS
+            // 
+            this.txtTenHS.AutoSize = true;
+            this.txtTenHS.Location = new System.Drawing.Point(710, 69);
+            this.txtTenHS.Name = "txtTenHS";
+            this.txtTenHS.Size = new System.Drawing.Size(0, 0);
+            this.txtTenHS.TabIndex = 5;
+            // 
             // FormXemThongKeHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 500);
+            this.Controls.Add(this.txtTenHS);
             this.Controls.Add(this.lvChiTiet);
             this.Controls.Add(this.lvShow);
-            this.Controls.Add(this.txtTenHS);
             this.Controls.Add(this.cbbKyThi);
             this.Controls.Add(this.cbKhoiHoc);
             this.Controls.Add(this.metroLabel3);
@@ -224,7 +202,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox cbKhoiHoc;
         private MetroFramework.Controls.MetroComboBox cbbKyThi;
-        private MetroFramework.Controls.MetroTextBox txtTenHS;
         private System.Windows.Forms.ListView lvShow;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
@@ -234,5 +211,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private MetroFramework.Controls.MetroLabel txtTenHS;
     }
 }
