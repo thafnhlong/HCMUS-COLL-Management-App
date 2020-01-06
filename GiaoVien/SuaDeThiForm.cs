@@ -131,12 +131,17 @@ namespace GiaoVien
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = ch.id.ToString() });
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = ch.noidung });
                     lvi.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = StrDoKho[ch.dokho.Value] });
-                    var dt_ch = qltn.DeThi_CauHois.Where(i => i.dethiid == dethi.id && i.cauhoiid == ch.id).ToList();
+                    var dt_ch = qltn.DeThi_CauHois.Where(i => i.cauhoiid == ch.id).ToList();
                     if (dt_ch.Count > 0)
                     {
-                        lvi.Checked = true;
-                        dem++;
-                        cauHoiDcChon.Add(ch.id);
+                        if (dt_ch.Where(i => i.dethiid == dethi.id).ToList().Count > 0)
+                        {
+                            lvi.Checked = true;
+                            dem++;
+                            cauHoiDcChon.Add(ch.id);
+                        }
+                        if (dt_ch.Where(i => i.dethiid != dethi.id).ToList().Count > 0)
+                            continue;
                     }
                     lvCauHoi.Items.Add(lvi);
                 }
