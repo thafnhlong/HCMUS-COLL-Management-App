@@ -1,0 +1,25 @@
+Phần cơ bản
+    1.Login 3 phan he
+    2.Regis 3 phan he
+    3.Login loi
+    4.
+    5.
+    6.Giao dien tong quan dep
+Phân hệ Học sinh
+    Quản lý thông tin Học sinh
+        1. HS03
+        2. HS03
+        3. HS03 - HK1 - Toan-9
+        4. HS03 - HK1 - Toan (that)
+    Làm bài trắc nghiệm
+        2. HS03 - HK1 - Ly-10
+        5. ..
+        6. ..
+    Ôn luyện, thi thử
+        1. HS01 - 
+        2. ..
+        3. abc - 15p*
+
+
+Quản lý Kỳ thi
+    4. Chinh ngay 31/1/2020 de test giao vien
