@@ -96,12 +96,6 @@
     <Compile Include="IE\LuaChon.Designer.cs">
       <DependentUpon>LuaChon.cs</DependentUpon>
     </Compile>
-    <Compile Include="InKyThiForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InKyThiForm.Designer.cs">
-      <DependentUpon>InKyThiForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyDeThiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,9 +189,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IE\LuaChon.resx">
       <DependentUpon>LuaChon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InKyThiForm.resx">
-      <DependentUpon>InKyThiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDeThiForm.resx">
       <DependentUpon>QuanLyDeThiForm.cs</DependentUpon>

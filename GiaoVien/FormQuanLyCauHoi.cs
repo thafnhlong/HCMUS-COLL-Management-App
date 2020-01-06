@@ -78,13 +78,13 @@ namespace GiaoVien
         // event click Sửa câu hỏi
         private void BtnSuaCauHoi_Click(object sender, EventArgs e)
         {
-            if(lvLoadCauHoi.SelectedItems[0].BackColor==Color.Red)
-            {
-                MessageBox.Show("Không thể sửa câu hỏi này");
-                return;
-            }
             if (lvLoadCauHoi.SelectedItems.Count > 0)
             {
+                if (lvLoadCauHoi.SelectedItems[0].BackColor == Color.Red)
+                {
+                    MessageBox.Show("Không thể sửa câu hỏi này");
+                    return;
+                }
                 frmSua = new FormSuaCauHoi(ch);
                 frmSua.Show();
                 frmSua.FormClosed += FrmSua_FormClosed;

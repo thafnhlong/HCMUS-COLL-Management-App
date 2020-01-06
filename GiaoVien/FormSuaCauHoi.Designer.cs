@@ -104,9 +104,10 @@
             this.txtNoiDung.Lines = new string[0];
             this.txtNoiDung.Location = new System.Drawing.Point(23, 92);
             this.txtNoiDung.MaxLength = 32767;
+            this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.PasswordChar = '\0';
-            this.txtNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNoiDung.SelectedText = "";
             this.txtNoiDung.SelectionLength = 0;
             this.txtNoiDung.SelectionStart = 0;
@@ -134,9 +135,10 @@
             this.txtGoiY.Lines = new string[0];
             this.txtGoiY.Location = new System.Drawing.Point(23, 254);
             this.txtGoiY.MaxLength = 32767;
+            this.txtGoiY.Multiline = true;
             this.txtGoiY.Name = "txtGoiY";
             this.txtGoiY.PasswordChar = '\0';
-            this.txtGoiY.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGoiY.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtGoiY.SelectedText = "";
             this.txtGoiY.SelectionLength = 0;
             this.txtGoiY.SelectionStart = 0;
@@ -244,9 +246,10 @@
             this.txtEditND.Lines = new string[0];
             this.txtEditND.Location = new System.Drawing.Point(638, 372);
             this.txtEditND.MaxLength = 32767;
+            this.txtEditND.Multiline = true;
             this.txtEditND.Name = "txtEditND";
             this.txtEditND.PasswordChar = '\0';
-            this.txtEditND.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEditND.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtEditND.SelectedText = "";
             this.txtEditND.SelectionLength = 0;
             this.txtEditND.SelectionStart = 0;

@@ -205,10 +205,11 @@
             this.txtNoiDung.Lines = new string[0];
             this.txtNoiDung.Location = new System.Drawing.Point(804, 81);
             this.txtNoiDung.MaxLength = 32767;
+            this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.PasswordChar = '\0';
             this.txtNoiDung.ReadOnly = true;
-            this.txtNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNoiDung.SelectedText = "";
             this.txtNoiDung.SelectionLength = 0;
             this.txtNoiDung.SelectionStart = 0;

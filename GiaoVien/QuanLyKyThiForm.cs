@@ -59,17 +59,17 @@ namespace GiaoVien
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
-            if (lvKyThi.SelectedItems[0].BackColor==Color.Red)
-            {
-                MessageBox.Show("Không thể xóa kỳ thi này");
-                return;
-            }
             if (lvKyThi.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Hãy chọn kỳ thi muốn xóa");
                 return;
             }
-            using(var qltn = Utils.QLTN.getInstance())
+            if (lvKyThi.SelectedItems[0].BackColor == Color.Red)
+            {
+                MessageBox.Show("Không thể xóa kỳ thi này");
+                return;
+            }
+            using (var qltn = Utils.QLTN.getInstance())
             {
                 var kythi = qltn.KyThis.Where(i => i.id == int.Parse(lvKyThi.SelectedItems[0].SubItems[0].Text)).First();
                 KyThi kt = qltn.KyThis.Where(i => i.id == kythi.id).First();

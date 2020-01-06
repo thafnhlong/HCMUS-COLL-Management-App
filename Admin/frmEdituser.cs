@@ -46,7 +46,6 @@ namespace Admin
 
             Load += FrmEdituser_Load;
             cbbper.SelectedIndexChanged += cbbper_SelectedIndexChanged;
-            cbblophoc.SelectedIndexChanged += cbbper_SelectedIndexChanged;
             btnsua.Click += btnSua_Click;
         }
         private void load()
